@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>apps/bitcoin/get_public_key.py</title>
+    <meta charset="utf-8">
+    <style>body { font-size: 80%; }</style>
+  </head>
+  <body>
+    <table>
+      <thead>
+        <tr>
+          <th style="color: grey">#</th>
+          <th style="text-align: right;">avg</th>
+          <th style="text-align: right;">total</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr id="1" style="None">
+          <td style="color: grey">1</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>from&nbsp;typing&nbsp;import&nbsp;TYPE_CHECKING</td>
+        </tr>
+        <tr id="2" style="None">
+          <td style="color: grey">2</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="3" style="None">
+          <td style="color: grey">3</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>if&nbsp;TYPE_CHECKING:</td>
+        </tr>
+        <tr id="4" style="None">
+          <td style="color: grey">4</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;from&nbsp;trezor.messages&nbsp;import&nbsp;GetPublicKey,&nbsp;PublicKey</td>
+        </tr>
+        <tr id="5" style="None">
+          <td style="color: grey">5</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;from&nbsp;trezor.protobuf&nbsp;import&nbsp;MessageType</td>
+        </tr>
+        <tr id="6" style="None">
+          <td style="color: grey">6</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;from&nbsp;trezor.wire&nbsp;import&nbsp;Context</td>
+        </tr>
+        <tr id="7" style="None">
+          <td style="color: grey">7</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="8" style="None">
+          <td style="color: grey">8</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="9" style="color: blue;">
+          <td style="color: grey">9</td>
+          <td style="text-align: right;">3.00</td>
+          <td style="text-align: right;">1479</td>
+          <td>async&nbsp;def&nbsp;get_public_key(</td>
+        </tr>
+        <tr id="10" style="None">
+          <td style="color: grey">10</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;ctx:&nbsp;Context,&nbsp;msg:&nbsp;GetPublicKey,&nbsp;auth_msg:&nbsp;MessageType&nbsp;|&nbsp;None&nbsp;=&nbsp;None</td>
+        </tr>
+        <tr id="11" style="None">
+          <td style="color: grey">11</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>)&nbsp;->&nbsp;PublicKey:</td>
+        </tr>
+        <tr id="12" style="color: blue;">
+          <td style="color: grey">12</td>
+          <td style="text-align: right;">1.00</td>
+          <td style="text-align: right;">493</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;from&nbsp;trezor&nbsp;import&nbsp;wire</td>
+        </tr>
+        <tr id="13" style="color: red;">
+          <td style="color: grey">13</td>
+          <td style="text-align: right;">6.00</td>
+          <td style="text-align: right;">2958</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;from&nbsp;trezor.enums&nbsp;import&nbsp;InputScriptType</td>
+        </tr>
+        <tr id="14" style="color: blue;">
+          <td style="color: grey">14</td>
+          <td style="text-align: right;">1.00</td>
+          <td style="text-align: right;">493</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;from&nbsp;trezor.messages&nbsp;import&nbsp;HDNodeType,&nbsp;PublicKey,&nbsp;UnlockPath</td>
+        </tr>
+        <tr id="15" style="None">
+          <td style="color: grey">15</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="16" style="color: red;">
+          <td style="color: grey">16</td>
+          <td style="text-align: right;">6.00</td>
+          <td style="text-align: right;">2958</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;from&nbsp;apps.common&nbsp;import&nbsp;coininfo,&nbsp;paths</td>
+        </tr>
+        <tr id="17" style="color: red;">
+          <td style="color: grey">17</td>
+          <td style="text-align: right;">6.00</td>
+          <td style="text-align: right;">2958</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;from&nbsp;apps.common.keychain&nbsp;import&nbsp;FORBIDDEN_KEY_PATH,&nbsp;get_keychain</td>
+        </tr>
+        <tr id="18" style="None">
+          <td style="color: grey">18</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="19" style="None">
+          <td style="color: grey">19</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;coin_name&nbsp;=&nbsp;msg.coin_name&nbsp;or&nbsp;"Bitcoin"</td>
+        </tr>
+        <tr id="20" style="None">
+          <td style="color: grey">20</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;script_type&nbsp;=&nbsp;msg.script_type&nbsp;or&nbsp;InputScriptType.SPENDADDRESS</td>
+        </tr>
+        <tr id="21" style="None">
+          <td style="color: grey">21</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;coin&nbsp;=&nbsp;coininfo.by_name(coin_name)</td>
+        </tr>
+        <tr id="22" style="None">
+          <td style="color: grey">22</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;curve_name&nbsp;=&nbsp;msg.ecdsa_curve_name&nbsp;or&nbsp;coin.curve_name</td>
+        </tr>
+        <tr id="23" style="None">
+          <td style="color: grey">23</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;address_n&nbsp;=&nbsp;msg.address_n&nbsp;&nbsp;#&nbsp;local_cache_attribute</td>
+        </tr>
+        <tr id="24" style="None">
+          <td style="color: grey">24</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;ignore_xpub_magic&nbsp;=&nbsp;msg.ignore_xpub_magic&nbsp;&nbsp;#&nbsp;local_cache_attribute</td>
+        </tr>
+        <tr id="25" style="None">
+          <td style="color: grey">25</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;xpub_magic&nbsp;=&nbsp;coin.xpub_magic&nbsp;&nbsp;#&nbsp;local_cache_attribute</td>
+        </tr>
+        <tr id="26" style="None">
+          <td style="color: grey">26</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="27" style="None">
+          <td style="color: grey">27</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;address_n&nbsp;and&nbsp;address_n[0]&nbsp;==&nbsp;paths.SLIP25_PURPOSE:</td>
+        </tr>
+        <tr id="28" style="None">
+          <td style="color: grey">28</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#&nbsp;UnlockPath&nbsp;is&nbsp;required&nbsp;to&nbsp;access&nbsp;SLIP25&nbsp;paths.</td>
+        </tr>
+        <tr id="29" style="None">
+          <td style="color: grey">29</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;not&nbsp;UnlockPath.is_type_of(auth_msg):</td>
+        </tr>
+        <tr id="30" style="color: blue;">
+          <td style="color: grey">30</td>
+          <td style="text-align: right;">1.33</td>
+          <td style="text-align: right;">4</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;raise&nbsp;FORBIDDEN_KEY_PATH</td>
+        </tr>
+        <tr id="31" style="None">
+          <td style="color: grey">31</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="32" style="None">
+          <td style="color: grey">32</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#&nbsp;Verify&nbsp;that&nbsp;the&nbsp;desired&nbsp;path&nbsp;lies&nbsp;in&nbsp;the&nbsp;unlocked&nbsp;subtree.</td>
+        </tr>
+        <tr id="33" style="color: blue;">
+          <td style="color: grey">33</td>
+          <td style="text-align: right;">3.00</td>
+          <td style="text-align: right;">9</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;auth_msg.address_n&nbsp;!=&nbsp;address_n[:&nbsp;len(auth_msg.address_n)]:</td>
+        </tr>
+        <tr id="34" style="None">
+          <td style="color: grey">34</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;raise&nbsp;FORBIDDEN_KEY_PATH</td>
+        </tr>
+        <tr id="35" style="None">
+          <td style="color: grey">35</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="36" style="color: blue;">
+          <td style="color: grey">36</td>
+          <td style="text-align: right;">1.84</td>
+          <td style="text-align: right;">1470</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;keychain&nbsp;=&nbsp;await&nbsp;get_keychain(ctx,&nbsp;curve_name,&nbsp;[paths.AlwaysMatchingSchema])</td>
+        </tr>
+        <tr id="37" style="None">
+          <td style="color: grey">37</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="38" style="color: blue;">
+          <td style="color: grey">38</td>
+          <td style="text-align: right;">1.00</td>
+          <td style="text-align: right;">485</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;node&nbsp;=&nbsp;keychain.derive(address_n)</td>
+        </tr>
+        <tr id="39" style="None">
+          <td style="color: grey">39</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="40" style="None">
+          <td style="color: grey">40</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(</td>
+        </tr>
+        <tr id="41" style="None">
+          <td style="color: grey">41</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;script_type</td>
+        </tr>
+        <tr id="42" style="None">
+          <td style="color: grey">42</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;in&nbsp;(</td>
+        </tr>
+        <tr id="43" style="None">
+          <td style="color: grey">43</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;InputScriptType.SPENDADDRESS,</td>
+        </tr>
+        <tr id="44" style="None">
+          <td style="color: grey">44</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;InputScriptType.SPENDMULTISIG,</td>
+        </tr>
+        <tr id="45" style="color: blue;">
+          <td style="color: grey">45</td>
+          <td style="text-align: right;">1.00</td>
+          <td style="text-align: right;">484</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;InputScriptType.SPENDTAPROOT,</td>
+        </tr>
+        <tr id="46" style="None">
+          <td style="color: grey">46</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;)</td>
+        </tr>
+        <tr id="47" style="None">
+          <td style="color: grey">47</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;and&nbsp;xpub_magic&nbsp;is&nbsp;not&nbsp;None</td>
+        </tr>
+        <tr id="48" style="None">
+          <td style="color: grey">48</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;):</td>
+        </tr>
+        <tr id="49" style="color: blue;">
+          <td style="color: grey">49</td>
+          <td style="text-align: right;">2.00</td>
+          <td style="text-align: right;">926</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;node_xpub&nbsp;=&nbsp;node.serialize_public(xpub_magic)</td>
+        </tr>
+        <tr id="50" style="None">
+          <td style="color: grey">50</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;elif&nbsp;(</td>
+        </tr>
+        <tr id="51" style="None">
+          <td style="color: grey">51</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;coin.segwit</td>
+        </tr>
+        <tr id="52" style="None">
+          <td style="color: grey">52</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;and&nbsp;script_type&nbsp;==&nbsp;InputScriptType.SPENDP2SHWITNESS</td>
+        </tr>
+        <tr id="53" style="None">
+          <td style="color: grey">53</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;and&nbsp;(ignore_xpub_magic&nbsp;or&nbsp;coin.xpub_magic_segwit_p2sh&nbsp;is&nbsp;not&nbsp;None)</td>
+        </tr>
+        <tr id="54" style="None">
+          <td style="color: grey">54</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;):</td>
+        </tr>
+        <tr id="55" style="None">
+          <td style="color: grey">55</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;assert&nbsp;coin.xpub_magic_segwit_p2sh&nbsp;is&nbsp;not&nbsp;None</td>
+        </tr>
+        <tr id="56" style="None">
+          <td style="color: grey">56</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;node_xpub&nbsp;=&nbsp;node.serialize_public(</td>
+        </tr>
+        <tr id="57" style="color: blue;">
+          <td style="color: grey">57</td>
+          <td style="text-align: right;">2.00</td>
+          <td style="text-align: right;">22</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;xpub_magic&nbsp;if&nbsp;ignore_xpub_magic&nbsp;else&nbsp;coin.xpub_magic_segwit_p2sh</td>
+        </tr>
+        <tr id="58" style="None">
+          <td style="color: grey">58</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;)</td>
+        </tr>
+        <tr id="59" style="None">
+          <td style="color: grey">59</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;elif&nbsp;(</td>
+        </tr>
+        <tr id="60" style="None">
+          <td style="color: grey">60</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;coin.segwit</td>
+        </tr>
+        <tr id="61" style="None">
+          <td style="color: grey">61</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;and&nbsp;script_type&nbsp;==&nbsp;InputScriptType.SPENDWITNESS</td>
+        </tr>
+        <tr id="62" style="None">
+          <td style="color: grey">62</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;and&nbsp;(ignore_xpub_magic&nbsp;or&nbsp;coin.xpub_magic_segwit_native&nbsp;is&nbsp;not&nbsp;None)</td>
+        </tr>
+        <tr id="63" style="None">
+          <td style="color: grey">63</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;):</td>
+        </tr>
+        <tr id="64" style="None">
+          <td style="color: grey">64</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;assert&nbsp;coin.xpub_magic_segwit_native&nbsp;is&nbsp;not&nbsp;None</td>
+        </tr>
+        <tr id="65" style="None">
+          <td style="color: grey">65</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;node_xpub&nbsp;=&nbsp;node.serialize_public(</td>
+        </tr>
+        <tr id="66" style="color: blue;">
+          <td style="color: grey">66</td>
+          <td style="text-align: right;">2.00</td>
+          <td style="text-align: right;">20</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;xpub_magic&nbsp;if&nbsp;ignore_xpub_magic&nbsp;else&nbsp;coin.xpub_magic_segwit_native</td>
+        </tr>
+        <tr id="67" style="None">
+          <td style="color: grey">67</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;)</td>
+        </tr>
+        <tr id="68" style="None">
+          <td style="color: grey">68</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;else:</td>
+        </tr>
+        <tr id="69" style="None">
+          <td style="color: grey">69</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;raise&nbsp;wire.DataError("Invalid&nbsp;combination&nbsp;of&nbsp;coin&nbsp;and&nbsp;script_type")</td>
+        </tr>
+        <tr id="70" style="None">
+          <td style="color: grey">70</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="71" style="color: blue;">
+          <td style="color: grey">71</td>
+          <td style="text-align: right;">2.00</td>
+          <td style="text-align: right;">968</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;pubkey&nbsp;=&nbsp;node.public_key()</td>
+        </tr>
+        <tr id="72" style="None">
+          <td style="color: grey">72</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;pubkey[0]&nbsp;==&nbsp;1:</td>
+        </tr>
+        <tr id="73" style="color: red;">
+          <td style="color: grey">73</td>
+          <td style="text-align: right;">5.00</td>
+          <td style="text-align: right;">10</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;pubkey&nbsp;=&nbsp;b"\x00"&nbsp;+&nbsp;pubkey[1:]</td>
+        </tr>
+        <tr id="74" style="None">
+          <td style="color: grey">74</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;node_type&nbsp;=&nbsp;HDNodeType(</td>
+        </tr>
+        <tr id="75" style="None">
+          <td style="color: grey">75</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;depth=node.depth(),</td>
+        </tr>
+        <tr id="76" style="None">
+          <td style="color: grey">76</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;child_num=node.child_num(),</td>
+        </tr>
+        <tr id="77" style="None">
+          <td style="color: grey">77</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;fingerprint=node.fingerprint(),</td>
+        </tr>
+        <tr id="78" style="color: red;">
+          <td style="color: grey">78</td>
+          <td style="text-align: right;">4.00</td>
+          <td style="text-align: right;">1936</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;chain_code=node.chain_code(),</td>
+        </tr>
+        <tr id="79" style="None">
+          <td style="color: grey">79</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;public_key=pubkey,</td>
+        </tr>
+        <tr id="80" style="None">
+          <td style="color: grey">80</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;)</td>
+        </tr>
+        <tr id="81" style="None">
+          <td style="color: grey">81</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="82" style="None">
+          <td style="color: grey">82</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;msg.show_display:</td>
+        </tr>
+        <tr id="83" style="color: blue;">
+          <td style="color: grey">83</td>
+          <td style="text-align: right;">1.00</td>
+          <td style="text-align: right;">18</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;from&nbsp;trezor.ui.layouts&nbsp;import&nbsp;show_xpub</td>
+        </tr>
+        <tr id="84" style="None">
+          <td style="color: grey">84</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="85" style="color: blue;">
+          <td style="color: grey">85</td>
+          <td style="text-align: right;">0.25</td>
+          <td style="text-align: right;">18</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;await&nbsp;show_xpub(ctx,&nbsp;node_xpub,&nbsp;"XPUB")</td>
+        </tr>
+        <tr id="86" style="None">
+          <td style="color: grey">86</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="87" style="None">
+          <td style="color: grey">87</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;PublicKey(</td>
+        </tr>
+        <tr id="88" style="None">
+          <td style="color: grey">88</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;node=node_type,</td>
+        </tr>
+        <tr id="89" style="None">
+          <td style="color: grey">89</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;xpub=node_xpub,</td>
+        </tr>
+        <tr id="90" style="color: blue;">
+          <td style="color: grey">90</td>
+          <td style="text-align: right;">1.00</td>
+          <td style="text-align: right;">484</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;root_fingerprint=keychain.root_fingerprint(),</td>
+        </tr>
+        <tr id="91" style="None">
+          <td style="color: grey">91</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;)</td>
+        </tr>
+      </tbody>
+    </table>
+  </body>
+</html>

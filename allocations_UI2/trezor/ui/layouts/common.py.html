@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>trezor/ui/layouts/common.py</title>
+    <meta charset="utf-8">
+    <style>body { font-size: 80%; }</style>
+  </head>
+  <body>
+    <table>
+      <thead>
+        <tr>
+          <th style="color: grey">#</th>
+          <th style="text-align: right;">avg</th>
+          <th style="text-align: right;">total</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr id="1" style="None">
+          <td style="color: grey">1</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>from&nbsp;typing&nbsp;import&nbsp;TYPE_CHECKING</td>
+        </tr>
+        <tr id="2" style="None">
+          <td style="color: grey">2</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="3" style="color: red;">
+          <td style="color: grey">3</td>
+          <td style="text-align: right;">3.00</td>
+          <td style="text-align: right;">37809</td>
+          <td>from&nbsp;trezor&nbsp;import&nbsp;log,&nbsp;wire,&nbsp;workflow</td>
+        </tr>
+        <tr id="4" style="color: red;">
+          <td style="color: grey">4</td>
+          <td style="text-align: right;">6.00</td>
+          <td style="text-align: right;">75618</td>
+          <td>from&nbsp;trezor.enums&nbsp;import&nbsp;ButtonRequestType</td>
+        </tr>
+        <tr id="5" style="color: blue;">
+          <td style="color: grey">5</td>
+          <td style="text-align: right;">1.00</td>
+          <td style="text-align: right;">12603</td>
+          <td>from&nbsp;trezor.messages&nbsp;import&nbsp;ButtonAck,&nbsp;ButtonRequest</td>
+        </tr>
+        <tr id="6" style="None">
+          <td style="color: grey">6</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="7" style="None">
+          <td style="color: grey">7</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>if&nbsp;TYPE_CHECKING:</td>
+        </tr>
+        <tr id="8" style="None">
+          <td style="color: grey">8</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;from&nbsp;typing&nbsp;import&nbsp;Any,&nbsp;Awaitable,&nbsp;Protocol</td>
+        </tr>
+        <tr id="9" style="None">
+          <td style="color: grey">9</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="10" style="None">
+          <td style="color: grey">10</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;LayoutType&nbsp;=&nbsp;Awaitable[Any]</td>
+        </tr>
+        <tr id="11" style="None">
+          <td style="color: grey">11</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;PropertyType&nbsp;=&nbsp;tuple[str&nbsp;|&nbsp;None,&nbsp;str&nbsp;|&nbsp;bytes&nbsp;|&nbsp;None]</td>
+        </tr>
+        <tr id="12" style="None">
+          <td style="color: grey">12</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;ExceptionType&nbsp;=&nbsp;BaseException&nbsp;|&nbsp;type[BaseException]</td>
+        </tr>
+        <tr id="13" style="None">
+          <td style="color: grey">13</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="14" style="None">
+          <td style="color: grey">14</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;class&nbsp;ProgressLayout(Protocol):</td>
+        </tr>
+        <tr id="15" style="None">
+          <td style="color: grey">15</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;def&nbsp;report(self,&nbsp;value:&nbsp;int,&nbsp;description:&nbsp;str&nbsp;|&nbsp;None&nbsp;=&nbsp;None)&nbsp;->&nbsp;None:</td>
+        </tr>
+        <tr id="16" style="None">
+          <td style="color: grey">16</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;...</td>
+        </tr>
+        <tr id="17" style="None">
+          <td style="color: grey">17</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="18" style="None">
+          <td style="color: grey">18</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="19" style="None">
+          <td style="color: grey">19</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>async&nbsp;def&nbsp;button_request(</td>
+        </tr>
+        <tr id="20" style="None">
+          <td style="color: grey">20</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;ctx:&nbsp;wire.GenericContext,</td>
+        </tr>
+        <tr id="21" style="None">
+          <td style="color: grey">21</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;br_type:&nbsp;str,</td>
+        </tr>
+        <tr id="22" style="color: red;">
+          <td style="color: grey">22</td>
+          <td style="text-align: right;">3.00</td>
+          <td style="text-align: right;">37809</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;code:&nbsp;ButtonRequestType&nbsp;=&nbsp;ButtonRequestType.Other,</td>
+        </tr>
+        <tr id="23" style="None">
+          <td style="color: grey">23</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;pages:&nbsp;int&nbsp;|&nbsp;None&nbsp;=&nbsp;None,</td>
+        </tr>
+        <tr id="24" style="None">
+          <td style="color: grey">24</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>)&nbsp;->&nbsp;None:</td>
+        </tr>
+        <tr id="25" style="None">
+          <td style="color: grey">25</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;__debug__:</td>
+        </tr>
+        <tr id="26" style="color: blue;">
+          <td style="color: grey">26</td>
+          <td style="text-align: right;">1.00</td>
+          <td style="text-align: right;">8054</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;log.debug(__name__,&nbsp;"ButtonRequest.type=%s",&nbsp;br_type)</td>
+        </tr>
+        <tr id="27" style="None">
+          <td style="color: grey">27</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;workflow.close_others()</td>
+        </tr>
+        <tr id="28" style="None">
+          <td style="color: grey">28</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;pages&nbsp;is&nbsp;not&nbsp;None:</td>
+        </tr>
+        <tr id="29" style="color: red;">
+          <td style="color: grey">29</td>
+          <td style="text-align: right;">1.00</td>
+          <td style="text-align: right;">1806</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;await&nbsp;ctx.call(ButtonRequest(code=code,&nbsp;pages=pages),&nbsp;ButtonAck)</td>
+        </tr>
+        <tr id="30" style="None">
+          <td style="color: grey">30</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;else:</td>
+        </tr>
+        <tr id="31" style="color: blue;">
+          <td style="color: grey">31</td>
+          <td style="text-align: right;">0.97</td>
+          <td style="text-align: right;">22362</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;await&nbsp;ctx.call(ButtonRequest(code=code),&nbsp;ButtonAck)</td>
+        </tr>
+        <tr id="32" style="None">
+          <td style="color: grey">32</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="33" style="None">
+          <td style="color: grey">33</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="34" style="None">
+          <td style="color: grey">34</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>async&nbsp;def&nbsp;interact(</td>
+        </tr>
+        <tr id="35" style="None">
+          <td style="color: grey">35</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;ctx:&nbsp;wire.GenericContext,</td>
+        </tr>
+        <tr id="36" style="None">
+          <td style="color: grey">36</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;layout:&nbsp;LayoutType,</td>
+        </tr>
+        <tr id="37" style="None">
+          <td style="color: grey">37</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;br_type:&nbsp;str,</td>
+        </tr>
+        <tr id="38" style="color: red;">
+          <td style="color: grey">38</td>
+          <td style="text-align: right;">7.00</td>
+          <td style="text-align: right;">88221</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;br_code:&nbsp;ButtonRequestType&nbsp;=&nbsp;ButtonRequestType.Other,</td>
+        </tr>
+        <tr id="39" style="None">
+          <td style="color: grey">39</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>)&nbsp;->&nbsp;Any:</td>
+        </tr>
+        <tr id="40" style="None">
+          <td style="color: grey">40</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;hasattr(layout,&nbsp;"page_count")&nbsp;and&nbsp;layout.page_count()&nbsp;>&nbsp;1:&nbsp;&nbsp;#&nbsp;type:&nbsp;ignore&nbsp;[Cannot&nbsp;access&nbsp;member&nbsp;"page_count"&nbsp;for&nbsp;type&nbsp;"LayoutType"]</td>
+        </tr>
+        <tr id="41" style="None">
+          <td style="color: grey">41</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;await&nbsp;button_request(ctx,&nbsp;br_type,&nbsp;br_code,&nbsp;pages=layout.page_count())&nbsp;&nbsp;#&nbsp;type:&nbsp;ignore&nbsp;[Cannot&nbsp;access&nbsp;member&nbsp;"page_count"&nbsp;for&nbsp;type&nbsp;"LayoutType"]</td>
+        </tr>
+        <tr id="42" style="color: blue;">
+          <td style="color: grey">42</td>
+          <td style="text-align: right;">0.50</td>
+          <td style="text-align: right;">603</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;await&nbsp;ctx.wait(layout)</td>
+        </tr>
+        <tr id="43" style="None">
+          <td style="color: grey">43</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;else:</td>
+        </tr>
+        <tr id="44" style="color: blue;">
+          <td style="color: grey">44</td>
+          <td style="text-align: right;">0.33</td>
+          <td style="text-align: right;">7123</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;await&nbsp;button_request(ctx,&nbsp;br_type,&nbsp;br_code)</td>
+        </tr>
+        <tr id="45" style="color: blue;">
+          <td style="color: grey">45</td>
+          <td style="text-align: right;">0.50</td>
+          <td style="text-align: right;">7136</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;await&nbsp;ctx.wait(layout)</td>
+        </tr>
+      </tbody>
+    </table>
+  </body>
+</html>

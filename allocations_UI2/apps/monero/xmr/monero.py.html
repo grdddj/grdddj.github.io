@@ -1,0 +1,1918 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>apps/monero/xmr/monero.py</title>
+    <meta charset="utf-8">
+    <style>body { font-size: 80%; }</style>
+  </head>
+  <body>
+    <table>
+      <thead>
+        <tr>
+          <th style="color: grey">#</th>
+          <th style="text-align: right;">avg</th>
+          <th style="text-align: right;">total</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr id="1" style="color: blue;">
+          <td style="color: grey">1</td>
+          <td style="text-align: right;">1.00</td>
+          <td style="text-align: right;">12</td>
+          <td>from&nbsp;typing&nbsp;import&nbsp;TYPE_CHECKING</td>
+        </tr>
+        <tr id="2" style="None">
+          <td style="color: grey">2</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="3" style="color: blue;">
+          <td style="color: grey">3</td>
+          <td style="text-align: right;">2.00</td>
+          <td style="text-align: right;">12</td>
+          <td>from&nbsp;apps.monero.xmr&nbsp;import&nbsp;crypto,&nbsp;crypto_helpers</td>
+        </tr>
+        <tr id="4" style="None">
+          <td style="color: grey">4</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="5" style="None">
+          <td style="color: grey">5</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>if&nbsp;TYPE_CHECKING:</td>
+        </tr>
+        <tr id="6" style="None">
+          <td style="color: grey">6</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;from&nbsp;apps.monero.xmr.credentials&nbsp;import&nbsp;AccountCreds</td>
+        </tr>
+        <tr id="7" style="None">
+          <td style="color: grey">7</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="8" style="None">
+          <td style="color: grey">8</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;Subaddresses&nbsp;=&nbsp;dict[bytes,&nbsp;tuple[int,&nbsp;int]]</td>
+        </tr>
+        <tr id="9" style="None">
+          <td style="color: grey">9</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="10" style="None">
+          <td style="color: grey">10</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="11" style="color: red;">
+          <td style="color: grey">11</td>
+          <td style="text-align: right;">2.00</td>
+          <td style="text-align: right;">12</td>
+          <td>class&nbsp;XmrException(Exception):</td>
+        </tr>
+        <tr id="12" style="color: red;">
+          <td style="color: grey">12</td>
+          <td style="text-align: right;">3.00</td>
+          <td style="text-align: right;">18</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;pass</td>
+        </tr>
+        <tr id="13" style="None">
+          <td style="color: grey">13</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="14" style="None">
+          <td style="color: grey">14</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="15" style="color: red;">
+          <td style="color: grey">15</td>
+          <td style="text-align: right;">2.00</td>
+          <td style="text-align: right;">12</td>
+          <td>class&nbsp;XmrNoSuchAddressException(XmrException):</td>
+        </tr>
+        <tr id="16" style="color: blue;">
+          <td style="color: grey">16</td>
+          <td style="text-align: right;">2.00</td>
+          <td style="text-align: right;">12</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;pass</td>
+        </tr>
+        <tr id="17" style="None">
+          <td style="color: grey">17</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="18" style="None">
+          <td style="color: grey">18</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="19" style="color: red;">
+          <td style="color: grey">19</td>
+          <td style="text-align: right;">3.00</td>
+          <td style="text-align: right;">18</td>
+          <td>def&nbsp;get_subaddress_secret_key(</td>
+        </tr>
+        <tr id="20" style="None">
+          <td style="color: grey">20</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;secret_key:&nbsp;crypto.Scalar,&nbsp;major:&nbsp;int&nbsp;=&nbsp;0,&nbsp;minor:&nbsp;int&nbsp;=&nbsp;0</td>
+        </tr>
+        <tr id="21" style="None">
+          <td style="color: grey">21</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>)&nbsp;->&nbsp;crypto.Scalar:</td>
+        </tr>
+        <tr id="22" style="None">
+          <td style="color: grey">22</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;"""</td>
+        </tr>
+        <tr id="23" style="None">
+          <td style="color: grey">23</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;Builds&nbsp;subaddress&nbsp;secret&nbsp;key&nbsp;from&nbsp;the&nbsp;subaddress&nbsp;index</td>
+        </tr>
+        <tr id="24" style="None">
+          <td style="color: grey">24</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;Hs(SubAddr&nbsp;||&nbsp;a&nbsp;||&nbsp;index_major&nbsp;||&nbsp;index_minor)</td>
+        </tr>
+        <tr id="25" style="None">
+          <td style="color: grey">25</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;"""</td>
+        </tr>
+        <tr id="26" style="None">
+          <td style="color: grey">26</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;major&nbsp;==&nbsp;0&nbsp;and&nbsp;minor&nbsp;==&nbsp;0:</td>
+        </tr>
+        <tr id="27" style="None">
+          <td style="color: grey">27</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;secret_key</td>
+        </tr>
+        <tr id="28" style="None">
+          <td style="color: grey">28</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="29" style="None">
+          <td style="color: grey">29</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;crypto_helpers.get_subaddress_secret_key(secret_key,&nbsp;major,&nbsp;minor)</td>
+        </tr>
+        <tr id="30" style="None">
+          <td style="color: grey">30</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="31" style="None">
+          <td style="color: grey">31</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="32" style="color: blue;">
+          <td style="color: grey">32</td>
+          <td style="text-align: right;">1.00</td>
+          <td style="text-align: right;">6</td>
+          <td>def&nbsp;get_subaddress_spend_public_key(</td>
+        </tr>
+        <tr id="33" style="None">
+          <td style="color: grey">33</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;view_private:&nbsp;crypto.Scalar,&nbsp;spend_public:&nbsp;crypto.Point,&nbsp;major:&nbsp;int,&nbsp;minor:&nbsp;int</td>
+        </tr>
+        <tr id="34" style="None">
+          <td style="color: grey">34</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>)&nbsp;->&nbsp;crypto.Point:</td>
+        </tr>
+        <tr id="35" style="None">
+          <td style="color: grey">35</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;"""</td>
+        </tr>
+        <tr id="36" style="None">
+          <td style="color: grey">36</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;Generates&nbsp;subaddress&nbsp;spend&nbsp;public&nbsp;key&nbsp;D_{major,&nbsp;minor}</td>
+        </tr>
+        <tr id="37" style="None">
+          <td style="color: grey">37</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;"""</td>
+        </tr>
+        <tr id="38" style="None">
+          <td style="color: grey">38</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;major&nbsp;==&nbsp;0&nbsp;and&nbsp;minor&nbsp;==&nbsp;0:</td>
+        </tr>
+        <tr id="39" style="None">
+          <td style="color: grey">39</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;spend_public</td>
+        </tr>
+        <tr id="40" style="None">
+          <td style="color: grey">40</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="41" style="None">
+          <td style="color: grey">41</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;m&nbsp;=&nbsp;get_subaddress_secret_key(view_private,&nbsp;major,&nbsp;minor)</td>
+        </tr>
+        <tr id="42" style="None">
+          <td style="color: grey">42</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;M&nbsp;=&nbsp;crypto.scalarmult_base_into(None,&nbsp;m)</td>
+        </tr>
+        <tr id="43" style="None">
+          <td style="color: grey">43</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;D&nbsp;=&nbsp;crypto.point_add_into(None,&nbsp;spend_public,&nbsp;M)</td>
+        </tr>
+        <tr id="44" style="None">
+          <td style="color: grey">44</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;D</td>
+        </tr>
+        <tr id="45" style="None">
+          <td style="color: grey">45</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="46" style="None">
+          <td style="color: grey">46</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="47" style="color: blue;">
+          <td style="color: grey">47</td>
+          <td style="text-align: right;">2.00</td>
+          <td style="text-align: right;">12</td>
+          <td>def&nbsp;derive_subaddress_public_key(</td>
+        </tr>
+        <tr id="48" style="None">
+          <td style="color: grey">48</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;out_key:&nbsp;crypto.Point,&nbsp;derivation:&nbsp;crypto.Point,&nbsp;output_index:&nbsp;int</td>
+        </tr>
+        <tr id="49" style="None">
+          <td style="color: grey">49</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>)&nbsp;->&nbsp;crypto.Point:</td>
+        </tr>
+        <tr id="50" style="None">
+          <td style="color: grey">50</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;"""</td>
+        </tr>
+        <tr id="51" style="None">
+          <td style="color: grey">51</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;out_key&nbsp;-&nbsp;H_s(derivation&nbsp;||&nbsp;varint(output_index))G</td>
+        </tr>
+        <tr id="52" style="None">
+          <td style="color: grey">52</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;"""</td>
+        </tr>
+        <tr id="53" style="None">
+          <td style="color: grey">53</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;crypto.ge25519_check(out_key)</td>
+        </tr>
+        <tr id="54" style="None">
+          <td style="color: grey">54</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;scalar&nbsp;=&nbsp;crypto_helpers.derivation_to_scalar(derivation,&nbsp;output_index)</td>
+        </tr>
+        <tr id="55" style="None">
+          <td style="color: grey">55</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;point2&nbsp;=&nbsp;crypto.scalarmult_base_into(None,&nbsp;scalar)</td>
+        </tr>
+        <tr id="56" style="None">
+          <td style="color: grey">56</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;point4&nbsp;=&nbsp;crypto.point_sub_into(None,&nbsp;out_key,&nbsp;point2)</td>
+        </tr>
+        <tr id="57" style="None">
+          <td style="color: grey">57</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;point4</td>
+        </tr>
+        <tr id="58" style="None">
+          <td style="color: grey">58</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="59" style="None">
+          <td style="color: grey">59</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="60" style="color: blue;">
+          <td style="color: grey">60</td>
+          <td style="text-align: right;">1.00</td>
+          <td style="text-align: right;">6</td>
+          <td>def&nbsp;generate_key_image(public_key:&nbsp;bytes,&nbsp;secret_key:&nbsp;crypto.Scalar)&nbsp;->&nbsp;crypto.Point:</td>
+        </tr>
+        <tr id="61" style="None">
+          <td style="color: grey">61</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;"""</td>
+        </tr>
+        <tr id="62" style="None">
+          <td style="color: grey">62</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;Key&nbsp;image:&nbsp;secret_key&nbsp;*&nbsp;H_p(pub_key)</td>
+        </tr>
+        <tr id="63" style="None">
+          <td style="color: grey">63</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;"""</td>
+        </tr>
+        <tr id="64" style="None">
+          <td style="color: grey">64</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;point&nbsp;=&nbsp;crypto.hash_to_point_into(None,&nbsp;public_key)</td>
+        </tr>
+        <tr id="65" style="None">
+          <td style="color: grey">65</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;point2&nbsp;=&nbsp;crypto.scalarmult_into(None,&nbsp;point,&nbsp;secret_key)</td>
+        </tr>
+        <tr id="66" style="None">
+          <td style="color: grey">66</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;point2</td>
+        </tr>
+        <tr id="67" style="None">
+          <td style="color: grey">67</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="68" style="None">
+          <td style="color: grey">68</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="69" style="color: blue;">
+          <td style="color: grey">69</td>
+          <td style="text-align: right;">2.00</td>
+          <td style="text-align: right;">12</td>
+          <td>def&nbsp;_is_out_to_account(</td>
+        </tr>
+        <tr id="70" style="None">
+          <td style="color: grey">70</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;subaddresses:&nbsp;Subaddresses,</td>
+        </tr>
+        <tr id="71" style="None">
+          <td style="color: grey">71</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;out_key:&nbsp;crypto.Point,</td>
+        </tr>
+        <tr id="72" style="None">
+          <td style="color: grey">72</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;derivation:&nbsp;crypto.Point,</td>
+        </tr>
+        <tr id="73" style="None">
+          <td style="color: grey">73</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;additional_derivation:&nbsp;crypto.Point&nbsp;|&nbsp;None,</td>
+        </tr>
+        <tr id="74" style="None">
+          <td style="color: grey">74</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;output_index:&nbsp;int,</td>
+        </tr>
+        <tr id="75" style="None">
+          <td style="color: grey">75</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;creds:&nbsp;AccountCreds&nbsp;|&nbsp;None,</td>
+        </tr>
+        <tr id="76" style="None">
+          <td style="color: grey">76</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;sub_addr_major:&nbsp;int&nbsp;|&nbsp;None,</td>
+        </tr>
+        <tr id="77" style="None">
+          <td style="color: grey">77</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;sub_addr_minor:&nbsp;int&nbsp;|&nbsp;None,</td>
+        </tr>
+        <tr id="78" style="None">
+          <td style="color: grey">78</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>)&nbsp;->&nbsp;tuple[tuple[int,&nbsp;int],&nbsp;crypto.Point]&nbsp;|&nbsp;None:</td>
+        </tr>
+        <tr id="79" style="None">
+          <td style="color: grey">79</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;"""</td>
+        </tr>
+        <tr id="80" style="None">
+          <td style="color: grey">80</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;Checks&nbsp;whether&nbsp;the&nbsp;given&nbsp;transaction&nbsp;is&nbsp;sent&nbsp;to&nbsp;the&nbsp;account.</td>
+        </tr>
+        <tr id="81" style="None">
+          <td style="color: grey">81</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;Searches&nbsp;subaddresses&nbsp;for&nbsp;the&nbsp;computed&nbsp;subaddress_spendkey.</td>
+        </tr>
+        <tr id="82" style="None">
+          <td style="color: grey">82</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;Corresponds&nbsp;to&nbsp;is_out_to_acc_precomp()&nbsp;in&nbsp;the&nbsp;Monero&nbsp;codebase.</td>
+        </tr>
+        <tr id="83" style="None">
+          <td style="color: grey">83</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;If&nbsp;found,&nbsp;returns&nbsp;(major,&nbsp;minor),&nbsp;derivation,&nbsp;otherwise&nbsp;None.</td>
+        </tr>
+        <tr id="84" style="None">
+          <td style="color: grey">84</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;If&nbsp;(creds,&nbsp;sub_addr_major,&nbsp;sub_addr_minor)&nbsp;are&nbsp;specified,</td>
+        </tr>
+        <tr id="85" style="None">
+          <td style="color: grey">85</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;subaddress&nbsp;is&nbsp;checked&nbsp;directly&nbsp;(avoids&nbsp;the&nbsp;need&nbsp;to&nbsp;store</td>
+        </tr>
+        <tr id="86" style="None">
+          <td style="color: grey">86</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;large&nbsp;subaddresses&nbsp;dicts).</td>
+        </tr>
+        <tr id="87" style="None">
+          <td style="color: grey">87</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;"""</td>
+        </tr>
+        <tr id="88" style="None">
+          <td style="color: grey">88</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;subaddress_spendkey_obj&nbsp;=&nbsp;derive_subaddress_public_key(</td>
+        </tr>
+        <tr id="89" style="None">
+          <td style="color: grey">89</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;out_key,&nbsp;derivation,&nbsp;output_index</td>
+        </tr>
+        <tr id="90" style="None">
+          <td style="color: grey">90</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;)</td>
+        </tr>
+        <tr id="91" style="None">
+          <td style="color: grey">91</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="92" style="None">
+          <td style="color: grey">92</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;sub_pub_key&nbsp;=&nbsp;None</td>
+        </tr>
+        <tr id="93" style="None">
+          <td style="color: grey">93</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;creds&nbsp;and&nbsp;sub_addr_major&nbsp;is&nbsp;not&nbsp;None&nbsp;and&nbsp;sub_addr_minor&nbsp;is&nbsp;not&nbsp;None:</td>
+        </tr>
+        <tr id="94" style="None">
+          <td style="color: grey">94</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sub_pub_key&nbsp;=&nbsp;get_subaddress_spend_public_key(</td>
+        </tr>
+        <tr id="95" style="None">
+          <td style="color: grey">95</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;creds.view_key_private,</td>
+        </tr>
+        <tr id="96" style="None">
+          <td style="color: grey">96</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;creds.spend_key_public,</td>
+        </tr>
+        <tr id="97" style="None">
+          <td style="color: grey">97</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sub_addr_major,</td>
+        </tr>
+        <tr id="98" style="None">
+          <td style="color: grey">98</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sub_addr_minor,</td>
+        </tr>
+        <tr id="99" style="None">
+          <td style="color: grey">99</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;)</td>
+        </tr>
+        <tr id="100" style="None">
+          <td style="color: grey">100</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="101" style="None">
+          <td style="color: grey">101</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;crypto.point_eq(subaddress_spendkey_obj,&nbsp;sub_pub_key):</td>
+        </tr>
+        <tr id="102" style="None">
+          <td style="color: grey">102</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;(sub_addr_major,&nbsp;sub_addr_minor),&nbsp;derivation</td>
+        </tr>
+        <tr id="103" style="None">
+          <td style="color: grey">103</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="104" style="None">
+          <td style="color: grey">104</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;subaddresses:</td>
+        </tr>
+        <tr id="105" style="None">
+          <td style="color: grey">105</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;subaddress_spendkey&nbsp;=&nbsp;crypto_helpers.encodepoint(subaddress_spendkey_obj)</td>
+        </tr>
+        <tr id="106" style="None">
+          <td style="color: grey">106</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;subaddress_spendkey&nbsp;in&nbsp;subaddresses:</td>
+        </tr>
+        <tr id="107" style="None">
+          <td style="color: grey">107</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;subaddresses[subaddress_spendkey],&nbsp;derivation</td>
+        </tr>
+        <tr id="108" style="None">
+          <td style="color: grey">108</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="109" style="None">
+          <td style="color: grey">109</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;additional_derivation:</td>
+        </tr>
+        <tr id="110" style="None">
+          <td style="color: grey">110</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;subaddress_spendkey_obj&nbsp;=&nbsp;derive_subaddress_public_key(</td>
+        </tr>
+        <tr id="111" style="None">
+          <td style="color: grey">111</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;out_key,&nbsp;additional_derivation,&nbsp;output_index</td>
+        </tr>
+        <tr id="112" style="None">
+          <td style="color: grey">112</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;)</td>
+        </tr>
+        <tr id="113" style="None">
+          <td style="color: grey">113</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="114" style="None">
+          <td style="color: grey">114</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;sub_pub_key&nbsp;and&nbsp;crypto.point_eq(subaddress_spendkey_obj,&nbsp;sub_pub_key):</td>
+        </tr>
+        <tr id="115" style="None">
+          <td style="color: grey">115</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#&nbsp;sub_pub_key&nbsp;is&nbsp;only&nbsp;set&nbsp;if&nbsp;sub_addr_{major,&nbsp;minor}&nbsp;are&nbsp;set</td>
+        </tr>
+        <tr id="116" style="None">
+          <td style="color: grey">116</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;assert&nbsp;sub_addr_major&nbsp;is&nbsp;not&nbsp;None&nbsp;and&nbsp;sub_addr_minor&nbsp;is&nbsp;not&nbsp;None</td>
+        </tr>
+        <tr id="117" style="None">
+          <td style="color: grey">117</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;(sub_addr_major,&nbsp;sub_addr_minor),&nbsp;additional_derivation</td>
+        </tr>
+        <tr id="118" style="None">
+          <td style="color: grey">118</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="119" style="None">
+          <td style="color: grey">119</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;subaddresses:</td>
+        </tr>
+        <tr id="120" style="None">
+          <td style="color: grey">120</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;subaddress_spendkey&nbsp;=&nbsp;crypto_helpers.encodepoint(subaddress_spendkey_obj)</td>
+        </tr>
+        <tr id="121" style="None">
+          <td style="color: grey">121</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;subaddress_spendkey&nbsp;in&nbsp;subaddresses:</td>
+        </tr>
+        <tr id="122" style="None">
+          <td style="color: grey">122</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;subaddresses[subaddress_spendkey],&nbsp;additional_derivation</td>
+        </tr>
+        <tr id="123" style="None">
+          <td style="color: grey">123</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="124" style="None">
+          <td style="color: grey">124</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;None</td>
+        </tr>
+        <tr id="125" style="None">
+          <td style="color: grey">125</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="126" style="None">
+          <td style="color: grey">126</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="127" style="color: blue;">
+          <td style="color: grey">127</td>
+          <td style="text-align: right;">1.00</td>
+          <td style="text-align: right;">6</td>
+          <td>def&nbsp;generate_tx_spend_and_key_image(</td>
+        </tr>
+        <tr id="128" style="None">
+          <td style="color: grey">128</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;ack:&nbsp;AccountCreds,</td>
+        </tr>
+        <tr id="129" style="None">
+          <td style="color: grey">129</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;out_key:&nbsp;crypto.Point,</td>
+        </tr>
+        <tr id="130" style="None">
+          <td style="color: grey">130</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;recv_derivation:&nbsp;crypto.Point,</td>
+        </tr>
+        <tr id="131" style="None">
+          <td style="color: grey">131</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;real_output_index:&nbsp;int,</td>
+        </tr>
+        <tr id="132" style="None">
+          <td style="color: grey">132</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;received_index:&nbsp;tuple[int,&nbsp;int],</td>
+        </tr>
+        <tr id="133" style="None">
+          <td style="color: grey">133</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>)&nbsp;->&nbsp;tuple[crypto.Scalar,&nbsp;crypto.Point]:</td>
+        </tr>
+        <tr id="134" style="None">
+          <td style="color: grey">134</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;"""</td>
+        </tr>
+        <tr id="135" style="None">
+          <td style="color: grey">135</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;Generates&nbsp;UTXO&nbsp;spending&nbsp;key&nbsp;and&nbsp;key&nbsp;image.</td>
+        </tr>
+        <tr id="136" style="None">
+          <td style="color: grey">136</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;Corresponds&nbsp;to&nbsp;generate_key_image_helper_precomp()&nbsp;in&nbsp;the&nbsp;Monero&nbsp;codebase.</td>
+        </tr>
+        <tr id="137" style="None">
+          <td style="color: grey">137</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="138" style="None">
+          <td style="color: grey">138</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;:param&nbsp;ack:&nbsp;sender&nbsp;credentials</td>
+        </tr>
+        <tr id="139" style="None">
+          <td style="color: grey">139</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;:type&nbsp;ack:&nbsp;apps.monero.xmr.credentials.AccountCreds</td>
+        </tr>
+        <tr id="140" style="None">
+          <td style="color: grey">140</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;:param&nbsp;out_key:&nbsp;real&nbsp;output&nbsp;(from&nbsp;input&nbsp;RCT)&nbsp;destination&nbsp;key</td>
+        </tr>
+        <tr id="141" style="None">
+          <td style="color: grey">141</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;:param&nbsp;recv_derivation:</td>
+        </tr>
+        <tr id="142" style="None">
+          <td style="color: grey">142</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;:param&nbsp;real_output_index:</td>
+        </tr>
+        <tr id="143" style="None">
+          <td style="color: grey">143</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;:param&nbsp;received_index:&nbsp;subaddress&nbsp;index&nbsp;this&nbsp;payment&nbsp;was&nbsp;received&nbsp;to</td>
+        </tr>
+        <tr id="144" style="None">
+          <td style="color: grey">144</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;:return:</td>
+        </tr>
+        <tr id="145" style="None">
+          <td style="color: grey">145</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;"""</td>
+        </tr>
+        <tr id="146" style="None">
+          <td style="color: grey">146</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;crypto.sc_iszero(ack.spend_key_private):</td>
+        </tr>
+        <tr id="147" style="None">
+          <td style="color: grey">147</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;raise&nbsp;ValueError("Watch-only&nbsp;wallet&nbsp;not&nbsp;supported")</td>
+        </tr>
+        <tr id="148" style="None">
+          <td style="color: grey">148</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="149" style="None">
+          <td style="color: grey">149</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;#&nbsp;derive&nbsp;secret&nbsp;key&nbsp;with&nbsp;subaddress&nbsp;-&nbsp;step&nbsp;1:&nbsp;original&nbsp;CN&nbsp;derivation</td>
+        </tr>
+        <tr id="150" style="None">
+          <td style="color: grey">150</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;scalar_step1&nbsp;=&nbsp;crypto_helpers.derive_secret_key(</td>
+        </tr>
+        <tr id="151" style="None">
+          <td style="color: grey">151</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;recv_derivation,&nbsp;real_output_index,&nbsp;ack.spend_key_private</td>
+        </tr>
+        <tr id="152" style="None">
+          <td style="color: grey">152</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;)</td>
+        </tr>
+        <tr id="153" style="None">
+          <td style="color: grey">153</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="154" style="None">
+          <td style="color: grey">154</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;#&nbsp;step&nbsp;2:&nbsp;add&nbsp;Hs(SubAddr&nbsp;||&nbsp;a&nbsp;||&nbsp;index_major&nbsp;||&nbsp;index_minor)</td>
+        </tr>
+        <tr id="155" style="None">
+          <td style="color: grey">155</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;subaddr_sk&nbsp;=&nbsp;None</td>
+        </tr>
+        <tr id="156" style="None">
+          <td style="color: grey">156</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;received_index&nbsp;==&nbsp;(0,&nbsp;0):</td>
+        </tr>
+        <tr id="157" style="None">
+          <td style="color: grey">157</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;scalar_step2&nbsp;=&nbsp;scalar_step1</td>
+        </tr>
+        <tr id="158" style="None">
+          <td style="color: grey">158</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;else:</td>
+        </tr>
+        <tr id="159" style="None">
+          <td style="color: grey">159</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;subaddr_sk&nbsp;=&nbsp;get_subaddress_secret_key(</td>
+        </tr>
+        <tr id="160" style="None">
+          <td style="color: grey">160</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ack.view_key_private,&nbsp;received_index[0],&nbsp;received_index[1]</td>
+        </tr>
+        <tr id="161" style="None">
+          <td style="color: grey">161</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;)</td>
+        </tr>
+        <tr id="162" style="None">
+          <td style="color: grey">162</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;scalar_step2&nbsp;=&nbsp;crypto.sc_add_into(None,&nbsp;scalar_step1,&nbsp;subaddr_sk)</td>
+        </tr>
+        <tr id="163" style="None">
+          <td style="color: grey">163</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="164" style="None">
+          <td style="color: grey">164</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;#&nbsp;When&nbsp;not&nbsp;in&nbsp;multisig,&nbsp;we&nbsp;know&nbsp;the&nbsp;full&nbsp;spend&nbsp;secret&nbsp;key,&nbsp;so&nbsp;the&nbsp;output&nbsp;pubkey&nbsp;can&nbsp;be&nbsp;obtained&nbsp;by&nbsp;scalarmultBase</td>
+        </tr>
+        <tr id="165" style="None">
+          <td style="color: grey">165</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;pub_ver&nbsp;=&nbsp;crypto.scalarmult_base_into(None,&nbsp;scalar_step2)</td>
+        </tr>
+        <tr id="166" style="None">
+          <td style="color: grey">166</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="167" style="None">
+          <td style="color: grey">167</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;#&nbsp;<Multisig>,&nbsp;branch&nbsp;deactivated&nbsp;until&nbsp;implemented</td>
+        </tr>
+        <tr id="168" style="None">
+          <td style="color: grey">168</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;#&nbsp;#&nbsp;When&nbsp;in&nbsp;multisig,&nbsp;we&nbsp;only&nbsp;know&nbsp;the&nbsp;partial&nbsp;spend&nbsp;secret&nbsp;key.&nbsp;But&nbsp;we&nbsp;do&nbsp;know&nbsp;the&nbsp;full&nbsp;spend&nbsp;public&nbsp;key,</td>
+        </tr>
+        <tr id="169" style="None">
+          <td style="color: grey">169</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;#&nbsp;#&nbsp;so&nbsp;the&nbsp;output&nbsp;pubkey&nbsp;can&nbsp;be&nbsp;obtained&nbsp;by&nbsp;using&nbsp;the&nbsp;standard&nbsp;CN&nbsp;key&nbsp;derivation.</td>
+        </tr>
+        <tr id="170" style="None">
+          <td style="color: grey">170</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;#&nbsp;pub_ver&nbsp;=&nbsp;crypto.derive_public_key(</td>
+        </tr>
+        <tr id="171" style="None">
+          <td style="color: grey">171</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;#&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;recv_derivation,&nbsp;real_output_index,&nbsp;ack.spend_key_public</td>
+        </tr>
+        <tr id="172" style="None">
+          <td style="color: grey">172</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;#&nbsp;)</td>
+        </tr>
+        <tr id="173" style="None">
+          <td style="color: grey">173</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;#</td>
+        </tr>
+        <tr id="174" style="None">
+          <td style="color: grey">174</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;#&nbsp;#&nbsp;Add&nbsp;the&nbsp;contribution&nbsp;from&nbsp;the&nbsp;subaddress&nbsp;part</td>
+        </tr>
+        <tr id="175" style="None">
+          <td style="color: grey">175</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;#&nbsp;if&nbsp;received_index&nbsp;!=&nbsp;(0,&nbsp;0):</td>
+        </tr>
+        <tr id="176" style="None">
+          <td style="color: grey">176</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;#&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;subaddr_pk&nbsp;=&nbsp;crypto.scalarmult_base(subaddr_sk)</td>
+        </tr>
+        <tr id="177" style="None">
+          <td style="color: grey">177</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;#&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;pub_ver&nbsp;=&nbsp;crypto.point_add(pub_ver,&nbsp;subaddr_pk)</td>
+        </tr>
+        <tr id="178" style="None">
+          <td style="color: grey">178</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;#&nbsp;</Multisig></td>
+        </tr>
+        <tr id="179" style="None">
+          <td style="color: grey">179</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="180" style="None">
+          <td style="color: grey">180</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;not&nbsp;crypto.point_eq(pub_ver,&nbsp;out_key):</td>
+        </tr>
+        <tr id="181" style="None">
+          <td style="color: grey">181</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;raise&nbsp;ValueError(</td>
+        </tr>
+        <tr id="182" style="None">
+          <td style="color: grey">182</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"key&nbsp;image&nbsp;helper&nbsp;precomp:&nbsp;given&nbsp;output&nbsp;pubkey&nbsp;doesn't&nbsp;match&nbsp;the&nbsp;derived&nbsp;one"</td>
+        </tr>
+        <tr id="183" style="None">
+          <td style="color: grey">183</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;)</td>
+        </tr>
+        <tr id="184" style="None">
+          <td style="color: grey">184</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="185" style="None">
+          <td style="color: grey">185</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;ki&nbsp;=&nbsp;generate_key_image(crypto_helpers.encodepoint(pub_ver),&nbsp;scalar_step2)</td>
+        </tr>
+        <tr id="186" style="None">
+          <td style="color: grey">186</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;scalar_step2,&nbsp;ki</td>
+        </tr>
+        <tr id="187" style="None">
+          <td style="color: grey">187</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="188" style="None">
+          <td style="color: grey">188</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="189" style="color: blue;">
+          <td style="color: grey">189</td>
+          <td style="text-align: right;">2.00</td>
+          <td style="text-align: right;">12</td>
+          <td>def&nbsp;generate_tx_spend_and_key_image_and_derivation(</td>
+        </tr>
+        <tr id="190" style="None">
+          <td style="color: grey">190</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;creds:&nbsp;AccountCreds,</td>
+        </tr>
+        <tr id="191" style="None">
+          <td style="color: grey">191</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;subaddresses:&nbsp;Subaddresses,</td>
+        </tr>
+        <tr id="192" style="None">
+          <td style="color: grey">192</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;out_key:&nbsp;crypto.Point,</td>
+        </tr>
+        <tr id="193" style="None">
+          <td style="color: grey">193</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;tx_public_key:&nbsp;crypto.Point,</td>
+        </tr>
+        <tr id="194" style="None">
+          <td style="color: grey">194</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;additional_tx_public_key:&nbsp;crypto.Point&nbsp;|&nbsp;None,</td>
+        </tr>
+        <tr id="195" style="None">
+          <td style="color: grey">195</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;real_output_index:&nbsp;int&nbsp;|&nbsp;None,</td>
+        </tr>
+        <tr id="196" style="None">
+          <td style="color: grey">196</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;sub_addr_major:&nbsp;int&nbsp;|&nbsp;None,</td>
+        </tr>
+        <tr id="197" style="None">
+          <td style="color: grey">197</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;sub_addr_minor:&nbsp;int&nbsp;|&nbsp;None,</td>
+        </tr>
+        <tr id="198" style="None">
+          <td style="color: grey">198</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>)&nbsp;->&nbsp;tuple[crypto.Scalar,&nbsp;crypto.Point,&nbsp;crypto.Point]:</td>
+        </tr>
+        <tr id="199" style="None">
+          <td style="color: grey">199</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;"""</td>
+        </tr>
+        <tr id="200" style="None">
+          <td style="color: grey">200</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;Generates&nbsp;UTXO&nbsp;spending&nbsp;key&nbsp;and&nbsp;key&nbsp;image&nbsp;and&nbsp;corresponding&nbsp;derivation.</td>
+        </tr>
+        <tr id="201" style="None">
+          <td style="color: grey">201</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;Supports&nbsp;subaddresses.</td>
+        </tr>
+        <tr id="202" style="None">
+          <td style="color: grey">202</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;Corresponds&nbsp;to&nbsp;generate_key_image_helper()&nbsp;in&nbsp;the&nbsp;Monero&nbsp;codebase.</td>
+        </tr>
+        <tr id="203" style="None">
+          <td style="color: grey">203</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="204" style="None">
+          <td style="color: grey">204</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;:param&nbsp;creds:</td>
+        </tr>
+        <tr id="205" style="None">
+          <td style="color: grey">205</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;:param&nbsp;subaddresses:</td>
+        </tr>
+        <tr id="206" style="None">
+          <td style="color: grey">206</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;:param&nbsp;out_key:&nbsp;real&nbsp;output&nbsp;(from&nbsp;input&nbsp;RCT)&nbsp;destination&nbsp;key</td>
+        </tr>
+        <tr id="207" style="None">
+          <td style="color: grey">207</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;:param&nbsp;tx_public_key:&nbsp;R,&nbsp;transaction&nbsp;public&nbsp;key</td>
+        </tr>
+        <tr id="208" style="None">
+          <td style="color: grey">208</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;:param&nbsp;additional_tx_public_key:&nbsp;Additional&nbsp;Rs,&nbsp;for&nbsp;subaddress&nbsp;destinations</td>
+        </tr>
+        <tr id="209" style="None">
+          <td style="color: grey">209</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;:param&nbsp;real_output_index:&nbsp;index&nbsp;of&nbsp;the&nbsp;real&nbsp;output&nbsp;in&nbsp;the&nbsp;RCT</td>
+        </tr>
+        <tr id="210" style="None">
+          <td style="color: grey">210</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;:param&nbsp;sub_addr_major:&nbsp;subaddress&nbsp;major&nbsp;index</td>
+        </tr>
+        <tr id="211" style="None">
+          <td style="color: grey">211</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;:param&nbsp;sub_addr_minor:&nbsp;subaddress&nbsp;minor&nbsp;index</td>
+        </tr>
+        <tr id="212" style="None">
+          <td style="color: grey">212</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;:return:</td>
+        </tr>
+        <tr id="213" style="None">
+          <td style="color: grey">213</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;"""</td>
+        </tr>
+        <tr id="214" style="None">
+          <td style="color: grey">214</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;recv_derivation&nbsp;=&nbsp;crypto_helpers.generate_key_derivation(</td>
+        </tr>
+        <tr id="215" style="None">
+          <td style="color: grey">215</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;tx_public_key,&nbsp;creds.view_key_private</td>
+        </tr>
+        <tr id="216" style="None">
+          <td style="color: grey">216</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;)</td>
+        </tr>
+        <tr id="217" style="None">
+          <td style="color: grey">217</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="218" style="None">
+          <td style="color: grey">218</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;additional_recv_derivation&nbsp;=&nbsp;(</td>
+        </tr>
+        <tr id="219" style="None">
+          <td style="color: grey">219</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;crypto_helpers.generate_key_derivation(</td>
+        </tr>
+        <tr id="220" style="None">
+          <td style="color: grey">220</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;additional_tx_public_key,&nbsp;creds.view_key_private</td>
+        </tr>
+        <tr id="221" style="None">
+          <td style="color: grey">221</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;)</td>
+        </tr>
+        <tr id="222" style="None">
+          <td style="color: grey">222</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;additional_tx_public_key</td>
+        </tr>
+        <tr id="223" style="None">
+          <td style="color: grey">223</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;else&nbsp;None</td>
+        </tr>
+        <tr id="224" style="None">
+          <td style="color: grey">224</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;)</td>
+        </tr>
+        <tr id="225" style="None">
+          <td style="color: grey">225</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="226" style="None">
+          <td style="color: grey">226</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;subaddr_recv_info&nbsp;=&nbsp;_is_out_to_account(</td>
+        </tr>
+        <tr id="227" style="None">
+          <td style="color: grey">227</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;subaddresses,</td>
+        </tr>
+        <tr id="228" style="None">
+          <td style="color: grey">228</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;out_key,</td>
+        </tr>
+        <tr id="229" style="None">
+          <td style="color: grey">229</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;recv_derivation,</td>
+        </tr>
+        <tr id="230" style="None">
+          <td style="color: grey">230</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;additional_recv_derivation,</td>
+        </tr>
+        <tr id="231" style="None">
+          <td style="color: grey">231</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;real_output_index,</td>
+        </tr>
+        <tr id="232" style="None">
+          <td style="color: grey">232</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;creds,</td>
+        </tr>
+        <tr id="233" style="None">
+          <td style="color: grey">233</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sub_addr_major,</td>
+        </tr>
+        <tr id="234" style="None">
+          <td style="color: grey">234</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sub_addr_minor,</td>
+        </tr>
+        <tr id="235" style="None">
+          <td style="color: grey">235</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;)</td>
+        </tr>
+        <tr id="236" style="None">
+          <td style="color: grey">236</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;subaddr_recv_info&nbsp;is&nbsp;None:</td>
+        </tr>
+        <tr id="237" style="None">
+          <td style="color: grey">237</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;raise&nbsp;XmrNoSuchAddressException("No&nbsp;such&nbsp;addr")</td>
+        </tr>
+        <tr id="238" style="None">
+          <td style="color: grey">238</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="239" style="None">
+          <td style="color: grey">239</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;xi,&nbsp;ki&nbsp;=&nbsp;generate_tx_spend_and_key_image(</td>
+        </tr>
+        <tr id="240" style="None">
+          <td style="color: grey">240</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;creds,&nbsp;out_key,&nbsp;subaddr_recv_info[1],&nbsp;real_output_index,&nbsp;subaddr_recv_info[0]</td>
+        </tr>
+        <tr id="241" style="None">
+          <td style="color: grey">241</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;)</td>
+        </tr>
+        <tr id="242" style="None">
+          <td style="color: grey">242</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;xi,&nbsp;ki,&nbsp;recv_derivation</td>
+        </tr>
+        <tr id="243" style="None">
+          <td style="color: grey">243</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="244" style="None">
+          <td style="color: grey">244</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="245" style="color: blue;">
+          <td style="color: grey">245</td>
+          <td style="text-align: right;">2.00</td>
+          <td style="text-align: right;">12</td>
+          <td>def&nbsp;compute_subaddresses(</td>
+        </tr>
+        <tr id="246" style="None">
+          <td style="color: grey">246</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;creds:&nbsp;AccountCreds,</td>
+        </tr>
+        <tr id="247" style="None">
+          <td style="color: grey">247</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;account:&nbsp;int,</td>
+        </tr>
+        <tr id="248" style="None">
+          <td style="color: grey">248</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;indices:&nbsp;list[int],</td>
+        </tr>
+        <tr id="249" style="None">
+          <td style="color: grey">249</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;subaddresses:&nbsp;Subaddresses&nbsp;|&nbsp;None&nbsp;=&nbsp;None,</td>
+        </tr>
+        <tr id="250" style="None">
+          <td style="color: grey">250</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>)&nbsp;->&nbsp;Subaddresses:</td>
+        </tr>
+        <tr id="251" style="None">
+          <td style="color: grey">251</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;"""</td>
+        </tr>
+        <tr id="252" style="None">
+          <td style="color: grey">252</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;Computes&nbsp;subaddress&nbsp;public&nbsp;spend&nbsp;key&nbsp;for&nbsp;receiving&nbsp;transactions.</td>
+        </tr>
+        <tr id="253" style="None">
+          <td style="color: grey">253</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="254" style="None">
+          <td style="color: grey">254</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;:param&nbsp;creds:&nbsp;credentials</td>
+        </tr>
+        <tr id="255" style="None">
+          <td style="color: grey">255</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;:param&nbsp;account:&nbsp;major&nbsp;index</td>
+        </tr>
+        <tr id="256" style="None">
+          <td style="color: grey">256</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;:param&nbsp;indices:&nbsp;array&nbsp;of&nbsp;minor&nbsp;indices</td>
+        </tr>
+        <tr id="257" style="None">
+          <td style="color: grey">257</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;:param&nbsp;subaddresses:&nbsp;subaddress&nbsp;dict.&nbsp;optional.</td>
+        </tr>
+        <tr id="258" style="None">
+          <td style="color: grey">258</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;:return:</td>
+        </tr>
+        <tr id="259" style="None">
+          <td style="color: grey">259</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;"""</td>
+        </tr>
+        <tr id="260" style="None">
+          <td style="color: grey">260</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;subaddresses&nbsp;is&nbsp;None:</td>
+        </tr>
+        <tr id="261" style="None">
+          <td style="color: grey">261</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;subaddresses&nbsp;=&nbsp;{}</td>
+        </tr>
+        <tr id="262" style="None">
+          <td style="color: grey">262</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="263" style="None">
+          <td style="color: grey">263</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;for&nbsp;idx&nbsp;in&nbsp;indices:</td>
+        </tr>
+        <tr id="264" style="None">
+          <td style="color: grey">264</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;account&nbsp;==&nbsp;0&nbsp;and&nbsp;idx&nbsp;==&nbsp;0:</td>
+        </tr>
+        <tr id="265" style="None">
+          <td style="color: grey">265</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;subaddresses[crypto_helpers.encodepoint(creds.spend_key_public)]&nbsp;=&nbsp;(0,&nbsp;0)</td>
+        </tr>
+        <tr id="266" style="None">
+          <td style="color: grey">266</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;continue</td>
+        </tr>
+        <tr id="267" style="None">
+          <td style="color: grey">267</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="268" style="None">
+          <td style="color: grey">268</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;pub&nbsp;=&nbsp;get_subaddress_spend_public_key(</td>
+        </tr>
+        <tr id="269" style="None">
+          <td style="color: grey">269</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;creds.view_key_private,&nbsp;creds.spend_key_public,&nbsp;account,&nbsp;idx</td>
+        </tr>
+        <tr id="270" style="None">
+          <td style="color: grey">270</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;)</td>
+        </tr>
+        <tr id="271" style="None">
+          <td style="color: grey">271</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;pub&nbsp;=&nbsp;crypto_helpers.encodepoint(pub)</td>
+        </tr>
+        <tr id="272" style="None">
+          <td style="color: grey">272</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;subaddresses[pub]&nbsp;=&nbsp;(account,&nbsp;idx)</td>
+        </tr>
+        <tr id="273" style="None">
+          <td style="color: grey">273</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;subaddresses</td>
+        </tr>
+        <tr id="274" style="None">
+          <td style="color: grey">274</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="275" style="None">
+          <td style="color: grey">275</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="276" style="color: blue;">
+          <td style="color: grey">276</td>
+          <td style="text-align: right;">1.00</td>
+          <td style="text-align: right;">6</td>
+          <td>def&nbsp;generate_keys(recovery_key:&nbsp;crypto.Scalar)&nbsp;->&nbsp;tuple[crypto.Scalar,&nbsp;crypto.Point]:</td>
+        </tr>
+        <tr id="277" style="color: blue;">
+          <td style="color: grey">277</td>
+          <td style="text-align: right;">1.00</td>
+          <td style="text-align: right;">12</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;pub&nbsp;=&nbsp;crypto.scalarmult_base_into(None,&nbsp;recovery_key)</td>
+        </tr>
+        <tr id="278" style="color: blue;">
+          <td style="color: grey">278</td>
+          <td style="text-align: right;">1.00</td>
+          <td style="text-align: right;">12</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;recovery_key,&nbsp;pub</td>
+        </tr>
+        <tr id="279" style="None">
+          <td style="color: grey">279</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="280" style="None">
+          <td style="color: grey">280</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="281" style="color: blue;">
+          <td style="color: grey">281</td>
+          <td style="text-align: right;">1.00</td>
+          <td style="text-align: right;">6</td>
+          <td>def&nbsp;generate_monero_keys(</td>
+        </tr>
+        <tr id="282" style="None">
+          <td style="color: grey">282</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;seed:&nbsp;bytes,</td>
+        </tr>
+        <tr id="283" style="None">
+          <td style="color: grey">283</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>)&nbsp;->&nbsp;tuple[crypto.Scalar,&nbsp;crypto.Point,&nbsp;crypto.Scalar,&nbsp;crypto.Point]:</td>
+        </tr>
+        <tr id="284" style="None">
+          <td style="color: grey">284</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;"""</td>
+        </tr>
+        <tr id="285" style="None">
+          <td style="color: grey">285</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;Generates&nbsp;spend&nbsp;key&nbsp;/&nbsp;view&nbsp;key&nbsp;from&nbsp;the&nbsp;seed&nbsp;in&nbsp;the&nbsp;same&nbsp;manner&nbsp;as&nbsp;Monero&nbsp;code&nbsp;does.</td>
+        </tr>
+        <tr id="286" style="None">
+          <td style="color: grey">286</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="287" style="None">
+          <td style="color: grey">287</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;account.cpp:</td>
+        </tr>
+        <tr id="288" style="None">
+          <td style="color: grey">288</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;crypto::secret_key&nbsp;account_base::generate(const&nbsp;crypto::secret_key&&nbsp;recovery_key,&nbsp;bool&nbsp;recover,&nbsp;bool&nbsp;two_random).</td>
+        </tr>
+        <tr id="289" style="None">
+          <td style="color: grey">289</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;"""</td>
+        </tr>
+        <tr id="290" style="None">
+          <td style="color: grey">290</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;spend_sec,&nbsp;spend_pub&nbsp;=&nbsp;generate_keys(crypto_helpers.decodeint(seed))</td>
+        </tr>
+        <tr id="291" style="None">
+          <td style="color: grey">291</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;hash&nbsp;=&nbsp;crypto.fast_hash_into(None,&nbsp;crypto_helpers.encodeint(spend_sec))</td>
+        </tr>
+        <tr id="292" style="None">
+          <td style="color: grey">292</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;view_sec,&nbsp;view_pub&nbsp;=&nbsp;generate_keys(crypto_helpers.decodeint(hash))</td>
+        </tr>
+        <tr id="293" style="color: blue;">
+          <td style="color: grey">293</td>
+          <td style="text-align: right;">1.00</td>
+          <td style="text-align: right;">6</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;spend_sec,&nbsp;spend_pub,&nbsp;view_sec,&nbsp;view_pub</td>
+        </tr>
+        <tr id="294" style="None">
+          <td style="color: grey">294</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="295" style="None">
+          <td style="color: grey">295</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="296" style="color: blue;">
+          <td style="color: grey">296</td>
+          <td style="text-align: right;">1.00</td>
+          <td style="text-align: right;">6</td>
+          <td>def&nbsp;generate_sub_address_keys(</td>
+        </tr>
+        <tr id="297" style="None">
+          <td style="color: grey">297</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;view_sec:&nbsp;crypto.Scalar,&nbsp;spend_pub:&nbsp;crypto.Point,&nbsp;major:&nbsp;int,&nbsp;minor:&nbsp;int</td>
+        </tr>
+        <tr id="298" style="None">
+          <td style="color: grey">298</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>)&nbsp;->&nbsp;tuple[crypto.Point,&nbsp;crypto.Point]:</td>
+        </tr>
+        <tr id="299" style="None">
+          <td style="color: grey">299</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;major&nbsp;==&nbsp;0&nbsp;and&nbsp;minor&nbsp;==&nbsp;0:&nbsp;&nbsp;#&nbsp;special&nbsp;case,&nbsp;Monero-defined</td>
+        </tr>
+        <tr id="300" style="None">
+          <td style="color: grey">300</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;spend_pub,&nbsp;crypto.scalarmult_base_into(None,&nbsp;view_sec)</td>
+        </tr>
+        <tr id="301" style="None">
+          <td style="color: grey">301</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="302" style="None">
+          <td style="color: grey">302</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;m&nbsp;=&nbsp;get_subaddress_secret_key(view_sec,&nbsp;major,&nbsp;minor)</td>
+        </tr>
+        <tr id="303" style="None">
+          <td style="color: grey">303</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;M&nbsp;=&nbsp;crypto.scalarmult_base_into(None,&nbsp;m)</td>
+        </tr>
+        <tr id="304" style="None">
+          <td style="color: grey">304</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;D&nbsp;=&nbsp;crypto.point_add_into(None,&nbsp;spend_pub,&nbsp;M)</td>
+        </tr>
+        <tr id="305" style="None">
+          <td style="color: grey">305</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;C&nbsp;=&nbsp;crypto.scalarmult_into(None,&nbsp;D,&nbsp;view_sec)</td>
+        </tr>
+        <tr id="306" style="None">
+          <td style="color: grey">306</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;D,&nbsp;C</td>
+        </tr>
+        <tr id="307" style="None">
+          <td style="color: grey">307</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="308" style="None">
+          <td style="color: grey">308</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="309" style="color: red;">
+          <td style="color: grey">309</td>
+          <td style="text-align: right;">3.50</td>
+          <td style="text-align: right;">21</td>
+          <td>def&nbsp;commitment_mask(key:&nbsp;bytes,&nbsp;buff:&nbsp;crypto.Scalar&nbsp;|&nbsp;None&nbsp;=&nbsp;None)&nbsp;->&nbsp;crypto.Scalar:</td>
+        </tr>
+        <tr id="310" style="None">
+          <td style="color: grey">310</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;"""</td>
+        </tr>
+        <tr id="311" style="None">
+          <td style="color: grey">311</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;Generates&nbsp;deterministic&nbsp;commitment&nbsp;mask&nbsp;for&nbsp;Bulletproof2</td>
+        </tr>
+        <tr id="312" style="None">
+          <td style="color: grey">312</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;"""</td>
+        </tr>
+        <tr id="313" style="None">
+          <td style="color: grey">313</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;data&nbsp;=&nbsp;bytearray(15&nbsp;+&nbsp;32)</td>
+        </tr>
+        <tr id="314" style="None">
+          <td style="color: grey">314</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;data[0:15]&nbsp;=&nbsp;b"commitment_mask"</td>
+        </tr>
+        <tr id="315" style="None">
+          <td style="color: grey">315</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;data[15:]&nbsp;=&nbsp;key</td>
+        </tr>
+        <tr id="316" style="None">
+          <td style="color: grey">316</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;crypto.hash_to_scalar_into(buff,&nbsp;data)</td>
+        </tr>
+      </tbody>
+    </table>
+  </body>
+</html>

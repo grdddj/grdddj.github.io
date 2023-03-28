@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>trezor/crypto/rlp.py</title>
+    <meta charset="utf-8">
+    <style>body { font-size: 80%; }</style>
+  </head>
+  <body>
+    <table>
+      <thead>
+        <tr>
+          <th style="color: grey">#</th>
+          <th style="text-align: right;">avg</th>
+          <th style="text-align: right;">total</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr id="1" style="color: red;">
+          <td style="color: grey">1</td>
+          <td style="text-align: right;">2.00</td>
+          <td style="text-align: right;">114</td>
+          <td>from&nbsp;micropython&nbsp;import&nbsp;const</td>
+        </tr>
+        <tr id="2" style="None">
+          <td style="color: grey">2</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>from&nbsp;typing&nbsp;import&nbsp;TYPE_CHECKING</td>
+        </tr>
+        <tr id="3" style="None">
+          <td style="color: grey">3</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="4" style="None">
+          <td style="color: grey">4</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>if&nbsp;TYPE_CHECKING:</td>
+        </tr>
+        <tr id="5" style="None">
+          <td style="color: grey">5</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;from&nbsp;trezor.utils&nbsp;import&nbsp;Writer</td>
+        </tr>
+        <tr id="6" style="None">
+          <td style="color: grey">6</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="7" style="None">
+          <td style="color: grey">7</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;#&nbsp;The&nbsp;intention&nbsp;below&nbsp;is&nbsp;basically:</td>
+        </tr>
+        <tr id="8" style="None">
+          <td style="color: grey">8</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;#&nbsp;RLPItem&nbsp;=&nbsp;int&nbsp;|&nbsp;bytes&nbsp;|&nbsp;list[RLPItem]</td>
+        </tr>
+        <tr id="9" style="None">
+          <td style="color: grey">9</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;#&nbsp;That&nbsp;will&nbsp;not&nbsp;typecheck&nbsp;though.&nbsp;Type&nbsp;`list`&nbsp;is&nbsp;invariant&nbsp;in&nbsp;its&nbsp;parameter,&nbsp;meaning</td>
+        </tr>
+        <tr id="10" style="None">
+          <td style="color: grey">10</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;#&nbsp;that&nbsp;we&nbsp;cannot&nbsp;pass&nbsp;list[bytes]&nbsp;into&nbsp;a&nbsp;list[RLPItem]&nbsp;parameter&nbsp;(what&nbsp;if&nbsp;the</td>
+        </tr>
+        <tr id="11" style="None">
+          <td style="color: grey">11</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;#&nbsp;function&nbsp;wanted&nbsp;to&nbsp;append&nbsp;an&nbsp;int?).&nbsp;We&nbsp;do&nbsp;want&nbsp;to&nbsp;enforce&nbsp;that&nbsp;it's&nbsp;a&nbsp;`list`,&nbsp;not</td>
+        </tr>
+        <tr id="12" style="None">
+          <td style="color: grey">12</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;#&nbsp;a&nbsp;generic&nbsp;`Sequence`&nbsp;(because&nbsp;we&nbsp;do&nbsp;isinstance&nbsp;checks&nbsp;for&nbsp;a&nbsp;list).&nbsp;We&nbsp;are&nbsp;however</td>
+        </tr>
+        <tr id="13" style="None">
+          <td style="color: grey">13</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;#&nbsp;only&nbsp;reading&nbsp;from&nbsp;the&nbsp;list&nbsp;and&nbsp;passing&nbsp;into&nbsp;things&nbsp;that&nbsp;consume&nbsp;a&nbsp;RLPItem.&nbsp;Hence</td>
+        </tr>
+        <tr id="14" style="None">
+          <td style="color: grey">14</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;#&nbsp;we&nbsp;have&nbsp;to&nbsp;enumerate&nbsp;single-type&nbsp;lists&nbsp;as&nbsp;well&nbsp;as&nbsp;the&nbsp;universal&nbsp;list[RLPItem].</td>
+        </tr>
+        <tr id="15" style="None">
+          <td style="color: grey">15</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;RLPList&nbsp;=&nbsp;list[int]&nbsp;|&nbsp;list[bytes]&nbsp;|&nbsp;list["RLPItem"]</td>
+        </tr>
+        <tr id="16" style="None">
+          <td style="color: grey">16</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;RLPItem&nbsp;=&nbsp;RLPList&nbsp;|&nbsp;bytes&nbsp;|&nbsp;int</td>
+        </tr>
+        <tr id="17" style="None">
+          <td style="color: grey">17</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="18" style="None">
+          <td style="color: grey">18</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="19" style="None">
+          <td style="color: grey">19</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>STRING_HEADER_BYTE&nbsp;=&nbsp;const(0x80)</td>
+        </tr>
+        <tr id="20" style="color: blue;">
+          <td style="color: grey">20</td>
+          <td style="text-align: right;">1.00</td>
+          <td style="text-align: right;">57</td>
+          <td>LIST_HEADER_BYTE&nbsp;=&nbsp;const(0xC0)</td>
+        </tr>
+        <tr id="21" style="None">
+          <td style="color: grey">21</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="22" style="None">
+          <td style="color: grey">22</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="23" style="color: blue;">
+          <td style="color: grey">23</td>
+          <td style="text-align: right;">1.00</td>
+          <td style="text-align: right;">57</td>
+          <td>def&nbsp;_byte_size(x:&nbsp;int)&nbsp;->&nbsp;int:</td>
+        </tr>
+        <tr id="24" style="None">
+          <td style="color: grey">24</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;x&nbsp;<&nbsp;0:</td>
+        </tr>
+        <tr id="25" style="None">
+          <td style="color: grey">25</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;raise&nbsp;ValueError&nbsp;&nbsp;#&nbsp;only&nbsp;unsigned&nbsp;ints&nbsp;are&nbsp;supported</td>
+        </tr>
+        <tr id="26" style="None">
+          <td style="color: grey">26</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;for&nbsp;exp&nbsp;in&nbsp;range(64):</td>
+        </tr>
+        <tr id="27" style="color: blue;">
+          <td style="color: grey">27</td>
+          <td style="text-align: right;">0.06</td>
+          <td style="text-align: right;">32</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;x&nbsp;<&nbsp;0x100**exp:</td>
+        </tr>
+        <tr id="28" style="color: blue;">
+          <td style="color: grey">28</td>
+          <td style="text-align: right;">0.61</td>
+          <td style="text-align: right;">542</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;exp</td>
+        </tr>
+        <tr id="29" style="None">
+          <td style="color: grey">29</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="30" style="None">
+          <td style="color: grey">30</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;raise&nbsp;ValueError&nbsp;&nbsp;#&nbsp;int&nbsp;is&nbsp;too&nbsp;large</td>
+        </tr>
+        <tr id="31" style="None">
+          <td style="color: grey">31</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="32" style="None">
+          <td style="color: grey">32</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="33" style="color: red;">
+          <td style="color: grey">33</td>
+          <td style="text-align: right;">2.00</td>
+          <td style="text-align: right;">114</td>
+          <td>def&nbsp;int_to_bytes(x:&nbsp;int)&nbsp;->&nbsp;bytes:</td>
+        </tr>
+        <tr id="34" style="None">
+          <td style="color: grey">34</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;x.to_bytes(_byte_size(x),&nbsp;"big")</td>
+        </tr>
+        <tr id="35" style="None">
+          <td style="color: grey">35</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="36" style="None">
+          <td style="color: grey">36</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="37" style="color: red;">
+          <td style="color: grey">37</td>
+          <td style="text-align: right;">2.00</td>
+          <td style="text-align: right;">114</td>
+          <td>def&nbsp;write_header(</td>
+        </tr>
+        <tr id="38" style="None">
+          <td style="color: grey">38</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;w:&nbsp;Writer,</td>
+        </tr>
+        <tr id="39" style="None">
+          <td style="color: grey">39</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;length:&nbsp;int,</td>
+        </tr>
+        <tr id="40" style="None">
+          <td style="color: grey">40</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;header_byte:&nbsp;int,</td>
+        </tr>
+        <tr id="41" style="None">
+          <td style="color: grey">41</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;data_start:&nbsp;bytes&nbsp;|&nbsp;None&nbsp;=&nbsp;None,</td>
+        </tr>
+        <tr id="42" style="None">
+          <td style="color: grey">42</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>)&nbsp;->&nbsp;None:</td>
+        </tr>
+        <tr id="43" style="None">
+          <td style="color: grey">43</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;length&nbsp;==&nbsp;1&nbsp;and&nbsp;data_start&nbsp;is&nbsp;not&nbsp;None&nbsp;and&nbsp;data_start[0]&nbsp;<=&nbsp;0x7F:</td>
+        </tr>
+        <tr id="44" style="None">
+          <td style="color: grey">44</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#&nbsp;no&nbsp;header&nbsp;when&nbsp;encoding&nbsp;one&nbsp;byte&nbsp;below&nbsp;0x80</td>
+        </tr>
+        <tr id="45" style="None">
+          <td style="color: grey">45</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;pass</td>
+        </tr>
+        <tr id="46" style="None">
+          <td style="color: grey">46</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="47" style="None">
+          <td style="color: grey">47</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;elif&nbsp;length&nbsp;<=&nbsp;55:</td>
+        </tr>
+        <tr id="48" style="None">
+          <td style="color: grey">48</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;w.append(header_byte&nbsp;+&nbsp;length)</td>
+        </tr>
+        <tr id="49" style="None">
+          <td style="color: grey">49</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="50" style="None">
+          <td style="color: grey">50</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;else:</td>
+        </tr>
+        <tr id="51" style="None">
+          <td style="color: grey">51</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;encoded_length&nbsp;=&nbsp;int_to_bytes(length)</td>
+        </tr>
+        <tr id="52" style="None">
+          <td style="color: grey">52</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;w.append(header_byte&nbsp;+&nbsp;55&nbsp;+&nbsp;len(encoded_length))</td>
+        </tr>
+        <tr id="53" style="None">
+          <td style="color: grey">53</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;w.extend(encoded_length)</td>
+        </tr>
+        <tr id="54" style="None">
+          <td style="color: grey">54</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="55" style="None">
+          <td style="color: grey">55</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="56" style="color: red;">
+          <td style="color: grey">56</td>
+          <td style="text-align: right;">3.00</td>
+          <td style="text-align: right;">171</td>
+          <td>def&nbsp;header_length(length:&nbsp;int,&nbsp;data_start:&nbsp;bytes&nbsp;|&nbsp;None&nbsp;=&nbsp;None)&nbsp;->&nbsp;int:</td>
+        </tr>
+        <tr id="57" style="None">
+          <td style="color: grey">57</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;length&nbsp;==&nbsp;1&nbsp;and&nbsp;data_start&nbsp;is&nbsp;not&nbsp;None&nbsp;and&nbsp;data_start[0]&nbsp;<=&nbsp;0x7F:</td>
+        </tr>
+        <tr id="58" style="None">
+          <td style="color: grey">58</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#&nbsp;no&nbsp;header&nbsp;when&nbsp;encoding&nbsp;one&nbsp;byte&nbsp;below&nbsp;0x80</td>
+        </tr>
+        <tr id="59" style="None">
+          <td style="color: grey">59</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;0</td>
+        </tr>
+        <tr id="60" style="None">
+          <td style="color: grey">60</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="61" style="None">
+          <td style="color: grey">61</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;length&nbsp;<=&nbsp;55:</td>
+        </tr>
+        <tr id="62" style="None">
+          <td style="color: grey">62</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;1</td>
+        </tr>
+        <tr id="63" style="None">
+          <td style="color: grey">63</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="64" style="None">
+          <td style="color: grey">64</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;1&nbsp;+&nbsp;_byte_size(length)</td>
+        </tr>
+        <tr id="65" style="None">
+          <td style="color: grey">65</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="66" style="None">
+          <td style="color: grey">66</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="67" style="color: blue;">
+          <td style="color: grey">67</td>
+          <td style="text-align: right;">1.00</td>
+          <td style="text-align: right;">57</td>
+          <td>def&nbsp;length(item:&nbsp;RLPItem)&nbsp;->&nbsp;int:</td>
+        </tr>
+        <tr id="68" style="None">
+          <td style="color: grey">68</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;data:&nbsp;bytes&nbsp;|&nbsp;None&nbsp;=&nbsp;None</td>
+        </tr>
+        <tr id="69" style="None">
+          <td style="color: grey">69</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;isinstance(item,&nbsp;int):</td>
+        </tr>
+        <tr id="70" style="None">
+          <td style="color: grey">70</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;data&nbsp;=&nbsp;int_to_bytes(item)</td>
+        </tr>
+        <tr id="71" style="None">
+          <td style="color: grey">71</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;item_length&nbsp;=&nbsp;len(data)</td>
+        </tr>
+        <tr id="72" style="color: blue;">
+          <td style="color: grey">72</td>
+          <td style="text-align: right;">1.00</td>
+          <td style="text-align: right;">265</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;elif&nbsp;isinstance(item,&nbsp;(bytes,&nbsp;bytearray)):</td>
+        </tr>
+        <tr id="73" style="None">
+          <td style="color: grey">73</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;data&nbsp;=&nbsp;item</td>
+        </tr>
+        <tr id="74" style="None">
+          <td style="color: grey">74</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;item_length&nbsp;=&nbsp;len(item)</td>
+        </tr>
+        <tr id="75" style="None">
+          <td style="color: grey">75</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;elif&nbsp;isinstance(item,&nbsp;list):</td>
+        </tr>
+        <tr id="76" style="color: blue;">
+          <td style="color: grey">76</td>
+          <td style="text-align: right;">0.45</td>
+          <td style="text-align: right;">27</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;item_length&nbsp;=&nbsp;sum(length(i)&nbsp;for&nbsp;i&nbsp;in&nbsp;item)</td>
+        </tr>
+        <tr id="77" style="None">
+          <td style="color: grey">77</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;else:</td>
+        </tr>
+        <tr id="78" style="None">
+          <td style="color: grey">78</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;raise&nbsp;TypeError</td>
+        </tr>
+        <tr id="79" style="None">
+          <td style="color: grey">79</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="80" style="None">
+          <td style="color: grey">80</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;header_length(item_length,&nbsp;data)&nbsp;+&nbsp;item_length</td>
+        </tr>
+        <tr id="81" style="None">
+          <td style="color: grey">81</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="82" style="None">
+          <td style="color: grey">82</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="83" style="color: blue;">
+          <td style="color: grey">83</td>
+          <td style="text-align: right;">2.00</td>
+          <td style="text-align: right;">114</td>
+          <td>def&nbsp;_write_string(w:&nbsp;Writer,&nbsp;string:&nbsp;bytes)&nbsp;->&nbsp;None:</td>
+        </tr>
+        <tr id="84" style="None">
+          <td style="color: grey">84</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;write_header(w,&nbsp;len(string),&nbsp;STRING_HEADER_BYTE,&nbsp;string)</td>
+        </tr>
+        <tr id="85" style="None">
+          <td style="color: grey">85</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;w.extend(string)</td>
+        </tr>
+        <tr id="86" style="None">
+          <td style="color: grey">86</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="87" style="None">
+          <td style="color: grey">87</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="88" style="color: blue;">
+          <td style="color: grey">88</td>
+          <td style="text-align: right;">1.00</td>
+          <td style="text-align: right;">57</td>
+          <td>def&nbsp;_write_list(w:&nbsp;Writer,&nbsp;lst:&nbsp;RLPList)&nbsp;->&nbsp;None:</td>
+        </tr>
+        <tr id="89" style="color: blue;">
+          <td style="color: grey">89</td>
+          <td style="text-align: right;">0.45</td>
+          <td style="text-align: right;">9</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;payload_length&nbsp;=&nbsp;sum(length(item)&nbsp;for&nbsp;item&nbsp;in&nbsp;lst)</td>
+        </tr>
+        <tr id="90" style="None">
+          <td style="color: grey">90</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;write_header(w,&nbsp;payload_length,&nbsp;LIST_HEADER_BYTE)</td>
+        </tr>
+        <tr id="91" style="None">
+          <td style="color: grey">91</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;for&nbsp;item&nbsp;in&nbsp;lst:</td>
+        </tr>
+        <tr id="92" style="None">
+          <td style="color: grey">92</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;write(w,&nbsp;item)</td>
+        </tr>
+        <tr id="93" style="None">
+          <td style="color: grey">93</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="94" style="None">
+          <td style="color: grey">94</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="95" style="color: red;">
+          <td style="color: grey">95</td>
+          <td style="text-align: right;">2.77</td>
+          <td style="text-align: right;">158</td>
+          <td>def&nbsp;write(w:&nbsp;Writer,&nbsp;item:&nbsp;RLPItem)&nbsp;->&nbsp;None:</td>
+        </tr>
+        <tr id="96" style="None">
+          <td style="color: grey">96</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;isinstance(item,&nbsp;int):</td>
+        </tr>
+        <tr id="97" style="None">
+          <td style="color: grey">97</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;_write_string(w,&nbsp;int_to_bytes(item))</td>
+        </tr>
+        <tr id="98" style="color: blue;">
+          <td style="color: grey">98</td>
+          <td style="text-align: right;">1.00</td>
+          <td style="text-align: right;">270</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;elif&nbsp;isinstance(item,&nbsp;(bytes,&nbsp;bytearray)):</td>
+        </tr>
+        <tr id="99" style="None">
+          <td style="color: grey">99</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;_write_string(w,&nbsp;item)</td>
+        </tr>
+        <tr id="100" style="None">
+          <td style="color: grey">100</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;elif&nbsp;isinstance(item,&nbsp;list):</td>
+        </tr>
+        <tr id="101" style="None">
+          <td style="color: grey">101</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;_write_list(w,&nbsp;item)</td>
+        </tr>
+        <tr id="102" style="None">
+          <td style="color: grey">102</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;else:</td>
+        </tr>
+        <tr id="103" style="None">
+          <td style="color: grey">103</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;raise&nbsp;TypeError</td>
+        </tr>
+      </tbody>
+    </table>
+  </body>
+</html>

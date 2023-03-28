@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>boot.py</title>
+    <meta charset="utf-8">
+    <style>body { font-size: 80%; }</style>
+  </head>
+  <body>
+    <table>
+      <thead>
+        <tr>
+          <th style="color: grey">#</th>
+          <th style="text-align: right;">avg</th>
+          <th style="text-align: right;">total</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr id="1" style="None">
+          <td style="color: grey">1</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>#&nbsp;isort:skip_file</td>
+        </tr>
+        <tr id="2" style="None">
+          <td style="color: grey">2</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="3" style="color: blue;">
+          <td style="color: grey">3</td>
+          <td style="text-align: right;">1.00</td>
+          <td style="text-align: right;">1</td>
+          <td>import&nbsp;trezorui2</td>
+        </tr>
+        <tr id="4" style="None">
+          <td style="color: grey">4</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>import&nbsp;utime</td>
+        </tr>
+        <tr id="5" style="None">
+          <td style="color: grey">5</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="6" style="None">
+          <td style="color: grey">6</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>#&nbsp;Showing&nbsp;welcome&nbsp;screen&nbsp;as&nbsp;soon&nbsp;as&nbsp;possible</td>
+        </tr>
+        <tr id="7" style="None">
+          <td style="color: grey">7</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>#&nbsp;(display&nbsp;is&nbsp;also&nbsp;prepared&nbsp;on&nbsp;that&nbsp;occasion).</td>
+        </tr>
+        <tr id="8" style="None">
+          <td style="color: grey">8</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>#&nbsp;Remembering&nbsp;time&nbsp;to&nbsp;control&nbsp;how&nbsp;long&nbsp;we&nbsp;show&nbsp;it.</td>
+        </tr>
+        <tr id="9" style="None">
+          <td style="color: grey">9</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>trezorui2.draw_welcome_screen()</td>
+        </tr>
+        <tr id="10" style="color: blue;">
+          <td style="color: grey">10</td>
+          <td style="text-align: right;">1.00</td>
+          <td style="text-align: right;">1</td>
+          <td>welcome_screen_start_ms&nbsp;=&nbsp;utime.ticks_ms()</td>
+        </tr>
+        <tr id="11" style="None">
+          <td style="color: grey">11</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="12" style="None">
+          <td style="color: grey">12</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>import&nbsp;storage</td>
+        </tr>
+        <tr id="13" style="None">
+          <td style="color: grey">13</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>import&nbsp;storage.device</td>
+        </tr>
+        <tr id="14" style="color: red;">
+          <td style="color: grey">14</td>
+          <td style="text-align: right;">7.00</td>
+          <td style="text-align: right;">7</td>
+          <td>from&nbsp;trezor&nbsp;import&nbsp;config,&nbsp;log,&nbsp;loop,&nbsp;ui,&nbsp;utils,&nbsp;wire</td>
+        </tr>
+        <tr id="15" style="color: red;">
+          <td style="color: grey">15</td>
+          <td style="text-align: right;">2.00</td>
+          <td style="text-align: right;">2</td>
+          <td>from&nbsp;trezor.pin&nbsp;import&nbsp;(</td>
+        </tr>
+        <tr id="16" style="None">
+          <td style="color: grey">16</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;allow_all_loader_messages,</td>
+        </tr>
+        <tr id="17" style="None">
+          <td style="color: grey">17</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;ignore_nonpin_loader_messages,</td>
+        </tr>
+        <tr id="18" style="None">
+          <td style="color: grey">18</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;show_pin_timeout,</td>
+        </tr>
+        <tr id="19" style="None">
+          <td style="color: grey">19</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>)</td>
+        </tr>
+        <tr id="20" style="color: red;">
+          <td style="color: grey">20</td>
+          <td style="text-align: right;">9.00</td>
+          <td style="text-align: right;">9</td>
+          <td>from&nbsp;trezor.ui.layouts.homescreen&nbsp;import&nbsp;Lockscreen</td>
+        </tr>
+        <tr id="21" style="None">
+          <td style="color: grey">21</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="22" style="color: red;">
+          <td style="color: grey">22</td>
+          <td style="text-align: right;">7.00</td>
+          <td style="text-align: right;">7</td>
+          <td>from&nbsp;apps.common.request_pin&nbsp;import&nbsp;can_lock_device,&nbsp;verify_user_pin</td>
+        </tr>
+        <tr id="23" style="None">
+          <td style="color: grey">23</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="24" style="None">
+          <td style="color: grey">24</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>_WELCOME_SCREEN_MS&nbsp;=&nbsp;1500&nbsp;&nbsp;#&nbsp;how&nbsp;long&nbsp;do&nbsp;we&nbsp;want&nbsp;to&nbsp;show&nbsp;welcome&nbsp;screen&nbsp;(minimum)</td>
+        </tr>
+        <tr id="25" style="None">
+          <td style="color: grey">25</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="26" style="None">
+          <td style="color: grey">26</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="27" style="color: blue;">
+          <td style="color: grey">27</td>
+          <td style="text-align: right;">1.00</td>
+          <td style="text-align: right;">1</td>
+          <td>def&nbsp;enforce_welcome_screen_duration()&nbsp;->&nbsp;None:</td>
+        </tr>
+        <tr id="28" style="None">
+          <td style="color: grey">28</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;"""Make&nbsp;sure&nbsp;we&nbsp;will&nbsp;show&nbsp;the&nbsp;welcome&nbsp;screen&nbsp;for&nbsp;appropriate&nbsp;amount&nbsp;of&nbsp;time."""</td>
+        </tr>
+        <tr id="29" style="None">
+          <td style="color: grey">29</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;#&nbsp;Not&nbsp;wasting&nbsp;the&nbsp;time&nbsp;in&nbsp;debug&nbsp;builds&nbsp;(saves&nbsp;time&nbsp;during&nbsp;emulator&nbsp;debugging)</td>
+        </tr>
+        <tr id="30" style="None">
+          <td style="color: grey">30</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;__debug__:</td>
+        </tr>
+        <tr id="31" style="None">
+          <td style="color: grey">31</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return</td>
+        </tr>
+        <tr id="32" style="None">
+          <td style="color: grey">32</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;while&nbsp;utime.ticks_ms()&nbsp;-&nbsp;welcome_screen_start_ms&nbsp;<&nbsp;_WELCOME_SCREEN_MS:</td>
+        </tr>
+        <tr id="33" style="None">
+          <td style="color: grey">33</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;utime.sleep_ms(100)</td>
+        </tr>
+        <tr id="34" style="None">
+          <td style="color: grey">34</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="35" style="None">
+          <td style="color: grey">35</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="36" style="color: blue;">
+          <td style="color: grey">36</td>
+          <td style="text-align: right;">1.00</td>
+          <td style="text-align: right;">1</td>
+          <td>async&nbsp;def&nbsp;bootscreen()&nbsp;->&nbsp;None:</td>
+        </tr>
+        <tr id="37" style="None">
+          <td style="color: grey">37</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;"""Sequence&nbsp;of&nbsp;actions&nbsp;to&nbsp;be&nbsp;done&nbsp;on&nbsp;boot&nbsp;(after&nbsp;device&nbsp;is&nbsp;connected).</td>
+        </tr>
+        <tr id="38" style="None">
+          <td style="color: grey">38</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="39" style="None">
+          <td style="color: grey">39</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;We&nbsp;are&nbsp;starting&nbsp;with&nbsp;welcome_screen&nbsp;on&nbsp;the&nbsp;screen&nbsp;and&nbsp;want&nbsp;to&nbsp;show&nbsp;it</td>
+        </tr>
+        <tr id="40" style="None">
+          <td style="color: grey">40</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;for&nbsp;at&nbsp;least&nbsp;_WELCOME_SCREEN_MS&nbsp;before&nbsp;any&nbsp;other&nbsp;screen.</td>
+        </tr>
+        <tr id="41" style="None">
+          <td style="color: grey">41</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="42" style="None">
+          <td style="color: grey">42</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;Any&nbsp;non-PIN&nbsp;loaders&nbsp;are&nbsp;ignored&nbsp;during&nbsp;this&nbsp;function.</td>
+        </tr>
+        <tr id="43" style="None">
+          <td style="color: grey">43</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;Allowing&nbsp;all&nbsp;of&nbsp;them&nbsp;before&nbsp;returning.</td>
+        </tr>
+        <tr id="44" style="None">
+          <td style="color: grey">44</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;"""</td>
+        </tr>
+        <tr id="45" style="None">
+          <td style="color: grey">45</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;lockscreen&nbsp;=&nbsp;Lockscreen(label=storage.device.get_label(),&nbsp;bootscreen=True)</td>
+        </tr>
+        <tr id="46" style="None">
+          <td style="color: grey">46</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;ui.display.orientation(storage.device.get_rotation())</td>
+        </tr>
+        <tr id="47" style="None">
+          <td style="color: grey">47</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;while&nbsp;True:</td>
+        </tr>
+        <tr id="48" style="None">
+          <td style="color: grey">48</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;try:</td>
+        </tr>
+        <tr id="49" style="None">
+          <td style="color: grey">49</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;can_lock_device():</td>
+        </tr>
+        <tr id="50" style="None">
+          <td style="color: grey">50</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;enforce_welcome_screen_duration()</td>
+        </tr>
+        <tr id="51" style="None">
+          <td style="color: grey">51</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;await&nbsp;lockscreen</td>
+        </tr>
+        <tr id="52" style="color: blue;">
+          <td style="color: grey">52</td>
+          <td style="text-align: right;">1.00</td>
+          <td style="text-align: right;">1</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;await&nbsp;verify_user_pin()</td>
+        </tr>
+        <tr id="53" style="None">
+          <td style="color: grey">53</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;storage.init_unlocked()</td>
+        </tr>
+        <tr id="54" style="None">
+          <td style="color: grey">54</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;enforce_welcome_screen_duration()</td>
+        </tr>
+        <tr id="55" style="None">
+          <td style="color: grey">55</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;allow_all_loader_messages()</td>
+        </tr>
+        <tr id="56" style="color: red;">
+          <td style="color: grey">56</td>
+          <td style="text-align: right;">2.00</td>
+          <td style="text-align: right;">2</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return</td>
+        </tr>
+        <tr id="57" style="None">
+          <td style="color: grey">57</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;except&nbsp;wire.PinCancelled:</td>
+        </tr>
+        <tr id="58" style="None">
+          <td style="color: grey">58</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#&nbsp;verify_user_pin&nbsp;will&nbsp;convert&nbsp;a&nbsp;SdCardUnavailable&nbsp;(in&nbsp;case&nbsp;of&nbsp;sd&nbsp;salt)</td>
+        </tr>
+        <tr id="59" style="None">
+          <td style="color: grey">59</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#&nbsp;to&nbsp;PinCancelled&nbsp;exception.</td>
+        </tr>
+        <tr id="60" style="None">
+          <td style="color: grey">60</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#&nbsp;Ignore&nbsp;exception,&nbsp;retry&nbsp;loop.</td>
+        </tr>
+        <tr id="61" style="None">
+          <td style="color: grey">61</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;pass</td>
+        </tr>
+        <tr id="62" style="None">
+          <td style="color: grey">62</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;except&nbsp;BaseException&nbsp;as&nbsp;e:</td>
+        </tr>
+        <tr id="63" style="None">
+          <td style="color: grey">63</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#&nbsp;other&nbsp;exceptions&nbsp;here&nbsp;are&nbsp;unexpected&nbsp;and&nbsp;should&nbsp;halt&nbsp;the&nbsp;device</td>
+        </tr>
+        <tr id="64" style="None">
+          <td style="color: grey">64</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;__debug__:</td>
+        </tr>
+        <tr id="65" style="None">
+          <td style="color: grey">65</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;log.exception(__name__,&nbsp;e)</td>
+        </tr>
+        <tr id="66" style="None">
+          <td style="color: grey">66</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;utils.halt(e.__class__.__name__)</td>
+        </tr>
+        <tr id="67" style="None">
+          <td style="color: grey">67</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="68" style="None">
+          <td style="color: grey">68</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="69" style="None">
+          <td style="color: grey">69</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>#&nbsp;Ignoring&nbsp;all&nbsp;non-PIN&nbsp;messages&nbsp;in&nbsp;the&nbsp;boot-phase&nbsp;(turned&nbsp;off&nbsp;in&nbsp;`bootscreen()`).</td>
+        </tr>
+        <tr id="70" style="None">
+          <td style="color: grey">70</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>ignore_nonpin_loader_messages()</td>
+        </tr>
+        <tr id="71" style="None">
+          <td style="color: grey">71</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="72" style="None">
+          <td style="color: grey">72</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>config.init(show_pin_timeout)</td>
+        </tr>
+        <tr id="73" style="None">
+          <td style="color: grey">73</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="74" style="None">
+          <td style="color: grey">74</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>if&nbsp;__debug__&nbsp;and&nbsp;not&nbsp;utils.EMULATOR:</td>
+        </tr>
+        <tr id="75" style="None">
+          <td style="color: grey">75</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;config.wipe()</td>
+        </tr>
+        <tr id="76" style="None">
+          <td style="color: grey">76</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="77" style="color: blue;">
+          <td style="color: grey">77</td>
+          <td style="text-align: right;">1.00</td>
+          <td style="text-align: right;">1</td>
+          <td>loop.schedule(bootscreen())</td>
+        </tr>
+        <tr id="78" style="None">
+          <td style="color: grey">78</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>loop.run()</td>
+        </tr>
+      </tbody>
+    </table>
+  </body>
+</html>

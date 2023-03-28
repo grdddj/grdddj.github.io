@@ -1,0 +1,1144 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>apps/cardano/seed.py</title>
+    <meta charset="utf-8">
+    <style>body { font-size: 80%; }</style>
+  </head>
+  <body>
+    <table>
+      <thead>
+        <tr>
+          <th style="color: grey">#</th>
+          <th style="text-align: right;">avg</th>
+          <th style="text-align: right;">total</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr id="1" style="color: blue;">
+          <td style="color: grey">1</td>
+          <td style="text-align: right;">1.00</td>
+          <td style="text-align: right;">300</td>
+          <td>from&nbsp;typing&nbsp;import&nbsp;TYPE_CHECKING</td>
+        </tr>
+        <tr id="2" style="None">
+          <td style="color: grey">2</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="3" style="color: blue;">
+          <td style="color: grey">3</td>
+          <td style="text-align: right;">2.00</td>
+          <td style="text-align: right;">600</td>
+          <td>from&nbsp;storage&nbsp;import&nbsp;cache,&nbsp;device</td>
+        </tr>
+        <tr id="4" style="color: blue;">
+          <td style="color: grey">4</td>
+          <td style="text-align: right;">2.00</td>
+          <td style="text-align: right;">600</td>
+          <td>from&nbsp;trezor&nbsp;import&nbsp;wire</td>
+        </tr>
+        <tr id="5" style="color: blue;">
+          <td style="color: grey">5</td>
+          <td style="text-align: right;">1.00</td>
+          <td style="text-align: right;">300</td>
+          <td>from&nbsp;trezor.crypto&nbsp;import&nbsp;cardano</td>
+        </tr>
+        <tr id="6" style="None">
+          <td style="color: grey">6</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="7" style="color: blue;">
+          <td style="color: grey">7</td>
+          <td style="text-align: right;">2.00</td>
+          <td style="text-align: right;">600</td>
+          <td>from&nbsp;apps.common&nbsp;import&nbsp;mnemonic</td>
+        </tr>
+        <tr id="8" style="color: blue;">
+          <td style="color: grey">8</td>
+          <td style="text-align: right;">1.00</td>
+          <td style="text-align: right;">300</td>
+          <td>from&nbsp;apps.common.seed&nbsp;import&nbsp;get_seed</td>
+        </tr>
+        <tr id="9" style="None">
+          <td style="color: grey">9</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="10" style="color: red;">
+          <td style="color: grey">10</td>
+          <td style="text-align: right;">9.00</td>
+          <td style="text-align: right;">2700</td>
+          <td>from&nbsp;.helpers.paths&nbsp;import&nbsp;BYRON_ROOT,&nbsp;MINTING_ROOT,&nbsp;MULTISIG_ROOT,&nbsp;SHELLEY_ROOT</td>
+        </tr>
+        <tr id="11" style="None">
+          <td style="color: grey">11</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="12" style="None">
+          <td style="color: grey">12</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>if&nbsp;TYPE_CHECKING:</td>
+        </tr>
+        <tr id="13" style="None">
+          <td style="color: grey">13</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;from&nbsp;typing&nbsp;import&nbsp;Callable,&nbsp;Awaitable,&nbsp;TypeVar</td>
+        </tr>
+        <tr id="14" style="None">
+          <td style="color: grey">14</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="15" style="None">
+          <td style="color: grey">15</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;from&nbsp;apps.common.paths&nbsp;import&nbsp;Bip32Path</td>
+        </tr>
+        <tr id="16" style="None">
+          <td style="color: grey">16</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;from&nbsp;apps.common.keychain&nbsp;import&nbsp;MsgOut,&nbsp;Handler</td>
+        </tr>
+        <tr id="17" style="None">
+          <td style="color: grey">17</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="18" style="None">
+          <td style="color: grey">18</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;from&nbsp;trezor&nbsp;import&nbsp;messages</td>
+        </tr>
+        <tr id="19" style="None">
+          <td style="color: grey">19</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;from&nbsp;trezor.enums&nbsp;import&nbsp;CardanoDerivationType</td>
+        </tr>
+        <tr id="20" style="None">
+          <td style="color: grey">20</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;from&nbsp;trezor.crypto&nbsp;import&nbsp;bip32</td>
+        </tr>
+        <tr id="21" style="None">
+          <td style="color: grey">21</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="22" style="None">
+          <td style="color: grey">22</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;CardanoMessages&nbsp;=&nbsp;(</td>
+        </tr>
+        <tr id="23" style="None">
+          <td style="color: grey">23</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;messages.CardanoGetAddress</td>
+        </tr>
+        <tr id="24" style="None">
+          <td style="color: grey">24</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;messages.CardanoGetPublicKey</td>
+        </tr>
+        <tr id="25" style="None">
+          <td style="color: grey">25</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;messages.CardanoGetNativeScriptHash</td>
+        </tr>
+        <tr id="26" style="None">
+          <td style="color: grey">26</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;messages.CardanoSignTxInit</td>
+        </tr>
+        <tr id="27" style="None">
+          <td style="color: grey">27</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;)</td>
+        </tr>
+        <tr id="28" style="None">
+          <td style="color: grey">28</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;MsgIn&nbsp;=&nbsp;TypeVar("MsgIn",&nbsp;bound=CardanoMessages)</td>
+        </tr>
+        <tr id="29" style="None">
+          <td style="color: grey">29</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="30" style="None">
+          <td style="color: grey">30</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;HandlerWithKeychain&nbsp;=&nbsp;Callable[[wire.Context,&nbsp;MsgIn,&nbsp;"Keychain"],&nbsp;Awaitable[MsgOut]]</td>
+        </tr>
+        <tr id="31" style="None">
+          <td style="color: grey">31</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="32" style="None">
+          <td style="color: grey">32</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="33" style="color: blue;">
+          <td style="color: grey">33</td>
+          <td style="text-align: right;">2.00</td>
+          <td style="text-align: right;">600</td>
+          <td>class&nbsp;Keychain:</td>
+        </tr>
+        <tr id="34" style="None">
+          <td style="color: grey">34</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;"""</td>
+        </tr>
+        <tr id="35" style="None">
+          <td style="color: grey">35</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;Cardano&nbsp;keychain&nbsp;hard-coded&nbsp;to&nbsp;44&nbsp;(Byron),&nbsp;1852&nbsp;(Shelley),&nbsp;1854&nbsp;(multi-sig)&nbsp;and&nbsp;1855&nbsp;(token&nbsp;minting)</td>
+        </tr>
+        <tr id="36" style="None">
+          <td style="color: grey">36</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;seed&nbsp;namespaces.</td>
+        </tr>
+        <tr id="37" style="None">
+          <td style="color: grey">37</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;"""</td>
+        </tr>
+        <tr id="38" style="None">
+          <td style="color: grey">38</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="39" style="color: blue;">
+          <td style="color: grey">39</td>
+          <td style="text-align: right;">2.00</td>
+          <td style="text-align: right;">600</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;def&nbsp;__init__(self,&nbsp;root:&nbsp;bip32.HDNode)&nbsp;->&nbsp;None:</td>
+        </tr>
+        <tr id="40" style="None">
+          <td style="color: grey">40</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.byron_root&nbsp;=&nbsp;self._derive_path(root,&nbsp;BYRON_ROOT)</td>
+        </tr>
+        <tr id="41" style="None">
+          <td style="color: grey">41</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.shelley_root&nbsp;=&nbsp;self._derive_path(root,&nbsp;SHELLEY_ROOT)</td>
+        </tr>
+        <tr id="42" style="None">
+          <td style="color: grey">42</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.multisig_root&nbsp;=&nbsp;self._derive_path(root,&nbsp;MULTISIG_ROOT)</td>
+        </tr>
+        <tr id="43" style="None">
+          <td style="color: grey">43</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.minting_root&nbsp;=&nbsp;self._derive_path(root,&nbsp;MINTING_ROOT)</td>
+        </tr>
+        <tr id="44" style="None">
+          <td style="color: grey">44</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;root.__del__()</td>
+        </tr>
+        <tr id="45" style="None">
+          <td style="color: grey">45</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="46" style="color: blue;">
+          <td style="color: grey">46</td>
+          <td style="text-align: right;">2.00</td>
+          <td style="text-align: right;">600</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;@staticmethod</td>
+        </tr>
+        <tr id="47" style="None">
+          <td style="color: grey">47</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;def&nbsp;_derive_path(root:&nbsp;bip32.HDNode,&nbsp;path:&nbsp;Bip32Path)&nbsp;->&nbsp;bip32.HDNode:</td>
+        </tr>
+        <tr id="48" style="None">
+          <td style="color: grey">48</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"""Clone&nbsp;and&nbsp;derive&nbsp;path&nbsp;from&nbsp;the&nbsp;root."""</td>
+        </tr>
+        <tr id="49" style="color: blue;">
+          <td style="color: grey">49</td>
+          <td style="text-align: right;">1.00</td>
+          <td style="text-align: right;">1799</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;node&nbsp;=&nbsp;root.clone()</td>
+        </tr>
+        <tr id="50" style="None">
+          <td style="color: grey">50</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;node.derive_path(path)</td>
+        </tr>
+        <tr id="51" style="color: blue;">
+          <td style="color: grey">51</td>
+          <td style="text-align: right;">0.33</td>
+          <td style="text-align: right;">590</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;node</td>
+        </tr>
+        <tr id="52" style="None">
+          <td style="color: grey">52</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="53" style="color: blue;">
+          <td style="color: grey">53</td>
+          <td style="text-align: right;">2.00</td>
+          <td style="text-align: right;">600</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;def&nbsp;verify_path(self,&nbsp;path:&nbsp;Bip32Path)&nbsp;->&nbsp;None:</td>
+        </tr>
+        <tr id="54" style="None">
+          <td style="color: grey">54</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;not&nbsp;self.is_in_keychain(path):</td>
+        </tr>
+        <tr id="55" style="None">
+          <td style="color: grey">55</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;raise&nbsp;wire.DataError("Forbidden&nbsp;key&nbsp;path")</td>
+        </tr>
+        <tr id="56" style="None">
+          <td style="color: grey">56</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="57" style="color: blue;">
+          <td style="color: grey">57</td>
+          <td style="text-align: right;">1.00</td>
+          <td style="text-align: right;">300</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;def&nbsp;_get_path_root(self,&nbsp;path:&nbsp;Bip32Path)&nbsp;->&nbsp;bip32.HDNode:</td>
+        </tr>
+        <tr id="58" style="None">
+          <td style="color: grey">58</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;is_byron_path(path):</td>
+        </tr>
+        <tr id="59" style="None">
+          <td style="color: grey">59</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;self.byron_root</td>
+        </tr>
+        <tr id="60" style="None">
+          <td style="color: grey">60</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;elif&nbsp;is_shelley_path(path):</td>
+        </tr>
+        <tr id="61" style="None">
+          <td style="color: grey">61</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;self.shelley_root</td>
+        </tr>
+        <tr id="62" style="None">
+          <td style="color: grey">62</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;elif&nbsp;is_multisig_path(path):</td>
+        </tr>
+        <tr id="63" style="None">
+          <td style="color: grey">63</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;self.multisig_root</td>
+        </tr>
+        <tr id="64" style="None">
+          <td style="color: grey">64</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;elif&nbsp;is_minting_path(path):</td>
+        </tr>
+        <tr id="65" style="None">
+          <td style="color: grey">65</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;self.minting_root</td>
+        </tr>
+        <tr id="66" style="None">
+          <td style="color: grey">66</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;else:</td>
+        </tr>
+        <tr id="67" style="None">
+          <td style="color: grey">67</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;raise&nbsp;wire.DataError("Forbidden&nbsp;key&nbsp;path")</td>
+        </tr>
+        <tr id="68" style="None">
+          <td style="color: grey">68</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="69" style="color: blue;">
+          <td style="color: grey">69</td>
+          <td style="text-align: right;">2.00</td>
+          <td style="text-align: right;">600</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;def&nbsp;is_in_keychain(self,&nbsp;path:&nbsp;Bip32Path)&nbsp;->&nbsp;bool:</td>
+        </tr>
+        <tr id="70" style="None">
+          <td style="color: grey">70</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;(</td>
+        </tr>
+        <tr id="71" style="None">
+          <td style="color: grey">71</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;is_byron_path(path)</td>
+        </tr>
+        <tr id="72" style="None">
+          <td style="color: grey">72</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;or&nbsp;is_shelley_path(path)</td>
+        </tr>
+        <tr id="73" style="None">
+          <td style="color: grey">73</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;or&nbsp;is_multisig_path(path)</td>
+        </tr>
+        <tr id="74" style="None">
+          <td style="color: grey">74</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;or&nbsp;is_minting_path(path)</td>
+        </tr>
+        <tr id="75" style="None">
+          <td style="color: grey">75</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;)</td>
+        </tr>
+        <tr id="76" style="None">
+          <td style="color: grey">76</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="77" style="color: red;">
+          <td style="color: grey">77</td>
+          <td style="text-align: right;">3.00</td>
+          <td style="text-align: right;">900</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;def&nbsp;derive(self,&nbsp;node_path:&nbsp;Bip32Path)&nbsp;->&nbsp;bip32.HDNode:</td>
+        </tr>
+        <tr id="78" style="None">
+          <td style="color: grey">78</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.verify_path(node_path)</td>
+        </tr>
+        <tr id="79" style="None">
+          <td style="color: grey">79</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;path_root&nbsp;=&nbsp;self._get_path_root(node_path)</td>
+        </tr>
+        <tr id="80" style="None">
+          <td style="color: grey">80</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="81" style="None">
+          <td style="color: grey">81</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#&nbsp;this&nbsp;is&nbsp;true&nbsp;now,&nbsp;so&nbsp;for&nbsp;simplicity&nbsp;we&nbsp;don't&nbsp;branch&nbsp;on&nbsp;path&nbsp;type</td>
+        </tr>
+        <tr id="82" style="None">
+          <td style="color: grey">82</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;assert&nbsp;(</td>
+        </tr>
+        <tr id="83" style="None">
+          <td style="color: grey">83</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;len(BYRON_ROOT)&nbsp;==&nbsp;len(SHELLEY_ROOT)</td>
+        </tr>
+        <tr id="84" style="None">
+          <td style="color: grey">84</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;and&nbsp;len(MULTISIG_ROOT)&nbsp;==&nbsp;len(SHELLEY_ROOT)</td>
+        </tr>
+        <tr id="85" style="None">
+          <td style="color: grey">85</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;and&nbsp;len(MINTING_ROOT)&nbsp;==&nbsp;len(SHELLEY_ROOT)</td>
+        </tr>
+        <tr id="86" style="None">
+          <td style="color: grey">86</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;)</td>
+        </tr>
+        <tr id="87" style="color: red;">
+          <td style="color: grey">87</td>
+          <td style="text-align: right;">3.00</td>
+          <td style="text-align: right;">1857</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;suffix&nbsp;=&nbsp;node_path[len(SHELLEY_ROOT)&nbsp;:]</td>
+        </tr>
+        <tr id="88" style="None">
+          <td style="color: grey">88</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="89" style="None">
+          <td style="color: grey">89</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#&nbsp;derive&nbsp;child&nbsp;node&nbsp;from&nbsp;the&nbsp;root</td>
+        </tr>
+        <tr id="90" style="None">
+          <td style="color: grey">90</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;self._derive_path(path_root,&nbsp;suffix)</td>
+        </tr>
+        <tr id="91" style="None">
+          <td style="color: grey">91</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="92" style="None">
+          <td style="color: grey">92</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;#&nbsp;XXX&nbsp;the&nbsp;root&nbsp;node&nbsp;remains&nbsp;in&nbsp;session&nbsp;cache&nbsp;so&nbsp;we&nbsp;should&nbsp;not&nbsp;delete&nbsp;it</td>
+        </tr>
+        <tr id="93" style="None">
+          <td style="color: grey">93</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;#&nbsp;def&nbsp;__del__(self)&nbsp;->&nbsp;None:</td>
+        </tr>
+        <tr id="94" style="None">
+          <td style="color: grey">94</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;#&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.root.__del__()</td>
+        </tr>
+        <tr id="95" style="None">
+          <td style="color: grey">95</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="96" style="None">
+          <td style="color: grey">96</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="97" style="color: blue;">
+          <td style="color: grey">97</td>
+          <td style="text-align: right;">1.00</td>
+          <td style="text-align: right;">300</td>
+          <td>def&nbsp;is_byron_path(path:&nbsp;Bip32Path)&nbsp;->&nbsp;bool:</td>
+        </tr>
+        <tr id="98" style="color: red;">
+          <td style="color: grey">98</td>
+          <td style="text-align: right;">3.00</td>
+          <td style="text-align: right;">4704</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;path[:&nbsp;len(BYRON_ROOT)]&nbsp;==&nbsp;BYRON_ROOT</td>
+        </tr>
+        <tr id="99" style="None">
+          <td style="color: grey">99</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="100" style="None">
+          <td style="color: grey">100</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="101" style="color: blue;">
+          <td style="color: grey">101</td>
+          <td style="text-align: right;">1.00</td>
+          <td style="text-align: right;">300</td>
+          <td>def&nbsp;is_shelley_path(path:&nbsp;Bip32Path)&nbsp;->&nbsp;bool:</td>
+        </tr>
+        <tr id="102" style="color: blue;">
+          <td style="color: grey">102</td>
+          <td style="text-align: right;">3.00</td>
+          <td style="text-align: right;">3945</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;path[:&nbsp;len(SHELLEY_ROOT)]&nbsp;==&nbsp;SHELLEY_ROOT</td>
+        </tr>
+        <tr id="103" style="None">
+          <td style="color: grey">103</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="104" style="None">
+          <td style="color: grey">104</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="105" style="color: blue;">
+          <td style="color: grey">105</td>
+          <td style="text-align: right;">1.00</td>
+          <td style="text-align: right;">300</td>
+          <td>def&nbsp;is_multisig_path(path:&nbsp;Bip32Path)&nbsp;->&nbsp;bool:</td>
+        </tr>
+        <tr id="106" style="color: blue;">
+          <td style="color: grey">106</td>
+          <td style="text-align: right;">3.00</td>
+          <td style="text-align: right;">1746</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;path[:&nbsp;len(MULTISIG_ROOT)]&nbsp;==&nbsp;MULTISIG_ROOT</td>
+        </tr>
+        <tr id="107" style="None">
+          <td style="color: grey">107</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="108" style="None">
+          <td style="color: grey">108</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="109" style="color: blue;">
+          <td style="color: grey">109</td>
+          <td style="text-align: right;">1.00</td>
+          <td style="text-align: right;">300</td>
+          <td>def&nbsp;is_minting_path(path:&nbsp;Bip32Path)&nbsp;->&nbsp;bool:</td>
+        </tr>
+        <tr id="110" style="color: blue;">
+          <td style="color: grey">110</td>
+          <td style="text-align: right;">3.00</td>
+          <td style="text-align: right;">993</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;path[:&nbsp;len(MINTING_ROOT)]&nbsp;==&nbsp;MINTING_ROOT</td>
+        </tr>
+        <tr id="111" style="None">
+          <td style="color: grey">111</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="112" style="None">
+          <td style="color: grey">112</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="113" style="color: blue;">
+          <td style="color: grey">113</td>
+          <td style="text-align: right;">2.00</td>
+          <td style="text-align: right;">600</td>
+          <td>def&nbsp;derive_and_store_secrets(passphrase:&nbsp;str)&nbsp;->&nbsp;None:</td>
+        </tr>
+        <tr id="114" style="None">
+          <td style="color: grey">114</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;assert&nbsp;device.is_initialized()</td>
+        </tr>
+        <tr id="115" style="None">
+          <td style="color: grey">115</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;assert&nbsp;cache.get(cache.APP_COMMON_DERIVE_CARDANO)</td>
+        </tr>
+        <tr id="116" style="None">
+          <td style="color: grey">116</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="117" style="None">
+          <td style="color: grey">117</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;not&nbsp;mnemonic.is_bip39():</td>
+        </tr>
+        <tr id="118" style="None">
+          <td style="color: grey">118</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#&nbsp;nothing&nbsp;to&nbsp;do&nbsp;for&nbsp;SLIP-39,&nbsp;where&nbsp;we&nbsp;can&nbsp;derive&nbsp;the&nbsp;root&nbsp;from&nbsp;the&nbsp;main&nbsp;seed</td>
+        </tr>
+        <tr id="119" style="None">
+          <td style="color: grey">119</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return</td>
+        </tr>
+        <tr id="120" style="None">
+          <td style="color: grey">120</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="121" style="None">
+          <td style="color: grey">121</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;icarus_secret&nbsp;=&nbsp;mnemonic.derive_cardano_icarus(passphrase,&nbsp;trezor_derivation=False)</td>
+        </tr>
+        <tr id="122" style="None">
+          <td style="color: grey">122</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="123" style="None">
+          <td style="color: grey">123</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;words&nbsp;=&nbsp;mnemonic.get_secret()</td>
+        </tr>
+        <tr id="124" style="None">
+          <td style="color: grey">124</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;assert&nbsp;words&nbsp;is&nbsp;not&nbsp;None,&nbsp;"Mnemonic&nbsp;is&nbsp;not&nbsp;set"</td>
+        </tr>
+        <tr id="125" style="None">
+          <td style="color: grey">125</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;#&nbsp;count&nbsp;ASCII&nbsp;spaces,&nbsp;add&nbsp;1&nbsp;to&nbsp;get&nbsp;number&nbsp;of&nbsp;words</td>
+        </tr>
+        <tr id="126" style="color: blue;">
+          <td style="color: grey">126</td>
+          <td style="text-align: right;">0.03</td>
+          <td style="text-align: right;">822</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;words_count&nbsp;=&nbsp;sum(c&nbsp;==&nbsp;0x20&nbsp;for&nbsp;c&nbsp;in&nbsp;words)&nbsp;+&nbsp;1</td>
+        </tr>
+        <tr id="127" style="None">
+          <td style="color: grey">127</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="128" style="None">
+          <td style="color: grey">128</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;words_count&nbsp;==&nbsp;24:</td>
+        </tr>
+        <tr id="129" style="None">
+          <td style="color: grey">129</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;icarus_trezor_secret&nbsp;=&nbsp;mnemonic.derive_cardano_icarus(</td>
+        </tr>
+        <tr id="130" style="None">
+          <td style="color: grey">130</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;passphrase,&nbsp;trezor_derivation=True</td>
+        </tr>
+        <tr id="131" style="None">
+          <td style="color: grey">131</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;)</td>
+        </tr>
+        <tr id="132" style="None">
+          <td style="color: grey">132</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;else:</td>
+        </tr>
+        <tr id="133" style="None">
+          <td style="color: grey">133</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;icarus_trezor_secret&nbsp;=&nbsp;icarus_secret</td>
+        </tr>
+        <tr id="134" style="None">
+          <td style="color: grey">134</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="135" style="None">
+          <td style="color: grey">135</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;cache.set(cache.APP_CARDANO_ICARUS_SECRET,&nbsp;icarus_secret)</td>
+        </tr>
+        <tr id="136" style="None">
+          <td style="color: grey">136</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;cache.set(cache.APP_CARDANO_ICARUS_TREZOR_SECRET,&nbsp;icarus_trezor_secret)</td>
+        </tr>
+        <tr id="137" style="None">
+          <td style="color: grey">137</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="138" style="None">
+          <td style="color: grey">138</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="139" style="color: blue;">
+          <td style="color: grey">139</td>
+          <td style="text-align: right;">1.00</td>
+          <td style="text-align: right;">300</td>
+          <td>async&nbsp;def&nbsp;_get_keychain_bip39(</td>
+        </tr>
+        <tr id="140" style="None">
+          <td style="color: grey">140</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;ctx:&nbsp;wire.Context,&nbsp;derivation_type:&nbsp;CardanoDerivationType</td>
+        </tr>
+        <tr id="141" style="None">
+          <td style="color: grey">141</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>)&nbsp;->&nbsp;Keychain:</td>
+        </tr>
+        <tr id="142" style="color: blue;">
+          <td style="color: grey">142</td>
+          <td style="text-align: right;">1.00</td>
+          <td style="text-align: right;">281</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;from&nbsp;apps.common.seed&nbsp;import&nbsp;derive_and_store_roots</td>
+        </tr>
+        <tr id="143" style="color: red;">
+          <td style="color: grey">143</td>
+          <td style="text-align: right;">6.00</td>
+          <td style="text-align: right;">1686</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;from&nbsp;trezor.enums&nbsp;import&nbsp;CardanoDerivationType</td>
+        </tr>
+        <tr id="144" style="None">
+          <td style="color: grey">144</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="145" style="None">
+          <td style="color: grey">145</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;not&nbsp;device.is_initialized():</td>
+        </tr>
+        <tr id="146" style="None">
+          <td style="color: grey">146</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;raise&nbsp;wire.NotInitialized("Device&nbsp;is&nbsp;not&nbsp;initialized")</td>
+        </tr>
+        <tr id="147" style="None">
+          <td style="color: grey">147</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="148" style="None">
+          <td style="color: grey">148</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;derivation_type&nbsp;==&nbsp;CardanoDerivationType.LEDGER:</td>
+        </tr>
+        <tr id="149" style="color: blue;">
+          <td style="color: grey">149</td>
+          <td style="text-align: right;">1.50</td>
+          <td style="text-align: right;">12</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;seed&nbsp;=&nbsp;await&nbsp;get_seed(ctx)</td>
+        </tr>
+        <tr id="150" style="color: blue;">
+          <td style="color: grey">150</td>
+          <td style="text-align: right;">3.00</td>
+          <td style="text-align: right;">12</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;Keychain(cardano.from_seed_ledger(seed))</td>
+        </tr>
+        <tr id="151" style="None">
+          <td style="color: grey">151</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="152" style="None">
+          <td style="color: grey">152</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;not&nbsp;cache.get(cache.APP_COMMON_DERIVE_CARDANO):</td>
+        </tr>
+        <tr id="153" style="color: blue;">
+          <td style="color: grey">153</td>
+          <td style="text-align: right;">2.00</td>
+          <td style="text-align: right;">8</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;raise&nbsp;wire.ProcessError("Cardano&nbsp;derivation&nbsp;is&nbsp;not&nbsp;enabled&nbsp;for&nbsp;this&nbsp;session")</td>
+        </tr>
+        <tr id="154" style="None">
+          <td style="color: grey">154</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="155" style="None">
+          <td style="color: grey">155</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;derivation_type&nbsp;==&nbsp;CardanoDerivationType.ICARUS:</td>
+        </tr>
+        <tr id="156" style="None">
+          <td style="color: grey">156</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cache_entry&nbsp;=&nbsp;cache.APP_CARDANO_ICARUS_SECRET</td>
+        </tr>
+        <tr id="157" style="None">
+          <td style="color: grey">157</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;else:</td>
+        </tr>
+        <tr id="158" style="None">
+          <td style="color: grey">158</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cache_entry&nbsp;=&nbsp;cache.APP_CARDANO_ICARUS_TREZOR_SECRET</td>
+        </tr>
+        <tr id="159" style="None">
+          <td style="color: grey">159</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="160" style="None">
+          <td style="color: grey">160</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;#&nbsp;_get_secret</td>
+        </tr>
+        <tr id="161" style="None">
+          <td style="color: grey">161</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;secret&nbsp;=&nbsp;cache.get(cache_entry)</td>
+        </tr>
+        <tr id="162" style="None">
+          <td style="color: grey">162</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;secret&nbsp;is&nbsp;None:</td>
+        </tr>
+        <tr id="163" style="color: blue;">
+          <td style="color: grey">163</td>
+          <td style="text-align: right;">0.33</td>
+          <td style="text-align: right;">270</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;await&nbsp;derive_and_store_roots(ctx)</td>
+        </tr>
+        <tr id="164" style="None">
+          <td style="color: grey">164</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;secret&nbsp;=&nbsp;cache.get(cache_entry)</td>
+        </tr>
+        <tr id="165" style="None">
+          <td style="color: grey">165</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;assert&nbsp;secret&nbsp;is&nbsp;not&nbsp;None</td>
+        </tr>
+        <tr id="166" style="None">
+          <td style="color: grey">166</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="167" style="color: blue;">
+          <td style="color: grey">167</td>
+          <td style="text-align: right;">1.00</td>
+          <td style="text-align: right;">273</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;root&nbsp;=&nbsp;cardano.from_secret(secret)</td>
+        </tr>
+        <tr id="168" style="color: blue;">
+          <td style="color: grey">168</td>
+          <td style="text-align: right;">2.00</td>
+          <td style="text-align: right;">546</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;Keychain(root)</td>
+        </tr>
+        <tr id="169" style="None">
+          <td style="color: grey">169</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="170" style="None">
+          <td style="color: grey">170</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="171" style="color: blue;">
+          <td style="color: grey">171</td>
+          <td style="text-align: right;">1.00</td>
+          <td style="text-align: right;">300</td>
+          <td>async&nbsp;def&nbsp;_get_keychain(</td>
+        </tr>
+        <tr id="172" style="None">
+          <td style="color: grey">172</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;ctx:&nbsp;wire.Context,&nbsp;derivation_type:&nbsp;CardanoDerivationType</td>
+        </tr>
+        <tr id="173" style="None">
+          <td style="color: grey">173</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>)&nbsp;->&nbsp;Keychain:</td>
+        </tr>
+        <tr id="174" style="None">
+          <td style="color: grey">174</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;mnemonic.is_bip39():</td>
+        </tr>
+        <tr id="175" style="color: blue;">
+          <td style="color: grey">175</td>
+          <td style="text-align: right;">0.34</td>
+          <td style="text-align: right;">281</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;await&nbsp;_get_keychain_bip39(ctx,&nbsp;derivation_type)</td>
+        </tr>
+        <tr id="176" style="None">
+          <td style="color: grey">176</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;else:</td>
+        </tr>
+        <tr id="177" style="None">
+          <td style="color: grey">177</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#&nbsp;derive&nbsp;the&nbsp;root&nbsp;node&nbsp;via&nbsp;SLIP-0023&nbsp;https://github.com/satoshilabs/slips/blob/master/slip-0022.md</td>
+        </tr>
+        <tr id="178" style="color: blue;">
+          <td style="color: grey">178</td>
+          <td style="text-align: right;">0.47</td>
+          <td style="text-align: right;">54</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;seed&nbsp;=&nbsp;await&nbsp;get_seed(ctx)</td>
+        </tr>
+        <tr id="179" style="color: blue;">
+          <td style="color: grey">179</td>
+          <td style="text-align: right;">3.00</td>
+          <td style="text-align: right;">54</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;Keychain(cardano.from_seed_slip23(seed))</td>
+        </tr>
+        <tr id="180" style="None">
+          <td style="color: grey">180</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="181" style="None">
+          <td style="color: grey">181</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="182" style="color: blue;">
+          <td style="color: grey">182</td>
+          <td style="text-align: right;">2.18</td>
+          <td style="text-align: right;">653</td>
+          <td>def&nbsp;with_keychain(func:&nbsp;HandlerWithKeychain[MsgIn,&nbsp;MsgOut])&nbsp;->&nbsp;Handler[MsgIn,&nbsp;MsgOut]:</td>
+        </tr>
+        <tr id="183" style="color: blue;">
+          <td style="color: grey">183</td>
+          <td style="text-align: right;">2.00</td>
+          <td style="text-align: right;">598</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;async&nbsp;def&nbsp;wrapper(ctx:&nbsp;wire.Context,&nbsp;msg:&nbsp;MsgIn)&nbsp;->&nbsp;MsgOut:</td>
+        </tr>
+        <tr id="184" style="color: blue;">
+          <td style="color: grey">184</td>
+          <td style="text-align: right;">0.32</td>
+          <td style="text-align: right;">299</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;keychain&nbsp;=&nbsp;await&nbsp;_get_keychain(ctx,&nbsp;msg.derivation_type)</td>
+        </tr>
+        <tr id="185" style="color: blue;">
+          <td style="color: grey">185</td>
+          <td style="text-align: right;">0.04</td>
+          <td style="text-align: right;">295</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;await&nbsp;func(ctx,&nbsp;msg,&nbsp;keychain)</td>
+        </tr>
+        <tr id="186" style="None">
+          <td style="color: grey">186</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="187" style="color: blue;">
+          <td style="color: grey">187</td>
+          <td style="text-align: right;">0.82</td>
+          <td style="text-align: right;">246</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;wrapper</td>
+        </tr>
+      </tbody>
+    </table>
+  </body>
+</html>

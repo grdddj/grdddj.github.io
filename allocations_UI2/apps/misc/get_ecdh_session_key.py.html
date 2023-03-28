@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>apps/misc/get_ecdh_session_key.py</title>
+    <meta charset="utf-8">
+    <style>body { font-size: 80%; }</style>
+  </head>
+  <body>
+    <table>
+      <thead>
+        <tr>
+          <th style="color: grey">#</th>
+          <th style="text-align: right;">avg</th>
+          <th style="text-align: right;">total</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr id="1" style="None">
+          <td style="color: grey">1</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>from&nbsp;typing&nbsp;import&nbsp;TYPE_CHECKING</td>
+        </tr>
+        <tr id="2" style="None">
+          <td style="color: grey">2</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="3" style="None">
+          <td style="color: grey">3</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>if&nbsp;TYPE_CHECKING:</td>
+        </tr>
+        <tr id="4" style="None">
+          <td style="color: grey">4</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;from&nbsp;trezor.messages&nbsp;import&nbsp;GetECDHSessionKey,&nbsp;ECDHSessionKey</td>
+        </tr>
+        <tr id="5" style="None">
+          <td style="color: grey">5</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;from&nbsp;trezor.wire&nbsp;import&nbsp;Context</td>
+        </tr>
+        <tr id="6" style="None">
+          <td style="color: grey">6</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="7" style="None">
+          <td style="color: grey">7</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>#&nbsp;This&nbsp;module&nbsp;implements&nbsp;the&nbsp;SLIP-0017&nbsp;Elliptic&nbsp;Curve&nbsp;Diffie-Hellman&nbsp;algorithm,&nbsp;using&nbsp;a</td>
+        </tr>
+        <tr id="8" style="None">
+          <td style="color: grey">8</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>#&nbsp;deterministic&nbsp;hierarchy,&nbsp;see&nbsp;https://github.com/satoshilabs/slips/blob/master/slip-0017.md.</td>
+        </tr>
+        <tr id="9" style="None">
+          <td style="color: grey">9</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="10" style="None">
+          <td style="color: grey">10</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="11" style="color: blue;">
+          <td style="color: grey">11</td>
+          <td style="text-align: right;">2.00</td>
+          <td style="text-align: right;">6</td>
+          <td>async&nbsp;def&nbsp;get_ecdh_session_key(ctx:&nbsp;Context,&nbsp;msg:&nbsp;GetECDHSessionKey)&nbsp;->&nbsp;ECDHSessionKey:</td>
+        </tr>
+        <tr id="12" style="color: blue;">
+          <td style="color: grey">12</td>
+          <td style="text-align: right;">1.00</td>
+          <td style="text-align: right;">3</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;from&nbsp;trezor.ui.layouts&nbsp;import&nbsp;confirm_address</td>
+        </tr>
+        <tr id="13" style="color: red;">
+          <td style="color: grey">13</td>
+          <td style="text-align: right;">6.00</td>
+          <td style="text-align: right;">18</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;from&nbsp;.sign_identity&nbsp;import&nbsp;(</td>
+        </tr>
+        <tr id="14" style="None">
+          <td style="color: grey">14</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;get_identity_path,</td>
+        </tr>
+        <tr id="15" style="None">
+          <td style="color: grey">15</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;serialize_identity_without_proto,</td>
+        </tr>
+        <tr id="16" style="None">
+          <td style="color: grey">16</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;serialize_identity,</td>
+        </tr>
+        <tr id="17" style="None">
+          <td style="color: grey">17</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;)</td>
+        </tr>
+        <tr id="18" style="color: blue;">
+          <td style="color: grey">18</td>
+          <td style="text-align: right;">1.00</td>
+          <td style="text-align: right;">3</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;from&nbsp;trezor.wire&nbsp;import&nbsp;DataError</td>
+        </tr>
+        <tr id="19" style="color: blue;">
+          <td style="color: grey">19</td>
+          <td style="text-align: right;">1.00</td>
+          <td style="text-align: right;">3</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;from&nbsp;trezor.messages&nbsp;import&nbsp;ECDHSessionKey</td>
+        </tr>
+        <tr id="20" style="color: red;">
+          <td style="color: grey">20</td>
+          <td style="text-align: right;">6.00</td>
+          <td style="text-align: right;">18</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;from&nbsp;apps.common.keychain&nbsp;import&nbsp;get_keychain</td>
+        </tr>
+        <tr id="21" style="color: blue;">
+          <td style="color: grey">21</td>
+          <td style="text-align: right;">1.00</td>
+          <td style="text-align: right;">3</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;from&nbsp;apps.common.paths&nbsp;import&nbsp;AlwaysMatchingSchema</td>
+        </tr>
+        <tr id="22" style="None">
+          <td style="color: grey">22</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="23" style="None">
+          <td style="color: grey">23</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;msg_identity&nbsp;=&nbsp;msg.identity&nbsp;&nbsp;#&nbsp;local_cache_attribute</td>
+        </tr>
+        <tr id="24" style="None">
+          <td style="color: grey">24</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;peer_public_key&nbsp;=&nbsp;msg.peer_public_key&nbsp;&nbsp;#&nbsp;local_cache_attribute</td>
+        </tr>
+        <tr id="25" style="None">
+          <td style="color: grey">25</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;curve_name&nbsp;=&nbsp;msg.ecdsa_curve_name&nbsp;or&nbsp;"secp256k1"</td>
+        </tr>
+        <tr id="26" style="None">
+          <td style="color: grey">26</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="27" style="color: blue;">
+          <td style="color: grey">27</td>
+          <td style="text-align: right;">3.00</td>
+          <td style="text-align: right;">9</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;keychain&nbsp;=&nbsp;await&nbsp;get_keychain(ctx,&nbsp;curve_name,&nbsp;[AlwaysMatchingSchema])</td>
+        </tr>
+        <tr id="28" style="None">
+          <td style="color: grey">28</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;identity&nbsp;=&nbsp;serialize_identity(msg_identity)</td>
+        </tr>
+        <tr id="29" style="None">
+          <td style="color: grey">29</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="30" style="None">
+          <td style="color: grey">30</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;#&nbsp;require_confirm_ecdh_session_key</td>
+        </tr>
+        <tr id="31" style="color: blue;">
+          <td style="color: grey">31</td>
+          <td style="text-align: right;">2.00</td>
+          <td style="text-align: right;">6</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;proto&nbsp;=&nbsp;msg_identity.proto.upper()&nbsp;if&nbsp;msg_identity.proto&nbsp;else&nbsp;"identity"</td>
+        </tr>
+        <tr id="32" style="None">
+          <td style="color: grey">32</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;await&nbsp;confirm_address(</td>
+        </tr>
+        <tr id="33" style="None">
+          <td style="color: grey">33</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ctx,</td>
+        </tr>
+        <tr id="34" style="color: blue;">
+          <td style="color: grey">34</td>
+          <td style="text-align: right;">4.00</td>
+          <td style="text-align: right;">12</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;f"Decrypt&nbsp;{proto}",</td>
+        </tr>
+        <tr id="35" style="None">
+          <td style="color: grey">35</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;serialize_identity_without_proto(msg_identity),</td>
+        </tr>
+        <tr id="36" style="None">
+          <td style="color: grey">36</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;None,</td>
+        </tr>
+        <tr id="37" style="None">
+          <td style="color: grey">37</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;)</td>
+        </tr>
+        <tr id="38" style="None">
+          <td style="color: grey">38</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;#&nbsp;END&nbsp;require_confirm_ecdh_session_key</td>
+        </tr>
+        <tr id="39" style="None">
+          <td style="color: grey">39</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="40" style="color: blue;">
+          <td style="color: grey">40</td>
+          <td style="text-align: right;">1.00</td>
+          <td style="text-align: right;">3</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;address_n&nbsp;=&nbsp;get_identity_path(identity,&nbsp;msg_identity.index&nbsp;or&nbsp;0,&nbsp;17)</td>
+        </tr>
+        <tr id="41" style="color: blue;">
+          <td style="color: grey">41</td>
+          <td style="text-align: right;">1.00</td>
+          <td style="text-align: right;">3</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;node&nbsp;=&nbsp;keychain.derive(address_n)</td>
+        </tr>
+        <tr id="42" style="None">
+          <td style="color: grey">42</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="43" style="None">
+          <td style="color: grey">43</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;#&nbsp;ecdh</td>
+        </tr>
+        <tr id="44" style="None">
+          <td style="color: grey">44</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;curve_name&nbsp;==&nbsp;"secp256k1":</td>
+        </tr>
+        <tr id="45" style="color: blue;">
+          <td style="color: grey">45</td>
+          <td style="text-align: right;">1.00</td>
+          <td style="text-align: right;">1</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;from&nbsp;trezor.crypto.curve&nbsp;import&nbsp;secp256k1</td>
+        </tr>
+        <tr id="46" style="None">
+          <td style="color: grey">46</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="47" style="color: red;">
+          <td style="color: grey">47</td>
+          <td style="text-align: right;">4.00</td>
+          <td style="text-align: right;">4</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;session_key&nbsp;=&nbsp;secp256k1.multiply(node.private_key(),&nbsp;peer_public_key)</td>
+        </tr>
+        <tr id="48" style="None">
+          <td style="color: grey">48</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;elif&nbsp;curve_name&nbsp;==&nbsp;"nist256p1":</td>
+        </tr>
+        <tr id="49" style="color: blue;">
+          <td style="color: grey">49</td>
+          <td style="text-align: right;">1.00</td>
+          <td style="text-align: right;">1</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;from&nbsp;trezor.crypto.curve&nbsp;import&nbsp;nist256p1</td>
+        </tr>
+        <tr id="50" style="None">
+          <td style="color: grey">50</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="51" style="color: blue;">
+          <td style="color: grey">51</td>
+          <td style="text-align: right;">4.00</td>
+          <td style="text-align: right;">4</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;session_key&nbsp;=&nbsp;nist256p1.multiply(node.private_key(),&nbsp;peer_public_key)</td>
+        </tr>
+        <tr id="52" style="None">
+          <td style="color: grey">52</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;elif&nbsp;curve_name&nbsp;==&nbsp;"curve25519":</td>
+        </tr>
+        <tr id="53" style="color: blue;">
+          <td style="color: grey">53</td>
+          <td style="text-align: right;">1.00</td>
+          <td style="text-align: right;">1</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;from&nbsp;trezor.crypto.curve&nbsp;import&nbsp;curve25519</td>
+        </tr>
+        <tr id="54" style="None">
+          <td style="color: grey">54</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="55" style="None">
+          <td style="color: grey">55</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;peer_public_key[0]&nbsp;!=&nbsp;0x40:</td>
+        </tr>
+        <tr id="56" style="None">
+          <td style="color: grey">56</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;raise&nbsp;DataError("Curve25519&nbsp;public&nbsp;key&nbsp;should&nbsp;start&nbsp;with&nbsp;0x40")</td>
+        </tr>
+        <tr id="57" style="None">
+          <td style="color: grey">57</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;session_key&nbsp;=&nbsp;b"\x04"&nbsp;+&nbsp;curve25519.multiply(</td>
+        </tr>
+        <tr id="58" style="color: red;">
+          <td style="color: grey">58</td>
+          <td style="text-align: right;">9.00</td>
+          <td style="text-align: right;">9</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;node.private_key(),&nbsp;peer_public_key[1:]</td>
+        </tr>
+        <tr id="59" style="None">
+          <td style="color: grey">59</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;)</td>
+        </tr>
+        <tr id="60" style="None">
+          <td style="color: grey">60</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;else:</td>
+        </tr>
+        <tr id="61" style="None">
+          <td style="color: grey">61</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;raise&nbsp;DataError("Unsupported&nbsp;curve&nbsp;for&nbsp;ECDH:&nbsp;"&nbsp;+&nbsp;curve_name)</td>
+        </tr>
+        <tr id="62" style="None">
+          <td style="color: grey">62</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;#&nbsp;END&nbsp;ecdh</td>
+        </tr>
+        <tr id="63" style="None">
+          <td style="color: grey">63</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="64" style="color: red;">
+          <td style="color: grey">64</td>
+          <td style="text-align: right;">7.00</td>
+          <td style="text-align: right;">21</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;ECDHSessionKey(session_key=session_key,&nbsp;public_key=node.public_key())</td>
+        </tr>
+      </tbody>
+    </table>
+  </body>
+</html>

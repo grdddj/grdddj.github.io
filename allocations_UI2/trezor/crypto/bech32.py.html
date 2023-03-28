@@ -1,0 +1,1000 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>trezor/crypto/bech32.py</title>
+    <meta charset="utf-8">
+    <style>body { font-size: 80%; }</style>
+  </head>
+  <body>
+    <table>
+      <thead>
+        <tr>
+          <th style="color: grey">#</th>
+          <th style="text-align: right;">avg</th>
+          <th style="text-align: right;">total</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr id="1" style="color: blue;">
+          <td style="color: grey">1</td>
+          <td style="text-align: right;">1.00</td>
+          <td style="text-align: right;">980</td>
+          <td>#&nbsp;Copyright&nbsp;(c)&nbsp;2017,&nbsp;2020&nbsp;Pieter&nbsp;Wuille</td>
+        </tr>
+        <tr id="2" style="None">
+          <td style="color: grey">2</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>#</td>
+        </tr>
+        <tr id="3" style="None">
+          <td style="color: grey">3</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>#&nbsp;Permission&nbsp;is&nbsp;hereby&nbsp;granted,&nbsp;free&nbsp;of&nbsp;charge,&nbsp;to&nbsp;any&nbsp;person&nbsp;obtaining&nbsp;a&nbsp;copy</td>
+        </tr>
+        <tr id="4" style="None">
+          <td style="color: grey">4</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>#&nbsp;of&nbsp;this&nbsp;software&nbsp;and&nbsp;associated&nbsp;documentation&nbsp;files&nbsp;(the&nbsp;"Software"),&nbsp;to&nbsp;deal</td>
+        </tr>
+        <tr id="5" style="None">
+          <td style="color: grey">5</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>#&nbsp;in&nbsp;the&nbsp;Software&nbsp;without&nbsp;restriction,&nbsp;including&nbsp;without&nbsp;limitation&nbsp;the&nbsp;rights</td>
+        </tr>
+        <tr id="6" style="None">
+          <td style="color: grey">6</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>#&nbsp;to&nbsp;use,&nbsp;copy,&nbsp;modify,&nbsp;merge,&nbsp;publish,&nbsp;distribute,&nbsp;sublicense,&nbsp;and/or&nbsp;sell</td>
+        </tr>
+        <tr id="7" style="None">
+          <td style="color: grey">7</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>#&nbsp;copies&nbsp;of&nbsp;the&nbsp;Software,&nbsp;and&nbsp;to&nbsp;permit&nbsp;persons&nbsp;to&nbsp;whom&nbsp;the&nbsp;Software&nbsp;is</td>
+        </tr>
+        <tr id="8" style="None">
+          <td style="color: grey">8</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>#&nbsp;furnished&nbsp;to&nbsp;do&nbsp;so,&nbsp;subject&nbsp;to&nbsp;the&nbsp;following&nbsp;conditions:</td>
+        </tr>
+        <tr id="9" style="None">
+          <td style="color: grey">9</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>#</td>
+        </tr>
+        <tr id="10" style="None">
+          <td style="color: grey">10</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>#&nbsp;The&nbsp;above&nbsp;copyright&nbsp;notice&nbsp;and&nbsp;this&nbsp;permission&nbsp;notice&nbsp;shall&nbsp;be&nbsp;included&nbsp;in</td>
+        </tr>
+        <tr id="11" style="None">
+          <td style="color: grey">11</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>#&nbsp;all&nbsp;copies&nbsp;or&nbsp;substantial&nbsp;portions&nbsp;of&nbsp;the&nbsp;Software.</td>
+        </tr>
+        <tr id="12" style="None">
+          <td style="color: grey">12</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>#</td>
+        </tr>
+        <tr id="13" style="None">
+          <td style="color: grey">13</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>#&nbsp;THE&nbsp;SOFTWARE&nbsp;IS&nbsp;PROVIDED&nbsp;"AS&nbsp;IS",&nbsp;WITHOUT&nbsp;WARRANTY&nbsp;OF&nbsp;ANY&nbsp;KIND,&nbsp;EXPRESS&nbsp;OR</td>
+        </tr>
+        <tr id="14" style="None">
+          <td style="color: grey">14</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>#&nbsp;IMPLIED,&nbsp;INCLUDING&nbsp;BUT&nbsp;NOT&nbsp;LIMITED&nbsp;TO&nbsp;THE&nbsp;WARRANTIES&nbsp;OF&nbsp;MERCHANTABILITY,</td>
+        </tr>
+        <tr id="15" style="None">
+          <td style="color: grey">15</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>#&nbsp;FITNESS&nbsp;FOR&nbsp;A&nbsp;PARTICULAR&nbsp;PURPOSE&nbsp;AND&nbsp;NONINFRINGEMENT.&nbsp;IN&nbsp;NO&nbsp;EVENT&nbsp;SHALL&nbsp;THE</td>
+        </tr>
+        <tr id="16" style="None">
+          <td style="color: grey">16</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>#&nbsp;AUTHORS&nbsp;OR&nbsp;COPYRIGHT&nbsp;HOLDERS&nbsp;BE&nbsp;LIABLE&nbsp;FOR&nbsp;ANY&nbsp;CLAIM,&nbsp;DAMAGES&nbsp;OR&nbsp;OTHER</td>
+        </tr>
+        <tr id="17" style="None">
+          <td style="color: grey">17</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>#&nbsp;LIABILITY,&nbsp;WHETHER&nbsp;IN&nbsp;AN&nbsp;ACTION&nbsp;OF&nbsp;CONTRACT,&nbsp;TORT&nbsp;OR&nbsp;OTHERWISE,&nbsp;ARISING&nbsp;FROM,</td>
+        </tr>
+        <tr id="18" style="None">
+          <td style="color: grey">18</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>#&nbsp;OUT&nbsp;OF&nbsp;OR&nbsp;IN&nbsp;CONNECTION&nbsp;WITH&nbsp;THE&nbsp;SOFTWARE&nbsp;OR&nbsp;THE&nbsp;USE&nbsp;OR&nbsp;OTHER&nbsp;DEALINGS&nbsp;IN</td>
+        </tr>
+        <tr id="19" style="None">
+          <td style="color: grey">19</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>#&nbsp;THE&nbsp;SOFTWARE.</td>
+        </tr>
+        <tr id="20" style="None">
+          <td style="color: grey">20</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="21" style="None">
+          <td style="color: grey">21</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>"""Reference&nbsp;implementation&nbsp;for&nbsp;Bech32/Bech32m&nbsp;and&nbsp;segwit&nbsp;addresses."""</td>
+        </tr>
+        <tr id="22" style="None">
+          <td style="color: grey">22</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="23" style="color: blue;">
+          <td style="color: grey">23</td>
+          <td style="text-align: right;">2.00</td>
+          <td style="text-align: right;">1960</td>
+          <td>from&nbsp;micropython&nbsp;import&nbsp;const</td>
+        </tr>
+        <tr id="24" style="color: blue;">
+          <td style="color: grey">24</td>
+          <td style="text-align: right;">1.00</td>
+          <td style="text-align: right;">980</td>
+          <td>from&nbsp;trezorcrypto&nbsp;import&nbsp;bech32</td>
+        </tr>
+        <tr id="25" style="None">
+          <td style="color: grey">25</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>from&nbsp;typing&nbsp;import&nbsp;TYPE_CHECKING</td>
+        </tr>
+        <tr id="26" style="None">
+          <td style="color: grey">26</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="27" style="color: blue;">
+          <td style="color: grey">27</td>
+          <td style="text-align: right;">1.00</td>
+          <td style="text-align: right;">980</td>
+          <td>bech32_decode&nbsp;=&nbsp;bech32.decode&nbsp;&nbsp;#&nbsp;reexported</td>
+        </tr>
+        <tr id="28" style="None">
+          <td style="color: grey">28</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="29" style="None">
+          <td style="color: grey">29</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="30" style="None">
+          <td style="color: grey">30</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>if&nbsp;TYPE_CHECKING:</td>
+        </tr>
+        <tr id="31" style="None">
+          <td style="color: grey">31</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;from&nbsp;enum&nbsp;import&nbsp;IntEnum</td>
+        </tr>
+        <tr id="32" style="None">
+          <td style="color: grey">32</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;from&nbsp;typing&nbsp;import&nbsp;Sequence,&nbsp;TypeVar</td>
+        </tr>
+        <tr id="33" style="None">
+          <td style="color: grey">33</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="34" style="None">
+          <td style="color: grey">34</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;A&nbsp;=&nbsp;TypeVar("A")</td>
+        </tr>
+        <tr id="35" style="None">
+          <td style="color: grey">35</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;B&nbsp;=&nbsp;TypeVar("B")</td>
+        </tr>
+        <tr id="36" style="None">
+          <td style="color: grey">36</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;C&nbsp;=&nbsp;TypeVar("C")</td>
+        </tr>
+        <tr id="37" style="None">
+          <td style="color: grey">37</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;#&nbsp;usage:&nbsp;OptionalTuple[int,&nbsp;list[int]]&nbsp;is&nbsp;either&nbsp;(None,&nbsp;None)&nbsp;or&nbsp;(someint,&nbsp;somelist)</td>
+        </tr>
+        <tr id="38" style="None">
+          <td style="color: grey">38</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;#&nbsp;but&nbsp;not&nbsp;(None,&nbsp;somelist)</td>
+        </tr>
+        <tr id="39" style="None">
+          <td style="color: grey">39</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;OptionalTuple2&nbsp;=&nbsp;tuple[None,&nbsp;None]&nbsp;|&nbsp;tuple[A,&nbsp;B]</td>
+        </tr>
+        <tr id="40" style="None">
+          <td style="color: grey">40</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>else:</td>
+        </tr>
+        <tr id="41" style="None">
+          <td style="color: grey">41</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;IntEnum&nbsp;=&nbsp;object</td>
+        </tr>
+        <tr id="42" style="None">
+          <td style="color: grey">42</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="43" style="None">
+          <td style="color: grey">43</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="44" style="color: blue;">
+          <td style="color: grey">44</td>
+          <td style="text-align: right;">2.00</td>
+          <td style="text-align: right;">1960</td>
+          <td>class&nbsp;Encoding(IntEnum):</td>
+        </tr>
+        <tr id="45" style="None">
+          <td style="color: grey">45</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;"""Enumeration&nbsp;type&nbsp;to&nbsp;list&nbsp;the&nbsp;various&nbsp;supported&nbsp;encodings."""</td>
+        </tr>
+        <tr id="46" style="None">
+          <td style="color: grey">46</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="47" style="color: blue;">
+          <td style="color: grey">47</td>
+          <td style="text-align: right;">1.00</td>
+          <td style="text-align: right;">980</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;BECH32&nbsp;=&nbsp;const(1)</td>
+        </tr>
+        <tr id="48" style="color: red;">
+          <td style="color: grey">48</td>
+          <td style="text-align: right;">3.00</td>
+          <td style="text-align: right;">2940</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;BECH32M&nbsp;=&nbsp;const(2)</td>
+        </tr>
+        <tr id="49" style="None">
+          <td style="color: grey">49</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="50" style="None">
+          <td style="color: grey">50</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="51" style="None">
+          <td style="color: grey">51</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>CHARSET&nbsp;=&nbsp;"qpzry9x8gf2tvdw0s3jn54khce6mua7l"</td>
+        </tr>
+        <tr id="52" style="None">
+          <td style="color: grey">52</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>_BECH32M_CONST&nbsp;=&nbsp;const(0x2BC830A3)</td>
+        </tr>
+        <tr id="53" style="None">
+          <td style="color: grey">53</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="54" style="None">
+          <td style="color: grey">54</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="55" style="color: blue;">
+          <td style="color: grey">55</td>
+          <td style="text-align: right;">2.00</td>
+          <td style="text-align: right;">1960</td>
+          <td>def&nbsp;bech32_polymod(values:&nbsp;list[int])&nbsp;->&nbsp;int:</td>
+        </tr>
+        <tr id="56" style="None">
+          <td style="color: grey">56</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;"""Internal&nbsp;function&nbsp;that&nbsp;computes&nbsp;the&nbsp;Bech32&nbsp;checksum."""</td>
+        </tr>
+        <tr id="57" style="color: blue;">
+          <td style="color: grey">57</td>
+          <td style="text-align: right;">2.00</td>
+          <td style="text-align: right;">1268</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;generator&nbsp;=&nbsp;[0x3B6A_57B2,&nbsp;0x2650_8E6D,&nbsp;0x1EA1_19FA,&nbsp;0x3D42_33DD,&nbsp;0x2A14_62B3]</td>
+        </tr>
+        <tr id="58" style="None">
+          <td style="color: grey">58</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;chk&nbsp;=&nbsp;1</td>
+        </tr>
+        <tr id="59" style="None">
+          <td style="color: grey">59</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;for&nbsp;value&nbsp;in&nbsp;values:</td>
+        </tr>
+        <tr id="60" style="None">
+          <td style="color: grey">60</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;top&nbsp;=&nbsp;chk&nbsp;>>&nbsp;25</td>
+        </tr>
+        <tr id="61" style="None">
+          <td style="color: grey">61</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;chk&nbsp;=&nbsp;(chk&nbsp;&&nbsp;0x1FF_FFFF)&nbsp;<<&nbsp;5&nbsp;^&nbsp;value</td>
+        </tr>
+        <tr id="62" style="None">
+          <td style="color: grey">62</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for&nbsp;i&nbsp;in&nbsp;range(5):</td>
+        </tr>
+        <tr id="63" style="None">
+          <td style="color: grey">63</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;chk&nbsp;^=&nbsp;generator[i]&nbsp;if&nbsp;((top&nbsp;>>&nbsp;i)&nbsp;&&nbsp;1)&nbsp;else&nbsp;0</td>
+        </tr>
+        <tr id="64" style="None">
+          <td style="color: grey">64</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;chk</td>
+        </tr>
+        <tr id="65" style="None">
+          <td style="color: grey">65</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="66" style="None">
+          <td style="color: grey">66</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="67" style="color: blue;">
+          <td style="color: grey">67</td>
+          <td style="text-align: right;">1.00</td>
+          <td style="text-align: right;">980</td>
+          <td>def&nbsp;bech32_hrp_expand(hrp:&nbsp;str)&nbsp;->&nbsp;list[int]:</td>
+        </tr>
+        <tr id="68" style="None">
+          <td style="color: grey">68</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;"""Expand&nbsp;the&nbsp;HRP&nbsp;into&nbsp;values&nbsp;for&nbsp;checksum&nbsp;computation."""</td>
+        </tr>
+        <tr id="69" style="color: blue;">
+          <td style="color: grey">69</td>
+          <td style="text-align: right;">1.39</td>
+          <td style="text-align: right;">9380</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;[ord(x)&nbsp;>>&nbsp;5&nbsp;for&nbsp;x&nbsp;in&nbsp;hrp]&nbsp;+&nbsp;[0]&nbsp;+&nbsp;[ord(x)&nbsp;&&nbsp;31&nbsp;for&nbsp;x&nbsp;in&nbsp;hrp]</td>
+        </tr>
+        <tr id="70" style="None">
+          <td style="color: grey">70</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="71" style="None">
+          <td style="color: grey">71</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="72" style="color: blue;">
+          <td style="color: grey">72</td>
+          <td style="text-align: right;">2.00</td>
+          <td style="text-align: right;">1960</td>
+          <td>def&nbsp;_bech32_create_checksum(hrp:&nbsp;str,&nbsp;data:&nbsp;list[int],&nbsp;spec:&nbsp;Encoding)&nbsp;->&nbsp;list[int]:</td>
+        </tr>
+        <tr id="73" style="None">
+          <td style="color: grey">73</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;"""Compute&nbsp;the&nbsp;checksum&nbsp;values&nbsp;given&nbsp;HRP&nbsp;and&nbsp;data."""</td>
+        </tr>
+        <tr id="74" style="None">
+          <td style="color: grey">74</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;values&nbsp;=&nbsp;bech32_hrp_expand(hrp)&nbsp;+&nbsp;data</td>
+        </tr>
+        <tr id="75" style="None">
+          <td style="color: grey">75</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;const&nbsp;=&nbsp;_BECH32M_CONST&nbsp;if&nbsp;spec&nbsp;==&nbsp;Encoding.BECH32M&nbsp;else&nbsp;1</td>
+        </tr>
+        <tr id="76" style="color: red;">
+          <td style="color: grey">76</td>
+          <td style="text-align: right;">4.00</td>
+          <td style="text-align: right;">2536</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;polymod&nbsp;=&nbsp;bech32_polymod(values&nbsp;+&nbsp;[0,&nbsp;0,&nbsp;0,&nbsp;0,&nbsp;0,&nbsp;0])&nbsp;^&nbsp;const</td>
+        </tr>
+        <tr id="77" style="color: blue;">
+          <td style="color: grey">77</td>
+          <td style="text-align: right;">1.00</td>
+          <td style="text-align: right;">5072</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;[(polymod&nbsp;>>&nbsp;5&nbsp;*&nbsp;(5&nbsp;-&nbsp;i))&nbsp;&&nbsp;31&nbsp;for&nbsp;i&nbsp;in&nbsp;range(6)]</td>
+        </tr>
+        <tr id="78" style="None">
+          <td style="color: grey">78</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="79" style="None">
+          <td style="color: grey">79</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="80" style="color: blue;">
+          <td style="color: grey">80</td>
+          <td style="text-align: right;">1.00</td>
+          <td style="text-align: right;">980</td>
+          <td>def&nbsp;bech32_encode(hrp:&nbsp;str,&nbsp;data:&nbsp;list[int],&nbsp;spec:&nbsp;Encoding)&nbsp;->&nbsp;str:</td>
+        </tr>
+        <tr id="81" style="None">
+          <td style="color: grey">81</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;"""Compute&nbsp;a&nbsp;Bech32&nbsp;string&nbsp;given&nbsp;HRP&nbsp;and&nbsp;data&nbsp;values."""</td>
+        </tr>
+        <tr id="82" style="color: blue;">
+          <td style="color: grey">82</td>
+          <td style="text-align: right;">1.00</td>
+          <td style="text-align: right;">634</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;combined&nbsp;=&nbsp;data&nbsp;+&nbsp;_bech32_create_checksum(hrp,&nbsp;data,&nbsp;spec)</td>
+        </tr>
+        <tr id="83" style="color: blue;">
+          <td style="color: grey">83</td>
+          <td style="text-align: right;">0.27</td>
+          <td style="text-align: right;">8557</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;hrp&nbsp;+&nbsp;"1"&nbsp;+&nbsp;"".join([CHARSET[d]&nbsp;for&nbsp;d&nbsp;in&nbsp;combined])</td>
+        </tr>
+        <tr id="84" style="None">
+          <td style="color: grey">84</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="85" style="None">
+          <td style="color: grey">85</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="86" style="color: red;">
+          <td style="color: grey">86</td>
+          <td style="text-align: right;">3.00</td>
+          <td style="text-align: right;">2940</td>
+          <td>def&nbsp;convertbits(</td>
+        </tr>
+        <tr id="87" style="None">
+          <td style="color: grey">87</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;data:&nbsp;Sequence[int],&nbsp;frombits:&nbsp;int,&nbsp;tobits:&nbsp;int,&nbsp;arbitrary_input:&nbsp;bool&nbsp;=&nbsp;True</td>
+        </tr>
+        <tr id="88" style="None">
+          <td style="color: grey">88</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>)&nbsp;->&nbsp;list[int]:</td>
+        </tr>
+        <tr id="89" style="None">
+          <td style="color: grey">89</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;"""General&nbsp;power-of-2&nbsp;base&nbsp;conversion.</td>
+        </tr>
+        <tr id="90" style="None">
+          <td style="color: grey">90</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="91" style="None">
+          <td style="color: grey">91</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;The&nbsp;`arbitrary_input`&nbsp;parameter&nbsp;specifies&nbsp;what&nbsp;happens&nbsp;when&nbsp;the&nbsp;total&nbsp;length</td>
+        </tr>
+        <tr id="92" style="None">
+          <td style="color: grey">92</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;of&nbsp;input&nbsp;bits&nbsp;is&nbsp;not&nbsp;a&nbsp;multiple&nbsp;of&nbsp;`tobits`.</td>
+        </tr>
+        <tr id="93" style="None">
+          <td style="color: grey">93</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;If&nbsp;True&nbsp;(default),&nbsp;the&nbsp;overflowing&nbsp;bits&nbsp;are&nbsp;zero-padded&nbsp;to&nbsp;the&nbsp;right.</td>
+        </tr>
+        <tr id="94" style="None">
+          <td style="color: grey">94</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;If&nbsp;False,&nbsp;the&nbsp;input&nbsp;must&nbsp;must&nbsp;be&nbsp;a&nbsp;valid&nbsp;output&nbsp;of&nbsp;`convertbits()`&nbsp;in&nbsp;the&nbsp;opposite</td>
+        </tr>
+        <tr id="95" style="None">
+          <td style="color: grey">95</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;direction.</td>
+        </tr>
+        <tr id="96" style="None">
+          <td style="color: grey">96</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;Namely:</td>
+        </tr>
+        <tr id="97" style="None">
+          <td style="color: grey">97</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;(a)&nbsp;the&nbsp;overflow&nbsp;must&nbsp;only&nbsp;be&nbsp;the&nbsp;zero&nbsp;padding</td>
+        </tr>
+        <tr id="98" style="None">
+          <td style="color: grey">98</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;(b)&nbsp;length&nbsp;of&nbsp;the&nbsp;overflow&nbsp;is&nbsp;less&nbsp;than&nbsp;`frombits`,&nbsp;meaning&nbsp;that&nbsp;there&nbsp;is&nbsp;no</td>
+        </tr>
+        <tr id="99" style="None">
+          <td style="color: grey">99</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;additional&nbsp;all-zero&nbsp;`frombits`-sized&nbsp;group&nbsp;at&nbsp;the&nbsp;end.</td>
+        </tr>
+        <tr id="100" style="None">
+          <td style="color: grey">100</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;If&nbsp;both&nbsp;conditions&nbsp;hold,&nbsp;the&nbsp;all-zero&nbsp;overflow&nbsp;is&nbsp;discarded.</td>
+        </tr>
+        <tr id="101" style="None">
+          <td style="color: grey">101</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;Otherwise&nbsp;a&nbsp;ValueError&nbsp;is&nbsp;raised.</td>
+        </tr>
+        <tr id="102" style="None">
+          <td style="color: grey">102</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;"""</td>
+        </tr>
+        <tr id="103" style="None">
+          <td style="color: grey">103</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;acc&nbsp;=&nbsp;0</td>
+        </tr>
+        <tr id="104" style="None">
+          <td style="color: grey">104</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;bits&nbsp;=&nbsp;0</td>
+        </tr>
+        <tr id="105" style="color: blue;">
+          <td style="color: grey">105</td>
+          <td style="text-align: right;">2.00</td>
+          <td style="text-align: right;">6504</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;ret&nbsp;=&nbsp;[]</td>
+        </tr>
+        <tr id="106" style="None">
+          <td style="color: grey">106</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;maxv&nbsp;=&nbsp;(1&nbsp;<<&nbsp;tobits)&nbsp;-&nbsp;1</td>
+        </tr>
+        <tr id="107" style="None">
+          <td style="color: grey">107</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;max_acc&nbsp;=&nbsp;(1&nbsp;<<&nbsp;(frombits&nbsp;+&nbsp;tobits&nbsp;-&nbsp;1))&nbsp;-&nbsp;1</td>
+        </tr>
+        <tr id="108" style="None">
+          <td style="color: grey">108</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;for&nbsp;value&nbsp;in&nbsp;data:</td>
+        </tr>
+        <tr id="109" style="None">
+          <td style="color: grey">109</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;value&nbsp;<&nbsp;0&nbsp;or&nbsp;(value&nbsp;>>&nbsp;frombits):</td>
+        </tr>
+        <tr id="110" style="None">
+          <td style="color: grey">110</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;raise&nbsp;ValueError&nbsp;&nbsp;#&nbsp;input&nbsp;value&nbsp;does&nbsp;not&nbsp;match&nbsp;`frombits`&nbsp;size</td>
+        </tr>
+        <tr id="111" style="None">
+          <td style="color: grey">111</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;acc&nbsp;=&nbsp;((acc&nbsp;<<&nbsp;frombits)&nbsp;|&nbsp;value)&nbsp;&&nbsp;max_acc</td>
+        </tr>
+        <tr id="112" style="None">
+          <td style="color: grey">112</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;bits&nbsp;+=&nbsp;frombits</td>
+        </tr>
+        <tr id="113" style="None">
+          <td style="color: grey">113</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;while&nbsp;bits&nbsp;>=&nbsp;tobits:</td>
+        </tr>
+        <tr id="114" style="None">
+          <td style="color: grey">114</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;bits&nbsp;-=&nbsp;tobits</td>
+        </tr>
+        <tr id="115" style="color: blue;">
+          <td style="color: grey">115</td>
+          <td style="text-align: right;">0.04</td>
+          <td style="text-align: right;">10542</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ret.append((acc&nbsp;>>&nbsp;bits)&nbsp;&&nbsp;maxv)</td>
+        </tr>
+        <tr id="116" style="None">
+          <td style="color: grey">116</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="117" style="None">
+          <td style="color: grey">117</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;arbitrary_input:</td>
+        </tr>
+        <tr id="118" style="None">
+          <td style="color: grey">118</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;bits:</td>
+        </tr>
+        <tr id="119" style="None">
+          <td style="color: grey">119</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#&nbsp;append&nbsp;remaining&nbsp;bits,&nbsp;zero-padded&nbsp;from&nbsp;right</td>
+        </tr>
+        <tr id="120" style="None">
+          <td style="color: grey">120</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ret.append((acc&nbsp;<<&nbsp;(tobits&nbsp;-&nbsp;bits))&nbsp;&&nbsp;maxv)</td>
+        </tr>
+        <tr id="121" style="None">
+          <td style="color: grey">121</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;elif&nbsp;bits&nbsp;>=&nbsp;frombits&nbsp;or&nbsp;((acc&nbsp;<<&nbsp;(tobits&nbsp;-&nbsp;bits))&nbsp;&&nbsp;maxv):</td>
+        </tr>
+        <tr id="122" style="None">
+          <td style="color: grey">122</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#&nbsp;(1)&nbsp;either&nbsp;there&nbsp;is&nbsp;a&nbsp;superfluous&nbsp;group&nbsp;at&nbsp;end&nbsp;of&nbsp;input,&nbsp;and/or</td>
+        </tr>
+        <tr id="123" style="None">
+          <td style="color: grey">123</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#&nbsp;(2)&nbsp;the&nbsp;remainder&nbsp;is&nbsp;nonzero</td>
+        </tr>
+        <tr id="124" style="None">
+          <td style="color: grey">124</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;raise&nbsp;ValueError</td>
+        </tr>
+        <tr id="125" style="None">
+          <td style="color: grey">125</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="126" style="color: blue;">
+          <td style="color: grey">126</td>
+          <td style="text-align: right;">1.72</td>
+          <td style="text-align: right;">5595</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;ret</td>
+        </tr>
+        <tr id="127" style="None">
+          <td style="color: grey">127</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="128" style="None">
+          <td style="color: grey">128</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="129" style="color: blue;">
+          <td style="color: grey">129</td>
+          <td style="text-align: right;">1.00</td>
+          <td style="text-align: right;">980</td>
+          <td>def&nbsp;decode(hrp:&nbsp;str,&nbsp;addr:&nbsp;str)&nbsp;->&nbsp;OptionalTuple2[int,&nbsp;bytes]:</td>
+        </tr>
+        <tr id="130" style="None">
+          <td style="color: grey">130</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;"""Decode&nbsp;a&nbsp;segwit&nbsp;address."""</td>
+        </tr>
+        <tr id="131" style="color: blue;">
+          <td style="color: grey">131</td>
+          <td style="text-align: right;">1.00</td>
+          <td style="text-align: right;">2018</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;from&nbsp;trezorcrypto&nbsp;import&nbsp;bech32</td>
+        </tr>
+        <tr id="132" style="None">
+          <td style="color: grey">132</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="133" style="None">
+          <td style="color: grey">133</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;try:</td>
+        </tr>
+        <tr id="134" style="color: red;">
+          <td style="color: grey">134</td>
+          <td style="text-align: right;">3.00</td>
+          <td style="text-align: right;">6054</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;hrpgot,&nbsp;data,&nbsp;spec&nbsp;=&nbsp;bech32.decode(addr)</td>
+        </tr>
+        <tr id="135" style="color: blue;">
+          <td style="color: grey">135</td>
+          <td style="text-align: right;">3.00</td>
+          <td style="text-align: right;">6054</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;decoded&nbsp;=&nbsp;bytes(convertbits(data[1:],&nbsp;5,&nbsp;8,&nbsp;False))</td>
+        </tr>
+        <tr id="136" style="None">
+          <td style="color: grey">136</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;except&nbsp;ValueError:</td>
+        </tr>
+        <tr id="137" style="None">
+          <td style="color: grey">137</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;(None,&nbsp;None)</td>
+        </tr>
+        <tr id="138" style="None">
+          <td style="color: grey">138</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;hrpgot&nbsp;!=&nbsp;hrp:</td>
+        </tr>
+        <tr id="139" style="None">
+          <td style="color: grey">139</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;(None,&nbsp;None)</td>
+        </tr>
+        <tr id="140" style="None">
+          <td style="color: grey">140</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;not&nbsp;2&nbsp;<=&nbsp;len(decoded)&nbsp;<=&nbsp;40:</td>
+        </tr>
+        <tr id="141" style="None">
+          <td style="color: grey">141</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;(None,&nbsp;None)</td>
+        </tr>
+        <tr id="142" style="None">
+          <td style="color: grey">142</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;data[0]&nbsp;>&nbsp;16:</td>
+        </tr>
+        <tr id="143" style="None">
+          <td style="color: grey">143</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;(None,&nbsp;None)</td>
+        </tr>
+        <tr id="144" style="color: blue;">
+          <td style="color: grey">144</td>
+          <td style="text-align: right;">0.30</td>
+          <td style="text-align: right;">604</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;data[0]&nbsp;==&nbsp;0&nbsp;and&nbsp;len(decoded)&nbsp;not&nbsp;in&nbsp;(20,&nbsp;32):</td>
+        </tr>
+        <tr id="145" style="None">
+          <td style="color: grey">145</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;(None,&nbsp;None)</td>
+        </tr>
+        <tr id="146" style="None">
+          <td style="color: grey">146</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(</td>
+        </tr>
+        <tr id="147" style="None">
+          <td style="color: grey">147</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;data[0]&nbsp;==&nbsp;0</td>
+        </tr>
+        <tr id="148" style="None">
+          <td style="color: grey">148</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;and&nbsp;spec&nbsp;!=&nbsp;Encoding.BECH32</td>
+        </tr>
+        <tr id="149" style="None">
+          <td style="color: grey">149</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;or&nbsp;data[0]&nbsp;!=&nbsp;0</td>
+        </tr>
+        <tr id="150" style="None">
+          <td style="color: grey">150</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;and&nbsp;spec&nbsp;!=&nbsp;Encoding.BECH32M</td>
+        </tr>
+        <tr id="151" style="None">
+          <td style="color: grey">151</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;):</td>
+        </tr>
+        <tr id="152" style="None">
+          <td style="color: grey">152</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;(None,&nbsp;None)</td>
+        </tr>
+        <tr id="153" style="color: blue;">
+          <td style="color: grey">153</td>
+          <td style="text-align: right;">1.19</td>
+          <td style="text-align: right;">2403</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;(data[0],&nbsp;decoded)</td>
+        </tr>
+        <tr id="154" style="None">
+          <td style="color: grey">154</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="155" style="None">
+          <td style="color: grey">155</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="156" style="color: blue;">
+          <td style="color: grey">156</td>
+          <td style="text-align: right;">2.00</td>
+          <td style="text-align: right;">1958</td>
+          <td>def&nbsp;encode(hrp:&nbsp;str,&nbsp;witver:&nbsp;int,&nbsp;witprog:&nbsp;bytes)&nbsp;->&nbsp;str&nbsp;|&nbsp;None:</td>
+        </tr>
+        <tr id="157" style="None">
+          <td style="color: grey">157</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;"""Encode&nbsp;a&nbsp;segwit&nbsp;address."""</td>
+        </tr>
+        <tr id="158" style="None">
+          <td style="color: grey">158</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;data&nbsp;=&nbsp;convertbits(witprog,&nbsp;8,&nbsp;5)</td>
+        </tr>
+        <tr id="159" style="None">
+          <td style="color: grey">159</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;spec&nbsp;=&nbsp;Encoding.BECH32&nbsp;if&nbsp;witver&nbsp;==&nbsp;0&nbsp;else&nbsp;Encoding.BECH32M</td>
+        </tr>
+        <tr id="160" style="color: red;">
+          <td style="color: grey">160</td>
+          <td style="text-align: right;">4.00</td>
+          <td style="text-align: right;">1540</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;ret&nbsp;=&nbsp;bech32_encode(hrp,&nbsp;[witver]&nbsp;+&nbsp;data,&nbsp;spec)</td>
+        </tr>
+        <tr id="161" style="None">
+          <td style="color: grey">161</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;decode(hrp,&nbsp;ret)&nbsp;==&nbsp;(None,&nbsp;None):</td>
+        </tr>
+        <tr id="162" style="None">
+          <td style="color: grey">162</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;None</td>
+        </tr>
+        <tr id="163" style="None">
+          <td style="color: grey">163</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;ret</td>
+        </tr>
+      </tbody>
+    </table>
+  </body>
+</html>

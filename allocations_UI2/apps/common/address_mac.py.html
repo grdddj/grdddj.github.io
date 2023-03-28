@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>apps/common/address_mac.py</title>
+    <meta charset="utf-8">
+    <style>body { font-size: 80%; }</style>
+  </head>
+  <body>
+    <table>
+      <thead>
+        <tr>
+          <th style="color: grey">#</th>
+          <th style="text-align: right;">avg</th>
+          <th style="text-align: right;">total</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr id="1" style="None">
+          <td style="color: grey">1</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>from&nbsp;typing&nbsp;import&nbsp;TYPE_CHECKING</td>
+        </tr>
+        <tr id="2" style="None">
+          <td style="color: grey">2</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="3" style="color: red;">
+          <td style="color: grey">3</td>
+          <td style="text-align: right;">2.00</td>
+          <td style="text-align: right;">626</td>
+          <td>from&nbsp;trezor&nbsp;import&nbsp;utils</td>
+        </tr>
+        <tr id="4" style="None">
+          <td style="color: grey">4</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="5" style="None">
+          <td style="color: grey">5</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>if&nbsp;TYPE_CHECKING:</td>
+        </tr>
+        <tr id="6" style="None">
+          <td style="color: grey">6</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;from&nbsp;apps.common.keychain&nbsp;import&nbsp;Keychain</td>
+        </tr>
+        <tr id="7" style="None">
+          <td style="color: grey">7</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="8" style="color: red;">
+          <td style="color: grey">8</td>
+          <td style="text-align: right;">2.00</td>
+          <td style="text-align: right;">626</td>
+          <td>_ADDRESS_MAC_KEY_PATH&nbsp;=&nbsp;[b"SLIP-0024",&nbsp;b"Address&nbsp;MAC&nbsp;key"]</td>
+        </tr>
+        <tr id="9" style="None">
+          <td style="color: grey">9</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="10" style="None">
+          <td style="color: grey">10</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="11" style="color: red;">
+          <td style="color: grey">11</td>
+          <td style="text-align: right;">2.00</td>
+          <td style="text-align: right;">626</td>
+          <td>def&nbsp;check_address_mac(</td>
+        </tr>
+        <tr id="12" style="None">
+          <td style="color: grey">12</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;address:&nbsp;str,&nbsp;mac:&nbsp;bytes,&nbsp;slip44:&nbsp;int,&nbsp;keychain:&nbsp;Keychain</td>
+        </tr>
+        <tr id="13" style="None">
+          <td style="color: grey">13</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>)&nbsp;->&nbsp;None:</td>
+        </tr>
+        <tr id="14" style="color: blue;">
+          <td style="color: grey">14</td>
+          <td style="text-align: right;">1.00</td>
+          <td style="text-align: right;">6</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;from&nbsp;trezor&nbsp;import&nbsp;wire</td>
+        </tr>
+        <tr id="15" style="color: blue;">
+          <td style="color: grey">15</td>
+          <td style="text-align: right;">1.00</td>
+          <td style="text-align: right;">6</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;from&nbsp;trezor.crypto&nbsp;import&nbsp;hashlib</td>
+        </tr>
+        <tr id="16" style="None">
+          <td style="color: grey">16</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="17" style="None">
+          <td style="color: grey">17</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;expected_mac&nbsp;=&nbsp;get_address_mac(address,&nbsp;slip44,&nbsp;keychain)</td>
+        </tr>
+        <tr id="18" style="None">
+          <td style="color: grey">18</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;len(mac)&nbsp;!=&nbsp;hashlib.sha256.digest_size&nbsp;or&nbsp;not&nbsp;utils.consteq(expected_mac,&nbsp;mac):</td>
+        </tr>
+        <tr id="19" style="color: blue;">
+          <td style="color: grey">19</td>
+          <td style="text-align: right;">0.67</td>
+          <td style="text-align: right;">4</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;raise&nbsp;wire.DataError("Invalid&nbsp;address&nbsp;MAC.")</td>
+        </tr>
+        <tr id="20" style="None">
+          <td style="color: grey">20</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="21" style="None">
+          <td style="color: grey">21</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="22" style="color: red;">
+          <td style="color: grey">22</td>
+          <td style="text-align: right;">1.02</td>
+          <td style="text-align: right;">318</td>
+          <td>def&nbsp;get_address_mac(address:&nbsp;str,&nbsp;slip44:&nbsp;int,&nbsp;keychain:&nbsp;Keychain)&nbsp;->&nbsp;bytes:</td>
+        </tr>
+        <tr id="23" style="color: blue;">
+          <td style="color: grey">23</td>
+          <td style="text-align: right;">1.00</td>
+          <td style="text-align: right;">195</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;from&nbsp;trezor.crypto&nbsp;import&nbsp;hmac</td>
+        </tr>
+        <tr id="24" style="color: blue;">
+          <td style="color: grey">24</td>
+          <td style="text-align: right;">1.00</td>
+          <td style="text-align: right;">195</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;from&nbsp;.writers&nbsp;import&nbsp;write_bytes_unchecked,&nbsp;write_compact_size,&nbsp;write_uint32_le</td>
+        </tr>
+        <tr id="25" style="None">
+          <td style="color: grey">25</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="26" style="None">
+          <td style="color: grey">26</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;#&nbsp;k&nbsp;=&nbsp;Key(m/"SLIP-0024"/"Address&nbsp;MAC&nbsp;key")</td>
+        </tr>
+        <tr id="27" style="color: red;">
+          <td style="color: grey">27</td>
+          <td style="text-align: right;">3.00</td>
+          <td style="text-align: right;">585</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;node&nbsp;=&nbsp;keychain.derive_slip21(_ADDRESS_MAC_KEY_PATH)</td>
+        </tr>
+        <tr id="28" style="None">
+          <td style="color: grey">28</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="29" style="None">
+          <td style="color: grey">29</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;#&nbsp;mac&nbsp;=&nbsp;HMAC-SHA256(key&nbsp;=&nbsp;k,&nbsp;msg&nbsp;=&nbsp;slip44&nbsp;||&nbsp;address)</td>
+        </tr>
+        <tr id="30" style="None">
+          <td style="color: grey">30</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;mac&nbsp;=&nbsp;utils.HashWriter(hmac(hmac.SHA256,&nbsp;node.key()))</td>
+        </tr>
+        <tr id="31" style="color: blue;">
+          <td style="color: grey">31</td>
+          <td style="text-align: right;">1.00</td>
+          <td style="text-align: right;">195</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;address_bytes&nbsp;=&nbsp;address.encode()</td>
+        </tr>
+        <tr id="32" style="None">
+          <td style="color: grey">32</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;write_uint32_le(mac,&nbsp;slip44)</td>
+        </tr>
+        <tr id="33" style="None">
+          <td style="color: grey">33</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;write_compact_size(mac,&nbsp;len(address_bytes))</td>
+        </tr>
+        <tr id="34" style="None">
+          <td style="color: grey">34</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;write_bytes_unchecked(mac,&nbsp;address_bytes)</td>
+        </tr>
+        <tr id="35" style="None">
+          <td style="color: grey">35</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;mac.get_digest()</td>
+        </tr>
+      </tbody>
+    </table>
+  </body>
+</html>

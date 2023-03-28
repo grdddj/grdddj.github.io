@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>apps/stellar/writers.py</title>
+    <meta charset="utf-8">
+    <style>body { font-size: 80%; }</style>
+  </head>
+  <body>
+    <table>
+      <thead>
+        <tr>
+          <th style="color: grey">#</th>
+          <th style="text-align: right;">avg</th>
+          <th style="text-align: right;">total</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr id="1" style="None">
+          <td style="color: grey">1</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>from&nbsp;typing&nbsp;import&nbsp;TYPE_CHECKING</td>
+        </tr>
+        <tr id="2" style="None">
+          <td style="color: grey">2</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="3" style="color: red;">
+          <td style="color: grey">3</td>
+          <td style="text-align: right;">5.00</td>
+          <td style="text-align: right;">145</td>
+          <td>import&nbsp;apps.common.writers&nbsp;as&nbsp;writers</td>
+        </tr>
+        <tr id="4" style="None">
+          <td style="color: grey">4</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="5" style="None">
+          <td style="color: grey">5</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>#&nbsp;Reexporting&nbsp;to&nbsp;other&nbsp;modules</td>
+        </tr>
+        <tr id="6" style="None">
+          <td style="color: grey">6</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>write_bytes_fixed&nbsp;=&nbsp;writers.write_bytes_fixed</td>
+        </tr>
+        <tr id="7" style="color: blue;">
+          <td style="color: grey">7</td>
+          <td style="text-align: right;">1.00</td>
+          <td style="text-align: right;">29</td>
+          <td>write_uint32&nbsp;=&nbsp;writers.write_uint32_be</td>
+        </tr>
+        <tr id="8" style="None">
+          <td style="color: grey">8</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>write_uint64&nbsp;=&nbsp;writers.write_uint64_be</td>
+        </tr>
+        <tr id="9" style="None">
+          <td style="color: grey">9</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="10" style="None">
+          <td style="color: grey">10</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>if&nbsp;TYPE_CHECKING:</td>
+        </tr>
+        <tr id="11" style="None">
+          <td style="color: grey">11</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;from&nbsp;typing&nbsp;import&nbsp;AnyStr</td>
+        </tr>
+        <tr id="12" style="None">
+          <td style="color: grey">12</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="13" style="None">
+          <td style="color: grey">13</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;from&nbsp;trezor.utils&nbsp;import&nbsp;Writer</td>
+        </tr>
+        <tr id="14" style="None">
+          <td style="color: grey">14</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="15" style="None">
+          <td style="color: grey">15</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="16" style="color: red;">
+          <td style="color: grey">16</td>
+          <td style="text-align: right;">2.00</td>
+          <td style="text-align: right;">58</td>
+          <td>def&nbsp;write_string(w:&nbsp;Writer,&nbsp;s:&nbsp;AnyStr)&nbsp;->&nbsp;None:</td>
+        </tr>
+        <tr id="17" style="None">
+          <td style="color: grey">17</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;"""Write&nbsp;XDR&nbsp;string&nbsp;padded&nbsp;to&nbsp;a&nbsp;multiple&nbsp;of&nbsp;4&nbsp;bytes."""</td>
+        </tr>
+        <tr id="18" style="None">
+          <td style="color: grey">18</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;#&nbsp;NOTE:&nbsp;2&nbsp;bytes&nbsp;smaller&nbsp;than&nbsp;if-else</td>
+        </tr>
+        <tr id="19" style="color: blue;">
+          <td style="color: grey">19</td>
+          <td style="text-align: right;">0.67</td>
+          <td style="text-align: right;">4</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;buf&nbsp;=&nbsp;s.encode()&nbsp;if&nbsp;isinstance(s,&nbsp;str)&nbsp;else&nbsp;s</td>
+        </tr>
+        <tr id="20" style="None">
+          <td style="color: grey">20</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;write_uint32(w,&nbsp;len(buf))</td>
+        </tr>
+        <tr id="21" style="None">
+          <td style="color: grey">21</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;writers.write_bytes_unchecked(w,&nbsp;buf)</td>
+        </tr>
+        <tr id="22" style="None">
+          <td style="color: grey">22</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;#&nbsp;if&nbsp;len&nbsp;isn't&nbsp;a&nbsp;multiple&nbsp;of&nbsp;4,&nbsp;add&nbsp;padding&nbsp;bytes</td>
+        </tr>
+        <tr id="23" style="None">
+          <td style="color: grey">23</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;remainder&nbsp;=&nbsp;len(buf)&nbsp;%&nbsp;4</td>
+        </tr>
+        <tr id="24" style="None">
+          <td style="color: grey">24</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;remainder:</td>
+        </tr>
+        <tr id="25" style="color: red;">
+          <td style="color: grey">25</td>
+          <td style="text-align: right;">4.00</td>
+          <td style="text-align: right;">24</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;writers.write_bytes_unchecked(w,&nbsp;bytes([0]&nbsp;*&nbsp;(4&nbsp;-&nbsp;remainder)))</td>
+        </tr>
+        <tr id="26" style="None">
+          <td style="color: grey">26</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="27" style="None">
+          <td style="color: grey">27</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="28" style="color: blue;">
+          <td style="color: grey">28</td>
+          <td style="text-align: right;">1.00</td>
+          <td style="text-align: right;">29</td>
+          <td>def&nbsp;write_bool(w:&nbsp;Writer,&nbsp;val:&nbsp;bool)&nbsp;->&nbsp;None:</td>
+        </tr>
+        <tr id="29" style="None">
+          <td style="color: grey">29</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;#&nbsp;NOTE:&nbsp;10&nbsp;bytes&nbsp;smaller&nbsp;than&nbsp;if-else</td>
+        </tr>
+        <tr id="30" style="None">
+          <td style="color: grey">30</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;write_uint32(w,&nbsp;1&nbsp;if&nbsp;val&nbsp;else&nbsp;0)</td>
+        </tr>
+        <tr id="31" style="None">
+          <td style="color: grey">31</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="32" style="None">
+          <td style="color: grey">32</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="33" style="color: red;">
+          <td style="color: grey">33</td>
+          <td style="text-align: right;">3.00</td>
+          <td style="text-align: right;">87</td>
+          <td>def&nbsp;write_pubkey(w:&nbsp;Writer,&nbsp;address:&nbsp;str)&nbsp;->&nbsp;None:</td>
+        </tr>
+        <tr id="34" style="color: red;">
+          <td style="color: grey">34</td>
+          <td style="text-align: right;">1.00</td>
+          <td style="text-align: right;">68</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;from&nbsp;.helpers&nbsp;import&nbsp;public_key_from_address</td>
+        </tr>
+        <tr id="35" style="None">
+          <td style="color: grey">35</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="36" style="None">
+          <td style="color: grey">36</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;#&nbsp;first&nbsp;4&nbsp;bytes&nbsp;of&nbsp;an&nbsp;address&nbsp;are&nbsp;the&nbsp;type,&nbsp;there's&nbsp;only&nbsp;one&nbsp;type&nbsp;(0)</td>
+        </tr>
+        <tr id="37" style="None">
+          <td style="color: grey">37</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;write_uint32(w,&nbsp;0)</td>
+        </tr>
+        <tr id="38" style="None">
+          <td style="color: grey">38</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;writers.write_bytes_fixed(w,&nbsp;public_key_from_address(address),&nbsp;32)</td>
+        </tr>
+      </tbody>
+    </table>
+  </body>
+</html>

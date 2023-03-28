@@ -1,0 +1,1402 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>apps/management/reset_device/__init__.py</title>
+    <meta charset="utf-8">
+    <style>body { font-size: 80%; }</style>
+  </head>
+  <body>
+    <table>
+      <thead>
+        <tr>
+          <th style="color: grey">#</th>
+          <th style="text-align: right;">avg</th>
+          <th style="text-align: right;">total</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr id="1" style="None">
+          <td style="color: grey">1</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>from&nbsp;typing&nbsp;import&nbsp;TYPE_CHECKING</td>
+        </tr>
+        <tr id="2" style="None">
+          <td style="color: grey">2</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="3" style="None">
+          <td style="color: grey">3</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>import&nbsp;storage</td>
+        </tr>
+        <tr id="4" style="color: blue;">
+          <td style="color: grey">4</td>
+          <td style="text-align: right;">1.00</td>
+          <td style="text-align: right;">38</td>
+          <td>import&nbsp;storage.device&nbsp;as&nbsp;storage_device</td>
+        </tr>
+        <tr id="5" style="color: red;">
+          <td style="color: grey">5</td>
+          <td style="text-align: right;">6.00</td>
+          <td style="text-align: right;">228</td>
+          <td>from&nbsp;trezor.crypto&nbsp;import&nbsp;slip39</td>
+        </tr>
+        <tr id="6" style="color: red;">
+          <td style="color: grey">6</td>
+          <td style="text-align: right;">5.68</td>
+          <td style="text-align: right;">216</td>
+          <td>from&nbsp;trezor.enums&nbsp;import&nbsp;BackupType</td>
+        </tr>
+        <tr id="7" style="color: blue;">
+          <td style="color: grey">7</td>
+          <td style="text-align: right;">1.00</td>
+          <td style="text-align: right;">38</td>
+          <td>from&nbsp;trezor.wire&nbsp;import&nbsp;ProcessError</td>
+        </tr>
+        <tr id="8" style="None">
+          <td style="color: grey">8</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="9" style="color: red;">
+          <td style="color: grey">9</td>
+          <td style="text-align: right;">6.50</td>
+          <td style="text-align: right;">247</td>
+          <td>from&nbsp;.&nbsp;import&nbsp;layout</td>
+        </tr>
+        <tr id="10" style="None">
+          <td style="color: grey">10</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="11" style="None">
+          <td style="color: grey">11</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>if&nbsp;__debug__:</td>
+        </tr>
+        <tr id="12" style="None">
+          <td style="color: grey">12</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;import&nbsp;storage.debug</td>
+        </tr>
+        <tr id="13" style="None">
+          <td style="color: grey">13</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="14" style="None">
+          <td style="color: grey">14</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>if&nbsp;TYPE_CHECKING:</td>
+        </tr>
+        <tr id="15" style="None">
+          <td style="color: grey">15</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;from&nbsp;trezor.messages&nbsp;import&nbsp;ResetDevice</td>
+        </tr>
+        <tr id="16" style="None">
+          <td style="color: grey">16</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;from&nbsp;trezor.wire&nbsp;import&nbsp;Context</td>
+        </tr>
+        <tr id="17" style="None">
+          <td style="color: grey">17</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;from&nbsp;trezor.messages&nbsp;import&nbsp;Success</td>
+        </tr>
+        <tr id="18" style="None">
+          <td style="color: grey">18</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="19" style="None">
+          <td style="color: grey">19</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="20" style="None">
+          <td style="color: grey">20</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>BAK_T_BIP39&nbsp;=&nbsp;BackupType.Bip39&nbsp;&nbsp;#&nbsp;global_import_cache</td>
+        </tr>
+        <tr id="21" style="color: blue;">
+          <td style="color: grey">21</td>
+          <td style="text-align: right;">1.00</td>
+          <td style="text-align: right;">38</td>
+          <td>BAK_T_SLIP39_BASIC&nbsp;=&nbsp;BackupType.Slip39_Basic&nbsp;&nbsp;#&nbsp;global_import_cache</td>
+        </tr>
+        <tr id="22" style="None">
+          <td style="color: grey">22</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>BAK_T_SLIP39_ADVANCED&nbsp;=&nbsp;BackupType.Slip39_Advanced&nbsp;&nbsp;#&nbsp;global_import_cache</td>
+        </tr>
+        <tr id="23" style="color: blue;">
+          <td style="color: grey">23</td>
+          <td style="text-align: right;">1.00</td>
+          <td style="text-align: right;">38</td>
+          <td>_DEFAULT_BACKUP_TYPE&nbsp;=&nbsp;BAK_T_BIP39</td>
+        </tr>
+        <tr id="24" style="None">
+          <td style="color: grey">24</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="25" style="None">
+          <td style="color: grey">25</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="26" style="color: blue;">
+          <td style="color: grey">26</td>
+          <td style="text-align: right;">1.00</td>
+          <td style="text-align: right;">38</td>
+          <td>async&nbsp;def&nbsp;reset_device(ctx:&nbsp;Context,&nbsp;msg:&nbsp;ResetDevice)&nbsp;->&nbsp;Success:</td>
+        </tr>
+        <tr id="27" style="color: blue;">
+          <td style="color: grey">27</td>
+          <td style="text-align: right;">1.00</td>
+          <td style="text-align: right;">19</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;from&nbsp;trezor&nbsp;import&nbsp;config</td>
+        </tr>
+        <tr id="28" style="color: red;">
+          <td style="color: grey">28</td>
+          <td style="text-align: right;">6.00</td>
+          <td style="text-align: right;">114</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;from&nbsp;apps.common.request_pin&nbsp;import&nbsp;request_pin_confirm</td>
+        </tr>
+        <tr id="29" style="color: blue;">
+          <td style="color: grey">29</td>
+          <td style="text-align: right;">1.00</td>
+          <td style="text-align: right;">19</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;from&nbsp;trezor.ui.layouts&nbsp;import&nbsp;(</td>
+        </tr>
+        <tr id="30" style="None">
+          <td style="color: grey">30</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;confirm_backup,</td>
+        </tr>
+        <tr id="31" style="None">
+          <td style="color: grey">31</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;confirm_reset_device,</td>
+        </tr>
+        <tr id="32" style="None">
+          <td style="color: grey">32</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;)</td>
+        </tr>
+        <tr id="33" style="color: blue;">
+          <td style="color: grey">33</td>
+          <td style="text-align: right;">1.00</td>
+          <td style="text-align: right;">19</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;from&nbsp;trezor.crypto&nbsp;import&nbsp;bip39,&nbsp;random</td>
+        </tr>
+        <tr id="34" style="color: blue;">
+          <td style="color: grey">34</td>
+          <td style="text-align: right;">1.00</td>
+          <td style="text-align: right;">19</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;from&nbsp;trezor.messages&nbsp;import&nbsp;Success,&nbsp;EntropyAck,&nbsp;EntropyRequest</td>
+        </tr>
+        <tr id="35" style="color: blue;">
+          <td style="color: grey">35</td>
+          <td style="text-align: right;">1.00</td>
+          <td style="text-align: right;">19</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;from&nbsp;trezor.pin&nbsp;import&nbsp;render_empty_loader</td>
+        </tr>
+        <tr id="36" style="None">
+          <td style="color: grey">36</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="37" style="None">
+          <td style="color: grey">37</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;backup_type&nbsp;=&nbsp;msg.backup_type&nbsp;&nbsp;#&nbsp;local_cache_attribute</td>
+        </tr>
+        <tr id="38" style="None">
+          <td style="color: grey">38</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="39" style="None">
+          <td style="color: grey">39</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;#&nbsp;validate&nbsp;parameters&nbsp;and&nbsp;device&nbsp;state</td>
+        </tr>
+        <tr id="40" style="None">
+          <td style="color: grey">40</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;_validate_reset_device(msg)</td>
+        </tr>
+        <tr id="41" style="None">
+          <td style="color: grey">41</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="42" style="None">
+          <td style="color: grey">42</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;#&nbsp;make&nbsp;sure&nbsp;user&nbsp;knows&nbsp;they're&nbsp;setting&nbsp;up&nbsp;a&nbsp;new&nbsp;wallet</td>
+        </tr>
+        <tr id="43" style="None">
+          <td style="color: grey">43</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;backup_type&nbsp;==&nbsp;BAK_T_SLIP39_BASIC:</td>
+        </tr>
+        <tr id="44" style="None">
+          <td style="color: grey">44</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;title&nbsp;=&nbsp;"Wallet&nbsp;creation\n(Shamir)"</td>
+        </tr>
+        <tr id="45" style="None">
+          <td style="color: grey">45</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;elif&nbsp;backup_type&nbsp;==&nbsp;BAK_T_SLIP39_ADVANCED:</td>
+        </tr>
+        <tr id="46" style="None">
+          <td style="color: grey">46</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;title&nbsp;=&nbsp;"Wallet&nbsp;creation\n(Super&nbsp;Shamir)"</td>
+        </tr>
+        <tr id="47" style="None">
+          <td style="color: grey">47</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;else:</td>
+        </tr>
+        <tr id="48" style="None">
+          <td style="color: grey">48</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;title&nbsp;=&nbsp;"Wallet&nbsp;creation"</td>
+        </tr>
+        <tr id="49" style="color: blue;">
+          <td style="color: grey">49</td>
+          <td style="text-align: right;">0.25</td>
+          <td style="text-align: right;">18</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;await&nbsp;confirm_reset_device(ctx,&nbsp;title)</td>
+        </tr>
+        <tr id="50" style="None">
+          <td style="color: grey">50</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="51" style="None">
+          <td style="color: grey">51</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;#&nbsp;Rendering&nbsp;empty&nbsp;loader&nbsp;so&nbsp;users&nbsp;do&nbsp;not&nbsp;feel&nbsp;a&nbsp;freezing&nbsp;screen</td>
+        </tr>
+        <tr id="52" style="None">
+          <td style="color: grey">52</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;render_empty_loader("PROCESSING",&nbsp;"")</td>
+        </tr>
+        <tr id="53" style="None">
+          <td style="color: grey">53</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="54" style="None">
+          <td style="color: grey">54</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;#&nbsp;wipe&nbsp;storage&nbsp;to&nbsp;make&nbsp;sure&nbsp;the&nbsp;device&nbsp;is&nbsp;in&nbsp;a&nbsp;clear&nbsp;state</td>
+        </tr>
+        <tr id="55" style="None">
+          <td style="color: grey">55</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;storage.reset()</td>
+        </tr>
+        <tr id="56" style="None">
+          <td style="color: grey">56</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="57" style="None">
+          <td style="color: grey">57</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;#&nbsp;request&nbsp;and&nbsp;set&nbsp;new&nbsp;PIN</td>
+        </tr>
+        <tr id="58" style="None">
+          <td style="color: grey">58</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;msg.pin_protection:</td>
+        </tr>
+        <tr id="59" style="color: blue;">
+          <td style="color: grey">59</td>
+          <td style="text-align: right;">0.25</td>
+          <td style="text-align: right;">6</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;newpin&nbsp;=&nbsp;await&nbsp;request_pin_confirm(ctx)</td>
+        </tr>
+        <tr id="60" style="None">
+          <td style="color: grey">60</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;not&nbsp;config.change_pin("",&nbsp;newpin,&nbsp;None,&nbsp;None):</td>
+        </tr>
+        <tr id="61" style="None">
+          <td style="color: grey">61</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;raise&nbsp;ProcessError("Failed&nbsp;to&nbsp;set&nbsp;PIN")</td>
+        </tr>
+        <tr id="62" style="None">
+          <td style="color: grey">62</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="63" style="None">
+          <td style="color: grey">63</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;#&nbsp;generate&nbsp;and&nbsp;display&nbsp;internal&nbsp;entropy</td>
+        </tr>
+        <tr id="64" style="color: blue;">
+          <td style="color: grey">64</td>
+          <td style="text-align: right;">2.00</td>
+          <td style="text-align: right;">34</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;int_entropy&nbsp;=&nbsp;random.bytes(32)</td>
+        </tr>
+        <tr id="65" style="None">
+          <td style="color: grey">65</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;__debug__:</td>
+        </tr>
+        <tr id="66" style="None">
+          <td style="color: grey">66</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;storage.debug.reset_internal_entropy&nbsp;=&nbsp;int_entropy</td>
+        </tr>
+        <tr id="67" style="None">
+          <td style="color: grey">67</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;msg.display_random:</td>
+        </tr>
+        <tr id="68" style="color: blue;">
+          <td style="color: grey">68</td>
+          <td style="text-align: right;">0.25</td>
+          <td style="text-align: right;">1</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;await&nbsp;layout.show_internal_entropy(ctx,&nbsp;int_entropy)</td>
+        </tr>
+        <tr id="69" style="None">
+          <td style="color: grey">69</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="70" style="None">
+          <td style="color: grey">70</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;#&nbsp;request&nbsp;external&nbsp;entropy&nbsp;and&nbsp;compute&nbsp;the&nbsp;master&nbsp;secret</td>
+        </tr>
+        <tr id="71" style="color: blue;">
+          <td style="color: grey">71</td>
+          <td style="text-align: right;">0.51</td>
+          <td style="text-align: right;">34</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;entropy_ack&nbsp;=&nbsp;await&nbsp;ctx.call(EntropyRequest(),&nbsp;EntropyAck)</td>
+        </tr>
+        <tr id="72" style="None">
+          <td style="color: grey">72</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;ext_entropy&nbsp;=&nbsp;entropy_ack.entropy</td>
+        </tr>
+        <tr id="73" style="None">
+          <td style="color: grey">73</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;#&nbsp;For&nbsp;SLIP-39&nbsp;this&nbsp;is&nbsp;the&nbsp;Encrypted&nbsp;Master&nbsp;Secret</td>
+        </tr>
+        <tr id="74" style="None">
+          <td style="color: grey">74</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;secret&nbsp;=&nbsp;_compute_secret_from_entropy(int_entropy,&nbsp;ext_entropy,&nbsp;msg.strength)</td>
+        </tr>
+        <tr id="75" style="None">
+          <td style="color: grey">75</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="76" style="None">
+          <td style="color: grey">76</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;#&nbsp;Check&nbsp;backup&nbsp;type,&nbsp;perform&nbsp;type-specific&nbsp;handling</td>
+        </tr>
+        <tr id="77" style="None">
+          <td style="color: grey">77</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;backup_type&nbsp;==&nbsp;BAK_T_BIP39:</td>
+        </tr>
+        <tr id="78" style="None">
+          <td style="color: grey">78</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#&nbsp;in&nbsp;BIP-39&nbsp;we&nbsp;store&nbsp;mnemonic&nbsp;string&nbsp;instead&nbsp;of&nbsp;the&nbsp;secret</td>
+        </tr>
+        <tr id="79" style="color: blue;">
+          <td style="color: grey">79</td>
+          <td style="text-align: right;">3.00</td>
+          <td style="text-align: right;">24</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;secret&nbsp;=&nbsp;bip39.from_data(secret).encode()</td>
+        </tr>
+        <tr id="80" style="color: blue;">
+          <td style="color: grey">80</td>
+          <td style="text-align: right;">1.00</td>
+          <td style="text-align: right;">9</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;elif&nbsp;backup_type&nbsp;in&nbsp;(BAK_T_SLIP39_BASIC,&nbsp;BAK_T_SLIP39_ADVANCED):</td>
+        </tr>
+        <tr id="81" style="None">
+          <td style="color: grey">81</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#&nbsp;generate&nbsp;and&nbsp;set&nbsp;SLIP39&nbsp;parameters</td>
+        </tr>
+        <tr id="82" style="None">
+          <td style="color: grey">82</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;storage_device.set_slip39_identifier(slip39.generate_random_identifier())</td>
+        </tr>
+        <tr id="83" style="None">
+          <td style="color: grey">83</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;storage_device.set_slip39_iteration_exponent(slip39.DEFAULT_ITERATION_EXPONENT)</td>
+        </tr>
+        <tr id="84" style="None">
+          <td style="color: grey">84</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;else:</td>
+        </tr>
+        <tr id="85" style="None">
+          <td style="color: grey">85</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#&nbsp;Unknown&nbsp;backup&nbsp;type.</td>
+        </tr>
+        <tr id="86" style="None">
+          <td style="color: grey">86</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;raise&nbsp;RuntimeError</td>
+        </tr>
+        <tr id="87" style="None">
+          <td style="color: grey">87</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="88" style="None">
+          <td style="color: grey">88</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;#&nbsp;If&nbsp;either&nbsp;of&nbsp;skip_backup&nbsp;or&nbsp;no_backup&nbsp;is&nbsp;specified,&nbsp;we&nbsp;are&nbsp;not&nbsp;doing&nbsp;backup&nbsp;now.</td>
+        </tr>
+        <tr id="89" style="None">
+          <td style="color: grey">89</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;#&nbsp;Otherwise,&nbsp;we&nbsp;try&nbsp;to&nbsp;do&nbsp;it.</td>
+        </tr>
+        <tr id="90" style="None">
+          <td style="color: grey">90</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;perform_backup&nbsp;=&nbsp;not&nbsp;msg.no_backup&nbsp;and&nbsp;not&nbsp;msg.skip_backup</td>
+        </tr>
+        <tr id="91" style="None">
+          <td style="color: grey">91</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="92" style="None">
+          <td style="color: grey">92</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;#&nbsp;If&nbsp;doing&nbsp;backup,&nbsp;ask&nbsp;the&nbsp;user&nbsp;to&nbsp;confirm.</td>
+        </tr>
+        <tr id="93" style="None">
+          <td style="color: grey">93</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;perform_backup:</td>
+        </tr>
+        <tr id="94" style="color: blue;">
+          <td style="color: grey">94</td>
+          <td style="text-align: right;">0.21</td>
+          <td style="text-align: right;">13</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;perform_backup&nbsp;=&nbsp;await&nbsp;confirm_backup(ctx)</td>
+        </tr>
+        <tr id="95" style="None">
+          <td style="color: grey">95</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="96" style="None">
+          <td style="color: grey">96</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;#&nbsp;generate&nbsp;and&nbsp;display&nbsp;backup&nbsp;information&nbsp;for&nbsp;the&nbsp;master&nbsp;secret</td>
+        </tr>
+        <tr id="97" style="None">
+          <td style="color: grey">97</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;perform_backup:</td>
+        </tr>
+        <tr id="98" style="color: blue;">
+          <td style="color: grey">98</td>
+          <td style="text-align: right;">0.01</td>
+          <td style="text-align: right;">10</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;await&nbsp;backup_seed(ctx,&nbsp;backup_type,&nbsp;secret)</td>
+        </tr>
+        <tr id="99" style="None">
+          <td style="color: grey">99</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="100" style="None">
+          <td style="color: grey">100</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;#&nbsp;write&nbsp;settings&nbsp;and&nbsp;master&nbsp;secret&nbsp;into&nbsp;storage</td>
+        </tr>
+        <tr id="101" style="None">
+          <td style="color: grey">101</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;msg.label&nbsp;is&nbsp;not&nbsp;None:</td>
+        </tr>
+        <tr id="102" style="None">
+          <td style="color: grey">102</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;storage_device.set_label(msg.label)</td>
+        </tr>
+        <tr id="103" style="None">
+          <td style="color: grey">103</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;storage_device.set_passphrase_enabled(bool(msg.passphrase_protection))</td>
+        </tr>
+        <tr id="104" style="None">
+          <td style="color: grey">104</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;storage_device.store_mnemonic_secret(</td>
+        </tr>
+        <tr id="105" style="None">
+          <td style="color: grey">105</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;secret,&nbsp;&nbsp;#&nbsp;for&nbsp;SLIP-39,&nbsp;this&nbsp;is&nbsp;the&nbsp;EMS</td>
+        </tr>
+        <tr id="106" style="None">
+          <td style="color: grey">106</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;backup_type,</td>
+        </tr>
+        <tr id="107" style="None">
+          <td style="color: grey">107</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;needs_backup=not&nbsp;perform_backup,</td>
+        </tr>
+        <tr id="108" style="None">
+          <td style="color: grey">108</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;no_backup=bool(msg.no_backup),</td>
+        </tr>
+        <tr id="109" style="None">
+          <td style="color: grey">109</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;)</td>
+        </tr>
+        <tr id="110" style="None">
+          <td style="color: grey">110</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="111" style="None">
+          <td style="color: grey">111</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;#&nbsp;if&nbsp;we&nbsp;backed&nbsp;up&nbsp;the&nbsp;wallet,&nbsp;show&nbsp;success&nbsp;message</td>
+        </tr>
+        <tr id="112" style="None">
+          <td style="color: grey">112</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;perform_backup:</td>
+        </tr>
+        <tr id="113" style="color: blue;">
+          <td style="color: grey">113</td>
+          <td style="text-align: right;">0.25</td>
+          <td style="text-align: right;">10</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;await&nbsp;layout.show_backup_success(ctx)</td>
+        </tr>
+        <tr id="114" style="None">
+          <td style="color: grey">114</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="115" style="color: blue;">
+          <td style="color: grey">115</td>
+          <td style="text-align: right;">5.00</td>
+          <td style="text-align: right;">85</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;Success(message="Initialized")</td>
+        </tr>
+        <tr id="116" style="None">
+          <td style="color: grey">116</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="117" style="None">
+          <td style="color: grey">117</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="118" style="color: blue;">
+          <td style="color: grey">118</td>
+          <td style="text-align: right;">1.00</td>
+          <td style="text-align: right;">38</td>
+          <td>async&nbsp;def&nbsp;_backup_slip39_basic(ctx:&nbsp;Context,&nbsp;encrypted_master_secret:&nbsp;bytes)&nbsp;->&nbsp;None:</td>
+        </tr>
+        <tr id="119" style="None">
+          <td style="color: grey">119</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;#&nbsp;get&nbsp;number&nbsp;of&nbsp;shares</td>
+        </tr>
+        <tr id="120" style="color: blue;">
+          <td style="color: grey">120</td>
+          <td style="text-align: right;">0.25</td>
+          <td style="text-align: right;">7</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;await&nbsp;layout.slip39_show_checklist(ctx,&nbsp;0,&nbsp;BAK_T_SLIP39_BASIC)</td>
+        </tr>
+        <tr id="121" style="color: blue;">
+          <td style="color: grey">121</td>
+          <td style="text-align: right;">0.66</td>
+          <td style="text-align: right;">21</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;shares_count&nbsp;=&nbsp;await&nbsp;layout.slip39_prompt_number_of_shares(ctx)</td>
+        </tr>
+        <tr id="122" style="None">
+          <td style="color: grey">122</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="123" style="None">
+          <td style="color: grey">123</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;#&nbsp;get&nbsp;threshold</td>
+        </tr>
+        <tr id="124" style="color: blue;">
+          <td style="color: grey">124</td>
+          <td style="text-align: right;">0.25</td>
+          <td style="text-align: right;">7</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;await&nbsp;layout.slip39_show_checklist(ctx,&nbsp;1,&nbsp;BAK_T_SLIP39_BASIC)</td>
+        </tr>
+        <tr id="125" style="color: blue;">
+          <td style="color: grey">125</td>
+          <td style="text-align: right;">0.88</td>
+          <td style="text-align: right;">28</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;threshold&nbsp;=&nbsp;await&nbsp;layout.slip39_prompt_threshold(ctx,&nbsp;shares_count)</td>
+        </tr>
+        <tr id="126" style="None">
+          <td style="color: grey">126</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="127" style="None">
+          <td style="color: grey">127</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;identifier&nbsp;=&nbsp;storage_device.get_slip39_identifier()</td>
+        </tr>
+        <tr id="128" style="None">
+          <td style="color: grey">128</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;iteration_exponent&nbsp;=&nbsp;storage_device.get_slip39_iteration_exponent()</td>
+        </tr>
+        <tr id="129" style="None">
+          <td style="color: grey">129</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;identifier&nbsp;is&nbsp;None&nbsp;or&nbsp;iteration_exponent&nbsp;is&nbsp;None:</td>
+        </tr>
+        <tr id="130" style="None">
+          <td style="color: grey">130</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;raise&nbsp;ValueError</td>
+        </tr>
+        <tr id="131" style="None">
+          <td style="color: grey">131</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="132" style="None">
+          <td style="color: grey">132</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;#&nbsp;generate&nbsp;the&nbsp;mnemonics</td>
+        </tr>
+        <tr id="133" style="None">
+          <td style="color: grey">133</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;mnemonics&nbsp;=&nbsp;slip39.split_ems(</td>
+        </tr>
+        <tr id="134" style="None">
+          <td style="color: grey">134</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1,&nbsp;&nbsp;#&nbsp;Single&nbsp;Group&nbsp;threshold</td>
+        </tr>
+        <tr id="135" style="color: blue;">
+          <td style="color: grey">135</td>
+          <td style="text-align: right;">3.00</td>
+          <td style="text-align: right;">21</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[(threshold,&nbsp;shares_count)],&nbsp;&nbsp;#&nbsp;Single&nbsp;Group&nbsp;threshold/count</td>
+        </tr>
+        <tr id="136" style="None">
+          <td style="color: grey">136</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;identifier,</td>
+        </tr>
+        <tr id="137" style="None">
+          <td style="color: grey">137</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;iteration_exponent,</td>
+        </tr>
+        <tr id="138" style="None">
+          <td style="color: grey">138</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;encrypted_master_secret,</td>
+        </tr>
+        <tr id="139" style="None">
+          <td style="color: grey">139</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;)[0]</td>
+        </tr>
+        <tr id="140" style="None">
+          <td style="color: grey">140</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="141" style="None">
+          <td style="color: grey">141</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;#&nbsp;show&nbsp;and&nbsp;confirm&nbsp;individual&nbsp;shares</td>
+        </tr>
+        <tr id="142" style="color: blue;">
+          <td style="color: grey">142</td>
+          <td style="text-align: right;">0.25</td>
+          <td style="text-align: right;">7</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;await&nbsp;layout.slip39_show_checklist(ctx,&nbsp;2,&nbsp;BAK_T_SLIP39_BASIC)</td>
+        </tr>
+        <tr id="143" style="color: blue;">
+          <td style="color: grey">143</td>
+          <td style="text-align: right;">0.02</td>
+          <td style="text-align: right;">7</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;await&nbsp;layout.slip39_basic_show_and_confirm_shares(ctx,&nbsp;mnemonics)</td>
+        </tr>
+        <tr id="144" style="None">
+          <td style="color: grey">144</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="145" style="None">
+          <td style="color: grey">145</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="146" style="color: blue;">
+          <td style="color: grey">146</td>
+          <td style="text-align: right;">1.00</td>
+          <td style="text-align: right;">38</td>
+          <td>async&nbsp;def&nbsp;_backup_slip39_advanced(ctx:&nbsp;Context,&nbsp;encrypted_master_secret:&nbsp;bytes)&nbsp;->&nbsp;None:</td>
+        </tr>
+        <tr id="147" style="None">
+          <td style="color: grey">147</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;#&nbsp;get&nbsp;number&nbsp;of&nbsp;groups</td>
+        </tr>
+        <tr id="148" style="color: blue;">
+          <td style="color: grey">148</td>
+          <td style="text-align: right;">0.25</td>
+          <td style="text-align: right;">6</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;await&nbsp;layout.slip39_show_checklist(ctx,&nbsp;0,&nbsp;BAK_T_SLIP39_ADVANCED)</td>
+        </tr>
+        <tr id="149" style="color: blue;">
+          <td style="color: grey">149</td>
+          <td style="text-align: right;">0.64</td>
+          <td style="text-align: right;">18</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;groups_count&nbsp;=&nbsp;await&nbsp;layout.slip39_advanced_prompt_number_of_groups(ctx)</td>
+        </tr>
+        <tr id="150" style="None">
+          <td style="color: grey">150</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="151" style="None">
+          <td style="color: grey">151</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;#&nbsp;get&nbsp;group&nbsp;threshold</td>
+        </tr>
+        <tr id="152" style="color: blue;">
+          <td style="color: grey">152</td>
+          <td style="text-align: right;">0.25</td>
+          <td style="text-align: right;">6</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;await&nbsp;layout.slip39_show_checklist(ctx,&nbsp;1,&nbsp;BAK_T_SLIP39_ADVANCED)</td>
+        </tr>
+        <tr id="153" style="color: blue;">
+          <td style="color: grey">153</td>
+          <td style="text-align: right;">0.64</td>
+          <td style="text-align: right;">18</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;group_threshold&nbsp;=&nbsp;await&nbsp;layout.slip39_advanced_prompt_group_threshold(</td>
+        </tr>
+        <tr id="154" style="None">
+          <td style="color: grey">154</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ctx,&nbsp;groups_count</td>
+        </tr>
+        <tr id="155" style="None">
+          <td style="color: grey">155</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;)</td>
+        </tr>
+        <tr id="156" style="None">
+          <td style="color: grey">156</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="157" style="None">
+          <td style="color: grey">157</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;#&nbsp;get&nbsp;shares&nbsp;and&nbsp;thresholds</td>
+        </tr>
+        <tr id="158" style="color: blue;">
+          <td style="color: grey">158</td>
+          <td style="text-align: right;">0.25</td>
+          <td style="text-align: right;">6</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;await&nbsp;layout.slip39_show_checklist(ctx,&nbsp;2,&nbsp;BAK_T_SLIP39_ADVANCED)</td>
+        </tr>
+        <tr id="159" style="color: blue;">
+          <td style="color: grey">159</td>
+          <td style="text-align: right;">2.00</td>
+          <td style="text-align: right;">12</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;groups&nbsp;=&nbsp;[]</td>
+        </tr>
+        <tr id="160" style="None">
+          <td style="color: grey">160</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;for&nbsp;i&nbsp;in&nbsp;range(groups_count):</td>
+        </tr>
+        <tr id="161" style="color: blue;">
+          <td style="color: grey">161</td>
+          <td style="text-align: right;">0.64</td>
+          <td style="text-align: right;">90</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;share_count&nbsp;=&nbsp;await&nbsp;layout.slip39_prompt_number_of_shares(ctx,&nbsp;i)</td>
+        </tr>
+        <tr id="162" style="color: blue;">
+          <td style="color: grey">162</td>
+          <td style="text-align: right;">0.86</td>
+          <td style="text-align: right;">120</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;share_threshold&nbsp;=&nbsp;await&nbsp;layout.slip39_prompt_threshold(ctx,&nbsp;share_count,&nbsp;i)</td>
+        </tr>
+        <tr id="163" style="color: blue;">
+          <td style="color: grey">163</td>
+          <td style="text-align: right;">1.00</td>
+          <td style="text-align: right;">36</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;groups.append((share_threshold,&nbsp;share_count))</td>
+        </tr>
+        <tr id="164" style="None">
+          <td style="color: grey">164</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="165" style="None">
+          <td style="color: grey">165</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;identifier&nbsp;=&nbsp;storage_device.get_slip39_identifier()</td>
+        </tr>
+        <tr id="166" style="None">
+          <td style="color: grey">166</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;iteration_exponent&nbsp;=&nbsp;storage_device.get_slip39_iteration_exponent()</td>
+        </tr>
+        <tr id="167" style="None">
+          <td style="color: grey">167</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;identifier&nbsp;is&nbsp;None&nbsp;or&nbsp;iteration_exponent&nbsp;is&nbsp;None:</td>
+        </tr>
+        <tr id="168" style="None">
+          <td style="color: grey">168</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;raise&nbsp;ValueError</td>
+        </tr>
+        <tr id="169" style="None">
+          <td style="color: grey">169</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="170" style="None">
+          <td style="color: grey">170</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;#&nbsp;generate&nbsp;the&nbsp;mnemonics</td>
+        </tr>
+        <tr id="171" style="None">
+          <td style="color: grey">171</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;mnemonics&nbsp;=&nbsp;slip39.split_ems(</td>
+        </tr>
+        <tr id="172" style="None">
+          <td style="color: grey">172</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;group_threshold,</td>
+        </tr>
+        <tr id="173" style="None">
+          <td style="color: grey">173</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;groups,</td>
+        </tr>
+        <tr id="174" style="None">
+          <td style="color: grey">174</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;identifier,</td>
+        </tr>
+        <tr id="175" style="None">
+          <td style="color: grey">175</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;iteration_exponent,</td>
+        </tr>
+        <tr id="176" style="None">
+          <td style="color: grey">176</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;encrypted_master_secret,</td>
+        </tr>
+        <tr id="177" style="None">
+          <td style="color: grey">177</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;)</td>
+        </tr>
+        <tr id="178" style="None">
+          <td style="color: grey">178</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="179" style="None">
+          <td style="color: grey">179</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;#&nbsp;show&nbsp;and&nbsp;confirm&nbsp;individual&nbsp;shares</td>
+        </tr>
+        <tr id="180" style="color: blue;">
+          <td style="color: grey">180</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">6</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;await&nbsp;layout.slip39_advanced_show_and_confirm_shares(ctx,&nbsp;mnemonics)</td>
+        </tr>
+        <tr id="181" style="None">
+          <td style="color: grey">181</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="182" style="None">
+          <td style="color: grey">182</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="183" style="color: blue;">
+          <td style="color: grey">183</td>
+          <td style="text-align: right;">1.00</td>
+          <td style="text-align: right;">38</td>
+          <td>def&nbsp;_validate_reset_device(msg:&nbsp;ResetDevice)&nbsp;->&nbsp;None:</td>
+        </tr>
+        <tr id="184" style="color: red;">
+          <td style="color: grey">184</td>
+          <td style="text-align: right;">6.00</td>
+          <td style="text-align: right;">114</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;from&nbsp;..&nbsp;import&nbsp;backup_types</td>
+        </tr>
+        <tr id="185" style="color: blue;">
+          <td style="color: grey">185</td>
+          <td style="text-align: right;">1.00</td>
+          <td style="text-align: right;">19</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;from&nbsp;trezor.wire&nbsp;import&nbsp;UnexpectedMessage</td>
+        </tr>
+        <tr id="186" style="None">
+          <td style="color: grey">186</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="187" style="None">
+          <td style="color: grey">187</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;backup_type&nbsp;=&nbsp;msg.backup_type&nbsp;or&nbsp;_DEFAULT_BACKUP_TYPE</td>
+        </tr>
+        <tr id="188" style="color: blue;">
+          <td style="color: grey">188</td>
+          <td style="text-align: right;">1.00</td>
+          <td style="text-align: right;">19</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;backup_type&nbsp;not&nbsp;in&nbsp;(</td>
+        </tr>
+        <tr id="189" style="None">
+          <td style="color: grey">189</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;BAK_T_BIP39,</td>
+        </tr>
+        <tr id="190" style="None">
+          <td style="color: grey">190</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;BAK_T_SLIP39_BASIC,</td>
+        </tr>
+        <tr id="191" style="None">
+          <td style="color: grey">191</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;BAK_T_SLIP39_ADVANCED,</td>
+        </tr>
+        <tr id="192" style="None">
+          <td style="color: grey">192</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;):</td>
+        </tr>
+        <tr id="193" style="None">
+          <td style="color: grey">193</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;raise&nbsp;ProcessError("Backup&nbsp;type&nbsp;not&nbsp;implemented.")</td>
+        </tr>
+        <tr id="194" style="None">
+          <td style="color: grey">194</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;backup_types.is_slip39_backup_type(backup_type):</td>
+        </tr>
+        <tr id="195" style="color: blue;">
+          <td style="color: grey">195</td>
+          <td style="text-align: right;">1.00</td>
+          <td style="text-align: right;">9</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;msg.strength&nbsp;not&nbsp;in&nbsp;(128,&nbsp;256):</td>
+        </tr>
+        <tr id="196" style="None">
+          <td style="color: grey">196</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;raise&nbsp;ProcessError("Invalid&nbsp;strength&nbsp;(has&nbsp;to&nbsp;be&nbsp;128&nbsp;or&nbsp;256&nbsp;bits)")</td>
+        </tr>
+        <tr id="197" style="None">
+          <td style="color: grey">197</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;else:&nbsp;&nbsp;#&nbsp;BIP-39</td>
+        </tr>
+        <tr id="198" style="color: blue;">
+          <td style="color: grey">198</td>
+          <td style="text-align: right;">1.00</td>
+          <td style="text-align: right;">10</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;msg.strength&nbsp;not&nbsp;in&nbsp;(128,&nbsp;192,&nbsp;256):</td>
+        </tr>
+        <tr id="199" style="None">
+          <td style="color: grey">199</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;raise&nbsp;ProcessError("Invalid&nbsp;strength&nbsp;(has&nbsp;to&nbsp;be&nbsp;128,&nbsp;192&nbsp;or&nbsp;256&nbsp;bits)")</td>
+        </tr>
+        <tr id="200" style="None">
+          <td style="color: grey">200</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;msg.display_random&nbsp;and&nbsp;(msg.skip_backup&nbsp;or&nbsp;msg.no_backup):</td>
+        </tr>
+        <tr id="201" style="color: blue;">
+          <td style="color: grey">201</td>
+          <td style="text-align: right;">2.00</td>
+          <td style="text-align: right;">2</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;raise&nbsp;ProcessError("Can't&nbsp;show&nbsp;internal&nbsp;entropy&nbsp;when&nbsp;backup&nbsp;is&nbsp;skipped")</td>
+        </tr>
+        <tr id="202" style="None">
+          <td style="color: grey">202</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;storage_device.is_initialized():</td>
+        </tr>
+        <tr id="203" style="None">
+          <td style="color: grey">203</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;raise&nbsp;UnexpectedMessage("Already&nbsp;initialized")</td>
+        </tr>
+        <tr id="204" style="None">
+          <td style="color: grey">204</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="205" style="None">
+          <td style="color: grey">205</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="206" style="color: blue;">
+          <td style="color: grey">206</td>
+          <td style="text-align: right;">2.00</td>
+          <td style="text-align: right;">76</td>
+          <td>def&nbsp;_compute_secret_from_entropy(</td>
+        </tr>
+        <tr id="207" style="None">
+          <td style="color: grey">207</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;int_entropy:&nbsp;bytes,&nbsp;ext_entropy:&nbsp;bytes,&nbsp;strength_in_bytes:&nbsp;int</td>
+        </tr>
+        <tr id="208" style="None">
+          <td style="color: grey">208</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>)&nbsp;->&nbsp;bytes:</td>
+        </tr>
+        <tr id="209" style="color: blue;">
+          <td style="color: grey">209</td>
+          <td style="text-align: right;">1.00</td>
+          <td style="text-align: right;">17</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;from&nbsp;trezor.crypto&nbsp;import&nbsp;hashlib</td>
+        </tr>
+        <tr id="210" style="None">
+          <td style="color: grey">210</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="211" style="None">
+          <td style="color: grey">211</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;#&nbsp;combine&nbsp;internal&nbsp;and&nbsp;external&nbsp;entropy</td>
+        </tr>
+        <tr id="212" style="color: blue;">
+          <td style="color: grey">212</td>
+          <td style="text-align: right;">1.00</td>
+          <td style="text-align: right;">17</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;ehash&nbsp;=&nbsp;hashlib.sha256()</td>
+        </tr>
+        <tr id="213" style="None">
+          <td style="color: grey">213</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;ehash.update(int_entropy)</td>
+        </tr>
+        <tr id="214" style="None">
+          <td style="color: grey">214</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;ehash.update(ext_entropy)</td>
+        </tr>
+        <tr id="215" style="color: blue;">
+          <td style="color: grey">215</td>
+          <td style="text-align: right;">2.00</td>
+          <td style="text-align: right;">34</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;entropy&nbsp;=&nbsp;ehash.digest()</td>
+        </tr>
+        <tr id="216" style="None">
+          <td style="color: grey">216</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;#&nbsp;take&nbsp;a&nbsp;required&nbsp;number&nbsp;of&nbsp;bytes</td>
+        </tr>
+        <tr id="217" style="None">
+          <td style="color: grey">217</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;strength&nbsp;=&nbsp;strength_in_bytes&nbsp;//&nbsp;8</td>
+        </tr>
+        <tr id="218" style="color: blue;">
+          <td style="color: grey">218</td>
+          <td style="text-align: right;">3.00</td>
+          <td style="text-align: right;">51</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;secret&nbsp;=&nbsp;entropy[:strength]</td>
+        </tr>
+        <tr id="219" style="None">
+          <td style="color: grey">219</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;secret</td>
+        </tr>
+        <tr id="220" style="None">
+          <td style="color: grey">220</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="221" style="None">
+          <td style="color: grey">221</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="222" style="color: blue;">
+          <td style="color: grey">222</td>
+          <td style="text-align: right;">1.00</td>
+          <td style="text-align: right;">38</td>
+          <td>async&nbsp;def&nbsp;backup_seed(</td>
+        </tr>
+        <tr id="223" style="None">
+          <td style="color: grey">223</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;ctx:&nbsp;Context,&nbsp;backup_type:&nbsp;BackupType,&nbsp;mnemonic_secret:&nbsp;bytes</td>
+        </tr>
+        <tr id="224" style="None">
+          <td style="color: grey">224</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>)&nbsp;->&nbsp;None:</td>
+        </tr>
+        <tr id="225" style="None">
+          <td style="color: grey">225</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;backup_type&nbsp;==&nbsp;BAK_T_SLIP39_BASIC:</td>
+        </tr>
+        <tr id="226" style="color: blue;">
+          <td style="color: grey">226</td>
+          <td style="text-align: right;">0.02</td>
+          <td style="text-align: right;">7</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;await&nbsp;_backup_slip39_basic(ctx,&nbsp;mnemonic_secret)</td>
+        </tr>
+        <tr id="227" style="None">
+          <td style="color: grey">227</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;elif&nbsp;backup_type&nbsp;==&nbsp;BAK_T_SLIP39_ADVANCED:</td>
+        </tr>
+        <tr id="228" style="color: blue;">
+          <td style="color: grey">228</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">6</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;await&nbsp;_backup_slip39_advanced(ctx,&nbsp;mnemonic_secret)</td>
+        </tr>
+        <tr id="229" style="None">
+          <td style="color: grey">229</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;else:</td>
+        </tr>
+        <tr id="230" style="color: blue;">
+          <td style="color: grey">230</td>
+          <td style="text-align: right;">0.14</td>
+          <td style="text-align: right;">18</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;await&nbsp;layout.bip39_show_and_confirm_mnemonic(ctx,&nbsp;mnemonic_secret.decode())</td>
+        </tr>
+      </tbody>
+    </table>
+  </body>
+</html>

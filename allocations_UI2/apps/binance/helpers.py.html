@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>apps/binance/helpers.py</title>
+    <meta charset="utf-8">
+    <style>body { font-size: 80%; }</style>
+  </head>
+  <body>
+    <table>
+      <thead>
+        <tr>
+          <th style="color: grey">#</th>
+          <th style="text-align: right;">avg</th>
+          <th style="text-align: right;">total</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr id="1" style="color: blue;">
+          <td style="color: grey">1</td>
+          <td style="text-align: right;">2.00</td>
+          <td style="text-align: right;">10</td>
+          <td>from&nbsp;micropython&nbsp;import&nbsp;const</td>
+        </tr>
+        <tr id="2" style="None">
+          <td style="color: grey">2</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>from&nbsp;typing&nbsp;import&nbsp;TYPE_CHECKING</td>
+        </tr>
+        <tr id="3" style="None">
+          <td style="color: grey">3</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="4" style="None">
+          <td style="color: grey">4</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>if&nbsp;TYPE_CHECKING:</td>
+        </tr>
+        <tr id="5" style="None">
+          <td style="color: grey">5</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;from&nbsp;trezor.messages&nbsp;import&nbsp;BinanceInputOutput,&nbsp;BinanceSignTx</td>
+        </tr>
+        <tr id="6" style="None">
+          <td style="color: grey">6</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;from&nbsp;trezor.protobuf&nbsp;import&nbsp;MessageType</td>
+        </tr>
+        <tr id="7" style="None">
+          <td style="color: grey">7</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="8" style="None">
+          <td style="color: grey">8</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>#&nbsp;1*10^8&nbsp;Jagers&nbsp;equal&nbsp;1&nbsp;BNB&nbsp;https://www.binance.vision/glossary/jager</td>
+        </tr>
+        <tr id="9" style="None">
+          <td style="color: grey">9</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>DECIMALS&nbsp;=&nbsp;const(8)</td>
+        </tr>
+        <tr id="10" style="None">
+          <td style="color: grey">10</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="11" style="None">
+          <td style="color: grey">11</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="12" style="None">
+          <td style="color: grey">12</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>#&nbsp;NOTE:&nbsp;it&nbsp;is&nbsp;11&nbsp;bytes&nbsp;smaller&nbsp;to&nbsp;define&nbsp;it&nbsp;on&nbsp;top&nbsp;level&nbsp;than&nbsp;inside&nbsp;a&nbsp;function</td>
+        </tr>
+        <tr id="13" style="color: blue;">
+          <td style="color: grey">13</td>
+          <td style="text-align: right;">2.00</td>
+          <td style="text-align: right;">10</td>
+          <td>def&nbsp;_make_input_output(input_output:&nbsp;BinanceInputOutput)&nbsp;->&nbsp;str:</td>
+        </tr>
+        <tr id="14" style="None">
+          <td style="color: grey">14</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;COIN_BLUEPRINT&nbsp;=&nbsp;'{{"amount":{},"denom":"{}"}}'</td>
+        </tr>
+        <tr id="15" style="None">
+          <td style="color: grey">15</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;INPUT_OUTPUT_BLUEPRINT&nbsp;=&nbsp;'{{"address":"{}","coins":[{}]}}'</td>
+        </tr>
+        <tr id="16" style="None">
+          <td style="color: grey">16</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="17" style="color: blue;">
+          <td style="color: grey">17</td>
+          <td style="text-align: right;">2.00</td>
+          <td style="text-align: right;">4</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;coins&nbsp;=&nbsp;",".join(</td>
+        </tr>
+        <tr id="18" style="color: blue;">
+          <td style="color: grey">18</td>
+          <td style="text-align: right;">3.00</td>
+          <td style="text-align: right;">24</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;COIN_BLUEPRINT.format(c.amount,&nbsp;c.denom)&nbsp;for&nbsp;c&nbsp;in&nbsp;input_output.coins</td>
+        </tr>
+        <tr id="19" style="None">
+          <td style="color: grey">19</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;)</td>
+        </tr>
+        <tr id="20" style="color: red;">
+          <td style="color: grey">20</td>
+          <td style="text-align: right;">9.00</td>
+          <td style="text-align: right;">18</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;INPUT_OUTPUT_BLUEPRINT.format(input_output.address,&nbsp;coins)</td>
+        </tr>
+        <tr id="21" style="None">
+          <td style="color: grey">21</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="22" style="None">
+          <td style="color: grey">22</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="23" style="color: blue;">
+          <td style="color: grey">23</td>
+          <td style="text-align: right;">1.00</td>
+          <td style="text-align: right;">5</td>
+          <td>def&nbsp;produce_json_for_signing(envelope:&nbsp;BinanceSignTx,&nbsp;msg:&nbsp;MessageType)&nbsp;->&nbsp;str:</td>
+        </tr>
+        <tr id="24" style="color: blue;">
+          <td style="color: grey">24</td>
+          <td style="text-align: right;">1.00</td>
+          <td style="text-align: right;">3</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;from&nbsp;trezor.messages&nbsp;import&nbsp;BinanceCancelMsg,&nbsp;BinanceOrderMsg,&nbsp;BinanceTransferMsg</td>
+        </tr>
+        <tr id="25" style="color: blue;">
+          <td style="color: grey">25</td>
+          <td style="text-align: right;">1.00</td>
+          <td style="text-align: right;">3</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;from&nbsp;trezor&nbsp;import&nbsp;wire</td>
+        </tr>
+        <tr id="26" style="None">
+          <td style="color: grey">26</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="27" style="None">
+          <td style="color: grey">27</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;#&nbsp;NOTE:&nbsp;not&nbsp;defining&nbsp;kwargs&nbsp;in&nbsp;format&nbsp;string&nbsp;saves&nbsp;7&nbsp;bytes&nbsp;per&nbsp;each&nbsp;argument</td>
+        </tr>
+        <tr id="28" style="None">
+          <td style="color: grey">28</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;ENVELOPE_BLUEPRINT&nbsp;=&nbsp;'{{"account_number":"{}","chain_id":"{}","data":null,"memo":"{}","msgs":[{}],"sequence":"{}","source":"{}"}}'</td>
+        </tr>
+        <tr id="29" style="None">
+          <td style="color: grey">29</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;MSG_TRANSFER_BLUEPRINT&nbsp;=&nbsp;'{{"inputs":[{}],"outputs":[{}]}}'</td>
+        </tr>
+        <tr id="30" style="None">
+          <td style="color: grey">30</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;MSG_NEWORDER_BLUEPRINT&nbsp;=&nbsp;'{{"id":"{}","ordertype":{},"price":{},"quantity":{},"sender":"{}","side":{},"symbol":"{}","timeinforce":{}}}'</td>
+        </tr>
+        <tr id="31" style="None">
+          <td style="color: grey">31</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;MSG_CANCEL_BLUEPRINT&nbsp;=&nbsp;'{{"refid":"{}","sender":"{}","symbol":"{}"}}'</td>
+        </tr>
+        <tr id="32" style="None">
+          <td style="color: grey">32</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="33" style="None">
+          <td style="color: grey">33</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;BinanceTransferMsg.is_type_of(msg):</td>
+        </tr>
+        <tr id="34" style="color: blue;">
+          <td style="color: grey">34</td>
+          <td style="text-align: right;">2.00</td>
+          <td style="text-align: right;">8</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;inputs&nbsp;=&nbsp;",".join(_make_input_output(i)&nbsp;for&nbsp;i&nbsp;in&nbsp;msg.inputs)</td>
+        </tr>
+        <tr id="35" style="color: blue;">
+          <td style="color: grey">35</td>
+          <td style="text-align: right;">2.00</td>
+          <td style="text-align: right;">8</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;outputs&nbsp;=&nbsp;",".join(_make_input_output(o)&nbsp;for&nbsp;o&nbsp;in&nbsp;msg.outputs)</td>
+        </tr>
+        <tr id="36" style="color: red;">
+          <td style="color: grey">36</td>
+          <td style="text-align: right;">9.00</td>
+          <td style="text-align: right;">9</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;json_msg&nbsp;=&nbsp;MSG_TRANSFER_BLUEPRINT.format(inputs,&nbsp;outputs)</td>
+        </tr>
+        <tr id="37" style="None">
+          <td style="color: grey">37</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;elif&nbsp;BinanceOrderMsg.is_type_of(msg):</td>
+        </tr>
+        <tr id="38" style="None">
+          <td style="color: grey">38</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;json_msg&nbsp;=&nbsp;MSG_NEWORDER_BLUEPRINT.format(</td>
+        </tr>
+        <tr id="39" style="None">
+          <td style="color: grey">39</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;msg.id,</td>
+        </tr>
+        <tr id="40" style="None">
+          <td style="color: grey">40</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;msg.ordertype,</td>
+        </tr>
+        <tr id="41" style="None">
+          <td style="color: grey">41</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;msg.price,</td>
+        </tr>
+        <tr id="42" style="None">
+          <td style="color: grey">42</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;msg.quantity,</td>
+        </tr>
+        <tr id="43" style="None">
+          <td style="color: grey">43</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;msg.sender,</td>
+        </tr>
+        <tr id="44" style="None">
+          <td style="color: grey">44</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;msg.side,</td>
+        </tr>
+        <tr id="45" style="None">
+          <td style="color: grey">45</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;msg.symbol,</td>
+        </tr>
+        <tr id="46" style="color: red;">
+          <td style="color: grey">46</td>
+          <td style="text-align: right;">17.00</td>
+          <td style="text-align: right;">17</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;msg.timeinforce,</td>
+        </tr>
+        <tr id="47" style="None">
+          <td style="color: grey">47</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;)</td>
+        </tr>
+        <tr id="48" style="None">
+          <td style="color: grey">48</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;elif&nbsp;BinanceCancelMsg.is_type_of(msg):</td>
+        </tr>
+        <tr id="49" style="color: red;">
+          <td style="color: grey">49</td>
+          <td style="text-align: right;">11.00</td>
+          <td style="text-align: right;">11</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;json_msg&nbsp;=&nbsp;MSG_CANCEL_BLUEPRINT.format(msg.refid,&nbsp;msg.sender,&nbsp;msg.symbol)</td>
+        </tr>
+        <tr id="50" style="None">
+          <td style="color: grey">50</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;else:</td>
+        </tr>
+        <tr id="51" style="None">
+          <td style="color: grey">51</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;raise&nbsp;wire.ProcessError("input&nbsp;message&nbsp;unrecognized")</td>
+        </tr>
+        <tr id="52" style="None">
+          <td style="color: grey">52</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="53" style="None">
+          <td style="color: grey">53</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;envelope.source&nbsp;<&nbsp;0:</td>
+        </tr>
+        <tr id="54" style="None">
+          <td style="color: grey">54</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;raise&nbsp;wire.DataError("Source&nbsp;is&nbsp;invalid")</td>
+        </tr>
+        <tr id="55" style="None">
+          <td style="color: grey">55</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="56" style="None">
+          <td style="color: grey">56</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;ENVELOPE_BLUEPRINT.format(</td>
+        </tr>
+        <tr id="57" style="None">
+          <td style="color: grey">57</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;envelope.account_number,</td>
+        </tr>
+        <tr id="58" style="None">
+          <td style="color: grey">58</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;envelope.chain_id,</td>
+        </tr>
+        <tr id="59" style="None">
+          <td style="color: grey">59</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;envelope.memo,</td>
+        </tr>
+        <tr id="60" style="None">
+          <td style="color: grey">60</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;json_msg,</td>
+        </tr>
+        <tr id="61" style="None">
+          <td style="color: grey">61</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;envelope.sequence,</td>
+        </tr>
+        <tr id="62" style="color: red;">
+          <td style="color: grey">62</td>
+          <td style="text-align: right;">15.33</td>
+          <td style="text-align: right;">46</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;envelope.source,</td>
+        </tr>
+        <tr id="63" style="None">
+          <td style="color: grey">63</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;)</td>
+        </tr>
+        <tr id="64" style="None">
+          <td style="color: grey">64</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="65" style="None">
+          <td style="color: grey">65</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="66" style="color: blue;">
+          <td style="color: grey">66</td>
+          <td style="text-align: right;">6.00</td>
+          <td style="text-align: right;">30</td>
+          <td>def&nbsp;address_from_public_key(pubkey:&nbsp;bytes,&nbsp;hrp:&nbsp;str)&nbsp;->&nbsp;str:</td>
+        </tr>
+        <tr id="67" style="None">
+          <td style="color: grey">67</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;"""</td>
+        </tr>
+        <tr id="68" style="None">
+          <td style="color: grey">68</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;Address&nbsp;=&nbsp;RIPEMD160(SHA256(compressed&nbsp;public&nbsp;key))</td>
+        </tr>
+        <tr id="69" style="None">
+          <td style="color: grey">69</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;Address_Bech32&nbsp;=&nbsp;HRP&nbsp;+&nbsp;'1'&nbsp;+&nbsp;bech32.encode(convert8BitsTo5Bits(RIPEMD160(SHA256(compressed&nbsp;public&nbsp;key))))</td>
+        </tr>
+        <tr id="70" style="None">
+          <td style="color: grey">70</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;HRP&nbsp;-&nbsp;bnb&nbsp;for&nbsp;productions,&nbsp;tbnb&nbsp;for&nbsp;tests</td>
+        </tr>
+        <tr id="71" style="None">
+          <td style="color: grey">71</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;"""</td>
+        </tr>
+        <tr id="72" style="color: blue;">
+          <td style="color: grey">72</td>
+          <td style="text-align: right;">6.00</td>
+          <td style="text-align: right;">12</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;from&nbsp;trezor.crypto&nbsp;import&nbsp;bech32</td>
+        </tr>
+        <tr id="73" style="color: blue;">
+          <td style="color: grey">73</td>
+          <td style="text-align: right;">6.00</td>
+          <td style="text-align: right;">12</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;from&nbsp;trezor.crypto.scripts&nbsp;import&nbsp;sha256_ripemd160</td>
+        </tr>
+        <tr id="74" style="None">
+          <td style="color: grey">74</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="75" style="color: blue;">
+          <td style="color: grey">75</td>
+          <td style="text-align: right;">2.00</td>
+          <td style="text-align: right;">4</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;h&nbsp;=&nbsp;sha256_ripemd160(pubkey).digest()</td>
+        </tr>
+        <tr id="76" style="None">
+          <td style="color: grey">76</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="77" style="None">
+          <td style="color: grey">77</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;assert&nbsp;(len(h)&nbsp;*&nbsp;8)&nbsp;%&nbsp;5&nbsp;==&nbsp;0&nbsp;&nbsp;#&nbsp;no&nbsp;padding&nbsp;will&nbsp;be&nbsp;added&nbsp;by&nbsp;convertbits</td>
+        </tr>
+        <tr id="78" style="None">
+          <td style="color: grey">78</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;convertedbits&nbsp;=&nbsp;bech32.convertbits(h,&nbsp;8,&nbsp;5)</td>
+        </tr>
+        <tr id="79" style="None">
+          <td style="color: grey">79</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;bech32.bech32_encode(hrp,&nbsp;convertedbits,&nbsp;bech32.Encoding.BECH32)</td>
+        </tr>
+      </tbody>
+    </table>
+  </body>
+</html>

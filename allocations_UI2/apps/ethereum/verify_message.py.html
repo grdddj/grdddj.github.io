@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>apps/ethereum/verify_message.py</title>
+    <meta charset="utf-8">
+    <style>body { font-size: 80%; }</style>
+  </head>
+  <body>
+    <table>
+      <thead>
+        <tr>
+          <th style="color: grey">#</th>
+          <th style="text-align: right;">avg</th>
+          <th style="text-align: right;">total</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr id="1" style="None">
+          <td style="color: grey">1</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>from&nbsp;typing&nbsp;import&nbsp;TYPE_CHECKING</td>
+        </tr>
+        <tr id="2" style="None">
+          <td style="color: grey">2</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="3" style="None">
+          <td style="color: grey">3</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>if&nbsp;TYPE_CHECKING:</td>
+        </tr>
+        <tr id="4" style="None">
+          <td style="color: grey">4</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;from&nbsp;trezor.messages&nbsp;import&nbsp;EthereumVerifyMessage,&nbsp;Success</td>
+        </tr>
+        <tr id="5" style="None">
+          <td style="color: grey">5</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;from&nbsp;trezor.wire&nbsp;import&nbsp;Context</td>
+        </tr>
+        <tr id="6" style="None">
+          <td style="color: grey">6</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="7" style="None">
+          <td style="color: grey">7</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="8" style="color: blue;">
+          <td style="color: grey">8</td>
+          <td style="text-align: right;">3.00</td>
+          <td style="text-align: right;">36</td>
+          <td>async&nbsp;def&nbsp;verify_message(ctx:&nbsp;Context,&nbsp;msg:&nbsp;EthereumVerifyMessage)&nbsp;->&nbsp;Success:</td>
+        </tr>
+        <tr id="9" style="color: blue;">
+          <td style="color: grey">9</td>
+          <td style="text-align: right;">1.00</td>
+          <td style="text-align: right;">12</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;from&nbsp;trezor.wire&nbsp;import&nbsp;DataError</td>
+        </tr>
+        <tr id="10" style="color: blue;">
+          <td style="color: grey">10</td>
+          <td style="text-align: right;">1.00</td>
+          <td style="text-align: right;">12</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;from&nbsp;trezor.crypto.curve&nbsp;import&nbsp;secp256k1</td>
+        </tr>
+        <tr id="11" style="color: blue;">
+          <td style="color: grey">11</td>
+          <td style="text-align: right;">1.00</td>
+          <td style="text-align: right;">12</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;from&nbsp;trezor.crypto.hashlib&nbsp;import&nbsp;sha3_256</td>
+        </tr>
+        <tr id="12" style="color: blue;">
+          <td style="color: grey">12</td>
+          <td style="text-align: right;">1.00</td>
+          <td style="text-align: right;">12</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;from&nbsp;trezor.messages&nbsp;import&nbsp;Success</td>
+        </tr>
+        <tr id="13" style="color: blue;">
+          <td style="color: grey">13</td>
+          <td style="text-align: right;">1.00</td>
+          <td style="text-align: right;">12</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;from&nbsp;trezor.ui.layouts&nbsp;import&nbsp;confirm_signverify,&nbsp;show_success</td>
+        </tr>
+        <tr id="14" style="None">
+          <td style="color: grey">14</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="15" style="color: red;">
+          <td style="color: grey">15</td>
+          <td style="text-align: right;">6.00</td>
+          <td style="text-align: right;">72</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;from&nbsp;apps.common.signverify&nbsp;import&nbsp;decode_message</td>
+        </tr>
+        <tr id="16" style="None">
+          <td style="color: grey">16</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="17" style="color: red;">
+          <td style="color: grey">17</td>
+          <td style="text-align: right;">6.00</td>
+          <td style="text-align: right;">72</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;from&nbsp;.helpers&nbsp;import&nbsp;address_from_bytes,&nbsp;bytes_from_address</td>
+        </tr>
+        <tr id="18" style="color: red;">
+          <td style="color: grey">18</td>
+          <td style="text-align: right;">6.00</td>
+          <td style="text-align: right;">72</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;from&nbsp;.sign_message&nbsp;import&nbsp;message_digest</td>
+        </tr>
+        <tr id="19" style="None">
+          <td style="color: grey">19</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="20" style="None">
+          <td style="color: grey">20</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;digest&nbsp;=&nbsp;message_digest(msg.message)</td>
+        </tr>
+        <tr id="21" style="None">
+          <td style="color: grey">21</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;len(msg.signature)&nbsp;!=&nbsp;65:</td>
+        </tr>
+        <tr id="22" style="None">
+          <td style="color: grey">22</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;raise&nbsp;DataError("Invalid&nbsp;signature")</td>
+        </tr>
+        <tr id="23" style="color: red;">
+          <td style="color: grey">23</td>
+          <td style="text-align: right;">10.00</td>
+          <td style="text-align: right;">120</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;sig&nbsp;=&nbsp;bytearray([msg.signature[64]])&nbsp;+&nbsp;msg.signature[:64]</td>
+        </tr>
+        <tr id="24" style="None">
+          <td style="color: grey">24</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="25" style="color: blue;">
+          <td style="color: grey">25</td>
+          <td style="text-align: right;">1.83</td>
+          <td style="text-align: right;">22</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;pubkey&nbsp;=&nbsp;secp256k1.verify_recover(sig,&nbsp;digest)</td>
+        </tr>
+        <tr id="26" style="None">
+          <td style="color: grey">26</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="27" style="None">
+          <td style="color: grey">27</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;not&nbsp;pubkey:</td>
+        </tr>
+        <tr id="28" style="color: blue;">
+          <td style="color: grey">28</td>
+          <td style="text-align: right;">2.00</td>
+          <td style="text-align: right;">2</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;raise&nbsp;DataError("Invalid&nbsp;signature")</td>
+        </tr>
+        <tr id="29" style="None">
+          <td style="color: grey">29</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="30" style="color: red;">
+          <td style="color: grey">30</td>
+          <td style="text-align: right;">9.00</td>
+          <td style="text-align: right;">99</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;pkh&nbsp;=&nbsp;sha3_256(pubkey[1:],&nbsp;keccak=True).digest()[-20:]</td>
+        </tr>
+        <tr id="31" style="None">
+          <td style="color: grey">31</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="32" style="None">
+          <td style="color: grey">32</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;address_bytes&nbsp;=&nbsp;bytes_from_address(msg.address)</td>
+        </tr>
+        <tr id="33" style="None">
+          <td style="color: grey">33</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;address_bytes&nbsp;!=&nbsp;pkh:</td>
+        </tr>
+        <tr id="34" style="color: blue;">
+          <td style="color: grey">34</td>
+          <td style="text-align: right;">2.00</td>
+          <td style="text-align: right;">4</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;raise&nbsp;DataError("Invalid&nbsp;signature")</td>
+        </tr>
+        <tr id="35" style="None">
+          <td style="color: grey">35</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="36" style="color: blue;">
+          <td style="color: grey">36</td>
+          <td style="text-align: right;">3.00</td>
+          <td style="text-align: right;">27</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;address&nbsp;=&nbsp;address_from_bytes(address_bytes)</td>
+        </tr>
+        <tr id="37" style="None">
+          <td style="color: grey">37</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="38" style="None">
+          <td style="color: grey">38</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;await&nbsp;confirm_signverify(</td>
+        </tr>
+        <tr id="39" style="None">
+          <td style="color: grey">39</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ctx,&nbsp;"ETH",&nbsp;decode_message(msg.message),&nbsp;address,&nbsp;verify=True</td>
+        </tr>
+        <tr id="40" style="None">
+          <td style="color: grey">40</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;)</td>
+        </tr>
+        <tr id="41" style="None">
+          <td style="color: grey">41</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="42" style="color: blue;">
+          <td style="color: grey">42</td>
+          <td style="text-align: right;">0.25</td>
+          <td style="text-align: right;">9</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;await&nbsp;show_success(ctx,&nbsp;"verify_message",&nbsp;"The&nbsp;signature&nbsp;is&nbsp;valid.")</td>
+        </tr>
+        <tr id="43" style="color: blue;">
+          <td style="color: grey">43</td>
+          <td style="text-align: right;">5.00</td>
+          <td style="text-align: right;">45</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;Success(message="Message&nbsp;verified")</td>
+        </tr>
+      </tbody>
+    </table>
+  </body>
+</html>

@@ -1,0 +1,916 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>apps/eos/actions/__init__.py</title>
+    <meta charset="utf-8">
+    <style>body { font-size: 80%; }</style>
+  </head>
+  <body>
+    <table>
+      <thead>
+        <tr>
+          <th style="color: grey">#</th>
+          <th style="text-align: right;">avg</th>
+          <th style="text-align: right;">total</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr id="1" style="None">
+          <td style="color: grey">1</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>from&nbsp;typing&nbsp;import&nbsp;TYPE_CHECKING</td>
+        </tr>
+        <tr id="2" style="None">
+          <td style="color: grey">2</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="3" style="None">
+          <td style="color: grey">3</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>if&nbsp;TYPE_CHECKING:</td>
+        </tr>
+        <tr id="4" style="None">
+          <td style="color: grey">4</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;from&nbsp;trezor&nbsp;import&nbsp;wire</td>
+        </tr>
+        <tr id="5" style="None">
+          <td style="color: grey">5</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;from&nbsp;trezor.utils&nbsp;import&nbsp;Writer,&nbsp;HashWriter</td>
+        </tr>
+        <tr id="6" style="None">
+          <td style="color: grey">6</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;from&nbsp;trezor.messages&nbsp;import&nbsp;EosTxActionAck</td>
+        </tr>
+        <tr id="7" style="None">
+          <td style="color: grey">7</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="8" style="None">
+          <td style="color: grey">8</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="9" style="color: blue;">
+          <td style="color: grey">9</td>
+          <td style="text-align: right;">1.00</td>
+          <td style="text-align: right;">16</td>
+          <td>async&nbsp;def&nbsp;process_action(</td>
+        </tr>
+        <tr id="10" style="None">
+          <td style="color: grey">10</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;ctx:&nbsp;wire.Context,&nbsp;sha:&nbsp;HashWriter,&nbsp;action:&nbsp;EosTxActionAck,&nbsp;is_last:&nbsp;bool</td>
+        </tr>
+        <tr id="11" style="None">
+          <td style="color: grey">11</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>)&nbsp;->&nbsp;None:</td>
+        </tr>
+        <tr id="12" style="color: blue;">
+          <td style="color: grey">12</td>
+          <td style="text-align: right;">1.00</td>
+          <td style="text-align: right;">19</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;from&nbsp;..&nbsp;import&nbsp;helpers,&nbsp;writers</td>
+        </tr>
+        <tr id="13" style="color: red;">
+          <td style="color: grey">13</td>
+          <td style="text-align: right;">5.21</td>
+          <td style="text-align: right;">99</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;from&nbsp;.&nbsp;import&nbsp;layout</td>
+        </tr>
+        <tr id="14" style="None">
+          <td style="color: grey">14</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="15" style="None">
+          <td style="color: grey">15</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;name&nbsp;=&nbsp;helpers.eos_name_to_string(action.common.name)</td>
+        </tr>
+        <tr id="16" style="None">
+          <td style="color: grey">16</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;account&nbsp;=&nbsp;helpers.eos_name_to_string(action.common.account)</td>
+        </tr>
+        <tr id="17" style="None">
+          <td style="color: grey">17</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="18" style="None">
+          <td style="color: grey">18</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;not&nbsp;_check_action(action,&nbsp;name,&nbsp;account):</td>
+        </tr>
+        <tr id="19" style="None">
+          <td style="color: grey">19</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;raise&nbsp;ValueError("Invalid&nbsp;action")</td>
+        </tr>
+        <tr id="20" style="None">
+          <td style="color: grey">20</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="21" style="None">
+          <td style="color: grey">21</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;#&nbsp;Little&nbsp;cheat,&nbsp;not&nbsp;having&nbsp;to&nbsp;create&nbsp;"is_last"&nbsp;argument&nbsp;for&nbsp;every&nbsp;action&nbsp;layout</td>
+        </tr>
+        <tr id="22" style="None">
+          <td style="color: grey">22</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;#&nbsp;(not&nbsp;worth&nbsp;spending&nbsp;so&nbsp;many&nbsp;bytes&nbsp;in&nbsp;flash&nbsp;on&nbsp;this)</td>
+        </tr>
+        <tr id="23" style="None">
+          <td style="color: grey">23</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;layout.is_last&nbsp;=&nbsp;is_last</td>
+        </tr>
+        <tr id="24" style="None">
+          <td style="color: grey">24</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="25" style="color: blue;">
+          <td style="color: grey">25</td>
+          <td style="text-align: right;">1.00</td>
+          <td style="text-align: right;">19</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;w&nbsp;=&nbsp;bytearray()</td>
+        </tr>
+        <tr id="26" style="None">
+          <td style="color: grey">26</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;account&nbsp;==&nbsp;"eosio":</td>
+        </tr>
+        <tr id="27" style="None">
+          <td style="color: grey">27</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;name&nbsp;==&nbsp;"buyram":</td>
+        </tr>
+        <tr id="28" style="None">
+          <td style="color: grey">28</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;assert&nbsp;action.buy_ram&nbsp;is&nbsp;not&nbsp;None&nbsp;&nbsp;#&nbsp;_check_action</td>
+        </tr>
+        <tr id="29" style="color: blue;">
+          <td style="color: grey">29</td>
+          <td style="text-align: right;">0.25</td>
+          <td style="text-align: right;">1</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;await&nbsp;layout.confirm_action_buyram(ctx,&nbsp;action.buy_ram)</td>
+        </tr>
+        <tr id="30" style="None">
+          <td style="color: grey">30</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;writers.write_action_buyram(w,&nbsp;action.buy_ram)</td>
+        </tr>
+        <tr id="31" style="None">
+          <td style="color: grey">31</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;elif&nbsp;name&nbsp;==&nbsp;"buyrambytes":</td>
+        </tr>
+        <tr id="32" style="None">
+          <td style="color: grey">32</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;assert&nbsp;action.buy_ram_bytes&nbsp;is&nbsp;not&nbsp;None&nbsp;&nbsp;#&nbsp;_check_action</td>
+        </tr>
+        <tr id="33" style="color: blue;">
+          <td style="color: grey">33</td>
+          <td style="text-align: right;">0.25</td>
+          <td style="text-align: right;">2</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;await&nbsp;layout.confirm_action_buyrambytes(ctx,&nbsp;action.buy_ram_bytes)</td>
+        </tr>
+        <tr id="34" style="None">
+          <td style="color: grey">34</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;writers.write_action_buyrambytes(w,&nbsp;action.buy_ram_bytes)</td>
+        </tr>
+        <tr id="35" style="None">
+          <td style="color: grey">35</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;elif&nbsp;name&nbsp;==&nbsp;"sellram":</td>
+        </tr>
+        <tr id="36" style="None">
+          <td style="color: grey">36</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;assert&nbsp;action.sell_ram&nbsp;is&nbsp;not&nbsp;None&nbsp;&nbsp;#&nbsp;_check_action</td>
+        </tr>
+        <tr id="37" style="color: blue;">
+          <td style="color: grey">37</td>
+          <td style="text-align: right;">0.25</td>
+          <td style="text-align: right;">1</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;await&nbsp;layout.confirm_action_sellram(ctx,&nbsp;action.sell_ram)</td>
+        </tr>
+        <tr id="38" style="None">
+          <td style="color: grey">38</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;writers.write_action_sellram(w,&nbsp;action.sell_ram)</td>
+        </tr>
+        <tr id="39" style="None">
+          <td style="color: grey">39</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;elif&nbsp;name&nbsp;==&nbsp;"delegatebw":</td>
+        </tr>
+        <tr id="40" style="None">
+          <td style="color: grey">40</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;assert&nbsp;action.delegate&nbsp;is&nbsp;not&nbsp;None&nbsp;&nbsp;#&nbsp;_check_action</td>
+        </tr>
+        <tr id="41" style="color: blue;">
+          <td style="color: grey">41</td>
+          <td style="text-align: right;">0.25</td>
+          <td style="text-align: right;">2</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;await&nbsp;layout.confirm_action_delegate(ctx,&nbsp;action.delegate)</td>
+        </tr>
+        <tr id="42" style="None">
+          <td style="color: grey">42</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;writers.write_action_delegate(w,&nbsp;action.delegate)</td>
+        </tr>
+        <tr id="43" style="None">
+          <td style="color: grey">43</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;elif&nbsp;name&nbsp;==&nbsp;"undelegatebw":</td>
+        </tr>
+        <tr id="44" style="None">
+          <td style="color: grey">44</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;assert&nbsp;action.undelegate&nbsp;is&nbsp;not&nbsp;None&nbsp;&nbsp;#&nbsp;_check_action</td>
+        </tr>
+        <tr id="45" style="color: blue;">
+          <td style="color: grey">45</td>
+          <td style="text-align: right;">0.25</td>
+          <td style="text-align: right;">1</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;await&nbsp;layout.confirm_action_undelegate(ctx,&nbsp;action.undelegate)</td>
+        </tr>
+        <tr id="46" style="None">
+          <td style="color: grey">46</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;writers.write_action_undelegate(w,&nbsp;action.undelegate)</td>
+        </tr>
+        <tr id="47" style="None">
+          <td style="color: grey">47</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;elif&nbsp;name&nbsp;==&nbsp;"refund":</td>
+        </tr>
+        <tr id="48" style="None">
+          <td style="color: grey">48</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;assert&nbsp;action.refund&nbsp;is&nbsp;not&nbsp;None&nbsp;&nbsp;#&nbsp;_check_action</td>
+        </tr>
+        <tr id="49" style="color: blue;">
+          <td style="color: grey">49</td>
+          <td style="text-align: right;">0.25</td>
+          <td style="text-align: right;">1</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;await&nbsp;layout.confirm_action_refund(ctx,&nbsp;action.refund)</td>
+        </tr>
+        <tr id="50" style="None">
+          <td style="color: grey">50</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;writers.write_action_refund(w,&nbsp;action.refund)</td>
+        </tr>
+        <tr id="51" style="None">
+          <td style="color: grey">51</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;elif&nbsp;name&nbsp;==&nbsp;"voteproducer":</td>
+        </tr>
+        <tr id="52" style="None">
+          <td style="color: grey">52</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;assert&nbsp;action.vote_producer&nbsp;is&nbsp;not&nbsp;None&nbsp;&nbsp;#&nbsp;_check_action</td>
+        </tr>
+        <tr id="53" style="color: blue;">
+          <td style="color: grey">53</td>
+          <td style="text-align: right;">0.25</td>
+          <td style="text-align: right;">2</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;await&nbsp;layout.confirm_action_voteproducer(ctx,&nbsp;action.vote_producer)</td>
+        </tr>
+        <tr id="54" style="None">
+          <td style="color: grey">54</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;writers.write_action_voteproducer(w,&nbsp;action.vote_producer)</td>
+        </tr>
+        <tr id="55" style="None">
+          <td style="color: grey">55</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;elif&nbsp;name&nbsp;==&nbsp;"updateauth":</td>
+        </tr>
+        <tr id="56" style="None">
+          <td style="color: grey">56</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;assert&nbsp;action.update_auth&nbsp;is&nbsp;not&nbsp;None&nbsp;&nbsp;#&nbsp;_check_action</td>
+        </tr>
+        <tr id="57" style="color: blue;">
+          <td style="color: grey">57</td>
+          <td style="text-align: right;">0.25</td>
+          <td style="text-align: right;">1</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;await&nbsp;layout.confirm_action_updateauth(ctx,&nbsp;action.update_auth)</td>
+        </tr>
+        <tr id="58" style="None">
+          <td style="color: grey">58</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;writers.write_action_updateauth(w,&nbsp;action.update_auth)</td>
+        </tr>
+        <tr id="59" style="None">
+          <td style="color: grey">59</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;elif&nbsp;name&nbsp;==&nbsp;"deleteauth":</td>
+        </tr>
+        <tr id="60" style="None">
+          <td style="color: grey">60</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;assert&nbsp;action.delete_auth&nbsp;is&nbsp;not&nbsp;None&nbsp;&nbsp;#&nbsp;_check_action</td>
+        </tr>
+        <tr id="61" style="color: blue;">
+          <td style="color: grey">61</td>
+          <td style="text-align: right;">0.25</td>
+          <td style="text-align: right;">1</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;await&nbsp;layout.confirm_action_deleteauth(ctx,&nbsp;action.delete_auth)</td>
+        </tr>
+        <tr id="62" style="None">
+          <td style="color: grey">62</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;writers.write_action_deleteauth(w,&nbsp;action.delete_auth)</td>
+        </tr>
+        <tr id="63" style="None">
+          <td style="color: grey">63</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;elif&nbsp;name&nbsp;==&nbsp;"linkauth":</td>
+        </tr>
+        <tr id="64" style="None">
+          <td style="color: grey">64</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;assert&nbsp;action.link_auth&nbsp;is&nbsp;not&nbsp;None&nbsp;&nbsp;#&nbsp;_check_action</td>
+        </tr>
+        <tr id="65" style="color: blue;">
+          <td style="color: grey">65</td>
+          <td style="text-align: right;">0.25</td>
+          <td style="text-align: right;">1</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;await&nbsp;layout.confirm_action_linkauth(ctx,&nbsp;action.link_auth)</td>
+        </tr>
+        <tr id="66" style="None">
+          <td style="color: grey">66</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;writers.write_action_linkauth(w,&nbsp;action.link_auth)</td>
+        </tr>
+        <tr id="67" style="None">
+          <td style="color: grey">67</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;elif&nbsp;name&nbsp;==&nbsp;"unlinkauth":</td>
+        </tr>
+        <tr id="68" style="None">
+          <td style="color: grey">68</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;assert&nbsp;action.unlink_auth&nbsp;is&nbsp;not&nbsp;None&nbsp;&nbsp;#&nbsp;_check_action</td>
+        </tr>
+        <tr id="69" style="color: blue;">
+          <td style="color: grey">69</td>
+          <td style="text-align: right;">0.25</td>
+          <td style="text-align: right;">1</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;await&nbsp;layout.confirm_action_unlinkauth(ctx,&nbsp;action.unlink_auth)</td>
+        </tr>
+        <tr id="70" style="None">
+          <td style="color: grey">70</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;writers.write_action_unlinkauth(w,&nbsp;action.unlink_auth)</td>
+        </tr>
+        <tr id="71" style="None">
+          <td style="color: grey">71</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;elif&nbsp;name&nbsp;==&nbsp;"newaccount":</td>
+        </tr>
+        <tr id="72" style="None">
+          <td style="color: grey">72</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;assert&nbsp;action.new_account&nbsp;is&nbsp;not&nbsp;None&nbsp;&nbsp;#&nbsp;_check_action</td>
+        </tr>
+        <tr id="73" style="color: blue;">
+          <td style="color: grey">73</td>
+          <td style="text-align: right;">0.25</td>
+          <td style="text-align: right;">1</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;await&nbsp;layout.confirm_action_newaccount(ctx,&nbsp;action.new_account)</td>
+        </tr>
+        <tr id="74" style="None">
+          <td style="color: grey">74</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;writers.write_action_newaccount(w,&nbsp;action.new_account)</td>
+        </tr>
+        <tr id="75" style="None">
+          <td style="color: grey">75</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;else:</td>
+        </tr>
+        <tr id="76" style="None">
+          <td style="color: grey">76</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;raise&nbsp;ValueError("Unrecognized&nbsp;action&nbsp;type&nbsp;for&nbsp;eosio")</td>
+        </tr>
+        <tr id="77" style="None">
+          <td style="color: grey">77</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;elif&nbsp;name&nbsp;==&nbsp;"transfer":</td>
+        </tr>
+        <tr id="78" style="None">
+          <td style="color: grey">78</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;assert&nbsp;action.transfer&nbsp;is&nbsp;not&nbsp;None&nbsp;&nbsp;#&nbsp;_check_action</td>
+        </tr>
+        <tr id="79" style="color: blue;">
+          <td style="color: grey">79</td>
+          <td style="text-align: right;">0.25</td>
+          <td style="text-align: right;">1</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;await&nbsp;layout.confirm_action_transfer(ctx,&nbsp;action.transfer,&nbsp;account)</td>
+        </tr>
+        <tr id="80" style="None">
+          <td style="color: grey">80</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;writers.write_action_transfer(w,&nbsp;action.transfer)</td>
+        </tr>
+        <tr id="81" style="None">
+          <td style="color: grey">81</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;else:</td>
+        </tr>
+        <tr id="82" style="color: blue;">
+          <td style="color: grey">82</td>
+          <td style="text-align: right;">0.25</td>
+          <td style="text-align: right;">3</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;await&nbsp;_process_unknown_action(ctx,&nbsp;w,&nbsp;action)</td>
+        </tr>
+        <tr id="83" style="None">
+          <td style="color: grey">83</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="84" style="None">
+          <td style="color: grey">84</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;writers.write_action_common(sha,&nbsp;action.common)</td>
+        </tr>
+        <tr id="85" style="None">
+          <td style="color: grey">85</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;writers.write_bytes_prefixed(sha,&nbsp;w)</td>
+        </tr>
+        <tr id="86" style="None">
+          <td style="color: grey">86</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="87" style="None">
+          <td style="color: grey">87</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="88" style="color: red;">
+          <td style="color: grey">88</td>
+          <td style="text-align: right;">2.00</td>
+          <td style="text-align: right;">32</td>
+          <td>async&nbsp;def&nbsp;_process_unknown_action(</td>
+        </tr>
+        <tr id="89" style="None">
+          <td style="color: grey">89</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;ctx:&nbsp;wire.Context,&nbsp;w:&nbsp;Writer,&nbsp;action:&nbsp;EosTxActionAck</td>
+        </tr>
+        <tr id="90" style="None">
+          <td style="color: grey">90</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>)&nbsp;->&nbsp;None:</td>
+        </tr>
+        <tr id="91" style="color: blue;">
+          <td style="color: grey">91</td>
+          <td style="text-align: right;">1.00</td>
+          <td style="text-align: right;">3</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;from&nbsp;trezor.crypto.hashlib&nbsp;import&nbsp;sha256</td>
+        </tr>
+        <tr id="92" style="color: blue;">
+          <td style="color: grey">92</td>
+          <td style="text-align: right;">1.00</td>
+          <td style="text-align: right;">3</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;from&nbsp;trezor.utils&nbsp;import&nbsp;HashWriter</td>
+        </tr>
+        <tr id="93" style="color: blue;">
+          <td style="color: grey">93</td>
+          <td style="text-align: right;">1.00</td>
+          <td style="text-align: right;">3</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;from&nbsp;trezor.messages&nbsp;import&nbsp;EosTxActionAck,&nbsp;EosTxActionRequest</td>
+        </tr>
+        <tr id="94" style="color: red;">
+          <td style="color: grey">94</td>
+          <td style="text-align: right;">1.00</td>
+          <td style="text-align: right;">3</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;from&nbsp;..&nbsp;import&nbsp;writers</td>
+        </tr>
+        <tr id="95" style="color: red;">
+          <td style="color: grey">95</td>
+          <td style="text-align: right;">1.00</td>
+          <td style="text-align: right;">3</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;from&nbsp;.&nbsp;import&nbsp;layout</td>
+        </tr>
+        <tr id="96" style="None">
+          <td style="color: grey">96</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="97" style="None">
+          <td style="color: grey">97</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;unknown&nbsp;=&nbsp;action.unknown&nbsp;&nbsp;#&nbsp;local_cache_attribute</td>
+        </tr>
+        <tr id="98" style="None">
+          <td style="color: grey">98</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;assert&nbsp;unknown&nbsp;is&nbsp;not&nbsp;None</td>
+        </tr>
+        <tr id="99" style="None">
+          <td style="color: grey">99</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;data_chunk&nbsp;=&nbsp;unknown.data_chunk&nbsp;&nbsp;#&nbsp;local_cache_attribute</td>
+        </tr>
+        <tr id="100" style="None">
+          <td style="color: grey">100</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="101" style="color: red;">
+          <td style="color: grey">101</td>
+          <td style="text-align: right;">3.00</td>
+          <td style="text-align: right;">9</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;checksum&nbsp;=&nbsp;HashWriter(sha256())</td>
+        </tr>
+        <tr id="102" style="None">
+          <td style="color: grey">102</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;writers.write_uvarint(checksum,&nbsp;unknown.data_size)</td>
+        </tr>
+        <tr id="103" style="None">
+          <td style="color: grey">103</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;checksum.extend(data_chunk)</td>
+        </tr>
+        <tr id="104" style="None">
+          <td style="color: grey">104</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="105" style="None">
+          <td style="color: grey">105</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;writers.write_bytes_unchecked(w,&nbsp;data_chunk)</td>
+        </tr>
+        <tr id="106" style="None">
+          <td style="color: grey">106</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;bytes_left&nbsp;=&nbsp;unknown.data_size&nbsp;-&nbsp;len(data_chunk)</td>
+        </tr>
+        <tr id="107" style="None">
+          <td style="color: grey">107</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="108" style="None">
+          <td style="color: grey">108</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;while&nbsp;bytes_left&nbsp;!=&nbsp;0:</td>
+        </tr>
+        <tr id="109" style="None">
+          <td style="color: grey">109</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;action&nbsp;=&nbsp;await&nbsp;ctx.call(</td>
+        </tr>
+        <tr id="110" style="None">
+          <td style="color: grey">110</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;EosTxActionRequest(data_size=bytes_left),&nbsp;EosTxActionAck</td>
+        </tr>
+        <tr id="111" style="None">
+          <td style="color: grey">111</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;)</td>
+        </tr>
+        <tr id="112" style="None">
+          <td style="color: grey">112</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="113" style="None">
+          <td style="color: grey">113</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;unknown&nbsp;is&nbsp;None:</td>
+        </tr>
+        <tr id="114" style="None">
+          <td style="color: grey">114</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;raise&nbsp;ValueError("Bad&nbsp;response.&nbsp;Unknown&nbsp;struct&nbsp;expected.")</td>
+        </tr>
+        <tr id="115" style="None">
+          <td style="color: grey">115</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="116" style="None">
+          <td style="color: grey">116</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;checksum.extend(data_chunk)</td>
+        </tr>
+        <tr id="117" style="None">
+          <td style="color: grey">117</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;writers.write_bytes_unchecked(w,&nbsp;data_chunk)</td>
+        </tr>
+        <tr id="118" style="None">
+          <td style="color: grey">118</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="119" style="None">
+          <td style="color: grey">119</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;bytes_left&nbsp;-=&nbsp;len(data_chunk)</td>
+        </tr>
+        <tr id="120" style="None">
+          <td style="color: grey">120</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;bytes_left&nbsp;<&nbsp;0:</td>
+        </tr>
+        <tr id="121" style="None">
+          <td style="color: grey">121</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;raise&nbsp;ValueError("Bad&nbsp;response.&nbsp;Buffer&nbsp;overflow.")</td>
+        </tr>
+        <tr id="122" style="None">
+          <td style="color: grey">122</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="123" style="None">
+          <td style="color: grey">123</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;await&nbsp;layout.confirm_action_unknown(ctx,&nbsp;action.common,&nbsp;checksum.get_digest())</td>
+        </tr>
+        <tr id="124" style="None">
+          <td style="color: grey">124</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="125" style="None">
+          <td style="color: grey">125</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="126" style="color: blue;">
+          <td style="color: grey">126</td>
+          <td style="text-align: right;">1.00</td>
+          <td style="text-align: right;">16</td>
+          <td>def&nbsp;_check_action(action:&nbsp;EosTxActionAck,&nbsp;name:&nbsp;str,&nbsp;account:&nbsp;str)&nbsp;->&nbsp;bool:</td>
+        </tr>
+        <tr id="127" style="None">
+          <td style="color: grey">127</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;account&nbsp;==&nbsp;"eosio":</td>
+        </tr>
+        <tr id="128" style="None">
+          <td style="color: grey">128</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;(</td>
+        </tr>
+        <tr id="129" style="None">
+          <td style="color: grey">129</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(name&nbsp;==&nbsp;"buyram"&nbsp;and&nbsp;action.buy_ram&nbsp;is&nbsp;not&nbsp;None)</td>
+        </tr>
+        <tr id="130" style="None">
+          <td style="color: grey">130</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;or&nbsp;(name&nbsp;==&nbsp;"buyrambytes"&nbsp;and&nbsp;action.buy_ram_bytes&nbsp;is&nbsp;not&nbsp;None)</td>
+        </tr>
+        <tr id="131" style="None">
+          <td style="color: grey">131</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;or&nbsp;(name&nbsp;==&nbsp;"sellram"&nbsp;and&nbsp;action.sell_ram&nbsp;is&nbsp;not&nbsp;None)</td>
+        </tr>
+        <tr id="132" style="None">
+          <td style="color: grey">132</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;or&nbsp;(name&nbsp;==&nbsp;"delegatebw"&nbsp;and&nbsp;action.delegate&nbsp;is&nbsp;not&nbsp;None)</td>
+        </tr>
+        <tr id="133" style="None">
+          <td style="color: grey">133</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;or&nbsp;(name&nbsp;==&nbsp;"undelegatebw"&nbsp;and&nbsp;action.undelegate&nbsp;is&nbsp;not&nbsp;None)</td>
+        </tr>
+        <tr id="134" style="None">
+          <td style="color: grey">134</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;or&nbsp;(name&nbsp;==&nbsp;"refund"&nbsp;and&nbsp;action.refund&nbsp;is&nbsp;not&nbsp;None)</td>
+        </tr>
+        <tr id="135" style="None">
+          <td style="color: grey">135</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;or&nbsp;(name&nbsp;==&nbsp;"voteproducer"&nbsp;and&nbsp;action.vote_producer&nbsp;is&nbsp;not&nbsp;None)</td>
+        </tr>
+        <tr id="136" style="None">
+          <td style="color: grey">136</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;or&nbsp;(name&nbsp;==&nbsp;"updateauth"&nbsp;and&nbsp;action.update_auth&nbsp;is&nbsp;not&nbsp;None)</td>
+        </tr>
+        <tr id="137" style="None">
+          <td style="color: grey">137</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;or&nbsp;(name&nbsp;==&nbsp;"deleteauth"&nbsp;and&nbsp;action.delete_auth&nbsp;is&nbsp;not&nbsp;None)</td>
+        </tr>
+        <tr id="138" style="None">
+          <td style="color: grey">138</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;or&nbsp;(name&nbsp;==&nbsp;"linkauth"&nbsp;and&nbsp;action.link_auth&nbsp;is&nbsp;not&nbsp;None)</td>
+        </tr>
+        <tr id="139" style="None">
+          <td style="color: grey">139</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;or&nbsp;(name&nbsp;==&nbsp;"unlinkauth"&nbsp;and&nbsp;action.unlink_auth&nbsp;is&nbsp;not&nbsp;None)</td>
+        </tr>
+        <tr id="140" style="None">
+          <td style="color: grey">140</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;or&nbsp;(name&nbsp;==&nbsp;"newaccount"&nbsp;and&nbsp;action.new_account&nbsp;is&nbsp;not&nbsp;None)</td>
+        </tr>
+        <tr id="141" style="None">
+          <td style="color: grey">141</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;)</td>
+        </tr>
+        <tr id="142" style="None">
+          <td style="color: grey">142</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="143" style="None">
+          <td style="color: grey">143</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;elif&nbsp;name&nbsp;==&nbsp;"transfer":</td>
+        </tr>
+        <tr id="144" style="None">
+          <td style="color: grey">144</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;action.transfer&nbsp;is&nbsp;not&nbsp;None</td>
+        </tr>
+        <tr id="145" style="None">
+          <td style="color: grey">145</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="146" style="None">
+          <td style="color: grey">146</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;elif&nbsp;action.unknown&nbsp;is&nbsp;not&nbsp;None:</td>
+        </tr>
+        <tr id="147" style="None">
+          <td style="color: grey">147</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;True</td>
+        </tr>
+        <tr id="148" style="None">
+          <td style="color: grey">148</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="149" style="None">
+          <td style="color: grey">149</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;False</td>
+        </tr>
+      </tbody>
+    </table>
+  </body>
+</html>

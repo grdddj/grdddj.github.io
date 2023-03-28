@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>storage/recovery_shares.py</title>
+    <meta charset="utf-8">
+    <style>body { font-size: 80%; }</style>
+  </head>
+  <body>
+    <table>
+      <thead>
+        <tr>
+          <th style="color: grey">#</th>
+          <th style="text-align: right;">avg</th>
+          <th style="text-align: right;">total</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr id="1" style="color: red;">
+          <td style="color: grey">1</td>
+          <td style="text-align: right;">2.00</td>
+          <td style="text-align: right;">116</td>
+          <td>from&nbsp;storage&nbsp;import&nbsp;common</td>
+        </tr>
+        <tr id="2" style="color: red;">
+          <td style="color: grey">2</td>
+          <td style="text-align: right;">6.00</td>
+          <td style="text-align: right;">348</td>
+          <td>from&nbsp;trezor.crypto&nbsp;import&nbsp;slip39</td>
+        </tr>
+        <tr id="3" style="None">
+          <td style="color: grey">3</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="4" style="None">
+          <td style="color: grey">4</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>#&nbsp;Mnemonics&nbsp;stored&nbsp;during&nbsp;SLIP-39&nbsp;recovery&nbsp;process.</td>
+        </tr>
+        <tr id="5" style="None">
+          <td style="color: grey">5</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>#&nbsp;Each&nbsp;mnemonic&nbsp;is&nbsp;stored&nbsp;under&nbsp;key&nbsp;=&nbsp;index.</td>
+        </tr>
+        <tr id="6" style="None">
+          <td style="color: grey">6</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="7" style="None">
+          <td style="color: grey">7</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="8" style="color: red;">
+          <td style="color: grey">8</td>
+          <td style="text-align: right;">2.00</td>
+          <td style="text-align: right;">116</td>
+          <td>def&nbsp;set(index:&nbsp;int,&nbsp;group_index:&nbsp;int,&nbsp;mnemonic:&nbsp;str)&nbsp;->&nbsp;None:</td>
+        </tr>
+        <tr id="9" style="None">
+          <td style="color: grey">9</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;common.set(</td>
+        </tr>
+        <tr id="10" style="None">
+          <td style="color: grey">10</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;common.APP_RECOVERY_SHARES,</td>
+        </tr>
+        <tr id="11" style="None">
+          <td style="color: grey">11</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;index&nbsp;+&nbsp;group_index&nbsp;*&nbsp;slip39.MAX_SHARE_COUNT,</td>
+        </tr>
+        <tr id="12" style="color: blue;">
+          <td style="color: grey">12</td>
+          <td style="text-align: right;">1.00</td>
+          <td style="text-align: right;">121</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;mnemonic.encode(),</td>
+        </tr>
+        <tr id="13" style="None">
+          <td style="color: grey">13</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;)</td>
+        </tr>
+        <tr id="14" style="None">
+          <td style="color: grey">14</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="15" style="None">
+          <td style="color: grey">15</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="16" style="color: blue;">
+          <td style="color: grey">16</td>
+          <td style="text-align: right;">1.00</td>
+          <td style="text-align: right;">58</td>
+          <td>def&nbsp;get(index:&nbsp;int,&nbsp;group_index:&nbsp;int)&nbsp;->&nbsp;str&nbsp;|&nbsp;None:</td>
+        </tr>
+        <tr id="17" style="None">
+          <td style="color: grey">17</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;m&nbsp;=&nbsp;common.get(</td>
+        </tr>
+        <tr id="18" style="None">
+          <td style="color: grey">18</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;common.APP_RECOVERY_SHARES,&nbsp;index&nbsp;+&nbsp;group_index&nbsp;*&nbsp;slip39.MAX_SHARE_COUNT</td>
+        </tr>
+        <tr id="19" style="None">
+          <td style="color: grey">19</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;)</td>
+        </tr>
+        <tr id="20" style="None">
+          <td style="color: grey">20</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;m:</td>
+        </tr>
+        <tr id="21" style="color: blue;">
+          <td style="color: grey">21</td>
+          <td style="text-align: right;">1.00</td>
+          <td style="text-align: right;">4950</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;m.decode()</td>
+        </tr>
+        <tr id="22" style="None">
+          <td style="color: grey">22</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;None</td>
+        </tr>
+        <tr id="23" style="None">
+          <td style="color: grey">23</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="24" style="None">
+          <td style="color: grey">24</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="25" style="color: red;">
+          <td style="color: grey">25</td>
+          <td style="text-align: right;">2.00</td>
+          <td style="text-align: right;">116</td>
+          <td>def&nbsp;fetch_group(group_index:&nbsp;int)&nbsp;->&nbsp;list[str]:</td>
+        </tr>
+        <tr id="26" style="color: red;">
+          <td style="color: grey">26</td>
+          <td style="text-align: right;">2.00</td>
+          <td style="text-align: right;">11744</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;mnemonics&nbsp;=&nbsp;[]</td>
+        </tr>
+        <tr id="27" style="None">
+          <td style="color: grey">27</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;for&nbsp;index&nbsp;in&nbsp;range(slip39.MAX_SHARE_COUNT):</td>
+        </tr>
+        <tr id="28" style="None">
+          <td style="color: grey">28</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;m&nbsp;=&nbsp;get(index,&nbsp;group_index)</td>
+        </tr>
+        <tr id="29" style="None">
+          <td style="color: grey">29</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;m:</td>
+        </tr>
+        <tr id="30" style="None">
+          <td style="color: grey">30</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;mnemonics.append(m)</td>
+        </tr>
+        <tr id="31" style="None">
+          <td style="color: grey">31</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="32" style="color: blue;">
+          <td style="color: grey">32</td>
+          <td style="text-align: right;">0.19</td>
+          <td style="text-align: right;">1118</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;mnemonics</td>
+        </tr>
+        <tr id="33" style="None">
+          <td style="color: grey">33</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="34" style="None">
+          <td style="color: grey">34</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="35" style="color: blue;">
+          <td style="color: grey">35</td>
+          <td style="text-align: right;">1.00</td>
+          <td style="text-align: right;">58</td>
+          <td>def&nbsp;delete()&nbsp;->&nbsp;None:</td>
+        </tr>
+        <tr id="36" style="None">
+          <td style="color: grey">36</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;for&nbsp;index&nbsp;in&nbsp;range(slip39.MAX_SHARE_COUNT&nbsp;*&nbsp;slip39.MAX_GROUP_COUNT):</td>
+        </tr>
+        <tr id="37" style="None">
+          <td style="color: grey">37</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;common.delete(common.APP_RECOVERY_SHARES,&nbsp;index)</td>
+        </tr>
+      </tbody>
+    </table>
+  </body>
+</html>

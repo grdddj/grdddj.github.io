@@ -1,0 +1,3352 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>apps/bitcoin/sign_tx/approvers.py</title>
+    <meta charset="utf-8">
+    <style>body { font-size: 80%; }</style>
+  </head>
+  <body>
+    <table>
+      <thead>
+        <tr>
+          <th style="color: grey">#</th>
+          <th style="text-align: right;">avg</th>
+          <th style="text-align: right;">total</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr id="1" style="color: blue;">
+          <td style="color: grey">1</td>
+          <td style="text-align: right;">1.25</td>
+          <td style="text-align: right;">1425</td>
+          <td>from&nbsp;micropython&nbsp;import&nbsp;const</td>
+        </tr>
+        <tr id="2" style="None">
+          <td style="color: grey">2</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>from&nbsp;typing&nbsp;import&nbsp;TYPE_CHECKING</td>
+        </tr>
+        <tr id="3" style="None">
+          <td style="color: grey">3</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="4" style="color: blue;">
+          <td style="color: grey">4</td>
+          <td style="text-align: right;">2.00</td>
+          <td style="text-align: right;">570</td>
+          <td>from&nbsp;trezor.crypto.curve&nbsp;import&nbsp;bip340,&nbsp;secp256k1</td>
+        </tr>
+        <tr id="5" style="color: blue;">
+          <td style="color: grey">5</td>
+          <td style="text-align: right;">1.00</td>
+          <td style="text-align: right;">285</td>
+          <td>from&nbsp;trezor.crypto.hashlib&nbsp;import&nbsp;sha256</td>
+        </tr>
+        <tr id="6" style="color: blue;">
+          <td style="color: grey">6</td>
+          <td style="text-align: right;">2.00</td>
+          <td style="text-align: right;">570</td>
+          <td>from&nbsp;trezor.utils&nbsp;import&nbsp;HashWriter</td>
+        </tr>
+        <tr id="7" style="color: blue;">
+          <td style="color: grey">7</td>
+          <td style="text-align: right;">2.00</td>
+          <td style="text-align: right;">570</td>
+          <td>from&nbsp;trezor.wire&nbsp;import&nbsp;DataError,&nbsp;ProcessError</td>
+        </tr>
+        <tr id="8" style="None">
+          <td style="color: grey">8</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="9" style="color: red;">
+          <td style="color: grey">9</td>
+          <td style="text-align: right;">6.00</td>
+          <td style="text-align: right;">1710</td>
+          <td>from&nbsp;apps.common&nbsp;import&nbsp;safety_checks</td>
+        </tr>
+        <tr id="10" style="None">
+          <td style="color: grey">10</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="11" style="color: blue;">
+          <td style="color: grey">11</td>
+          <td style="text-align: right;">2.00</td>
+          <td style="text-align: right;">570</td>
+          <td>from&nbsp;..&nbsp;import&nbsp;writers</td>
+        </tr>
+        <tr id="12" style="color: blue;">
+          <td style="color: grey">12</td>
+          <td style="text-align: right;">1.00</td>
+          <td style="text-align: right;">285</td>
+          <td>from&nbsp;..common&nbsp;import&nbsp;input_is_external_unverified</td>
+        </tr>
+        <tr id="13" style="color: blue;">
+          <td style="color: grey">13</td>
+          <td style="text-align: right;">2.00</td>
+          <td style="text-align: right;">570</td>
+          <td>from&nbsp;..keychain&nbsp;import&nbsp;SLIP44_TESTNET,&nbsp;validate_path_against_script_type</td>
+        </tr>
+        <tr id="14" style="color: blue;">
+          <td style="color: grey">14</td>
+          <td style="text-align: right;">1.00</td>
+          <td style="text-align: right;">285</td>
+          <td>from&nbsp;.&nbsp;import&nbsp;helpers,&nbsp;tx_weight</td>
+        </tr>
+        <tr id="15" style="color: red;">
+          <td style="color: grey">15</td>
+          <td style="text-align: right;">6.00</td>
+          <td style="text-align: right;">1710</td>
+          <td>from&nbsp;.sig_hasher&nbsp;import&nbsp;BitcoinSigHasher</td>
+        </tr>
+        <tr id="16" style="color: blue;">
+          <td style="color: grey">16</td>
+          <td style="text-align: right;">2.00</td>
+          <td style="text-align: right;">570</td>
+          <td>from&nbsp;.tx_info&nbsp;import&nbsp;OriginalTxInfo</td>
+        </tr>
+        <tr id="17" style="None">
+          <td style="color: grey">17</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="18" style="None">
+          <td style="color: grey">18</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>if&nbsp;TYPE_CHECKING:</td>
+        </tr>
+        <tr id="19" style="None">
+          <td style="color: grey">19</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;from&nbsp;trezor.crypto&nbsp;import&nbsp;bip32</td>
+        </tr>
+        <tr id="20" style="None">
+          <td style="color: grey">20</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;from&nbsp;trezor.messages&nbsp;import&nbsp;SignTx,&nbsp;TxInput,&nbsp;TxOutput,&nbsp;TxAckPaymentRequest</td>
+        </tr>
+        <tr id="21" style="None">
+          <td style="color: grey">21</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="22" style="None">
+          <td style="color: grey">22</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;from&nbsp;apps.common.coininfo&nbsp;import&nbsp;CoinInfo</td>
+        </tr>
+        <tr id="23" style="None">
+          <td style="color: grey">23</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;from&nbsp;apps.common.keychain&nbsp;import&nbsp;Keychain</td>
+        </tr>
+        <tr id="24" style="None">
+          <td style="color: grey">24</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="25" style="None">
+          <td style="color: grey">25</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;from&nbsp;..authorization&nbsp;import&nbsp;CoinJoinAuthorization</td>
+        </tr>
+        <tr id="26" style="None">
+          <td style="color: grey">26</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;from&nbsp;.tx_info&nbsp;import&nbsp;TxInfo</td>
+        </tr>
+        <tr id="27" style="None">
+          <td style="color: grey">27</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;from&nbsp;.payment_request&nbsp;import&nbsp;PaymentRequestVerifier</td>
+        </tr>
+        <tr id="28" style="None">
+          <td style="color: grey">28</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="29" style="None">
+          <td style="color: grey">29</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="30" style="None">
+          <td style="color: grey">30</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>#&nbsp;An&nbsp;Approver&nbsp;object&nbsp;computes&nbsp;the&nbsp;transaction&nbsp;totals&nbsp;and&nbsp;either&nbsp;prompts&nbsp;the&nbsp;user</td>
+        </tr>
+        <tr id="31" style="None">
+          <td style="color: grey">31</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>#&nbsp;to&nbsp;confirm&nbsp;transaction&nbsp;parameters&nbsp;(output&nbsp;addresses,&nbsp;amounts&nbsp;and&nbsp;fees)&nbsp;or&nbsp;uses</td>
+        </tr>
+        <tr id="32" style="None">
+          <td style="color: grey">32</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>#&nbsp;an&nbsp;Authorization&nbsp;object&nbsp;to&nbsp;verify&nbsp;that&nbsp;the&nbsp;user&nbsp;authorized&nbsp;a&nbsp;transaction&nbsp;with</td>
+        </tr>
+        <tr id="33" style="None">
+          <td style="color: grey">33</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>#&nbsp;these&nbsp;parameters&nbsp;to&nbsp;be&nbsp;executed.</td>
+        </tr>
+        <tr id="34" style="color: blue;">
+          <td style="color: grey">34</td>
+          <td style="text-align: right;">2.00</td>
+          <td style="text-align: right;">570</td>
+          <td>class&nbsp;Approver:</td>
+        </tr>
+        <tr id="35" style="color: blue;">
+          <td style="color: grey">35</td>
+          <td style="text-align: right;">2.00</td>
+          <td style="text-align: right;">570</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;def&nbsp;__init__(self,&nbsp;tx:&nbsp;SignTx,&nbsp;coin:&nbsp;CoinInfo)&nbsp;->&nbsp;None:</td>
+        </tr>
+        <tr id="36" style="color: blue;">
+          <td style="color: grey">36</td>
+          <td style="text-align: right;">1.00</td>
+          <td style="text-align: right;">277</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.coin&nbsp;=&nbsp;coin</td>
+        </tr>
+        <tr id="37" style="color: blue;">
+          <td style="color: grey">37</td>
+          <td style="text-align: right;">1.00</td>
+          <td style="text-align: right;">277</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.weight&nbsp;=&nbsp;tx_weight.TxWeightCalculator()</td>
+        </tr>
+        <tr id="38" style="color: blue;">
+          <td style="color: grey">38</td>
+          <td style="text-align: right;">1.00</td>
+          <td style="text-align: right;">277</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.payment_req_verifier:&nbsp;PaymentRequestVerifier&nbsp;|&nbsp;None&nbsp;=&nbsp;None</td>
+        </tr>
+        <tr id="39" style="None">
+          <td style="color: grey">39</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.show_payment_req_details&nbsp;=&nbsp;False</td>
+        </tr>
+        <tr id="40" style="None">
+          <td style="color: grey">40</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="41" style="None">
+          <td style="color: grey">41</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#&nbsp;amounts&nbsp;in&nbsp;the&nbsp;current&nbsp;transaction</td>
+        </tr>
+        <tr id="42" style="color: blue;">
+          <td style="color: grey">42</td>
+          <td style="text-align: right;">1.00</td>
+          <td style="text-align: right;">277</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.total_in&nbsp;=&nbsp;0&nbsp;&nbsp;#&nbsp;sum&nbsp;of&nbsp;input&nbsp;amounts</td>
+        </tr>
+        <tr id="43" style="None">
+          <td style="color: grey">43</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.external_in&nbsp;=&nbsp;0&nbsp;&nbsp;#&nbsp;sum&nbsp;of&nbsp;external&nbsp;input&nbsp;amounts</td>
+        </tr>
+        <tr id="44" style="color: blue;">
+          <td style="color: grey">44</td>
+          <td style="text-align: right;">1.00</td>
+          <td style="text-align: right;">277</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.total_out&nbsp;=&nbsp;0&nbsp;&nbsp;#&nbsp;sum&nbsp;of&nbsp;output&nbsp;amounts</td>
+        </tr>
+        <tr id="45" style="None">
+          <td style="color: grey">45</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.change_out&nbsp;=&nbsp;0&nbsp;&nbsp;#&nbsp;sum&nbsp;of&nbsp;change&nbsp;output&nbsp;amounts</td>
+        </tr>
+        <tr id="46" style="None">
+          <td style="color: grey">46</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="47" style="None">
+          <td style="color: grey">47</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#&nbsp;amounts&nbsp;in&nbsp;original&nbsp;transactions&nbsp;when&nbsp;this&nbsp;is&nbsp;a&nbsp;replacement&nbsp;transaction</td>
+        </tr>
+        <tr id="48" style="color: blue;">
+          <td style="color: grey">48</td>
+          <td style="text-align: right;">1.00</td>
+          <td style="text-align: right;">277</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.orig_total_in&nbsp;=&nbsp;0&nbsp;&nbsp;#&nbsp;sum&nbsp;of&nbsp;original&nbsp;input&nbsp;amounts</td>
+        </tr>
+        <tr id="49" style="None">
+          <td style="color: grey">49</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.orig_external_in&nbsp;=&nbsp;0&nbsp;&nbsp;#&nbsp;sum&nbsp;of&nbsp;original&nbsp;external&nbsp;input&nbsp;amounts</td>
+        </tr>
+        <tr id="50" style="color: blue;">
+          <td style="color: grey">50</td>
+          <td style="text-align: right;">1.00</td>
+          <td style="text-align: right;">277</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.orig_total_out&nbsp;=&nbsp;0&nbsp;&nbsp;#&nbsp;sum&nbsp;of&nbsp;original&nbsp;output&nbsp;amounts</td>
+        </tr>
+        <tr id="51" style="None">
+          <td style="color: grey">51</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.orig_change_out&nbsp;=&nbsp;0&nbsp;&nbsp;#&nbsp;sum&nbsp;of&nbsp;original&nbsp;change&nbsp;output&nbsp;amounts</td>
+        </tr>
+        <tr id="52" style="None">
+          <td style="color: grey">52</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="53" style="color: blue;">
+          <td style="color: grey">53</td>
+          <td style="text-align: right;">1.00</td>
+          <td style="text-align: right;">277</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.amount_unit&nbsp;=&nbsp;tx.amount_unit</td>
+        </tr>
+        <tr id="54" style="None">
+          <td style="color: grey">54</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.has_unverified_external_input&nbsp;=&nbsp;False</td>
+        </tr>
+        <tr id="55" style="None">
+          <td style="color: grey">55</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="56" style="color: blue;">
+          <td style="color: grey">56</td>
+          <td style="text-align: right;">1.00</td>
+          <td style="text-align: right;">285</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;def&nbsp;is_payjoin(self)&nbsp;->&nbsp;bool:</td>
+        </tr>
+        <tr id="57" style="None">
+          <td style="color: grey">57</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#&nbsp;A&nbsp;PayJoin&nbsp;is&nbsp;a&nbsp;replacement&nbsp;transaction&nbsp;which&nbsp;manipulates&nbsp;the&nbsp;external&nbsp;inputs&nbsp;of&nbsp;the</td>
+        </tr>
+        <tr id="58" style="None">
+          <td style="color: grey">58</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#&nbsp;original&nbsp;transaction.&nbsp;A&nbsp;replacement&nbsp;transaction&nbsp;is&nbsp;not&nbsp;allowed&nbsp;to&nbsp;remove&nbsp;any&nbsp;inputs&nbsp;from</td>
+        </tr>
+        <tr id="59" style="None">
+          <td style="color: grey">59</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#&nbsp;the&nbsp;original,&nbsp;so&nbsp;the&nbsp;condition&nbsp;below&nbsp;is&nbsp;equivalent&nbsp;to&nbsp;external_in&nbsp;>&nbsp;orig_external_in.</td>
+        </tr>
+        <tr id="60" style="None">
+          <td style="color: grey">60</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;self.external_in&nbsp;!=&nbsp;self.orig_external_in</td>
+        </tr>
+        <tr id="61" style="None">
+          <td style="color: grey">61</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="62" style="color: blue;">
+          <td style="color: grey">62</td>
+          <td style="text-align: right;">2.00</td>
+          <td style="text-align: right;">570</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;def&nbsp;_add_input(self,&nbsp;txi:&nbsp;TxInput)&nbsp;->&nbsp;None:</td>
+        </tr>
+        <tr id="63" style="None">
+          <td style="color: grey">63</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.weight.add_input(txi)</td>
+        </tr>
+        <tr id="64" style="color: blue;">
+          <td style="color: grey">64</td>
+          <td style="text-align: right;">0.01</td>
+          <td style="text-align: right;">6</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.total_in&nbsp;+=&nbsp;txi.amount</td>
+        </tr>
+        <tr id="65" style="None">
+          <td style="color: grey">65</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;txi.orig_hash:</td>
+        </tr>
+        <tr id="66" style="None">
+          <td style="color: grey">66</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.orig_total_in&nbsp;+=&nbsp;txi.amount</td>
+        </tr>
+        <tr id="67" style="None">
+          <td style="color: grey">67</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="68" style="color: blue;">
+          <td style="color: grey">68</td>
+          <td style="text-align: right;">1.00</td>
+          <td style="text-align: right;">285</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;async&nbsp;def&nbsp;add_internal_input(self,&nbsp;txi:&nbsp;TxInput,&nbsp;node:&nbsp;bip32.HDNode)&nbsp;->&nbsp;None:</td>
+        </tr>
+        <tr id="69" style="None">
+          <td style="color: grey">69</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self._add_input(txi)</td>
+        </tr>
+        <tr id="70" style="None">
+          <td style="color: grey">70</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="71" style="color: blue;">
+          <td style="color: grey">71</td>
+          <td style="text-align: right;">2.00</td>
+          <td style="text-align: right;">570</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;def&nbsp;check_internal_input(self,&nbsp;txi:&nbsp;TxInput)&nbsp;->&nbsp;None:</td>
+        </tr>
+        <tr id="72" style="None">
+          <td style="color: grey">72</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;pass</td>
+        </tr>
+        <tr id="73" style="None">
+          <td style="color: grey">73</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="74" style="color: blue;">
+          <td style="color: grey">74</td>
+          <td style="text-align: right;">1.00</td>
+          <td style="text-align: right;">285</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;def&nbsp;add_external_input(self,&nbsp;txi:&nbsp;TxInput)&nbsp;->&nbsp;None:</td>
+        </tr>
+        <tr id="75" style="None">
+          <td style="color: grey">75</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self._add_input(txi)</td>
+        </tr>
+        <tr id="76" style="None">
+          <td style="color: grey">76</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="77" style="None">
+          <td style="color: grey">77</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;input_is_external_unverified(txi):</td>
+        </tr>
+        <tr id="78" style="None">
+          <td style="color: grey">78</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.has_unverified_external_input&nbsp;=&nbsp;True</td>
+        </tr>
+        <tr id="79" style="None">
+          <td style="color: grey">79</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;safety_checks.is_strict():</td>
+        </tr>
+        <tr id="80" style="color: blue;">
+          <td style="color: grey">80</td>
+          <td style="text-align: right;">1.00</td>
+          <td style="text-align: right;">4</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;raise&nbsp;ProcessError("Unverifiable&nbsp;external&nbsp;input.")</td>
+        </tr>
+        <tr id="81" style="None">
+          <td style="color: grey">81</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;else:</td>
+        </tr>
+        <tr id="82" style="None">
+          <td style="color: grey">82</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.external_in&nbsp;+=&nbsp;txi.amount</td>
+        </tr>
+        <tr id="83" style="None">
+          <td style="color: grey">83</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;txi.orig_hash:</td>
+        </tr>
+        <tr id="84" style="None">
+          <td style="color: grey">84</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.orig_external_in&nbsp;+=&nbsp;txi.amount</td>
+        </tr>
+        <tr id="85" style="None">
+          <td style="color: grey">85</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="86" style="color: blue;">
+          <td style="color: grey">86</td>
+          <td style="text-align: right;">2.00</td>
+          <td style="text-align: right;">570</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;async&nbsp;def&nbsp;_add_output(self,&nbsp;txo:&nbsp;TxOutput,&nbsp;script_pubkey:&nbsp;bytes)&nbsp;->&nbsp;None:</td>
+        </tr>
+        <tr id="87" style="None">
+          <td style="color: grey">87</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.weight.add_output(script_pubkey)</td>
+        </tr>
+        <tr id="88" style="color: blue;">
+          <td style="color: grey">88</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">6</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.total_out&nbsp;+=&nbsp;txo.amount</td>
+        </tr>
+        <tr id="89" style="None">
+          <td style="color: grey">89</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="90" style="color: blue;">
+          <td style="color: grey">90</td>
+          <td style="text-align: right;">1.00</td>
+          <td style="text-align: right;">285</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;async&nbsp;def&nbsp;add_payment_request(</td>
+        </tr>
+        <tr id="91" style="None">
+          <td style="color: grey">91</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self,&nbsp;msg:&nbsp;TxAckPaymentRequest,&nbsp;keychain:&nbsp;Keychain</td>
+        </tr>
+        <tr id="92" style="None">
+          <td style="color: grey">92</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;)&nbsp;->&nbsp;None:</td>
+        </tr>
+        <tr id="93" style="color: red;">
+          <td style="color: grey">93</td>
+          <td style="text-align: right;">5.52</td>
+          <td style="text-align: right;">116</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;from&nbsp;.payment_request&nbsp;import&nbsp;PaymentRequestVerifier</td>
+        </tr>
+        <tr id="94" style="None">
+          <td style="color: grey">94</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="95" style="None">
+          <td style="color: grey">95</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.finish_payment_request()</td>
+        </tr>
+        <tr id="96" style="color: blue;">
+          <td style="color: grey">96</td>
+          <td style="text-align: right;">2.00</td>
+          <td style="text-align: right;">42</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.payment_req_verifier&nbsp;=&nbsp;PaymentRequestVerifier(msg,&nbsp;self.coin,&nbsp;keychain)</td>
+        </tr>
+        <tr id="97" style="None">
+          <td style="color: grey">97</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="98" style="color: blue;">
+          <td style="color: grey">98</td>
+          <td style="text-align: right;">2.00</td>
+          <td style="text-align: right;">570</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;def&nbsp;finish_payment_request(self)&nbsp;->&nbsp;None:</td>
+        </tr>
+        <tr id="99" style="None">
+          <td style="color: grey">99</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;self.payment_req_verifier:</td>
+        </tr>
+        <tr id="100" style="None">
+          <td style="color: grey">100</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.payment_req_verifier.verify()</td>
+        </tr>
+        <tr id="101" style="None">
+          <td style="color: grey">101</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.payment_req_verifier&nbsp;=&nbsp;None</td>
+        </tr>
+        <tr id="102" style="None">
+          <td style="color: grey">102</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.show_payment_req_details&nbsp;=&nbsp;False</td>
+        </tr>
+        <tr id="103" style="None">
+          <td style="color: grey">103</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="104" style="color: blue;">
+          <td style="color: grey">104</td>
+          <td style="text-align: right;">1.00</td>
+          <td style="text-align: right;">285</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;async&nbsp;def&nbsp;add_change_output(self,&nbsp;txo:&nbsp;TxOutput,&nbsp;script_pubkey:&nbsp;bytes)&nbsp;->&nbsp;None:</td>
+        </tr>
+        <tr id="105" style="color: blue;">
+          <td style="color: grey">105</td>
+          <td style="text-align: right;">0.98</td>
+          <td style="text-align: right;">125</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;await&nbsp;self._add_output(txo,&nbsp;script_pubkey)</td>
+        </tr>
+        <tr id="106" style="None">
+          <td style="color: grey">106</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.change_out&nbsp;+=&nbsp;txo.amount</td>
+        </tr>
+        <tr id="107" style="None">
+          <td style="color: grey">107</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;self.payment_req_verifier:</td>
+        </tr>
+        <tr id="108" style="None">
+          <td style="color: grey">108</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.payment_req_verifier.add_change_output(txo)</td>
+        </tr>
+        <tr id="109" style="None">
+          <td style="color: grey">109</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="110" style="color: blue;">
+          <td style="color: grey">110</td>
+          <td style="text-align: right;">2.00</td>
+          <td style="text-align: right;">570</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;def&nbsp;add_orig_change_output(self,&nbsp;txo:&nbsp;TxOutput)&nbsp;->&nbsp;None:</td>
+        </tr>
+        <tr id="111" style="None">
+          <td style="color: grey">111</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.orig_total_out&nbsp;+=&nbsp;txo.amount</td>
+        </tr>
+        <tr id="112" style="None">
+          <td style="color: grey">112</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.orig_change_out&nbsp;+=&nbsp;txo.amount</td>
+        </tr>
+        <tr id="113" style="None">
+          <td style="color: grey">113</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="114" style="color: blue;">
+          <td style="color: grey">114</td>
+          <td style="text-align: right;">2.00</td>
+          <td style="text-align: right;">570</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;async&nbsp;def&nbsp;add_external_output(</td>
+        </tr>
+        <tr id="115" style="None">
+          <td style="color: grey">115</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self,</td>
+        </tr>
+        <tr id="116" style="None">
+          <td style="color: grey">116</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;txo:&nbsp;TxOutput,</td>
+        </tr>
+        <tr id="117" style="None">
+          <td style="color: grey">117</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;script_pubkey:&nbsp;bytes,</td>
+        </tr>
+        <tr id="118" style="None">
+          <td style="color: grey">118</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;orig_txo:&nbsp;TxOutput&nbsp;|&nbsp;None&nbsp;=&nbsp;None,</td>
+        </tr>
+        <tr id="119" style="None">
+          <td style="color: grey">119</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;)&nbsp;->&nbsp;None:</td>
+        </tr>
+        <tr id="120" style="color: blue;">
+          <td style="color: grey">120</td>
+          <td style="text-align: right;">1.00</td>
+          <td style="text-align: right;">1714</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;await&nbsp;self._add_output(txo,&nbsp;script_pubkey)</td>
+        </tr>
+        <tr id="121" style="None">
+          <td style="color: grey">121</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;self.payment_req_verifier:</td>
+        </tr>
+        <tr id="122" style="None">
+          <td style="color: grey">122</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.payment_req_verifier.add_external_output(txo)</td>
+        </tr>
+        <tr id="123" style="None">
+          <td style="color: grey">123</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="124" style="color: blue;">
+          <td style="color: grey">124</td>
+          <td style="text-align: right;">1.00</td>
+          <td style="text-align: right;">285</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;def&nbsp;add_orig_external_output(self,&nbsp;txo:&nbsp;TxOutput)&nbsp;->&nbsp;None:</td>
+        </tr>
+        <tr id="125" style="None">
+          <td style="color: grey">125</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.orig_total_out&nbsp;+=&nbsp;txo.amount</td>
+        </tr>
+        <tr id="126" style="None">
+          <td style="color: grey">126</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="127" style="color: blue;">
+          <td style="color: grey">127</td>
+          <td style="text-align: right;">1.00</td>
+          <td style="text-align: right;">285</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;async&nbsp;def&nbsp;approve_orig_txids(</td>
+        </tr>
+        <tr id="128" style="None">
+          <td style="color: grey">128</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self,&nbsp;tx_info:&nbsp;TxInfo,&nbsp;orig_txs:&nbsp;list[OriginalTxInfo]</td>
+        </tr>
+        <tr id="129" style="None">
+          <td style="color: grey">129</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;)&nbsp;->&nbsp;None:</td>
+        </tr>
+        <tr id="130" style="None">
+          <td style="color: grey">130</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;raise&nbsp;NotImplementedError</td>
+        </tr>
+        <tr id="131" style="None">
+          <td style="color: grey">131</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="132" style="color: blue;">
+          <td style="color: grey">132</td>
+          <td style="text-align: right;">2.00</td>
+          <td style="text-align: right;">570</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;async&nbsp;def&nbsp;approve_tx(self,&nbsp;tx_info:&nbsp;TxInfo,&nbsp;orig_txs:&nbsp;list[OriginalTxInfo])&nbsp;->&nbsp;None:</td>
+        </tr>
+        <tr id="133" style="None">
+          <td style="color: grey">133</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.finish_payment_request()</td>
+        </tr>
+        <tr id="134" style="None">
+          <td style="color: grey">134</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="135" style="None">
+          <td style="color: grey">135</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="136" style="color: blue;">
+          <td style="color: grey">136</td>
+          <td style="text-align: right;">3.00</td>
+          <td style="text-align: right;">855</td>
+          <td>class&nbsp;BasicApprover(Approver):</td>
+        </tr>
+        <tr id="137" style="None">
+          <td style="color: grey">137</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;#&nbsp;the&nbsp;maximum&nbsp;number&nbsp;of&nbsp;change-outputs&nbsp;allowed&nbsp;without&nbsp;user&nbsp;confirmation</td>
+        </tr>
+        <tr id="138" style="color: blue;">
+          <td style="color: grey">138</td>
+          <td style="text-align: right;">1.00</td>
+          <td style="text-align: right;">285</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;MAX_SILENT_CHANGE_COUNT&nbsp;=&nbsp;2</td>
+        </tr>
+        <tr id="139" style="None">
+          <td style="color: grey">139</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="140" style="color: blue;">
+          <td style="color: grey">140</td>
+          <td style="text-align: right;">2.00</td>
+          <td style="text-align: right;">570</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;def&nbsp;__init__(self,&nbsp;tx:&nbsp;SignTx,&nbsp;coin:&nbsp;CoinInfo)&nbsp;->&nbsp;None:</td>
+        </tr>
+        <tr id="141" style="None">
+          <td style="color: grey">141</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;super().__init__(tx,&nbsp;coin)</td>
+        </tr>
+        <tr id="142" style="None">
+          <td style="color: grey">142</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.change_count&nbsp;=&nbsp;0&nbsp;&nbsp;#&nbsp;the&nbsp;number&nbsp;of&nbsp;change-outputs</td>
+        </tr>
+        <tr id="143" style="None">
+          <td style="color: grey">143</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.foreign_address_confirmed&nbsp;=&nbsp;False</td>
+        </tr>
+        <tr id="144" style="None">
+          <td style="color: grey">144</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="145" style="color: blue;">
+          <td style="color: grey">145</td>
+          <td style="text-align: right;">3.00</td>
+          <td style="text-align: right;">855</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;async&nbsp;def&nbsp;add_internal_input(self,&nbsp;txi:&nbsp;TxInput,&nbsp;node:&nbsp;bip32.HDNode)&nbsp;->&nbsp;None:</td>
+        </tr>
+        <tr id="146" style="color: blue;">
+          <td style="color: grey">146</td>
+          <td style="text-align: right;">2.00</td>
+          <td style="text-align: right;">824</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;not&nbsp;validate_path_against_script_type(self.coin,&nbsp;txi):</td>
+        </tr>
+        <tr id="147" style="color: blue;">
+          <td style="color: grey">147</td>
+          <td style="text-align: right;">0.50</td>
+          <td style="text-align: right;">16</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;await&nbsp;helpers.confirm_foreign_address(txi.address_n)</td>
+        </tr>
+        <tr id="148" style="None">
+          <td style="color: grey">148</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.foreign_address_confirmed&nbsp;=&nbsp;True</td>
+        </tr>
+        <tr id="149" style="None">
+          <td style="color: grey">149</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="150" style="color: blue;">
+          <td style="color: grey">150</td>
+          <td style="text-align: right;">1.00</td>
+          <td style="text-align: right;">412</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;await&nbsp;super().add_internal_input(txi,&nbsp;node)</td>
+        </tr>
+        <tr id="151" style="None">
+          <td style="color: grey">151</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="152" style="color: blue;">
+          <td style="color: grey">152</td>
+          <td style="text-align: right;">1.00</td>
+          <td style="text-align: right;">285</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;def&nbsp;check_internal_input(self,&nbsp;txi:&nbsp;TxInput)&nbsp;->&nbsp;None:</td>
+        </tr>
+        <tr id="153" style="None">
+          <td style="color: grey">153</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#&nbsp;Sanity&nbsp;check&nbsp;not&nbsp;critical&nbsp;for&nbsp;security.</td>
+        </tr>
+        <tr id="154" style="None">
+          <td style="color: grey">154</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#&nbsp;The&nbsp;main&nbsp;reason&nbsp;for&nbsp;this&nbsp;is&nbsp;that&nbsp;we&nbsp;are&nbsp;not&nbsp;comfortable&nbsp;with&nbsp;using&nbsp;the&nbsp;same&nbsp;private&nbsp;key</td>
+        </tr>
+        <tr id="155" style="None">
+          <td style="color: grey">155</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#&nbsp;in&nbsp;multiple&nbsp;signatures&nbsp;schemes&nbsp;(ECDSA&nbsp;and&nbsp;Schnorr)&nbsp;and&nbsp;we&nbsp;want&nbsp;to&nbsp;be&nbsp;sure&nbsp;that&nbsp;the&nbsp;user</td>
+        </tr>
+        <tr id="156" style="None">
+          <td style="color: grey">156</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#&nbsp;went&nbsp;through&nbsp;a&nbsp;warning&nbsp;screen&nbsp;before&nbsp;we&nbsp;sign&nbsp;the&nbsp;input.</td>
+        </tr>
+        <tr id="157" style="None">
+          <td style="color: grey">157</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(</td>
+        </tr>
+        <tr id="158" style="color: blue;">
+          <td style="color: grey">158</td>
+          <td style="text-align: right;">2.00</td>
+          <td style="text-align: right;">262</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;not&nbsp;validate_path_against_script_type(self.coin,&nbsp;txi)</td>
+        </tr>
+        <tr id="159" style="None">
+          <td style="color: grey">159</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;and&nbsp;not&nbsp;self.foreign_address_confirmed</td>
+        </tr>
+        <tr id="160" style="None">
+          <td style="color: grey">160</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;):</td>
+        </tr>
+        <tr id="161" style="None">
+          <td style="color: grey">161</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;raise&nbsp;ProcessError("Transaction&nbsp;has&nbsp;changed&nbsp;during&nbsp;signing")</td>
+        </tr>
+        <tr id="162" style="None">
+          <td style="color: grey">162</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="163" style="color: blue;">
+          <td style="color: grey">163</td>
+          <td style="text-align: right;">3.00</td>
+          <td style="text-align: right;">855</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;async&nbsp;def&nbsp;_add_output(self,&nbsp;txo:&nbsp;TxOutput,&nbsp;script_pubkey:&nbsp;bytes)&nbsp;->&nbsp;None:</td>
+        </tr>
+        <tr id="164" style="color: blue;">
+          <td style="color: grey">164</td>
+          <td style="text-align: right;">1.00</td>
+          <td style="text-align: right;">630</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;from&nbsp;..common&nbsp;import&nbsp;CHANGE_OUTPUT_TO_INPUT_SCRIPT_TYPES</td>
+        </tr>
+        <tr id="165" style="None">
+          <td style="color: grey">165</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="166" style="None">
+          <td style="color: grey">166</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;txo.address_n&nbsp;and&nbsp;not&nbsp;validate_path_against_script_type(</td>
+        </tr>
+        <tr id="167" style="None">
+          <td style="color: grey">167</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.coin,</td>
+        </tr>
+        <tr id="168" style="None">
+          <td style="color: grey">168</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;address_n=txo.address_n,</td>
+        </tr>
+        <tr id="169" style="None">
+          <td style="color: grey">169</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;script_type=CHANGE_OUTPUT_TO_INPUT_SCRIPT_TYPES[txo.script_type],</td>
+        </tr>
+        <tr id="170" style="color: blue;">
+          <td style="color: grey">170</td>
+          <td style="text-align: right;">2.00</td>
+          <td style="text-align: right;">204</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;multisig=bool(txo.multisig),</td>
+        </tr>
+        <tr id="171" style="None">
+          <td style="color: grey">171</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;):</td>
+        </tr>
+        <tr id="172" style="color: blue;">
+          <td style="color: grey">172</td>
+          <td style="text-align: right;">0.50</td>
+          <td style="text-align: right;">6</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;await&nbsp;helpers.confirm_foreign_address(txo.address_n)</td>
+        </tr>
+        <tr id="173" style="None">
+          <td style="color: grey">173</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="174" style="color: blue;">
+          <td style="color: grey">174</td>
+          <td style="text-align: right;">1.00</td>
+          <td style="text-align: right;">630</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;await&nbsp;super()._add_output(txo,&nbsp;script_pubkey)</td>
+        </tr>
+        <tr id="175" style="None">
+          <td style="color: grey">175</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="176" style="color: blue;">
+          <td style="color: grey">176</td>
+          <td style="text-align: right;">2.00</td>
+          <td style="text-align: right;">570</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;async&nbsp;def&nbsp;add_change_output(self,&nbsp;txo:&nbsp;TxOutput,&nbsp;script_pubkey:&nbsp;bytes)&nbsp;->&nbsp;None:</td>
+        </tr>
+        <tr id="177" style="color: blue;">
+          <td style="color: grey">177</td>
+          <td style="text-align: right;">0.98</td>
+          <td style="text-align: right;">91</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;await&nbsp;super().add_change_output(txo,&nbsp;script_pubkey)</td>
+        </tr>
+        <tr id="178" style="None">
+          <td style="color: grey">178</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.change_count&nbsp;+=&nbsp;1</td>
+        </tr>
+        <tr id="179" style="None">
+          <td style="color: grey">179</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="180" style="color: red;">
+          <td style="color: grey">180</td>
+          <td style="text-align: right;">4.00</td>
+          <td style="text-align: right;">1140</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;async&nbsp;def&nbsp;add_external_output(</td>
+        </tr>
+        <tr id="181" style="None">
+          <td style="color: grey">181</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self,</td>
+        </tr>
+        <tr id="182" style="None">
+          <td style="color: grey">182</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;txo:&nbsp;TxOutput,</td>
+        </tr>
+        <tr id="183" style="None">
+          <td style="color: grey">183</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;script_pubkey:&nbsp;bytes,</td>
+        </tr>
+        <tr id="184" style="None">
+          <td style="color: grey">184</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;orig_txo:&nbsp;TxOutput&nbsp;|&nbsp;None&nbsp;=&nbsp;None,</td>
+        </tr>
+        <tr id="185" style="None">
+          <td style="color: grey">185</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;)&nbsp;->&nbsp;None:</td>
+        </tr>
+        <tr id="186" style="color: blue;">
+          <td style="color: grey">186</td>
+          <td style="text-align: right;">1.00</td>
+          <td style="text-align: right;">537</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;from&nbsp;trezor.enums&nbsp;import&nbsp;OutputScriptType</td>
+        </tr>
+        <tr id="187" style="None">
+          <td style="color: grey">187</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="188" style="color: blue;">
+          <td style="color: grey">188</td>
+          <td style="text-align: right;">0.99</td>
+          <td style="text-align: right;">537</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;await&nbsp;super().add_external_output(txo,&nbsp;script_pubkey,&nbsp;orig_txo)</td>
+        </tr>
+        <tr id="189" style="None">
+          <td style="color: grey">189</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="190" style="None">
+          <td style="color: grey">190</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;orig_txo:</td>
+        </tr>
+        <tr id="191" style="None">
+          <td style="color: grey">191</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;txo.amount&nbsp;<&nbsp;orig_txo.amount:</td>
+        </tr>
+        <tr id="192" style="None">
+          <td style="color: grey">192</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#&nbsp;Replacement&nbsp;transactions&nbsp;may&nbsp;need&nbsp;to&nbsp;decrease&nbsp;the&nbsp;value&nbsp;of&nbsp;external&nbsp;outputs&nbsp;to</td>
+        </tr>
+        <tr id="193" style="None">
+          <td style="color: grey">193</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#&nbsp;bump&nbsp;the&nbsp;fee.&nbsp;This&nbsp;is&nbsp;needed&nbsp;if&nbsp;the&nbsp;original&nbsp;transaction&nbsp;transfers&nbsp;the&nbsp;entire</td>
+        </tr>
+        <tr id="194" style="None">
+          <td style="color: grey">194</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#&nbsp;account&nbsp;balance&nbsp;("Send&nbsp;Max").</td>
+        </tr>
+        <tr id="195" style="None">
+          <td style="color: grey">195</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;self.is_payjoin():</td>
+        </tr>
+        <tr id="196" style="None">
+          <td style="color: grey">196</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#&nbsp;In&nbsp;case&nbsp;of&nbsp;PayJoin&nbsp;the&nbsp;above&nbsp;could&nbsp;be&nbsp;used&nbsp;to&nbsp;increase&nbsp;other&nbsp;external</td>
+        </tr>
+        <tr id="197" style="None">
+          <td style="color: grey">197</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#&nbsp;outputs,&nbsp;which&nbsp;would&nbsp;create&nbsp;too&nbsp;much&nbsp;UI&nbsp;complexity.</td>
+        </tr>
+        <tr id="198" style="None">
+          <td style="color: grey">198</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;raise&nbsp;ProcessError(</td>
+        </tr>
+        <tr id="199" style="None">
+          <td style="color: grey">199</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"Reducing&nbsp;original&nbsp;output&nbsp;amounts&nbsp;is&nbsp;not&nbsp;supported."</td>
+        </tr>
+        <tr id="200" style="None">
+          <td style="color: grey">200</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;)</td>
+        </tr>
+        <tr id="201" style="None">
+          <td style="color: grey">201</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;await&nbsp;helpers.confirm_modify_output(</td>
+        </tr>
+        <tr id="202" style="color: blue;">
+          <td style="color: grey">202</td>
+          <td style="text-align: right;">0.50</td>
+          <td style="text-align: right;">1</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;txo,&nbsp;orig_txo,&nbsp;self.coin,&nbsp;self.amount_unit</td>
+        </tr>
+        <tr id="203" style="None">
+          <td style="color: grey">203</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;)</td>
+        </tr>
+        <tr id="204" style="None">
+          <td style="color: grey">204</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;elif&nbsp;txo.amount&nbsp;>&nbsp;orig_txo.amount:</td>
+        </tr>
+        <tr id="205" style="None">
+          <td style="color: grey">205</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#&nbsp;PayJoin&nbsp;transactions&nbsp;may&nbsp;increase&nbsp;the&nbsp;value&nbsp;of&nbsp;external&nbsp;outputs&nbsp;without</td>
+        </tr>
+        <tr id="206" style="None">
+          <td style="color: grey">206</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#&nbsp;confirmation,&nbsp;because&nbsp;approve_tx()&nbsp;together&nbsp;with&nbsp;the&nbsp;branch&nbsp;above&nbsp;ensures&nbsp;that</td>
+        </tr>
+        <tr id="207" style="None">
+          <td style="color: grey">207</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#&nbsp;the&nbsp;increase&nbsp;is&nbsp;paid&nbsp;by&nbsp;external&nbsp;inputs.</td>
+        </tr>
+        <tr id="208" style="None">
+          <td style="color: grey">208</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;not&nbsp;self.is_payjoin():</td>
+        </tr>
+        <tr id="209" style="None">
+          <td style="color: grey">209</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;raise&nbsp;ProcessError(</td>
+        </tr>
+        <tr id="210" style="None">
+          <td style="color: grey">210</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"Increasing&nbsp;original&nbsp;output&nbsp;amounts&nbsp;is&nbsp;not&nbsp;supported."</td>
+        </tr>
+        <tr id="211" style="None">
+          <td style="color: grey">211</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;)</td>
+        </tr>
+        <tr id="212" style="None">
+          <td style="color: grey">212</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="213" style="None">
+          <td style="color: grey">213</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;self.orig_total_in:</td>
+        </tr>
+        <tr id="214" style="None">
+          <td style="color: grey">214</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#&nbsp;Skip&nbsp;output&nbsp;confirmation&nbsp;for&nbsp;replacement&nbsp;transactions,</td>
+        </tr>
+        <tr id="215" style="None">
+          <td style="color: grey">215</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#&nbsp;but&nbsp;don't&nbsp;allow&nbsp;adding&nbsp;new&nbsp;OP_RETURN&nbsp;outputs.</td>
+        </tr>
+        <tr id="216" style="None">
+          <td style="color: grey">216</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;txo.script_type&nbsp;==&nbsp;OutputScriptType.PAYTOOPRETURN&nbsp;and&nbsp;not&nbsp;orig_txo:</td>
+        </tr>
+        <tr id="217" style="None">
+          <td style="color: grey">217</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;raise&nbsp;ProcessError(</td>
+        </tr>
+        <tr id="218" style="None">
+          <td style="color: grey">218</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"Adding&nbsp;new&nbsp;OP_RETURN&nbsp;outputs&nbsp;in&nbsp;replacement&nbsp;transactions&nbsp;is&nbsp;not&nbsp;supported."</td>
+        </tr>
+        <tr id="219" style="None">
+          <td style="color: grey">219</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;)</td>
+        </tr>
+        <tr id="220" style="None">
+          <td style="color: grey">220</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;elif&nbsp;txo.payment_req_index&nbsp;is&nbsp;None&nbsp;or&nbsp;self.show_payment_req_details:</td>
+        </tr>
+        <tr id="221" style="None">
+          <td style="color: grey">221</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#&nbsp;Ask&nbsp;user&nbsp;to&nbsp;confirm&nbsp;output,&nbsp;unless&nbsp;it&nbsp;is&nbsp;part&nbsp;of&nbsp;a&nbsp;payment</td>
+        </tr>
+        <tr id="222" style="None">
+          <td style="color: grey">222</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#&nbsp;request,&nbsp;which&nbsp;gets&nbsp;confirmed&nbsp;separately.</td>
+        </tr>
+        <tr id="223" style="color: blue;">
+          <td style="color: grey">223</td>
+          <td style="text-align: right;">0.49</td>
+          <td style="text-align: right;">507</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;await&nbsp;helpers.confirm_output(txo,&nbsp;self.coin,&nbsp;self.amount_unit)</td>
+        </tr>
+        <tr id="224" style="None">
+          <td style="color: grey">224</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="225" style="color: blue;">
+          <td style="color: grey">225</td>
+          <td style="text-align: right;">2.00</td>
+          <td style="text-align: right;">570</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;async&nbsp;def&nbsp;add_payment_request(</td>
+        </tr>
+        <tr id="226" style="None">
+          <td style="color: grey">226</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self,&nbsp;msg:&nbsp;TxAckPaymentRequest,&nbsp;keychain:&nbsp;Keychain</td>
+        </tr>
+        <tr id="227" style="None">
+          <td style="color: grey">227</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;)&nbsp;->&nbsp;None:</td>
+        </tr>
+        <tr id="228" style="color: blue;">
+          <td style="color: grey">228</td>
+          <td style="text-align: right;">1.00</td>
+          <td style="text-align: right;">21</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;await&nbsp;super().add_payment_request(msg,&nbsp;keychain)</td>
+        </tr>
+        <tr id="229" style="None">
+          <td style="color: grey">229</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;msg.amount&nbsp;is&nbsp;None:</td>
+        </tr>
+        <tr id="230" style="None">
+          <td style="color: grey">230</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;raise&nbsp;DataError("Missing&nbsp;payment&nbsp;request&nbsp;amount.")</td>
+        </tr>
+        <tr id="231" style="None">
+          <td style="color: grey">231</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="232" style="color: blue;">
+          <td style="color: grey">232</td>
+          <td style="text-align: right;">0.50</td>
+          <td style="text-align: right;">12</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;result&nbsp;=&nbsp;await&nbsp;helpers.confirm_payment_request(msg,&nbsp;self.coin,&nbsp;self.amount_unit)</td>
+        </tr>
+        <tr id="233" style="None">
+          <td style="color: grey">233</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#&nbsp;When&nbsp;user&nbsp;wants&nbsp;to&nbsp;see&nbsp;more&nbsp;info,&nbsp;the&nbsp;result&nbsp;will&nbsp;be&nbsp;False.</td>
+        </tr>
+        <tr id="234" style="None">
+          <td style="color: grey">234</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.show_payment_req_details&nbsp;=&nbsp;result&nbsp;is&nbsp;False</td>
+        </tr>
+        <tr id="235" style="None">
+          <td style="color: grey">235</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="236" style="color: blue;">
+          <td style="color: grey">236</td>
+          <td style="text-align: right;">2.00</td>
+          <td style="text-align: right;">570</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;async&nbsp;def&nbsp;approve_orig_txids(</td>
+        </tr>
+        <tr id="237" style="None">
+          <td style="color: grey">237</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self,&nbsp;tx_info:&nbsp;TxInfo,&nbsp;orig_txs:&nbsp;list[OriginalTxInfo]</td>
+        </tr>
+        <tr id="238" style="None">
+          <td style="color: grey">238</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;)&nbsp;->&nbsp;None:</td>
+        </tr>
+        <tr id="239" style="None">
+          <td style="color: grey">239</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;not&nbsp;orig_txs:</td>
+        </tr>
+        <tr id="240" style="None">
+          <td style="color: grey">240</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return</td>
+        </tr>
+        <tr id="241" style="None">
+          <td style="color: grey">241</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="242" style="None">
+          <td style="color: grey">242</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;self.is_payjoin():</td>
+        </tr>
+        <tr id="243" style="None">
+          <td style="color: grey">243</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;description&nbsp;=&nbsp;"PayJoin"</td>
+        </tr>
+        <tr id="244" style="None">
+          <td style="color: grey">244</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;elif&nbsp;tx_info.rbf_disabled()&nbsp;and&nbsp;any(</td>
+        </tr>
+        <tr id="245" style="None">
+          <td style="color: grey">245</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;not&nbsp;orig.rbf_disabled()&nbsp;for&nbsp;orig&nbsp;in&nbsp;orig_txs</td>
+        </tr>
+        <tr id="246" style="None">
+          <td style="color: grey">246</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;):</td>
+        </tr>
+        <tr id="247" style="None">
+          <td style="color: grey">247</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;description&nbsp;=&nbsp;"Finalize&nbsp;transaction"</td>
+        </tr>
+        <tr id="248" style="None">
+          <td style="color: grey">248</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;elif&nbsp;len(orig_txs)&nbsp;>&nbsp;1:</td>
+        </tr>
+        <tr id="249" style="None">
+          <td style="color: grey">249</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;description&nbsp;=&nbsp;"Meld&nbsp;transactions"</td>
+        </tr>
+        <tr id="250" style="None">
+          <td style="color: grey">250</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;else:</td>
+        </tr>
+        <tr id="251" style="None">
+          <td style="color: grey">251</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;description&nbsp;=&nbsp;"Update&nbsp;transaction"</td>
+        </tr>
+        <tr id="252" style="None">
+          <td style="color: grey">252</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="253" style="None">
+          <td style="color: grey">253</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for&nbsp;orig&nbsp;in&nbsp;orig_txs:</td>
+        </tr>
+        <tr id="254" style="color: blue;">
+          <td style="color: grey">254</td>
+          <td style="text-align: right;">0.34</td>
+          <td style="text-align: right;">16</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;await&nbsp;helpers.confirm_replacement(description,&nbsp;orig.orig_hash)</td>
+        </tr>
+        <tr id="255" style="None">
+          <td style="color: grey">255</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="256" style="color: blue;">
+          <td style="color: grey">256</td>
+          <td style="text-align: right;">4.00</td>
+          <td style="text-align: right;">1140</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;async&nbsp;def&nbsp;approve_tx(self,&nbsp;tx_info:&nbsp;TxInfo,&nbsp;orig_txs:&nbsp;list[OriginalTxInfo])&nbsp;->&nbsp;None:</td>
+        </tr>
+        <tr id="257" style="color: blue;">
+          <td style="color: grey">257</td>
+          <td style="text-align: right;">1.00</td>
+          <td style="text-align: right;">233</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;from&nbsp;trezor.wire&nbsp;import&nbsp;NotEnoughFunds</td>
+        </tr>
+        <tr id="258" style="None">
+          <td style="color: grey">258</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="259" style="None">
+          <td style="color: grey">259</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;coin&nbsp;=&nbsp;self.coin&nbsp;&nbsp;#&nbsp;local_cache_attribute</td>
+        </tr>
+        <tr id="260" style="None">
+          <td style="color: grey">260</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;amount_unit&nbsp;=&nbsp;self.amount_unit&nbsp;&nbsp;#&nbsp;local_cache_attribute</td>
+        </tr>
+        <tr id="261" style="None">
+          <td style="color: grey">261</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="262" style="color: blue;">
+          <td style="color: grey">262</td>
+          <td style="text-align: right;">1.00</td>
+          <td style="text-align: right;">233</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;await&nbsp;super().approve_tx(tx_info,&nbsp;orig_txs)</td>
+        </tr>
+        <tr id="263" style="None">
+          <td style="color: grey">263</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="264" style="None">
+          <td style="color: grey">264</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;self.has_unverified_external_input:</td>
+        </tr>
+        <tr id="265" style="color: blue;">
+          <td style="color: grey">265</td>
+          <td style="text-align: right;">0.50</td>
+          <td style="text-align: right;">2</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;await&nbsp;helpers.confirm_unverified_external_input()</td>
+        </tr>
+        <tr id="266" style="None">
+          <td style="color: grey">266</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="267" style="color: blue;">
+          <td style="color: grey">267</td>
+          <td style="text-align: right;">0.03</td>
+          <td style="text-align: right;">6</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;fee&nbsp;=&nbsp;self.total_in&nbsp;-&nbsp;self.total_out</td>
+        </tr>
+        <tr id="268" style="None">
+          <td style="color: grey">268</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="269" style="None">
+          <td style="color: grey">269</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#&nbsp;some&nbsp;coins&nbsp;require&nbsp;negative&nbsp;fees&nbsp;for&nbsp;reward&nbsp;TX</td>
+        </tr>
+        <tr id="270" style="None">
+          <td style="color: grey">270</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;fee&nbsp;<&nbsp;0&nbsp;and&nbsp;not&nbsp;coin.negative_fee:</td>
+        </tr>
+        <tr id="271" style="color: blue;">
+          <td style="color: grey">271</td>
+          <td style="text-align: right;">2.00</td>
+          <td style="text-align: right;">2</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;raise&nbsp;NotEnoughFunds("Not&nbsp;enough&nbsp;funds")</td>
+        </tr>
+        <tr id="272" style="None">
+          <td style="color: grey">272</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="273" style="color: blue;">
+          <td style="color: grey">273</td>
+          <td style="text-align: right;">0.03</td>
+          <td style="text-align: right;">6</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;total&nbsp;=&nbsp;self.total_in&nbsp;-&nbsp;self.change_out</td>
+        </tr>
+        <tr id="274" style="color: blue;">
+          <td style="color: grey">274</td>
+          <td style="text-align: right;">0.03</td>
+          <td style="text-align: right;">6</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;spending&nbsp;=&nbsp;total&nbsp;-&nbsp;self.external_in</td>
+        </tr>
+        <tr id="275" style="None">
+          <td style="color: grey">275</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;tx_size_vB&nbsp;=&nbsp;self.weight.get_virtual_size()</td>
+        </tr>
+        <tr id="276" style="color: blue;">
+          <td style="color: grey">276</td>
+          <td style="text-align: right;">1.00</td>
+          <td style="text-align: right;">232</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;fee_rate&nbsp;=&nbsp;fee&nbsp;/&nbsp;tx_size_vB</td>
+        </tr>
+        <tr id="277" style="None">
+          <td style="color: grey">277</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#&nbsp;fee_threshold&nbsp;=&nbsp;(coin.maxfee&nbsp;per&nbsp;byte&nbsp;*&nbsp;tx&nbsp;size)</td>
+        </tr>
+        <tr id="278" style="color: blue;">
+          <td style="color: grey">278</td>
+          <td style="text-align: right;">2.00</td>
+          <td style="text-align: right;">464</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;fee_threshold&nbsp;=&nbsp;(coin.maxfee_kb&nbsp;/&nbsp;1000)&nbsp;*&nbsp;tx_size_vB</td>
+        </tr>
+        <tr id="279" style="None">
+          <td style="color: grey">279</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="280" style="None">
+          <td style="color: grey">280</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#&nbsp;fee&nbsp;>&nbsp;(coin.maxfee&nbsp;per&nbsp;byte&nbsp;*&nbsp;tx&nbsp;size)</td>
+        </tr>
+        <tr id="281" style="None">
+          <td style="color: grey">281</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;fee&nbsp;>&nbsp;fee_threshold:</td>
+        </tr>
+        <tr id="282" style="color: blue;">
+          <td style="color: grey">282</td>
+          <td style="text-align: right;">1.00</td>
+          <td style="text-align: right;">14</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;fee&nbsp;>&nbsp;10&nbsp;*&nbsp;fee_threshold&nbsp;and&nbsp;safety_checks.is_strict():</td>
+        </tr>
+        <tr id="283" style="color: blue;">
+          <td style="color: grey">283</td>
+          <td style="text-align: right;">2.00</td>
+          <td style="text-align: right;">2</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;raise&nbsp;DataError("The&nbsp;fee&nbsp;is&nbsp;unexpectedly&nbsp;large")</td>
+        </tr>
+        <tr id="284" style="color: blue;">
+          <td style="color: grey">284</td>
+          <td style="text-align: right;">0.50</td>
+          <td style="text-align: right;">13</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;await&nbsp;helpers.confirm_feeoverthreshold(fee,&nbsp;coin,&nbsp;amount_unit)</td>
+        </tr>
+        <tr id="285" style="None">
+          <td style="color: grey">285</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="286" style="None">
+          <td style="color: grey">286</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;self.change_count&nbsp;>&nbsp;self.MAX_SILENT_CHANGE_COUNT:</td>
+        </tr>
+        <tr id="287" style="color: blue;">
+          <td style="color: grey">287</td>
+          <td style="text-align: right;">0.50</td>
+          <td style="text-align: right;">1</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;await&nbsp;helpers.confirm_change_count_over_threshold(self.change_count)</td>
+        </tr>
+        <tr id="288" style="None">
+          <td style="color: grey">288</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="289" style="None">
+          <td style="color: grey">289</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;orig_txs:</td>
+        </tr>
+        <tr id="290" style="None">
+          <td style="color: grey">290</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#&nbsp;Replacement&nbsp;transaction.</td>
+        </tr>
+        <tr id="291" style="None">
+          <td style="color: grey">291</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;orig_spending&nbsp;=&nbsp;(</td>
+        </tr>
+        <tr id="292" style="None">
+          <td style="color: grey">292</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.orig_total_in&nbsp;-&nbsp;self.orig_change_out&nbsp;-&nbsp;self.orig_external_in</td>
+        </tr>
+        <tr id="293" style="None">
+          <td style="color: grey">293</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;)</td>
+        </tr>
+        <tr id="294" style="None">
+          <td style="color: grey">294</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;orig_fee&nbsp;=&nbsp;self.orig_total_in&nbsp;-&nbsp;self.orig_total_out</td>
+        </tr>
+        <tr id="295" style="None">
+          <td style="color: grey">295</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="296" style="None">
+          <td style="color: grey">296</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;fee&nbsp;<&nbsp;0&nbsp;or&nbsp;orig_fee&nbsp;<&nbsp;0:</td>
+        </tr>
+        <tr id="297" style="None">
+          <td style="color: grey">297</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;raise&nbsp;ProcessError(</td>
+        </tr>
+        <tr id="298" style="None">
+          <td style="color: grey">298</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"Negative&nbsp;fees&nbsp;not&nbsp;supported&nbsp;in&nbsp;transaction&nbsp;replacement."</td>
+        </tr>
+        <tr id="299" style="None">
+          <td style="color: grey">299</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;)</td>
+        </tr>
+        <tr id="300" style="None">
+          <td style="color: grey">300</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="301" style="None">
+          <td style="color: grey">301</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#&nbsp;Replacement&nbsp;transactions&nbsp;are&nbsp;only&nbsp;allowed&nbsp;to&nbsp;make&nbsp;amendments&nbsp;which</td>
+        </tr>
+        <tr id="302" style="None">
+          <td style="color: grey">302</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#&nbsp;do&nbsp;not&nbsp;increase&nbsp;the&nbsp;amount&nbsp;that&nbsp;we&nbsp;are&nbsp;spending&nbsp;on&nbsp;external&nbsp;outputs.</td>
+        </tr>
+        <tr id="303" style="None">
+          <td style="color: grey">303</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#&nbsp;In&nbsp;other&nbsp;words,&nbsp;the&nbsp;total&nbsp;amount&nbsp;being&nbsp;sent&nbsp;out&nbsp;of&nbsp;the&nbsp;wallet&nbsp;must</td>
+        </tr>
+        <tr id="304" style="None">
+          <td style="color: grey">304</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#&nbsp;not&nbsp;increase&nbsp;by&nbsp;more&nbsp;than&nbsp;the&nbsp;fee&nbsp;difference&nbsp;(so&nbsp;additional&nbsp;funds</td>
+        </tr>
+        <tr id="305" style="None">
+          <td style="color: grey">305</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#&nbsp;can&nbsp;only&nbsp;go&nbsp;towards&nbsp;the&nbsp;fee,&nbsp;which&nbsp;is&nbsp;confirmed&nbsp;by&nbsp;the&nbsp;user).</td>
+        </tr>
+        <tr id="306" style="None">
+          <td style="color: grey">306</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;spending&nbsp;-&nbsp;orig_spending&nbsp;>&nbsp;fee&nbsp;-&nbsp;orig_fee:</td>
+        </tr>
+        <tr id="307" style="None">
+          <td style="color: grey">307</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;raise&nbsp;ProcessError("Invalid&nbsp;replacement&nbsp;transaction.")</td>
+        </tr>
+        <tr id="308" style="None">
+          <td style="color: grey">308</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="309" style="None">
+          <td style="color: grey">309</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#&nbsp;Replacement&nbsp;transactions&nbsp;must&nbsp;not&nbsp;change&nbsp;the&nbsp;effective&nbsp;nLockTime.</td>
+        </tr>
+        <tr id="310" style="None">
+          <td style="color: grey">310</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lock_time&nbsp;=&nbsp;0&nbsp;if&nbsp;tx_info.lock_time_disabled()&nbsp;else&nbsp;tx_info.tx.lock_time</td>
+        </tr>
+        <tr id="311" style="None">
+          <td style="color: grey">311</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for&nbsp;orig&nbsp;in&nbsp;orig_txs:</td>
+        </tr>
+        <tr id="312" style="None">
+          <td style="color: grey">312</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;orig_lock_time&nbsp;=&nbsp;0&nbsp;if&nbsp;orig.lock_time_disabled()&nbsp;else&nbsp;orig.tx.lock_time</td>
+        </tr>
+        <tr id="313" style="None">
+          <td style="color: grey">313</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;lock_time&nbsp;!=&nbsp;orig_lock_time:</td>
+        </tr>
+        <tr id="314" style="None">
+          <td style="color: grey">314</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;raise&nbsp;ProcessError(</td>
+        </tr>
+        <tr id="315" style="None">
+          <td style="color: grey">315</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"Original&nbsp;transactions&nbsp;must&nbsp;have&nbsp;same&nbsp;effective&nbsp;nLockTime&nbsp;as&nbsp;replacement&nbsp;transaction."</td>
+        </tr>
+        <tr id="316" style="None">
+          <td style="color: grey">316</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;)</td>
+        </tr>
+        <tr id="317" style="None">
+          <td style="color: grey">317</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="318" style="None">
+          <td style="color: grey">318</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;not&nbsp;self.is_payjoin():</td>
+        </tr>
+        <tr id="319" style="None">
+          <td style="color: grey">319</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#&nbsp;Not&nbsp;a&nbsp;PayJoin:&nbsp;Show&nbsp;the&nbsp;actual&nbsp;fee&nbsp;difference,&nbsp;since&nbsp;any&nbsp;difference&nbsp;in&nbsp;the&nbsp;fee&nbsp;is</td>
+        </tr>
+        <tr id="320" style="None">
+          <td style="color: grey">320</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#&nbsp;coming&nbsp;entirely&nbsp;from&nbsp;the&nbsp;user's&nbsp;own&nbsp;funds&nbsp;and&nbsp;from&nbsp;decreases&nbsp;of&nbsp;external&nbsp;outputs.</td>
+        </tr>
+        <tr id="321" style="None">
+          <td style="color: grey">321</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#&nbsp;We&nbsp;consider&nbsp;the&nbsp;decreases&nbsp;as&nbsp;belonging&nbsp;to&nbsp;the&nbsp;user.</td>
+        </tr>
+        <tr id="322" style="None">
+          <td style="color: grey">322</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;await&nbsp;helpers.confirm_modify_fee(</td>
+        </tr>
+        <tr id="323" style="color: blue;">
+          <td style="color: grey">323</td>
+          <td style="text-align: right;">0.50</td>
+          <td style="text-align: right;">9</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;fee&nbsp;-&nbsp;orig_fee,&nbsp;fee,&nbsp;fee_rate,&nbsp;coin,&nbsp;amount_unit</td>
+        </tr>
+        <tr id="324" style="None">
+          <td style="color: grey">324</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;)</td>
+        </tr>
+        <tr id="325" style="None">
+          <td style="color: grey">325</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;elif&nbsp;spending&nbsp;>&nbsp;orig_spending:</td>
+        </tr>
+        <tr id="326" style="None">
+          <td style="color: grey">326</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#&nbsp;PayJoin&nbsp;and&nbsp;user&nbsp;is&nbsp;spending&nbsp;more:&nbsp;Show&nbsp;the&nbsp;increase&nbsp;in&nbsp;the&nbsp;user's&nbsp;contribution</td>
+        </tr>
+        <tr id="327" style="None">
+          <td style="color: grey">327</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#&nbsp;to&nbsp;the&nbsp;fee,&nbsp;ignoring&nbsp;any&nbsp;contribution&nbsp;from&nbsp;external&nbsp;inputs.&nbsp;Decreasing&nbsp;of</td>
+        </tr>
+        <tr id="328" style="None">
+          <td style="color: grey">328</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#&nbsp;external&nbsp;outputs&nbsp;is&nbsp;not&nbsp;allowed&nbsp;in&nbsp;PayJoin,&nbsp;so&nbsp;there&nbsp;is&nbsp;no&nbsp;need&nbsp;to&nbsp;handle&nbsp;those.</td>
+        </tr>
+        <tr id="329" style="None">
+          <td style="color: grey">329</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;await&nbsp;helpers.confirm_modify_fee(</td>
+        </tr>
+        <tr id="330" style="color: blue;">
+          <td style="color: grey">330</td>
+          <td style="text-align: right;">0.50</td>
+          <td style="text-align: right;">1</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;spending&nbsp;-&nbsp;orig_spending,&nbsp;fee,&nbsp;fee_rate,&nbsp;coin,&nbsp;amount_unit</td>
+        </tr>
+        <tr id="331" style="None">
+          <td style="color: grey">331</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;)</td>
+        </tr>
+        <tr id="332" style="None">
+          <td style="color: grey">332</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;else:</td>
+        </tr>
+        <tr id="333" style="None">
+          <td style="color: grey">333</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#&nbsp;PayJoin&nbsp;and&nbsp;user&nbsp;is&nbsp;not&nbsp;spending&nbsp;more:&nbsp;When&nbsp;new&nbsp;external&nbsp;inputs&nbsp;are&nbsp;involved&nbsp;and</td>
+        </tr>
+        <tr id="334" style="None">
+          <td style="color: grey">334</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#&nbsp;the&nbsp;user&nbsp;is&nbsp;paying&nbsp;less,&nbsp;the&nbsp;scenario&nbsp;can&nbsp;be&nbsp;open&nbsp;to&nbsp;multiple&nbsp;interpretations&nbsp;and</td>
+        </tr>
+        <tr id="335" style="None">
+          <td style="color: grey">335</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#&nbsp;the&nbsp;dialog&nbsp;would&nbsp;likely&nbsp;cause&nbsp;more&nbsp;confusion&nbsp;than&nbsp;what&nbsp;it's&nbsp;worth,&nbsp;see&nbsp;PR&nbsp;#1292.</td>
+        </tr>
+        <tr id="336" style="None">
+          <td style="color: grey">336</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;pass</td>
+        </tr>
+        <tr id="337" style="None">
+          <td style="color: grey">337</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;else:</td>
+        </tr>
+        <tr id="338" style="None">
+          <td style="color: grey">338</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#&nbsp;Standard&nbsp;transaction.</td>
+        </tr>
+        <tr id="339" style="None">
+          <td style="color: grey">339</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;tx_info.tx.lock_time&nbsp;>&nbsp;0:</td>
+        </tr>
+        <tr id="340" style="None">
+          <td style="color: grey">340</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;await&nbsp;helpers.confirm_nondefault_locktime(</td>
+        </tr>
+        <tr id="341" style="None">
+          <td style="color: grey">341</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;tx_info.tx.lock_time,&nbsp;tx_info.lock_time_disabled()</td>
+        </tr>
+        <tr id="342" style="None">
+          <td style="color: grey">342</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;)</td>
+        </tr>
+        <tr id="343" style="None">
+          <td style="color: grey">343</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="344" style="None">
+          <td style="color: grey">344</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;not&nbsp;self.external_in:</td>
+        </tr>
+        <tr id="345" style="None">
+          <td style="color: grey">345</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;await&nbsp;helpers.confirm_total(</td>
+        </tr>
+        <tr id="346" style="None">
+          <td style="color: grey">346</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;total,</td>
+        </tr>
+        <tr id="347" style="None">
+          <td style="color: grey">347</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;fee,</td>
+        </tr>
+        <tr id="348" style="None">
+          <td style="color: grey">348</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;fee_rate,</td>
+        </tr>
+        <tr id="349" style="None">
+          <td style="color: grey">349</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;coin,</td>
+        </tr>
+        <tr id="350" style="None">
+          <td style="color: grey">350</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;amount_unit,</td>
+        </tr>
+        <tr id="351" style="None">
+          <td style="color: grey">351</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;tx_info.wallet_path.get_path(),</td>
+        </tr>
+        <tr id="352" style="None">
+          <td style="color: grey">352</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;)</td>
+        </tr>
+        <tr id="353" style="None">
+          <td style="color: grey">353</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;else:</td>
+        </tr>
+        <tr id="354" style="color: blue;">
+          <td style="color: grey">354</td>
+          <td style="text-align: right;">0.07</td>
+          <td style="text-align: right;">17</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;await&nbsp;helpers.confirm_joint_total(spending,&nbsp;total,&nbsp;coin,&nbsp;amount_unit)</td>
+        </tr>
+        <tr id="355" style="None">
+          <td style="color: grey">355</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="356" style="None">
+          <td style="color: grey">356</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="357" style="color: blue;">
+          <td style="color: grey">357</td>
+          <td style="text-align: right;">3.00</td>
+          <td style="text-align: right;">855</td>
+          <td>class&nbsp;CoinJoinApprover(Approver):</td>
+        </tr>
+        <tr id="358" style="None">
+          <td style="color: grey">358</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;#&nbsp;Minimum&nbsp;registrable&nbsp;output&nbsp;amount&nbsp;accepted&nbsp;by&nbsp;the&nbsp;coinjoin&nbsp;coordinator.</td>
+        </tr>
+        <tr id="359" style="None">
+          <td style="color: grey">359</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;#&nbsp;The&nbsp;coinjoin&nbsp;request&nbsp;may&nbsp;specify&nbsp;an&nbsp;even&nbsp;lower&nbsp;amount.</td>
+        </tr>
+        <tr id="360" style="color: blue;">
+          <td style="color: grey">360</td>
+          <td style="text-align: right;">1.00</td>
+          <td style="text-align: right;">285</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;MIN_REGISTRABLE_OUTPUT_AMOUNT&nbsp;=&nbsp;const(5000)</td>
+        </tr>
+        <tr id="361" style="None">
+          <td style="color: grey">361</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="362" style="None">
+          <td style="color: grey">362</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;#&nbsp;Largest&nbsp;possible&nbsp;weight&nbsp;of&nbsp;an&nbsp;output&nbsp;supported&nbsp;by&nbsp;Trezor&nbsp;(P2TR&nbsp;or&nbsp;P2WSH).</td>
+        </tr>
+        <tr id="363" style="None">
+          <td style="color: grey">363</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;MAX_OUTPUT_WEIGHT&nbsp;=&nbsp;4&nbsp;*&nbsp;(8&nbsp;+&nbsp;1&nbsp;+&nbsp;1&nbsp;+&nbsp;1&nbsp;+&nbsp;32)</td>
+        </tr>
+        <tr id="364" style="None">
+          <td style="color: grey">364</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="365" style="None">
+          <td style="color: grey">365</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;#&nbsp;Masks&nbsp;for&nbsp;the&nbsp;signable&nbsp;and&nbsp;no_fee&nbsp;bits&nbsp;in&nbsp;coinjoin_flags.</td>
+        </tr>
+        <tr id="366" style="color: blue;">
+          <td style="color: grey">366</td>
+          <td style="text-align: right;">1.00</td>
+          <td style="text-align: right;">285</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;COINJOIN_FLAGS_SIGNABLE&nbsp;=&nbsp;const(0x01)</td>
+        </tr>
+        <tr id="367" style="None">
+          <td style="color: grey">367</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;COINJOIN_FLAGS_NO_FEE&nbsp;=&nbsp;const(0x02)</td>
+        </tr>
+        <tr id="368" style="None">
+          <td style="color: grey">368</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="369" style="None">
+          <td style="color: grey">369</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;#&nbsp;The&nbsp;public&nbsp;key&nbsp;used&nbsp;for&nbsp;verifying&nbsp;coinjoin&nbsp;requests&nbsp;in&nbsp;production&nbsp;on&nbsp;mainnet.</td>
+        </tr>
+        <tr id="370" style="color: blue;">
+          <td style="color: grey">370</td>
+          <td style="text-align: right;">1.00</td>
+          <td style="text-align: right;">285</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;COINJOIN_REQ_PUBKEY&nbsp;=&nbsp;b"\x02W\x03\xbb\xe1[\xb0\x8e\x98!\xfed\xaf\xf6\xb2\xef\x1a1`\xe3y\x9d\xd8\xf0\xce\xbf,y\xe8g\xdd\x12]"</td>
+        </tr>
+        <tr id="371" style="None">
+          <td style="color: grey">371</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="372" style="None">
+          <td style="color: grey">372</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;#&nbsp;The&nbsp;public&nbsp;key&nbsp;used&nbsp;for&nbsp;verifying&nbsp;coinjoin&nbsp;requests&nbsp;on&nbsp;testnet&nbsp;and&nbsp;in&nbsp;debug&nbsp;mode.</td>
+        </tr>
+        <tr id="373" style="None">
+          <td style="color: grey">373</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;#&nbsp;secp256k1&nbsp;public&nbsp;key&nbsp;of&nbsp;m/0h&nbsp;for&nbsp;"all&nbsp;all&nbsp;...&nbsp;all"&nbsp;seed.</td>
+        </tr>
+        <tr id="374" style="None">
+          <td style="color: grey">374</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;COINJOIN_REQ_PUBKEY_TEST&nbsp;=&nbsp;b"\x03\x0f\xdf^(\x9bZ\xefSb\x90\x95:\xe8\x1c\xe6\x0e\x84\x1f\xf9V\xf3f\xac\x12?\xa6\x9d\xb3\xc7\x9f!\xb0"</td>
+        </tr>
+        <tr id="375" style="None">
+          <td style="color: grey">375</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="376" style="color: blue;">
+          <td style="color: grey">376</td>
+          <td style="text-align: right;">3.00</td>
+          <td style="text-align: right;">855</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;def&nbsp;__init__(</td>
+        </tr>
+        <tr id="377" style="None">
+          <td style="color: grey">377</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self,</td>
+        </tr>
+        <tr id="378" style="None">
+          <td style="color: grey">378</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;tx:&nbsp;SignTx,</td>
+        </tr>
+        <tr id="379" style="None">
+          <td style="color: grey">379</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;coin:&nbsp;CoinInfo,</td>
+        </tr>
+        <tr id="380" style="None">
+          <td style="color: grey">380</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;authorization:&nbsp;CoinJoinAuthorization,</td>
+        </tr>
+        <tr id="381" style="None">
+          <td style="color: grey">381</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;)&nbsp;->&nbsp;None:</td>
+        </tr>
+        <tr id="382" style="None">
+          <td style="color: grey">382</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;super().__init__(tx,&nbsp;coin)</td>
+        </tr>
+        <tr id="383" style="None">
+          <td style="color: grey">383</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="384" style="None">
+          <td style="color: grey">384</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;not&nbsp;tx.coinjoin_request:</td>
+        </tr>
+        <tr id="385" style="None">
+          <td style="color: grey">385</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;raise&nbsp;DataError("Missing&nbsp;coinjoin&nbsp;request.")</td>
+        </tr>
+        <tr id="386" style="None">
+          <td style="color: grey">386</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="387" style="None">
+          <td style="color: grey">387</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.request&nbsp;=&nbsp;tx.coinjoin_request</td>
+        </tr>
+        <tr id="388" style="None">
+          <td style="color: grey">388</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.authorization&nbsp;=&nbsp;authorization</td>
+        </tr>
+        <tr id="389" style="None">
+          <td style="color: grey">389</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.coordination_fee_base&nbsp;=&nbsp;0</td>
+        </tr>
+        <tr id="390" style="None">
+          <td style="color: grey">390</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="391" style="None">
+          <td style="color: grey">391</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#&nbsp;Begin&nbsp;hashing&nbsp;the&nbsp;coinjoin&nbsp;request.</td>
+        </tr>
+        <tr id="392" style="color: blue;">
+          <td style="color: grey">392</td>
+          <td style="text-align: right;">3.00</td>
+          <td style="text-align: right;">9</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.h_request&nbsp;=&nbsp;HashWriter(sha256(b"CJR1"))&nbsp;&nbsp;#&nbsp;"CJR1"&nbsp;=&nbsp;Coinjoin&nbsp;Request&nbsp;v1.</td>
+        </tr>
+        <tr id="393" style="None">
+          <td style="color: grey">393</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;writers.write_bytes_prefixed(</td>
+        </tr>
+        <tr id="394" style="color: blue;">
+          <td style="color: grey">394</td>
+          <td style="text-align: right;">1.00</td>
+          <td style="text-align: right;">3</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.h_request,&nbsp;authorization.params.coordinator.encode()</td>
+        </tr>
+        <tr id="395" style="None">
+          <td style="color: grey">395</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;)</td>
+        </tr>
+        <tr id="396" style="None">
+          <td style="color: grey">396</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;writers.write_uint32(self.h_request,&nbsp;coin.slip44)</td>
+        </tr>
+        <tr id="397" style="None">
+          <td style="color: grey">397</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;writers.write_uint32(self.h_request,&nbsp;self.request.fee_rate)</td>
+        </tr>
+        <tr id="398" style="None">
+          <td style="color: grey">398</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;writers.write_uint64(self.h_request,&nbsp;self.request.no_fee_threshold)</td>
+        </tr>
+        <tr id="399" style="None">
+          <td style="color: grey">399</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;writers.write_uint64(self.h_request,&nbsp;self.request.min_registrable_amount)</td>
+        </tr>
+        <tr id="400" style="None">
+          <td style="color: grey">400</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;writers.write_bytes_fixed(self.h_request,&nbsp;self.request.mask_public_key,&nbsp;33)</td>
+        </tr>
+        <tr id="401" style="None">
+          <td style="color: grey">401</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;writers.write_compact_size(self.h_request,&nbsp;tx.inputs_count)</td>
+        </tr>
+        <tr id="402" style="None">
+          <td style="color: grey">402</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="403" style="None">
+          <td style="color: grey">403</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#&nbsp;Upper&nbsp;bound&nbsp;on&nbsp;the&nbsp;user's&nbsp;contribution&nbsp;to&nbsp;the&nbsp;weight&nbsp;of&nbsp;the&nbsp;transaction.</td>
+        </tr>
+        <tr id="404" style="color: blue;">
+          <td style="color: grey">404</td>
+          <td style="text-align: right;">1.00</td>
+          <td style="text-align: right;">3</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.our_weight&nbsp;=&nbsp;tx_weight.TxWeightCalculator()</td>
+        </tr>
+        <tr id="405" style="None">
+          <td style="color: grey">405</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="406" style="color: blue;">
+          <td style="color: grey">406</td>
+          <td style="text-align: right;">2.00</td>
+          <td style="text-align: right;">570</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;def&nbsp;_add_input(self,&nbsp;txi:&nbsp;TxInput)&nbsp;->&nbsp;None:</td>
+        </tr>
+        <tr id="407" style="None">
+          <td style="color: grey">407</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;super()._add_input(txi)</td>
+        </tr>
+        <tr id="408" style="None">
+          <td style="color: grey">408</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;writers.write_uint8(self.h_request,&nbsp;txi.coinjoin_flags)</td>
+        </tr>
+        <tr id="409" style="None">
+          <td style="color: grey">409</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="410" style="color: blue;">
+          <td style="color: grey">410</td>
+          <td style="text-align: right;">3.00</td>
+          <td style="text-align: right;">855</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;async&nbsp;def&nbsp;add_internal_input(self,&nbsp;txi:&nbsp;TxInput,&nbsp;node:&nbsp;bip32.HDNode)&nbsp;->&nbsp;None:</td>
+        </tr>
+        <tr id="411" style="None">
+          <td style="color: grey">411</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.our_weight.add_input(txi)</td>
+        </tr>
+        <tr id="412" style="None">
+          <td style="color: grey">412</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;not&nbsp;self.authorization.check_internal_input(txi):</td>
+        </tr>
+        <tr id="413" style="None">
+          <td style="color: grey">413</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;raise&nbsp;ProcessError("Unauthorized&nbsp;path")</td>
+        </tr>
+        <tr id="414" style="None">
+          <td style="color: grey">414</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="415" style="None">
+          <td style="color: grey">415</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#&nbsp;Compute&nbsp;the&nbsp;masking&nbsp;bit&nbsp;for&nbsp;the&nbsp;signable&nbsp;bit&nbsp;in&nbsp;coinjoin&nbsp;flags.</td>
+        </tr>
+        <tr id="416" style="color: blue;">
+          <td style="color: grey">416</td>
+          <td style="text-align: right;">2.00</td>
+          <td style="text-align: right;">24</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;internal_private_key&nbsp;=&nbsp;node.private_key()</td>
+        </tr>
+        <tr id="417" style="color: blue;">
+          <td style="color: grey">417</td>
+          <td style="text-align: right;">2.00</td>
+          <td style="text-align: right;">24</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;output_private_key&nbsp;=&nbsp;bip340.tweak_secret_key(internal_private_key)</td>
+        </tr>
+        <tr id="418" style="None">
+          <td style="color: grey">418</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;shared_secret&nbsp;=&nbsp;secp256k1.multiply(</td>
+        </tr>
+        <tr id="419" style="color: blue;">
+          <td style="color: grey">419</td>
+          <td style="text-align: right;">2.00</td>
+          <td style="text-align: right;">24</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;output_private_key,&nbsp;self.request.mask_public_key</td>
+        </tr>
+        <tr id="420" style="None">
+          <td style="color: grey">420</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;)</td>
+        </tr>
+        <tr id="421" style="color: blue;">
+          <td style="color: grey">421</td>
+          <td style="text-align: right;">3.00</td>
+          <td style="text-align: right;">36</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;h_mask&nbsp;=&nbsp;HashWriter(sha256())</td>
+        </tr>
+        <tr id="422" style="color: blue;">
+          <td style="color: grey">422</td>
+          <td style="text-align: right;">3.00</td>
+          <td style="text-align: right;">36</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;writers.write_bytes_fixed(h_mask,&nbsp;shared_secret[1:33],&nbsp;32)</td>
+        </tr>
+        <tr id="423" style="None">
+          <td style="color: grey">423</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;writers.write_bytes_reversed(h_mask,&nbsp;txi.prev_hash,&nbsp;writers.TX_HASH_SIZE)</td>
+        </tr>
+        <tr id="424" style="None">
+          <td style="color: grey">424</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;writers.write_uint32(h_mask,&nbsp;txi.prev_index)</td>
+        </tr>
+        <tr id="425" style="None">
+          <td style="color: grey">425</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;mask&nbsp;=&nbsp;h_mask.get_digest()[0]&nbsp;&&nbsp;1</td>
+        </tr>
+        <tr id="426" style="None">
+          <td style="color: grey">426</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="427" style="None">
+          <td style="color: grey">427</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#&nbsp;Ensure&nbsp;that&nbsp;the&nbsp;input&nbsp;can&nbsp;be&nbsp;signed.</td>
+        </tr>
+        <tr id="428" style="None">
+          <td style="color: grey">428</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;bool(txi.coinjoin_flags&nbsp;&&nbsp;self.COINJOIN_FLAGS_SIGNABLE)&nbsp;^&nbsp;mask&nbsp;!=&nbsp;1:</td>
+        </tr>
+        <tr id="429" style="None">
+          <td style="color: grey">429</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;raise&nbsp;ProcessError("Unauthorized&nbsp;input")</td>
+        </tr>
+        <tr id="430" style="None">
+          <td style="color: grey">430</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="431" style="None">
+          <td style="color: grey">431</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#&nbsp;Add&nbsp;to&nbsp;coordination_fee_base,&nbsp;except&nbsp;for&nbsp;remixes&nbsp;and&nbsp;small&nbsp;inputs&nbsp;which&nbsp;are</td>
+        </tr>
+        <tr id="432" style="None">
+          <td style="color: grey">432</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#&nbsp;not&nbsp;charged&nbsp;a&nbsp;coordination&nbsp;fee.</td>
+        </tr>
+        <tr id="433" style="None">
+          <td style="color: grey">433</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;no_fee&nbsp;=&nbsp;bool(txi.coinjoin_flags&nbsp;&&nbsp;self.COINJOIN_FLAGS_NO_FEE)</td>
+        </tr>
+        <tr id="434" style="None">
+          <td style="color: grey">434</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;txi.amount&nbsp;>&nbsp;self.request.no_fee_threshold&nbsp;and&nbsp;not&nbsp;no_fee:</td>
+        </tr>
+        <tr id="435" style="None">
+          <td style="color: grey">435</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.coordination_fee_base&nbsp;+=&nbsp;txi.amount</td>
+        </tr>
+        <tr id="436" style="None">
+          <td style="color: grey">436</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="437" style="color: blue;">
+          <td style="color: grey">437</td>
+          <td style="text-align: right;">1.00</td>
+          <td style="text-align: right;">12</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;await&nbsp;super().add_internal_input(txi,&nbsp;node)</td>
+        </tr>
+        <tr id="438" style="None">
+          <td style="color: grey">438</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="439" style="color: blue;">
+          <td style="color: grey">439</td>
+          <td style="text-align: right;">1.00</td>
+          <td style="text-align: right;">285</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;def&nbsp;check_internal_input(self,&nbsp;txi:&nbsp;TxInput)&nbsp;->&nbsp;None:</td>
+        </tr>
+        <tr id="440" style="None">
+          <td style="color: grey">440</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#&nbsp;Sanity&nbsp;check&nbsp;not&nbsp;critical&nbsp;for&nbsp;security.</td>
+        </tr>
+        <tr id="441" style="None">
+          <td style="color: grey">441</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#&nbsp;The&nbsp;main&nbsp;reason&nbsp;for&nbsp;this&nbsp;is&nbsp;that&nbsp;we&nbsp;are&nbsp;not&nbsp;comfortable&nbsp;with&nbsp;using&nbsp;the&nbsp;same&nbsp;private&nbsp;key</td>
+        </tr>
+        <tr id="442" style="None">
+          <td style="color: grey">442</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#&nbsp;in&nbsp;multiple&nbsp;signatures&nbsp;schemes&nbsp;(ECDSA&nbsp;and&nbsp;Schnorr)&nbsp;and&nbsp;we&nbsp;want&nbsp;to&nbsp;be&nbsp;sure&nbsp;that&nbsp;the&nbsp;user</td>
+        </tr>
+        <tr id="443" style="None">
+          <td style="color: grey">443</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#&nbsp;went&nbsp;through&nbsp;a&nbsp;warning&nbsp;screen&nbsp;before&nbsp;we&nbsp;sign&nbsp;the&nbsp;input.</td>
+        </tr>
+        <tr id="444" style="None">
+          <td style="color: grey">444</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;not&nbsp;self.authorization.check_internal_input(txi):</td>
+        </tr>
+        <tr id="445" style="None">
+          <td style="color: grey">445</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;raise&nbsp;ProcessError("Unauthorized&nbsp;path")</td>
+        </tr>
+        <tr id="446" style="None">
+          <td style="color: grey">446</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="447" style="color: blue;">
+          <td style="color: grey">447</td>
+          <td style="text-align: right;">3.00</td>
+          <td style="text-align: right;">855</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;def&nbsp;add_external_input(self,&nbsp;txi:&nbsp;TxInput)&nbsp;->&nbsp;None:</td>
+        </tr>
+        <tr id="448" style="None">
+          <td style="color: grey">448</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;super().add_external_input(txi)</td>
+        </tr>
+        <tr id="449" style="None">
+          <td style="color: grey">449</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="450" style="None">
+          <td style="color: grey">450</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#&nbsp;External&nbsp;inputs&nbsp;should&nbsp;always&nbsp;be&nbsp;verifiable&nbsp;in&nbsp;coinjoin.&nbsp;This&nbsp;check</td>
+        </tr>
+        <tr id="451" style="None">
+          <td style="color: grey">451</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#&nbsp;is&nbsp;not&nbsp;critical&nbsp;for&nbsp;security,&nbsp;we&nbsp;are&nbsp;just&nbsp;being&nbsp;cautious,&nbsp;because</td>
+        </tr>
+        <tr id="452" style="None">
+          <td style="color: grey">452</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#&nbsp;coinjoin&nbsp;is&nbsp;automated&nbsp;and&nbsp;this&nbsp;is&nbsp;not&nbsp;a&nbsp;very&nbsp;legitimate&nbsp;use-case.</td>
+        </tr>
+        <tr id="453" style="None">
+          <td style="color: grey">453</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;input_is_external_unverified(txi):</td>
+        </tr>
+        <tr id="454" style="None">
+          <td style="color: grey">454</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;raise&nbsp;ProcessError("Unverifiable&nbsp;external&nbsp;input.")</td>
+        </tr>
+        <tr id="455" style="None">
+          <td style="color: grey">455</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="456" style="color: blue;">
+          <td style="color: grey">456</td>
+          <td style="text-align: right;">2.00</td>
+          <td style="text-align: right;">570</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;async&nbsp;def&nbsp;add_change_output(self,&nbsp;txo:&nbsp;TxOutput,&nbsp;script_pubkey:&nbsp;bytes)&nbsp;->&nbsp;None:</td>
+        </tr>
+        <tr id="457" style="color: blue;">
+          <td style="color: grey">457</td>
+          <td style="text-align: right;">1.00</td>
+          <td style="text-align: right;">34</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;await&nbsp;super().add_change_output(txo,&nbsp;script_pubkey)</td>
+        </tr>
+        <tr id="458" style="None">
+          <td style="color: grey">458</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.our_weight.add_output(script_pubkey)</td>
+        </tr>
+        <tr id="459" style="None">
+          <td style="color: grey">459</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="460" style="color: blue;">
+          <td style="color: grey">460</td>
+          <td style="text-align: right;">1.00</td>
+          <td style="text-align: right;">285</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;async&nbsp;def&nbsp;approve_orig_txids(</td>
+        </tr>
+        <tr id="461" style="None">
+          <td style="color: grey">461</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self,&nbsp;tx_info:&nbsp;TxInfo,&nbsp;orig_txs:&nbsp;list[OriginalTxInfo]</td>
+        </tr>
+        <tr id="462" style="None">
+          <td style="color: grey">462</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;)&nbsp;->&nbsp;None:</td>
+        </tr>
+        <tr id="463" style="None">
+          <td style="color: grey">463</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;pass</td>
+        </tr>
+        <tr id="464" style="None">
+          <td style="color: grey">464</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="465" style="color: blue;">
+          <td style="color: grey">465</td>
+          <td style="text-align: right;">1.00</td>
+          <td style="text-align: right;">285</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;def&nbsp;_verify_coinjoin_request(self,&nbsp;tx_info:&nbsp;TxInfo):</td>
+        </tr>
+        <tr id="466" style="None">
+          <td style="color: grey">466</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;not&nbsp;isinstance(tx_info.sig_hasher,&nbsp;BitcoinSigHasher):</td>
+        </tr>
+        <tr id="467" style="None">
+          <td style="color: grey">467</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;raise&nbsp;ProcessError("Unexpected&nbsp;signature&nbsp;hasher.")</td>
+        </tr>
+        <tr id="468" style="None">
+          <td style="color: grey">468</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="469" style="None">
+          <td style="color: grey">469</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#&nbsp;Finish&nbsp;hashing&nbsp;the&nbsp;coinjoin&nbsp;request.</td>
+        </tr>
+        <tr id="470" style="None">
+          <td style="color: grey">470</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;writers.write_bytes_fixed(</td>
+        </tr>
+        <tr id="471" style="None">
+          <td style="color: grey">471</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.h_request,&nbsp;tx_info.sig_hasher.h_prevouts.get_digest(),&nbsp;32</td>
+        </tr>
+        <tr id="472" style="None">
+          <td style="color: grey">472</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;)</td>
+        </tr>
+        <tr id="473" style="None">
+          <td style="color: grey">473</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;writers.write_bytes_fixed(</td>
+        </tr>
+        <tr id="474" style="None">
+          <td style="color: grey">474</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.h_request,&nbsp;tx_info.sig_hasher.h_outputs.get_digest(),&nbsp;32</td>
+        </tr>
+        <tr id="475" style="None">
+          <td style="color: grey">475</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;)</td>
+        </tr>
+        <tr id="476" style="None">
+          <td style="color: grey">476</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="477" style="None">
+          <td style="color: grey">477</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#&nbsp;Verify&nbsp;the&nbsp;coinjoin&nbsp;request&nbsp;signature.</td>
+        </tr>
+        <tr id="478" style="None">
+          <td style="color: grey">478</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;__debug__&nbsp;or&nbsp;self.coin.slip44&nbsp;==&nbsp;SLIP44_TESTNET:</td>
+        </tr>
+        <tr id="479" style="None">
+          <td style="color: grey">479</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;secp256k1.verify(</td>
+        </tr>
+        <tr id="480" style="None">
+          <td style="color: grey">480</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.COINJOIN_REQ_PUBKEY_TEST,</td>
+        </tr>
+        <tr id="481" style="None">
+          <td style="color: grey">481</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.request.signature,</td>
+        </tr>
+        <tr id="482" style="None">
+          <td style="color: grey">482</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.h_request.get_digest(),</td>
+        </tr>
+        <tr id="483" style="None">
+          <td style="color: grey">483</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;):</td>
+        </tr>
+        <tr id="484" style="None">
+          <td style="color: grey">484</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;True</td>
+        </tr>
+        <tr id="485" style="None">
+          <td style="color: grey">485</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="486" style="None">
+          <td style="color: grey">486</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;secp256k1.verify(</td>
+        </tr>
+        <tr id="487" style="None">
+          <td style="color: grey">487</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.COINJOIN_REQ_PUBKEY,</td>
+        </tr>
+        <tr id="488" style="None">
+          <td style="color: grey">488</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.request.signature,</td>
+        </tr>
+        <tr id="489" style="None">
+          <td style="color: grey">489</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.h_request.get_digest(),</td>
+        </tr>
+        <tr id="490" style="None">
+          <td style="color: grey">490</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;)</td>
+        </tr>
+        <tr id="491" style="None">
+          <td style="color: grey">491</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="492" style="color: blue;">
+          <td style="color: grey">492</td>
+          <td style="text-align: right;">2.00</td>
+          <td style="text-align: right;">570</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;async&nbsp;def&nbsp;approve_tx(self,&nbsp;tx_info:&nbsp;TxInfo,&nbsp;orig_txs:&nbsp;list[OriginalTxInfo])&nbsp;->&nbsp;None:</td>
+        </tr>
+        <tr id="493" style="color: blue;">
+          <td style="color: grey">493</td>
+          <td style="text-align: right;">1.00</td>
+          <td style="text-align: right;">3</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;from&nbsp;..authorization&nbsp;import&nbsp;FEE_RATE_DECIMALS</td>
+        </tr>
+        <tr id="494" style="None">
+          <td style="color: grey">494</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="495" style="color: blue;">
+          <td style="color: grey">495</td>
+          <td style="text-align: right;">1.00</td>
+          <td style="text-align: right;">3</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;await&nbsp;super().approve_tx(tx_info,&nbsp;orig_txs)</td>
+        </tr>
+        <tr id="496" style="None">
+          <td style="color: grey">496</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="497" style="None">
+          <td style="color: grey">497</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;not&nbsp;self._verify_coinjoin_request(tx_info):</td>
+        </tr>
+        <tr id="498" style="None">
+          <td style="color: grey">498</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;raise&nbsp;DataError("Invalid&nbsp;signature&nbsp;in&nbsp;coinjoin&nbsp;request.")</td>
+        </tr>
+        <tr id="499" style="None">
+          <td style="color: grey">499</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="500" style="None">
+          <td style="color: grey">500</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#&nbsp;The&nbsp;mining&nbsp;fee&nbsp;of&nbsp;the&nbsp;transaction&nbsp;as&nbsp;a&nbsp;whole.</td>
+        </tr>
+        <tr id="501" style="None">
+          <td style="color: grey">501</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;mining_fee&nbsp;=&nbsp;self.total_in&nbsp;-&nbsp;self.total_out</td>
+        </tr>
+        <tr id="502" style="None">
+          <td style="color: grey">502</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="503" style="None">
+          <td style="color: grey">503</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#&nbsp;The&nbsp;maximum&nbsp;mining&nbsp;fee&nbsp;that&nbsp;the&nbsp;user&nbsp;should&nbsp;be&nbsp;paying.</td>
+        </tr>
+        <tr id="504" style="None">
+          <td style="color: grey">504</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;our_max_mining_fee&nbsp;=&nbsp;(</td>
+        </tr>
+        <tr id="505" style="None">
+          <td style="color: grey">505</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.authorization.params.max_fee_per_kvbyte</td>
+        </tr>
+        <tr id="506" style="None">
+          <td style="color: grey">506</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;self.our_weight.get_virtual_size()</td>
+        </tr>
+        <tr id="507" style="None">
+          <td style="color: grey">507</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/&nbsp;1000</td>
+        </tr>
+        <tr id="508" style="None">
+          <td style="color: grey">508</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;)</td>
+        </tr>
+        <tr id="509" style="None">
+          <td style="color: grey">509</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="510" style="None">
+          <td style="color: grey">510</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#&nbsp;The&nbsp;coordination&nbsp;fee&nbsp;for&nbsp;the&nbsp;user's&nbsp;inputs.</td>
+        </tr>
+        <tr id="511" style="None">
+          <td style="color: grey">511</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;our_coordination_fee&nbsp;=&nbsp;(</td>
+        </tr>
+        <tr id="512" style="None">
+          <td style="color: grey">512</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;min(</td>
+        </tr>
+        <tr id="513" style="None">
+          <td style="color: grey">513</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.request.fee_rate,</td>
+        </tr>
+        <tr id="514" style="None">
+          <td style="color: grey">514</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.authorization.params.max_coordinator_fee_rate,</td>
+        </tr>
+        <tr id="515" style="None">
+          <td style="color: grey">515</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;)</td>
+        </tr>
+        <tr id="516" style="None">
+          <td style="color: grey">516</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;self.coordination_fee_base</td>
+        </tr>
+        <tr id="517" style="color: blue;">
+          <td style="color: grey">517</td>
+          <td style="text-align: right;">1.00</td>
+          <td style="text-align: right;">3</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/&nbsp;pow(10,&nbsp;FEE_RATE_DECIMALS&nbsp;+&nbsp;2)</td>
+        </tr>
+        <tr id="518" style="None">
+          <td style="color: grey">518</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;)</td>
+        </tr>
+        <tr id="519" style="None">
+          <td style="color: grey">519</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="520" style="None">
+          <td style="color: grey">520</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#&nbsp;Total&nbsp;fees&nbsp;that&nbsp;the&nbsp;user&nbsp;is&nbsp;paying.</td>
+        </tr>
+        <tr id="521" style="None">
+          <td style="color: grey">521</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;our_fees&nbsp;=&nbsp;self.total_in&nbsp;-&nbsp;self.external_in&nbsp;-&nbsp;self.change_out</td>
+        </tr>
+        <tr id="522" style="None">
+          <td style="color: grey">522</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="523" style="None">
+          <td style="color: grey">523</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#&nbsp;For&nbsp;the&nbsp;next&nbsp;step&nbsp;we&nbsp;need&nbsp;to&nbsp;estimate&nbsp;an&nbsp;upper&nbsp;bound&nbsp;on&nbsp;the&nbsp;mining&nbsp;fee&nbsp;used&nbsp;by&nbsp;the</td>
+        </tr>
+        <tr id="524" style="None">
+          <td style="color: grey">524</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#&nbsp;coordinator.&nbsp;The&nbsp;coordinator&nbsp;does&nbsp;not&nbsp;include&nbsp;the&nbsp;base&nbsp;weight&nbsp;of&nbsp;the&nbsp;transaction&nbsp;when</td>
+        </tr>
+        <tr id="525" style="None">
+          <td style="color: grey">525</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#&nbsp;computing&nbsp;the&nbsp;mining&nbsp;fee,&nbsp;so&nbsp;we&nbsp;take&nbsp;this&nbsp;into&nbsp;account.</td>
+        </tr>
+        <tr id="526" style="None">
+          <td style="color: grey">526</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;max_fee_per_weight_unit&nbsp;=&nbsp;mining_fee&nbsp;/&nbsp;(</td>
+        </tr>
+        <tr id="527" style="None">
+          <td style="color: grey">527</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.weight.get_weight()&nbsp;-&nbsp;self.weight.get_base_weight()</td>
+        </tr>
+        <tr id="528" style="None">
+          <td style="color: grey">528</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;)</td>
+        </tr>
+        <tr id="529" style="None">
+          <td style="color: grey">529</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="530" style="None">
+          <td style="color: grey">530</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#&nbsp;Calculate&nbsp;the&nbsp;minimum&nbsp;registrable&nbsp;output&nbsp;amount&nbsp;in&nbsp;a&nbsp;coinjoin&nbsp;plus&nbsp;the&nbsp;mining&nbsp;fee&nbsp;that&nbsp;it</td>
+        </tr>
+        <tr id="531" style="None">
+          <td style="color: grey">531</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#&nbsp;would&nbsp;cost&nbsp;to&nbsp;register.&nbsp;Amounts&nbsp;below&nbsp;this&nbsp;value&nbsp;are&nbsp;left&nbsp;to&nbsp;the&nbsp;coordinator&nbsp;or&nbsp;miners</td>
+        </tr>
+        <tr id="532" style="None">
+          <td style="color: grey">532</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#&nbsp;and&nbsp;effectively&nbsp;constitute&nbsp;an&nbsp;extra&nbsp;fee&nbsp;for&nbsp;the&nbsp;user.</td>
+        </tr>
+        <tr id="533" style="None">
+          <td style="color: grey">533</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;min_allowed_output_amount_plus_fee&nbsp;=&nbsp;(</td>
+        </tr>
+        <tr id="534" style="None">
+          <td style="color: grey">534</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;min(self.request.min_registrable_amount,&nbsp;self.MIN_REGISTRABLE_OUTPUT_AMOUNT)</td>
+        </tr>
+        <tr id="535" style="color: blue;">
+          <td style="color: grey">535</td>
+          <td style="text-align: right;">2.00</td>
+          <td style="text-align: right;">6</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;+&nbsp;max_fee_per_weight_unit&nbsp;*&nbsp;self.MAX_OUTPUT_WEIGHT</td>
+        </tr>
+        <tr id="536" style="None">
+          <td style="color: grey">536</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;)</td>
+        </tr>
+        <tr id="537" style="None">
+          <td style="color: grey">537</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="538" style="None">
+          <td style="color: grey">538</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;our_fees&nbsp;>&nbsp;(</td>
+        </tr>
+        <tr id="539" style="color: blue;">
+          <td style="color: grey">539</td>
+          <td style="text-align: right;">2.00</td>
+          <td style="text-align: right;">6</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;our_coordination_fee</td>
+        </tr>
+        <tr id="540" style="None">
+          <td style="color: grey">540</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;+&nbsp;our_max_mining_fee</td>
+        </tr>
+        <tr id="541" style="None">
+          <td style="color: grey">541</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;+&nbsp;min_allowed_output_amount_plus_fee</td>
+        </tr>
+        <tr id="542" style="None">
+          <td style="color: grey">542</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;):</td>
+        </tr>
+        <tr id="543" style="None">
+          <td style="color: grey">543</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;raise&nbsp;ProcessError("Total&nbsp;fee&nbsp;over&nbsp;threshold.")</td>
+        </tr>
+        <tr id="544" style="None">
+          <td style="color: grey">544</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="545" style="None">
+          <td style="color: grey">545</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;not&nbsp;self.authorization.approve_sign_tx(tx_info.tx):</td>
+        </tr>
+        <tr id="546" style="None">
+          <td style="color: grey">546</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;raise&nbsp;ProcessError("Exceeded&nbsp;number&nbsp;of&nbsp;coinjoin&nbsp;rounds.")</td>
+        </tr>
+        <tr id="547" style="None">
+          <td style="color: grey">547</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="548" style="color: red;">
+          <td style="color: grey">548</td>
+          <td style="text-align: right;">5.00</td>
+          <td style="text-align: right;">1425</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;async&nbsp;def&nbsp;_add_output(self,&nbsp;txo:&nbsp;TxOutput,&nbsp;script_pubkey:&nbsp;bytes)&nbsp;->&nbsp;None:</td>
+        </tr>
+        <tr id="549" style="color: blue;">
+          <td style="color: grey">549</td>
+          <td style="text-align: right;">1.00</td>
+          <td style="text-align: right;">1210</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;await&nbsp;super()._add_output(txo,&nbsp;script_pubkey)</td>
+        </tr>
+        <tr id="550" style="None">
+          <td style="color: grey">550</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="551" style="None">
+          <td style="color: grey">551</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;txo.address_n&nbsp;and&nbsp;not&nbsp;self.authorization.check_internal_output(txo):</td>
+        </tr>
+        <tr id="552" style="None">
+          <td style="color: grey">552</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;raise&nbsp;ProcessError("Unauthorized&nbsp;path")</td>
+        </tr>
+        <tr id="553" style="None">
+          <td style="color: grey">553</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="554" style="None">
+          <td style="color: grey">554</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;txo.payment_req_index:</td>
+        </tr>
+        <tr id="555" style="None">
+          <td style="color: grey">555</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;raise&nbsp;DataError("Unexpected&nbsp;payment&nbsp;request.")</td>
+        </tr>
+      </tbody>
+    </table>
+  </body>
+</html>

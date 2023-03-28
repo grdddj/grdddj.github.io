@@ -1,0 +1,2668 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>apps/bitcoin/keychain.py</title>
+    <meta charset="utf-8">
+    <style>body { font-size: 80%; }</style>
+  </head>
+  <body>
+    <table>
+      <thead>
+        <tr>
+          <th style="color: grey">#</th>
+          <th style="text-align: right;">avg</th>
+          <th style="text-align: right;">total</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr id="1" style="color: blue;">
+          <td style="color: grey">1</td>
+          <td style="text-align: right;">1.50</td>
+          <td style="text-align: right;">1950</td>
+          <td>from&nbsp;micropython&nbsp;import&nbsp;const</td>
+        </tr>
+        <tr id="2" style="None">
+          <td style="color: grey">2</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>from&nbsp;typing&nbsp;import&nbsp;TYPE_CHECKING</td>
+        </tr>
+        <tr id="3" style="None">
+          <td style="color: grey">3</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="4" style="color: red;">
+          <td style="color: grey">4</td>
+          <td style="text-align: right;">5.94</td>
+          <td style="text-align: right;">3860</td>
+          <td>from&nbsp;trezor.enums&nbsp;import&nbsp;InputScriptType</td>
+        </tr>
+        <tr id="5" style="color: blue;">
+          <td style="color: grey">5</td>
+          <td style="text-align: right;">1.00</td>
+          <td style="text-align: right;">650</td>
+          <td>from&nbsp;trezor.messages&nbsp;import&nbsp;AuthorizeCoinJoin,&nbsp;SignMessage</td>
+        </tr>
+        <tr id="6" style="None">
+          <td style="color: grey">6</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="7" style="color: blue;">
+          <td style="color: grey">7</td>
+          <td style="text-align: right;">3.00</td>
+          <td style="text-align: right;">1950</td>
+          <td>from&nbsp;apps.common.paths&nbsp;import&nbsp;PATTERN_BIP44,&nbsp;PATTERN_CASA,&nbsp;PathSchema,&nbsp;unharden</td>
+        </tr>
+        <tr id="8" style="None">
+          <td style="color: grey">8</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="9" style="color: red;">
+          <td style="color: grey">9</td>
+          <td style="text-align: right;">5.95</td>
+          <td style="text-align: right;">3868</td>
+          <td>from&nbsp;.&nbsp;import&nbsp;authorization</td>
+        </tr>
+        <tr id="10" style="color: blue;">
+          <td style="color: grey">10</td>
+          <td style="text-align: right;">1.00</td>
+          <td style="text-align: right;">650</td>
+          <td>from&nbsp;.common&nbsp;import&nbsp;BITCOIN_NAMES</td>
+        </tr>
+        <tr id="11" style="None">
+          <td style="color: grey">11</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="12" style="None">
+          <td style="color: grey">12</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>if&nbsp;TYPE_CHECKING:</td>
+        </tr>
+        <tr id="13" style="None">
+          <td style="color: grey">13</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;from&nbsp;typing&nbsp;import&nbsp;Awaitable,&nbsp;Callable,&nbsp;Iterable,&nbsp;TypeVar</td>
+        </tr>
+        <tr id="14" style="None">
+          <td style="color: grey">14</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;from&nbsp;typing_extensions&nbsp;import&nbsp;Protocol</td>
+        </tr>
+        <tr id="15" style="None">
+          <td style="color: grey">15</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="16" style="None">
+          <td style="color: grey">16</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;from&nbsp;trezor.protobuf&nbsp;import&nbsp;MessageType</td>
+        </tr>
+        <tr id="17" style="None">
+          <td style="color: grey">17</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;from&nbsp;trezor.wire&nbsp;import&nbsp;Context</td>
+        </tr>
+        <tr id="18" style="None">
+          <td style="color: grey">18</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="19" style="None">
+          <td style="color: grey">19</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;from&nbsp;trezor.messages&nbsp;import&nbsp;(</td>
+        </tr>
+        <tr id="20" style="None">
+          <td style="color: grey">20</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;GetAddress,</td>
+        </tr>
+        <tr id="21" style="None">
+          <td style="color: grey">21</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;GetOwnershipId,</td>
+        </tr>
+        <tr id="22" style="None">
+          <td style="color: grey">22</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;GetPublicKey,</td>
+        </tr>
+        <tr id="23" style="None">
+          <td style="color: grey">23</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;VerifyMessage,</td>
+        </tr>
+        <tr id="24" style="None">
+          <td style="color: grey">24</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;GetOwnershipProof,</td>
+        </tr>
+        <tr id="25" style="None">
+          <td style="color: grey">25</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SignTx,</td>
+        </tr>
+        <tr id="26" style="None">
+          <td style="color: grey">26</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;)</td>
+        </tr>
+        <tr id="27" style="None">
+          <td style="color: grey">27</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="28" style="None">
+          <td style="color: grey">28</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;from&nbsp;apps.common.keychain&nbsp;import&nbsp;Keychain,&nbsp;MsgOut,&nbsp;Handler</td>
+        </tr>
+        <tr id="29" style="None">
+          <td style="color: grey">29</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;from&nbsp;apps.common.paths&nbsp;import&nbsp;Bip32Path</td>
+        </tr>
+        <tr id="30" style="None">
+          <td style="color: grey">30</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;from&nbsp;apps.common&nbsp;import&nbsp;coininfo</td>
+        </tr>
+        <tr id="31" style="None">
+          <td style="color: grey">31</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="32" style="None">
+          <td style="color: grey">32</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;BitcoinMessage&nbsp;=&nbsp;(</td>
+        </tr>
+        <tr id="33" style="None">
+          <td style="color: grey">33</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;AuthorizeCoinJoin</td>
+        </tr>
+        <tr id="34" style="None">
+          <td style="color: grey">34</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;GetAddress</td>
+        </tr>
+        <tr id="35" style="None">
+          <td style="color: grey">35</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;GetOwnershipId</td>
+        </tr>
+        <tr id="36" style="None">
+          <td style="color: grey">36</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;GetOwnershipProof</td>
+        </tr>
+        <tr id="37" style="None">
+          <td style="color: grey">37</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;GetPublicKey</td>
+        </tr>
+        <tr id="38" style="None">
+          <td style="color: grey">38</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;SignMessage</td>
+        </tr>
+        <tr id="39" style="None">
+          <td style="color: grey">39</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;SignTx</td>
+        </tr>
+        <tr id="40" style="None">
+          <td style="color: grey">40</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;VerifyMessage</td>
+        </tr>
+        <tr id="41" style="None">
+          <td style="color: grey">41</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;)</td>
+        </tr>
+        <tr id="42" style="None">
+          <td style="color: grey">42</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="43" style="None">
+          <td style="color: grey">43</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;class&nbsp;MsgWithAddressScriptType(Protocol):</td>
+        </tr>
+        <tr id="44" style="None">
+          <td style="color: grey">44</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;address_n:&nbsp;Bip32Path</td>
+        </tr>
+        <tr id="45" style="None">
+          <td style="color: grey">45</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;script_type:&nbsp;InputScriptType</td>
+        </tr>
+        <tr id="46" style="None">
+          <td style="color: grey">46</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="47" style="None">
+          <td style="color: grey">47</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;MsgIn&nbsp;=&nbsp;TypeVar("MsgIn",&nbsp;bound=BitcoinMessage)</td>
+        </tr>
+        <tr id="48" style="None">
+          <td style="color: grey">48</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;HandlerWithCoinInfo&nbsp;=&nbsp;Callable[...,&nbsp;Awaitable[MsgOut]]</td>
+        </tr>
+        <tr id="49" style="None">
+          <td style="color: grey">49</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="50" style="None">
+          <td style="color: grey">50</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>#&nbsp;BIP-45&nbsp;for&nbsp;multisig:&nbsp;https://github.com/bitcoin/bips/blob/master/bip-0045.mediawiki</td>
+        </tr>
+        <tr id="51" style="color: blue;">
+          <td style="color: grey">51</td>
+          <td style="text-align: right;">1.00</td>
+          <td style="text-align: right;">650</td>
+          <td>PATTERN_BIP45&nbsp;=&nbsp;"m/45'/[0-100]/change/address_index"</td>
+        </tr>
+        <tr id="52" style="None">
+          <td style="color: grey">52</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="53" style="None">
+          <td style="color: grey">53</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>#&nbsp;BIP-48&nbsp;for&nbsp;multisig:&nbsp;https://github.com/bitcoin/bips/blob/master/bip-0048.mediawiki</td>
+        </tr>
+        <tr id="54" style="None">
+          <td style="color: grey">54</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>#&nbsp;The&nbsp;raw&nbsp;script&nbsp;type&nbsp;is&nbsp;not&nbsp;part&nbsp;of&nbsp;the&nbsp;BIP&nbsp;(and&nbsp;Electrum,&nbsp;as&nbsp;a&nbsp;notable&nbsp;implementation,</td>
+        </tr>
+        <tr id="55" style="None">
+          <td style="color: grey">55</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>#&nbsp;does&nbsp;not&nbsp;use&nbsp;it),&nbsp;it&nbsp;is&nbsp;included&nbsp;here&nbsp;for&nbsp;completeness.</td>
+        </tr>
+        <tr id="56" style="None">
+          <td style="color: grey">56</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>PATTERN_BIP48_RAW&nbsp;=&nbsp;"m/48'/coin_type'/account'/0'/change/address_index"</td>
+        </tr>
+        <tr id="57" style="None">
+          <td style="color: grey">57</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>PATTERN_BIP48_P2SHSEGWIT&nbsp;=&nbsp;"m/48'/coin_type'/account'/1'/change/address_index"</td>
+        </tr>
+        <tr id="58" style="None">
+          <td style="color: grey">58</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>PATTERN_BIP48_SEGWIT&nbsp;=&nbsp;"m/48'/coin_type'/account'/2'/change/address_index"</td>
+        </tr>
+        <tr id="59" style="None">
+          <td style="color: grey">59</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="60" style="None">
+          <td style="color: grey">60</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>#&nbsp;BIP-49&nbsp;for&nbsp;segwit-in-P2SH:&nbsp;https://github.com/bitcoin/bips/blob/master/bip-0049.mediawiki</td>
+        </tr>
+        <tr id="61" style="None">
+          <td style="color: grey">61</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>PATTERN_BIP49&nbsp;=&nbsp;"m/49'/coin_type'/account'/change/address_index"</td>
+        </tr>
+        <tr id="62" style="None">
+          <td style="color: grey">62</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>#&nbsp;BIP-84&nbsp;for&nbsp;segwit:&nbsp;https://github.com/bitcoin/bips/blob/master/bip-0084.mediawiki</td>
+        </tr>
+        <tr id="63" style="color: blue;">
+          <td style="color: grey">63</td>
+          <td style="text-align: right;">1.00</td>
+          <td style="text-align: right;">650</td>
+          <td>PATTERN_BIP84&nbsp;=&nbsp;"m/84'/coin_type'/account'/change/address_index"</td>
+        </tr>
+        <tr id="64" style="None">
+          <td style="color: grey">64</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>#&nbsp;BIP-86&nbsp;for&nbsp;taproot:&nbsp;https://github.com/bitcoin/bips/blob/master/bip-0086.mediawiki</td>
+        </tr>
+        <tr id="65" style="None">
+          <td style="color: grey">65</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>PATTERN_BIP86&nbsp;=&nbsp;"m/86'/coin_type'/account'/change/address_index"</td>
+        </tr>
+        <tr id="66" style="None">
+          <td style="color: grey">66</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>#&nbsp;SLIP-25&nbsp;for&nbsp;coinjoin:&nbsp;https://github.com/satoshilabs/slips/blob/master/slip-0025.md</td>
+        </tr>
+        <tr id="67" style="None">
+          <td style="color: grey">67</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>#&nbsp;Only&nbsp;account=0&nbsp;and&nbsp;script_type=1&nbsp;are&nbsp;supported&nbsp;for&nbsp;now.</td>
+        </tr>
+        <tr id="68" style="None">
+          <td style="color: grey">68</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>PATTERN_SLIP25_TAPROOT&nbsp;=&nbsp;"m/10025'/coin_type'/0'/1'/change/address_index"</td>
+        </tr>
+        <tr id="69" style="None">
+          <td style="color: grey">69</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>PATTERN_SLIP25_TAPROOT_EXTERNAL&nbsp;=&nbsp;"m/10025'/coin_type'/0'/1'/0/address_index"</td>
+        </tr>
+        <tr id="70" style="None">
+          <td style="color: grey">70</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="71" style="None">
+          <td style="color: grey">71</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>#&nbsp;compatibility&nbsp;patterns,&nbsp;will&nbsp;be&nbsp;removed&nbsp;in&nbsp;the&nbsp;future</td>
+        </tr>
+        <tr id="72" style="None">
+          <td style="color: grey">72</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>PATTERN_GREENADDRESS_A&nbsp;=&nbsp;"m/[1,4]/address_index"</td>
+        </tr>
+        <tr id="73" style="None">
+          <td style="color: grey">73</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>PATTERN_GREENADDRESS_B&nbsp;=&nbsp;"m/3'/[1-100]'/[1,4]/address_index"</td>
+        </tr>
+        <tr id="74" style="color: blue;">
+          <td style="color: grey">74</td>
+          <td style="text-align: right;">1.00</td>
+          <td style="text-align: right;">650</td>
+          <td>PATTERN_GREENADDRESS_SIGN_A&nbsp;=&nbsp;"m/1195487518"</td>
+        </tr>
+        <tr id="75" style="None">
+          <td style="color: grey">75</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>PATTERN_GREENADDRESS_SIGN_B&nbsp;=&nbsp;"m/1195487518/6/address_index"</td>
+        </tr>
+        <tr id="76" style="None">
+          <td style="color: grey">76</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="77" style="None">
+          <td style="color: grey">77</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>PATTERN_CASA_UNHARDENED&nbsp;=&nbsp;"m/49/coin_type/account/change/address_index"</td>
+        </tr>
+        <tr id="78" style="None">
+          <td style="color: grey">78</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="79" style="None">
+          <td style="color: grey">79</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>PATTERN_UNCHAINED_HARDENED&nbsp;=&nbsp;(</td>
+        </tr>
+        <tr id="80" style="None">
+          <td style="color: grey">80</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;"m/45'/coin_type'/account'/[0-1000000]/change/address_index"</td>
+        </tr>
+        <tr id="81" style="None">
+          <td style="color: grey">81</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>)</td>
+        </tr>
+        <tr id="82" style="None">
+          <td style="color: grey">82</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>PATTERN_UNCHAINED_UNHARDENED&nbsp;=&nbsp;(</td>
+        </tr>
+        <tr id="83" style="None">
+          <td style="color: grey">83</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;"m/45'/coin_type/account/[0-1000000]/change/address_index"</td>
+        </tr>
+        <tr id="84" style="None">
+          <td style="color: grey">84</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>)</td>
+        </tr>
+        <tr id="85" style="None">
+          <td style="color: grey">85</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>PATTERN_UNCHAINED_DEPRECATED&nbsp;=&nbsp;"m/45'/coin_type'/account'/[0-1000000]/address_index"</td>
+        </tr>
+        <tr id="86" style="None">
+          <td style="color: grey">86</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="87" style="None">
+          <td style="color: grey">87</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>#&nbsp;Model&nbsp;1&nbsp;firmware&nbsp;signing.</td>
+        </tr>
+        <tr id="88" style="None">
+          <td style="color: grey">88</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>#&nbsp;826421588&nbsp;is&nbsp;ASCII&nbsp;string&nbsp;"T1B1"&nbsp;as&nbsp;a&nbsp;little-endian&nbsp;32-bit&nbsp;integer.</td>
+        </tr>
+        <tr id="89" style="color: blue;">
+          <td style="color: grey">89</td>
+          <td style="text-align: right;">1.00</td>
+          <td style="text-align: right;">650</td>
+          <td>PATTERN_SLIP26_T1_FW&nbsp;=&nbsp;"m/10026'/826421588'/2'/0'"</td>
+        </tr>
+        <tr id="90" style="None">
+          <td style="color: grey">90</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="91" style="None">
+          <td style="color: grey">91</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>#&nbsp;SLIP-44&nbsp;coin&nbsp;type&nbsp;for&nbsp;Bitcoin</td>
+        </tr>
+        <tr id="92" style="None">
+          <td style="color: grey">92</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>SLIP44_BITCOIN&nbsp;=&nbsp;const(0)</td>
+        </tr>
+        <tr id="93" style="None">
+          <td style="color: grey">93</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="94" style="None">
+          <td style="color: grey">94</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>#&nbsp;SLIP-44&nbsp;coin&nbsp;type&nbsp;for&nbsp;all&nbsp;Testnet&nbsp;coins</td>
+        </tr>
+        <tr id="95" style="None">
+          <td style="color: grey">95</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>SLIP44_TESTNET&nbsp;=&nbsp;const(1)</td>
+        </tr>
+        <tr id="96" style="None">
+          <td style="color: grey">96</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="97" style="None">
+          <td style="color: grey">97</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="98" style="color: blue;">
+          <td style="color: grey">98</td>
+          <td style="text-align: right;">2.00</td>
+          <td style="text-align: right;">1300</td>
+          <td>def&nbsp;validate_path_against_script_type(</td>
+        </tr>
+        <tr id="99" style="None">
+          <td style="color: grey">99</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;coin:&nbsp;coininfo.CoinInfo,</td>
+        </tr>
+        <tr id="100" style="None">
+          <td style="color: grey">100</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;msg:&nbsp;MsgWithAddressScriptType&nbsp;|&nbsp;None&nbsp;=&nbsp;None,</td>
+        </tr>
+        <tr id="101" style="None">
+          <td style="color: grey">101</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;address_n:&nbsp;Bip32Path&nbsp;|&nbsp;None&nbsp;=&nbsp;None,</td>
+        </tr>
+        <tr id="102" style="None">
+          <td style="color: grey">102</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;script_type:&nbsp;InputScriptType&nbsp;|&nbsp;None&nbsp;=&nbsp;None,</td>
+        </tr>
+        <tr id="103" style="None">
+          <td style="color: grey">103</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;multisig:&nbsp;bool&nbsp;=&nbsp;False,</td>
+        </tr>
+        <tr id="104" style="None">
+          <td style="color: grey">104</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>)&nbsp;->&nbsp;bool:</td>
+        </tr>
+        <tr id="105" style="color: blue;">
+          <td style="color: grey">105</td>
+          <td style="text-align: right;">1.00</td>
+          <td style="text-align: right;">965</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;from&nbsp;trezor.enums&nbsp;import&nbsp;InputScriptType</td>
+        </tr>
+        <tr id="106" style="None">
+          <td style="color: grey">106</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="107" style="color: blue;">
+          <td style="color: grey">107</td>
+          <td style="text-align: right;">2.00</td>
+          <td style="text-align: right;">1930</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;patterns&nbsp;=&nbsp;[]</td>
+        </tr>
+        <tr id="108" style="color: blue;">
+          <td style="color: grey">108</td>
+          <td style="text-align: right;">1.00</td>
+          <td style="text-align: right;">965</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;append&nbsp;=&nbsp;patterns.append&nbsp;&nbsp;#&nbsp;local_cache_attribute</td>
+        </tr>
+        <tr id="109" style="None">
+          <td style="color: grey">109</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;slip44&nbsp;=&nbsp;coin.slip44&nbsp;&nbsp;#&nbsp;local_cache_attribute</td>
+        </tr>
+        <tr id="110" style="None">
+          <td style="color: grey">110</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="111" style="None">
+          <td style="color: grey">111</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;msg&nbsp;is&nbsp;not&nbsp;None:</td>
+        </tr>
+        <tr id="112" style="None">
+          <td style="color: grey">112</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;assert&nbsp;address_n&nbsp;is&nbsp;None&nbsp;and&nbsp;script_type&nbsp;is&nbsp;None</td>
+        </tr>
+        <tr id="113" style="None">
+          <td style="color: grey">113</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;address_n&nbsp;=&nbsp;msg.address_n</td>
+        </tr>
+        <tr id="114" style="None">
+          <td style="color: grey">114</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;script_type&nbsp;=&nbsp;msg.script_type&nbsp;or&nbsp;InputScriptType.SPENDADDRESS</td>
+        </tr>
+        <tr id="115" style="color: blue;">
+          <td style="color: grey">115</td>
+          <td style="text-align: right;">0.11</td>
+          <td style="text-align: right;">90</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;multisig&nbsp;=&nbsp;bool(getattr(msg,&nbsp;"multisig",&nbsp;False))</td>
+        </tr>
+        <tr id="116" style="None">
+          <td style="color: grey">116</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="117" style="None">
+          <td style="color: grey">117</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;else:</td>
+        </tr>
+        <tr id="118" style="None">
+          <td style="color: grey">118</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;assert&nbsp;address_n&nbsp;is&nbsp;not&nbsp;None&nbsp;and&nbsp;script_type&nbsp;is&nbsp;not&nbsp;None</td>
+        </tr>
+        <tr id="119" style="None">
+          <td style="color: grey">119</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="120" style="None">
+          <td style="color: grey">120</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;script_type&nbsp;==&nbsp;InputScriptType.SPENDADDRESS&nbsp;and&nbsp;not&nbsp;multisig:</td>
+        </tr>
+        <tr id="121" style="None">
+          <td style="color: grey">121</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;append(PATTERN_BIP44)</td>
+        </tr>
+        <tr id="122" style="None">
+          <td style="color: grey">122</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;slip44&nbsp;==&nbsp;SLIP44_BITCOIN:</td>
+        </tr>
+        <tr id="123" style="None">
+          <td style="color: grey">123</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;append(PATTERN_GREENADDRESS_A)</td>
+        </tr>
+        <tr id="124" style="None">
+          <td style="color: grey">124</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;append(PATTERN_GREENADDRESS_B)</td>
+        </tr>
+        <tr id="125" style="None">
+          <td style="color: grey">125</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="126" style="None">
+          <td style="color: grey">126</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;SignMessage.is_type_of(msg):</td>
+        </tr>
+        <tr id="127" style="None">
+          <td style="color: grey">127</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;append(PATTERN_SLIP26_T1_FW)</td>
+        </tr>
+        <tr id="128" style="None">
+          <td style="color: grey">128</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;elif&nbsp;(</td>
+        </tr>
+        <tr id="129" style="color: blue;">
+          <td style="color: grey">129</td>
+          <td style="text-align: right;">1.00</td>
+          <td style="text-align: right;">512</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;script_type&nbsp;in&nbsp;(InputScriptType.SPENDADDRESS,&nbsp;InputScriptType.SPENDMULTISIG)</td>
+        </tr>
+        <tr id="130" style="None">
+          <td style="color: grey">130</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;and&nbsp;multisig</td>
+        </tr>
+        <tr id="131" style="None">
+          <td style="color: grey">131</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;):</td>
+        </tr>
+        <tr id="132" style="None">
+          <td style="color: grey">132</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;append(PATTERN_BIP48_RAW)</td>
+        </tr>
+        <tr id="133" style="None">
+          <td style="color: grey">133</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;slip44&nbsp;==&nbsp;SLIP44_BITCOIN&nbsp;or&nbsp;(</td>
+        </tr>
+        <tr id="134" style="None">
+          <td style="color: grey">134</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;coin.fork_id&nbsp;is&nbsp;not&nbsp;None&nbsp;and&nbsp;slip44&nbsp;!=&nbsp;SLIP44_TESTNET</td>
+        </tr>
+        <tr id="135" style="None">
+          <td style="color: grey">135</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;):</td>
+        </tr>
+        <tr id="136" style="None">
+          <td style="color: grey">136</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;append(PATTERN_BIP45)</td>
+        </tr>
+        <tr id="137" style="None">
+          <td style="color: grey">137</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;slip44&nbsp;==&nbsp;SLIP44_BITCOIN:</td>
+        </tr>
+        <tr id="138" style="None">
+          <td style="color: grey">138</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;append(PATTERN_GREENADDRESS_A)</td>
+        </tr>
+        <tr id="139" style="None">
+          <td style="color: grey">139</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;append(PATTERN_GREENADDRESS_B)</td>
+        </tr>
+        <tr id="140" style="None">
+          <td style="color: grey">140</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;coin.coin_name&nbsp;in&nbsp;BITCOIN_NAMES:</td>
+        </tr>
+        <tr id="141" style="color: blue;">
+          <td style="color: grey">141</td>
+          <td style="text-align: right;">0.79</td>
+          <td style="text-align: right;">65</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;append(PATTERN_UNCHAINED_HARDENED)</td>
+        </tr>
+        <tr id="142" style="None">
+          <td style="color: grey">142</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;append(PATTERN_UNCHAINED_UNHARDENED)</td>
+        </tr>
+        <tr id="143" style="None">
+          <td style="color: grey">143</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;append(PATTERN_UNCHAINED_DEPRECATED)</td>
+        </tr>
+        <tr id="144" style="None">
+          <td style="color: grey">144</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="145" style="None">
+          <td style="color: grey">145</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;elif&nbsp;coin.segwit&nbsp;and&nbsp;script_type&nbsp;==&nbsp;InputScriptType.SPENDP2SHWITNESS:</td>
+        </tr>
+        <tr id="146" style="None">
+          <td style="color: grey">146</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;append(PATTERN_BIP49)</td>
+        </tr>
+        <tr id="147" style="None">
+          <td style="color: grey">147</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;append(PATTERN_CASA)</td>
+        </tr>
+        <tr id="148" style="None">
+          <td style="color: grey">148</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;multisig:</td>
+        </tr>
+        <tr id="149" style="None">
+          <td style="color: grey">149</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;append(PATTERN_BIP48_P2SHSEGWIT)</td>
+        </tr>
+        <tr id="150" style="None">
+          <td style="color: grey">150</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;slip44&nbsp;==&nbsp;SLIP44_BITCOIN:</td>
+        </tr>
+        <tr id="151" style="None">
+          <td style="color: grey">151</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;append(PATTERN_GREENADDRESS_A)</td>
+        </tr>
+        <tr id="152" style="color: blue;">
+          <td style="color: grey">152</td>
+          <td style="text-align: right;">0.19</td>
+          <td style="text-align: right;">8</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;append(PATTERN_GREENADDRESS_B)</td>
+        </tr>
+        <tr id="153" style="None">
+          <td style="color: grey">153</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;coin.coin_name&nbsp;in&nbsp;BITCOIN_NAMES:</td>
+        </tr>
+        <tr id="154" style="color: blue;">
+          <td style="color: grey">154</td>
+          <td style="text-align: right;">0.26</td>
+          <td style="text-align: right;">34</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;append(PATTERN_CASA_UNHARDENED)</td>
+        </tr>
+        <tr id="155" style="None">
+          <td style="color: grey">155</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="156" style="None">
+          <td style="color: grey">156</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;elif&nbsp;coin.segwit&nbsp;and&nbsp;script_type&nbsp;==&nbsp;InputScriptType.SPENDWITNESS:</td>
+        </tr>
+        <tr id="157" style="None">
+          <td style="color: grey">157</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;append(PATTERN_BIP84)</td>
+        </tr>
+        <tr id="158" style="None">
+          <td style="color: grey">158</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;multisig:</td>
+        </tr>
+        <tr id="159" style="None">
+          <td style="color: grey">159</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;append(PATTERN_BIP48_SEGWIT)</td>
+        </tr>
+        <tr id="160" style="None">
+          <td style="color: grey">160</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;slip44&nbsp;==&nbsp;SLIP44_BITCOIN:</td>
+        </tr>
+        <tr id="161" style="None">
+          <td style="color: grey">161</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;append(PATTERN_GREENADDRESS_A)</td>
+        </tr>
+        <tr id="162" style="None">
+          <td style="color: grey">162</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;append(PATTERN_GREENADDRESS_B)</td>
+        </tr>
+        <tr id="163" style="None">
+          <td style="color: grey">163</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="164" style="None">
+          <td style="color: grey">164</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;elif&nbsp;coin.taproot&nbsp;and&nbsp;script_type&nbsp;==&nbsp;InputScriptType.SPENDTAPROOT:</td>
+        </tr>
+        <tr id="165" style="None">
+          <td style="color: grey">165</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;append(PATTERN_BIP86)</td>
+        </tr>
+        <tr id="166" style="None">
+          <td style="color: grey">166</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;append(PATTERN_SLIP25_TAPROOT)</td>
+        </tr>
+        <tr id="167" style="None">
+          <td style="color: grey">167</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="168" style="color: blue;">
+          <td style="color: grey">168</td>
+          <td style="text-align: right;">4.00</td>
+          <td style="text-align: right;">3860</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;any(</td>
+        </tr>
+        <tr id="169" style="color: blue;">
+          <td style="color: grey">169</td>
+          <td style="text-align: right;">0.51</td>
+          <td style="text-align: right;">1417</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;PathSchema.parse(pattern,&nbsp;coin.slip44).match(address_n)&nbsp;for&nbsp;pattern&nbsp;in&nbsp;patterns</td>
+        </tr>
+        <tr id="170" style="None">
+          <td style="color: grey">170</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;)</td>
+        </tr>
+        <tr id="171" style="None">
+          <td style="color: grey">171</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="172" style="None">
+          <td style="color: grey">172</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="173" style="None">
+          <td style="color: grey">173</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>def&nbsp;_get_schemas_for_coin(</td>
+        </tr>
+        <tr id="174" style="color: blue;">
+          <td style="color: grey">174</td>
+          <td style="text-align: right;">2.00</td>
+          <td style="text-align: right;">1300</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;coin:&nbsp;coininfo.CoinInfo,&nbsp;unlock_schemas:&nbsp;Iterable[PathSchema]&nbsp;=&nbsp;()</td>
+        </tr>
+        <tr id="175" style="None">
+          <td style="color: grey">175</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>)&nbsp;->&nbsp;Iterable[PathSchema]:</td>
+        </tr>
+        <tr id="176" style="None">
+          <td style="color: grey">176</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;import&nbsp;gc</td>
+        </tr>
+        <tr id="177" style="None">
+          <td style="color: grey">177</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="178" style="None">
+          <td style="color: grey">178</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;#&nbsp;basic&nbsp;patterns</td>
+        </tr>
+        <tr id="179" style="color: blue;">
+          <td style="color: grey">179</td>
+          <td style="text-align: right;">2.00</td>
+          <td style="text-align: right;">1300</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;patterns&nbsp;=&nbsp;[</td>
+        </tr>
+        <tr id="180" style="None">
+          <td style="color: grey">180</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;PATTERN_BIP44,</td>
+        </tr>
+        <tr id="181" style="None">
+          <td style="color: grey">181</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;PATTERN_BIP48_RAW,</td>
+        </tr>
+        <tr id="182" style="None">
+          <td style="color: grey">182</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;PATTERN_CASA,</td>
+        </tr>
+        <tr id="183" style="None">
+          <td style="color: grey">183</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;]</td>
+        </tr>
+        <tr id="184" style="None">
+          <td style="color: grey">184</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="185" style="None">
+          <td style="color: grey">185</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;#&nbsp;patterns&nbsp;without&nbsp;coin_type&nbsp;field&nbsp;must&nbsp;be&nbsp;treated&nbsp;as&nbsp;if&nbsp;coin_type&nbsp;==&nbsp;0</td>
+        </tr>
+        <tr id="186" style="None">
+          <td style="color: grey">186</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;coin.slip44&nbsp;==&nbsp;SLIP44_BITCOIN&nbsp;or&nbsp;(</td>
+        </tr>
+        <tr id="187" style="None">
+          <td style="color: grey">187</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;coin.fork_id&nbsp;is&nbsp;not&nbsp;None&nbsp;and&nbsp;coin.slip44&nbsp;!=&nbsp;SLIP44_TESTNET</td>
+        </tr>
+        <tr id="188" style="None">
+          <td style="color: grey">188</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;):</td>
+        </tr>
+        <tr id="189" style="None">
+          <td style="color: grey">189</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;patterns.append(PATTERN_BIP45)</td>
+        </tr>
+        <tr id="190" style="None">
+          <td style="color: grey">190</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="191" style="None">
+          <td style="color: grey">191</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;coin.slip44&nbsp;==&nbsp;SLIP44_BITCOIN:</td>
+        </tr>
+        <tr id="192" style="None">
+          <td style="color: grey">192</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;patterns.extend(</td>
+        </tr>
+        <tr id="193" style="color: blue;">
+          <td style="color: grey">193</td>
+          <td style="text-align: right;">3.34</td>
+          <td style="text-align: right;">895</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(</td>
+        </tr>
+        <tr id="194" style="None">
+          <td style="color: grey">194</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;PATTERN_GREENADDRESS_A,</td>
+        </tr>
+        <tr id="195" style="None">
+          <td style="color: grey">195</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;PATTERN_GREENADDRESS_B,</td>
+        </tr>
+        <tr id="196" style="None">
+          <td style="color: grey">196</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;PATTERN_GREENADDRESS_SIGN_A,</td>
+        </tr>
+        <tr id="197" style="None">
+          <td style="color: grey">197</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;PATTERN_GREENADDRESS_SIGN_B,</td>
+        </tr>
+        <tr id="198" style="None">
+          <td style="color: grey">198</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;PATTERN_SLIP26_T1_FW,</td>
+        </tr>
+        <tr id="199" style="None">
+          <td style="color: grey">199</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;)</td>
+        </tr>
+        <tr id="200" style="None">
+          <td style="color: grey">200</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;)</td>
+        </tr>
+        <tr id="201" style="None">
+          <td style="color: grey">201</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="202" style="None">
+          <td style="color: grey">202</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;#&nbsp;compatibility&nbsp;patterns</td>
+        </tr>
+        <tr id="203" style="None">
+          <td style="color: grey">203</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;coin.coin_name&nbsp;in&nbsp;BITCOIN_NAMES:</td>
+        </tr>
+        <tr id="204" style="None">
+          <td style="color: grey">204</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;patterns.extend(</td>
+        </tr>
+        <tr id="205" style="color: blue;">
+          <td style="color: grey">205</td>
+          <td style="text-align: right;">2.50</td>
+          <td style="text-align: right;">1343</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(</td>
+        </tr>
+        <tr id="206" style="None">
+          <td style="color: grey">206</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;PATTERN_CASA_UNHARDENED,</td>
+        </tr>
+        <tr id="207" style="None">
+          <td style="color: grey">207</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;PATTERN_UNCHAINED_HARDENED,</td>
+        </tr>
+        <tr id="208" style="None">
+          <td style="color: grey">208</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;PATTERN_UNCHAINED_UNHARDENED,</td>
+        </tr>
+        <tr id="209" style="None">
+          <td style="color: grey">209</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;PATTERN_UNCHAINED_DEPRECATED,</td>
+        </tr>
+        <tr id="210" style="None">
+          <td style="color: grey">210</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;)</td>
+        </tr>
+        <tr id="211" style="None">
+          <td style="color: grey">211</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;)</td>
+        </tr>
+        <tr id="212" style="None">
+          <td style="color: grey">212</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="213" style="None">
+          <td style="color: grey">213</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;#&nbsp;segwit&nbsp;patterns</td>
+        </tr>
+        <tr id="214" style="None">
+          <td style="color: grey">214</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;coin.segwit:</td>
+        </tr>
+        <tr id="215" style="None">
+          <td style="color: grey">215</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;patterns.extend(</td>
+        </tr>
+        <tr id="216" style="color: blue;">
+          <td style="color: grey">216</td>
+          <td style="text-align: right;">2.99</td>
+          <td style="text-align: right;">1791</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(</td>
+        </tr>
+        <tr id="217" style="None">
+          <td style="color: grey">217</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;PATTERN_BIP49,</td>
+        </tr>
+        <tr id="218" style="None">
+          <td style="color: grey">218</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;PATTERN_BIP84,</td>
+        </tr>
+        <tr id="219" style="None">
+          <td style="color: grey">219</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;PATTERN_BIP48_P2SHSEGWIT,</td>
+        </tr>
+        <tr id="220" style="None">
+          <td style="color: grey">220</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;PATTERN_BIP48_SEGWIT,</td>
+        </tr>
+        <tr id="221" style="None">
+          <td style="color: grey">221</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;)</td>
+        </tr>
+        <tr id="222" style="None">
+          <td style="color: grey">222</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;)</td>
+        </tr>
+        <tr id="223" style="None">
+          <td style="color: grey">223</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="224" style="None">
+          <td style="color: grey">224</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;#&nbsp;taproot&nbsp;patterns</td>
+        </tr>
+        <tr id="225" style="None">
+          <td style="color: grey">225</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;coin.taproot:</td>
+        </tr>
+        <tr id="226" style="None">
+          <td style="color: grey">226</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;patterns.append(PATTERN_BIP86)</td>
+        </tr>
+        <tr id="227" style="None">
+          <td style="color: grey">227</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="228" style="color: blue;">
+          <td style="color: grey">228</td>
+          <td style="text-align: right;">1.00</td>
+          <td style="text-align: right;">650</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;schemas&nbsp;=&nbsp;get_schemas_from_patterns(patterns,&nbsp;coin)</td>
+        </tr>
+        <tr id="229" style="None">
+          <td style="color: grey">229</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;schemas.extend(unlock_schemas)</td>
+        </tr>
+        <tr id="230" style="None">
+          <td style="color: grey">230</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="231" style="None">
+          <td style="color: grey">231</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;gc.collect()</td>
+        </tr>
+        <tr id="232" style="color: blue;">
+          <td style="color: grey">232</td>
+          <td style="text-align: right;">0.19</td>
+          <td style="text-align: right;">1950</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;[schema.copy()&nbsp;for&nbsp;schema&nbsp;in&nbsp;schemas]</td>
+        </tr>
+        <tr id="233" style="None">
+          <td style="color: grey">233</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="234" style="None">
+          <td style="color: grey">234</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="235" style="color: blue;">
+          <td style="color: grey">235</td>
+          <td style="text-align: right;">1.00</td>
+          <td style="text-align: right;">650</td>
+          <td>def&nbsp;get_schemas_from_patterns(</td>
+        </tr>
+        <tr id="236" style="None">
+          <td style="color: grey">236</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;patterns:&nbsp;Iterable[str],&nbsp;coin:&nbsp;coininfo.CoinInfo</td>
+        </tr>
+        <tr id="237" style="None">
+          <td style="color: grey">237</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>)&nbsp;->&nbsp;list[PathSchema]:</td>
+        </tr>
+        <tr id="238" style="color: blue;">
+          <td style="color: grey">238</td>
+          <td style="text-align: right;">1.13</td>
+          <td style="text-align: right;">11431</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;schemas&nbsp;=&nbsp;[PathSchema.parse(pattern,&nbsp;coin.slip44)&nbsp;for&nbsp;pattern&nbsp;in&nbsp;patterns]</td>
+        </tr>
+        <tr id="239" style="None">
+          <td style="color: grey">239</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="240" style="None">
+          <td style="color: grey">240</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;#&nbsp;Some&nbsp;wallets&nbsp;such&nbsp;as&nbsp;Electron-Cash&nbsp;(BCH)&nbsp;store&nbsp;coins&nbsp;on&nbsp;Bitcoin&nbsp;paths.</td>
+        </tr>
+        <tr id="241" style="None">
+          <td style="color: grey">241</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;#&nbsp;We&nbsp;can&nbsp;allow&nbsp;spending&nbsp;these&nbsp;coins&nbsp;from&nbsp;Bitcoin&nbsp;paths&nbsp;if&nbsp;the&nbsp;coin&nbsp;has</td>
+        </tr>
+        <tr id="242" style="None">
+          <td style="color: grey">242</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;#&nbsp;implemented&nbsp;strong&nbsp;replay&nbsp;protection&nbsp;via&nbsp;SIGHASH_FORKID.&nbsp;However,&nbsp;we</td>
+        </tr>
+        <tr id="243" style="None">
+          <td style="color: grey">243</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;#&nbsp;cannot&nbsp;allow&nbsp;spending&nbsp;any&nbsp;testnet&nbsp;coins&nbsp;from&nbsp;Bitcoin&nbsp;paths,&nbsp;because</td>
+        </tr>
+        <tr id="244" style="None">
+          <td style="color: grey">244</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;#&nbsp;otherwise&nbsp;an&nbsp;attacker&nbsp;could&nbsp;trick&nbsp;the&nbsp;user&nbsp;into&nbsp;spending&nbsp;BCH&nbsp;on&nbsp;a&nbsp;Bitcoin</td>
+        </tr>
+        <tr id="245" style="None">
+          <td style="color: grey">245</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;#&nbsp;path&nbsp;by&nbsp;signing&nbsp;a&nbsp;seemingly&nbsp;harmless&nbsp;BCH&nbsp;Testnet&nbsp;transaction.</td>
+        </tr>
+        <tr id="246" style="None">
+          <td style="color: grey">246</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;coin.fork_id&nbsp;is&nbsp;not&nbsp;None&nbsp;and&nbsp;coin.slip44&nbsp;!=&nbsp;SLIP44_TESTNET:</td>
+        </tr>
+        <tr id="247" style="color: blue;">
+          <td style="color: grey">247</td>
+          <td style="text-align: right;">3.00</td>
+          <td style="text-align: right;">93</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;schemas.extend(</td>
+        </tr>
+        <tr id="248" style="color: blue;">
+          <td style="color: grey">248</td>
+          <td style="text-align: right;">0.46</td>
+          <td style="text-align: right;">168</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;PathSchema.parse(pattern,&nbsp;SLIP44_BITCOIN)&nbsp;for&nbsp;pattern&nbsp;in&nbsp;patterns</td>
+        </tr>
+        <tr id="249" style="None">
+          <td style="color: grey">249</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;)</td>
+        </tr>
+        <tr id="250" style="None">
+          <td style="color: grey">250</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="251" style="None">
+          <td style="color: grey">251</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;schemas</td>
+        </tr>
+        <tr id="252" style="None">
+          <td style="color: grey">252</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="253" style="None">
+          <td style="color: grey">253</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="254" style="color: blue;">
+          <td style="color: grey">254</td>
+          <td style="text-align: right;">1.00</td>
+          <td style="text-align: right;">650</td>
+          <td>def&nbsp;_get_coin_by_name(coin_name:&nbsp;str&nbsp;|&nbsp;None)&nbsp;->&nbsp;coininfo.CoinInfo:</td>
+        </tr>
+        <tr id="255" style="color: red;">
+          <td style="color: grey">255</td>
+          <td style="text-align: right;">6.00</td>
+          <td style="text-align: right;">3900</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;from&nbsp;apps.common&nbsp;import&nbsp;coininfo</td>
+        </tr>
+        <tr id="256" style="color: blue;">
+          <td style="color: grey">256</td>
+          <td style="text-align: right;">1.00</td>
+          <td style="text-align: right;">650</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;from&nbsp;trezor&nbsp;import&nbsp;wire</td>
+        </tr>
+        <tr id="257" style="None">
+          <td style="color: grey">257</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="258" style="None">
+          <td style="color: grey">258</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;coin_name&nbsp;is&nbsp;None:</td>
+        </tr>
+        <tr id="259" style="None">
+          <td style="color: grey">259</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;coin_name&nbsp;=&nbsp;"Bitcoin"</td>
+        </tr>
+        <tr id="260" style="None">
+          <td style="color: grey">260</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="261" style="None">
+          <td style="color: grey">261</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;try:</td>
+        </tr>
+        <tr id="262" style="None">
+          <td style="color: grey">262</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;coininfo.by_name(coin_name)</td>
+        </tr>
+        <tr id="263" style="None">
+          <td style="color: grey">263</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;except&nbsp;ValueError:</td>
+        </tr>
+        <tr id="264" style="None">
+          <td style="color: grey">264</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;raise&nbsp;wire.DataError("Unsupported&nbsp;coin&nbsp;type")</td>
+        </tr>
+        <tr id="265" style="None">
+          <td style="color: grey">265</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="266" style="None">
+          <td style="color: grey">266</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="267" style="None">
+          <td style="color: grey">267</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>async&nbsp;def&nbsp;_get_keychain_for_coin(</td>
+        </tr>
+        <tr id="268" style="None">
+          <td style="color: grey">268</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;ctx:&nbsp;Context,</td>
+        </tr>
+        <tr id="269" style="None">
+          <td style="color: grey">269</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;coin:&nbsp;coininfo.CoinInfo,</td>
+        </tr>
+        <tr id="270" style="color: blue;">
+          <td style="color: grey">270</td>
+          <td style="text-align: right;">2.00</td>
+          <td style="text-align: right;">1300</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;unlock_schemas:&nbsp;Iterable[PathSchema]&nbsp;=&nbsp;(),</td>
+        </tr>
+        <tr id="271" style="None">
+          <td style="color: grey">271</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>)&nbsp;->&nbsp;Keychain:</td>
+        </tr>
+        <tr id="272" style="color: red;">
+          <td style="color: grey">272</td>
+          <td style="text-align: right;">6.00</td>
+          <td style="text-align: right;">3900</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;from&nbsp;apps.common.keychain&nbsp;import&nbsp;get_keychain</td>
+        </tr>
+        <tr id="273" style="None">
+          <td style="color: grey">273</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="274" style="None">
+          <td style="color: grey">274</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;schemas&nbsp;=&nbsp;_get_schemas_for_coin(coin,&nbsp;unlock_schemas)</td>
+        </tr>
+        <tr id="275" style="color: red;">
+          <td style="color: grey">275</td>
+          <td style="text-align: right;">6.00</td>
+          <td style="text-align: right;">3900</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;slip21_namespaces&nbsp;=&nbsp;[[b"SLIP-0019"],&nbsp;[b"SLIP-0024"]]</td>
+        </tr>
+        <tr id="276" style="color: blue;">
+          <td style="color: grey">276</td>
+          <td style="text-align: right;">0.84</td>
+          <td style="text-align: right;">650</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;keychain&nbsp;=&nbsp;await&nbsp;get_keychain(ctx,&nbsp;coin.curve_name,&nbsp;schemas,&nbsp;slip21_namespaces)</td>
+        </tr>
+        <tr id="277" style="None">
+          <td style="color: grey">277</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;keychain</td>
+        </tr>
+        <tr id="278" style="None">
+          <td style="color: grey">278</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="279" style="None">
+          <td style="color: grey">279</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="280" style="color: blue;">
+          <td style="color: grey">280</td>
+          <td style="text-align: right;">2.00</td>
+          <td style="text-align: right;">1300</td>
+          <td>def&nbsp;_get_unlock_schemas(</td>
+        </tr>
+        <tr id="281" style="None">
+          <td style="color: grey">281</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;msg:&nbsp;MessageType,&nbsp;auth_msg:&nbsp;MessageType&nbsp;|&nbsp;None,&nbsp;coin:&nbsp;coininfo.CoinInfo</td>
+        </tr>
+        <tr id="282" style="None">
+          <td style="color: grey">282</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>)&nbsp;->&nbsp;list[PathSchema]:</td>
+        </tr>
+        <tr id="283" style="None">
+          <td style="color: grey">283</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;"""</td>
+        </tr>
+        <tr id="284" style="None">
+          <td style="color: grey">284</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;Provides&nbsp;additional&nbsp;keychain&nbsp;schemas&nbsp;that&nbsp;are&nbsp;unlocked&nbsp;by&nbsp;the&nbsp;particular</td>
+        </tr>
+        <tr id="285" style="None">
+          <td style="color: grey">285</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;combination&nbsp;of&nbsp;`msg`&nbsp;and&nbsp;`auth_msg`.</td>
+        </tr>
+        <tr id="286" style="None">
+          <td style="color: grey">286</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;"""</td>
+        </tr>
+        <tr id="287" style="color: blue;">
+          <td style="color: grey">287</td>
+          <td style="text-align: right;">1.00</td>
+          <td style="text-align: right;">650</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;from&nbsp;trezor.messages&nbsp;import&nbsp;GetOwnershipProof,&nbsp;SignTx,&nbsp;UnlockPath</td>
+        </tr>
+        <tr id="288" style="None">
+          <td style="color: grey">288</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="289" style="None">
+          <td style="color: grey">289</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;AuthorizeCoinJoin.is_type_of(msg):</td>
+        </tr>
+        <tr id="290" style="None">
+          <td style="color: grey">290</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#&nbsp;When&nbsp;processing&nbsp;the&nbsp;AuthorizeCoinJoin&nbsp;message,&nbsp;validate_path()&nbsp;always</td>
+        </tr>
+        <tr id="291" style="None">
+          <td style="color: grey">291</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#&nbsp;needs&nbsp;to&nbsp;treat&nbsp;SLIP-25&nbsp;paths&nbsp;as&nbsp;valid,&nbsp;so&nbsp;add&nbsp;SLIP-25&nbsp;to&nbsp;the&nbsp;schemas.</td>
+        </tr>
+        <tr id="292" style="color: blue;">
+          <td style="color: grey">292</td>
+          <td style="text-align: right;">3.00</td>
+          <td style="text-align: right;">24</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;get_schemas_from_patterns([PATTERN_SLIP25_TAPROOT],&nbsp;coin)</td>
+        </tr>
+        <tr id="293" style="None">
+          <td style="color: grey">293</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="294" style="None">
+          <td style="color: grey">294</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;AuthorizeCoinJoin.is_type_of(auth_msg)&nbsp;or&nbsp;UnlockPath.is_type_of(auth_msg):</td>
+        </tr>
+        <tr id="295" style="None">
+          <td style="color: grey">295</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#&nbsp;The&nbsp;user&nbsp;has&nbsp;preauthorized&nbsp;access&nbsp;to&nbsp;certain&nbsp;paths.&nbsp;Here&nbsp;we&nbsp;create&nbsp;a</td>
+        </tr>
+        <tr id="296" style="None">
+          <td style="color: grey">296</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#&nbsp;list&nbsp;of&nbsp;all&nbsp;the&nbsp;patterns&nbsp;that&nbsp;can&nbsp;be&nbsp;unlocked&nbsp;by&nbsp;AuthorizeCoinJoin&nbsp;or</td>
+        </tr>
+        <tr id="297" style="None">
+          <td style="color: grey">297</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#&nbsp;by&nbsp;UnlockPath.&nbsp;At&nbsp;the&nbsp;moment&nbsp;only&nbsp;SLIP-25&nbsp;paths&nbsp;can&nbsp;be&nbsp;unlocked.</td>
+        </tr>
+        <tr id="298" style="color: blue;">
+          <td style="color: grey">298</td>
+          <td style="text-align: right;">2.00</td>
+          <td style="text-align: right;">36</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;patterns&nbsp;=&nbsp;[]</td>
+        </tr>
+        <tr id="299" style="None">
+          <td style="color: grey">299</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;SignTx.is_type_of(msg)&nbsp;or&nbsp;GetOwnershipProof.is_type_of(msg):</td>
+        </tr>
+        <tr id="300" style="None">
+          <td style="color: grey">300</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#&nbsp;SignTx&nbsp;and&nbsp;GetOwnershipProof&nbsp;need&nbsp;access&nbsp;to&nbsp;all&nbsp;SLIP-25&nbsp;addresses</td>
+        </tr>
+        <tr id="301" style="None">
+          <td style="color: grey">301</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#&nbsp;to&nbsp;create&nbsp;coinjoin&nbsp;outputs.</td>
+        </tr>
+        <tr id="302" style="None">
+          <td style="color: grey">302</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;patterns.append(PATTERN_SLIP25_TAPROOT)</td>
+        </tr>
+        <tr id="303" style="None">
+          <td style="color: grey">303</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;else:</td>
+        </tr>
+        <tr id="304" style="None">
+          <td style="color: grey">304</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#&nbsp;In&nbsp;case&nbsp;of&nbsp;other&nbsp;messages&nbsp;like&nbsp;GetAddress&nbsp;or&nbsp;SignMessage&nbsp;there&nbsp;is</td>
+        </tr>
+        <tr id="305" style="None">
+          <td style="color: grey">305</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#&nbsp;no&nbsp;reason&nbsp;for&nbsp;the&nbsp;user&nbsp;to&nbsp;work&nbsp;with&nbsp;SLIP-25&nbsp;change-addresses.&nbsp;For</td>
+        </tr>
+        <tr id="306" style="None">
+          <td style="color: grey">306</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#&nbsp;example,&nbsp;using&nbsp;a&nbsp;change-address&nbsp;to&nbsp;receive&nbsp;a&nbsp;payment&nbsp;may</td>
+        </tr>
+        <tr id="307" style="None">
+          <td style="color: grey">307</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#&nbsp;compromise&nbsp;privacy.</td>
+        </tr>
+        <tr id="308" style="None">
+          <td style="color: grey">308</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;patterns.append(PATTERN_SLIP25_TAPROOT_EXTERNAL)</td>
+        </tr>
+        <tr id="309" style="None">
+          <td style="color: grey">309</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="310" style="None">
+          <td style="color: grey">310</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#&nbsp;Convert&nbsp;the&nbsp;unlockable&nbsp;patterns&nbsp;to&nbsp;schemas&nbsp;and&nbsp;select&nbsp;only&nbsp;the&nbsp;ones</td>
+        </tr>
+        <tr id="311" style="None">
+          <td style="color: grey">311</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#&nbsp;that&nbsp;are&nbsp;unlocked&nbsp;by&nbsp;the&nbsp;auth_msg,&nbsp;i.e.&nbsp;lie&nbsp;in&nbsp;a&nbsp;subtree&nbsp;of&nbsp;the</td>
+        </tr>
+        <tr id="312" style="None">
+          <td style="color: grey">312</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#&nbsp;auth_msg's&nbsp;path.</td>
+        </tr>
+        <tr id="313" style="color: blue;">
+          <td style="color: grey">313</td>
+          <td style="text-align: right;">1.00</td>
+          <td style="text-align: right;">18</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;schemas&nbsp;=&nbsp;get_schemas_from_patterns(patterns,&nbsp;coin)</td>
+        </tr>
+        <tr id="314" style="color: blue;">
+          <td style="color: grey">314</td>
+          <td style="text-align: right;">1.33</td>
+          <td style="text-align: right;">72</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;[s&nbsp;for&nbsp;s&nbsp;in&nbsp;schemas&nbsp;if&nbsp;s.restrict(auth_msg.address_n)]</td>
+        </tr>
+        <tr id="315" style="None">
+          <td style="color: grey">315</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="316" style="color: blue;">
+          <td style="color: grey">316</td>
+          <td style="text-align: right;">2.00</td>
+          <td style="text-align: right;">1248</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;[]</td>
+        </tr>
+        <tr id="317" style="None">
+          <td style="color: grey">317</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="318" style="None">
+          <td style="color: grey">318</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="319" style="color: blue;">
+          <td style="color: grey">319</td>
+          <td style="text-align: right;">1.00</td>
+          <td style="text-align: right;">650</td>
+          <td>def&nbsp;with_keychain(func:&nbsp;HandlerWithCoinInfo[MsgOut])&nbsp;->&nbsp;Handler[MsgIn,&nbsp;MsgOut]:</td>
+        </tr>
+        <tr id="320" style="color: blue;">
+          <td style="color: grey">320</td>
+          <td style="text-align: right;">3.00</td>
+          <td style="text-align: right;">1950</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;async&nbsp;def&nbsp;wrapper(</td>
+        </tr>
+        <tr id="321" style="None">
+          <td style="color: grey">321</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ctx:&nbsp;Context,</td>
+        </tr>
+        <tr id="322" style="None">
+          <td style="color: grey">322</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;msg:&nbsp;MsgIn,</td>
+        </tr>
+        <tr id="323" style="None">
+          <td style="color: grey">323</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;auth_msg:&nbsp;MessageType&nbsp;|&nbsp;None&nbsp;=&nbsp;None,</td>
+        </tr>
+        <tr id="324" style="None">
+          <td style="color: grey">324</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;)&nbsp;->&nbsp;MsgOut:</td>
+        </tr>
+        <tr id="325" style="None">
+          <td style="color: grey">325</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;coin&nbsp;=&nbsp;_get_coin_by_name(msg.coin_name)</td>
+        </tr>
+        <tr id="326" style="color: blue;">
+          <td style="color: grey">326</td>
+          <td style="text-align: right;">1.00</td>
+          <td style="text-align: right;">650</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;unlock_schemas&nbsp;=&nbsp;_get_unlock_schemas(msg,&nbsp;auth_msg,&nbsp;coin)</td>
+        </tr>
+        <tr id="327" style="color: blue;">
+          <td style="color: grey">327</td>
+          <td style="text-align: right;">0.84</td>
+          <td style="text-align: right;">650</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;keychain&nbsp;=&nbsp;await&nbsp;_get_keychain_for_coin(ctx,&nbsp;coin,&nbsp;unlock_schemas)</td>
+        </tr>
+        <tr id="328" style="None">
+          <td style="color: grey">328</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;AuthorizeCoinJoin.is_type_of(auth_msg):</td>
+        </tr>
+        <tr id="329" style="None">
+          <td style="color: grey">329</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;auth_obj&nbsp;=&nbsp;authorization.from_cached_message(auth_msg)</td>
+        </tr>
+        <tr id="330" style="color: blue;">
+          <td style="color: grey">330</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">11</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;await&nbsp;func(ctx,&nbsp;msg,&nbsp;keychain,&nbsp;coin,&nbsp;auth_obj)</td>
+        </tr>
+        <tr id="331" style="None">
+          <td style="color: grey">331</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;else:</td>
+        </tr>
+        <tr id="332" style="None">
+          <td style="color: grey">332</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;with&nbsp;keychain:</td>
+        </tr>
+        <tr id="333" style="color: blue;">
+          <td style="color: grey">333</td>
+          <td style="text-align: right;">0.01</td>
+          <td style="text-align: right;">638</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;await&nbsp;func(ctx,&nbsp;msg,&nbsp;keychain,&nbsp;coin)</td>
+        </tr>
+        <tr id="334" style="None">
+          <td style="color: grey">334</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="335" style="color: blue;">
+          <td style="color: grey">335</td>
+          <td style="text-align: right;">1.47</td>
+          <td style="text-align: right;">953</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;wrapper</td>
+        </tr>
+        <tr id="336" style="None">
+          <td style="color: grey">336</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="337" style="None">
+          <td style="color: grey">337</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="338" style="color: blue;">
+          <td style="color: grey">338</td>
+          <td style="text-align: right;">2.00</td>
+          <td style="text-align: right;">1300</td>
+          <td>class&nbsp;AccountType:</td>
+        </tr>
+        <tr id="339" style="color: blue;">
+          <td style="color: grey">339</td>
+          <td style="text-align: right;">2.00</td>
+          <td style="text-align: right;">1300</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;def&nbsp;__init__(</td>
+        </tr>
+        <tr id="340" style="None">
+          <td style="color: grey">340</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self,</td>
+        </tr>
+        <tr id="341" style="None">
+          <td style="color: grey">341</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;account_name:&nbsp;str,</td>
+        </tr>
+        <tr id="342" style="None">
+          <td style="color: grey">342</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;pattern:&nbsp;str,</td>
+        </tr>
+        <tr id="343" style="None">
+          <td style="color: grey">343</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;script_type:&nbsp;InputScriptType,</td>
+        </tr>
+        <tr id="344" style="None">
+          <td style="color: grey">344</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;require_segwit:&nbsp;bool,</td>
+        </tr>
+        <tr id="345" style="None">
+          <td style="color: grey">345</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;require_bech32:&nbsp;bool,</td>
+        </tr>
+        <tr id="346" style="None">
+          <td style="color: grey">346</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;require_taproot:&nbsp;bool,</td>
+        </tr>
+        <tr id="347" style="None">
+          <td style="color: grey">347</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;):</td>
+        </tr>
+        <tr id="348" style="color: blue;">
+          <td style="color: grey">348</td>
+          <td style="text-align: right;">1.00</td>
+          <td style="text-align: right;">1398</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.account_name&nbsp;=&nbsp;account_name</td>
+        </tr>
+        <tr id="349" style="None">
+          <td style="color: grey">349</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.pattern&nbsp;=&nbsp;pattern</td>
+        </tr>
+        <tr id="350" style="color: blue;">
+          <td style="color: grey">350</td>
+          <td style="text-align: right;">1.00</td>
+          <td style="text-align: right;">1398</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.script_type&nbsp;=&nbsp;script_type</td>
+        </tr>
+        <tr id="351" style="None">
+          <td style="color: grey">351</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.require_segwit&nbsp;=&nbsp;require_segwit</td>
+        </tr>
+        <tr id="352" style="color: blue;">
+          <td style="color: grey">352</td>
+          <td style="text-align: right;">1.00</td>
+          <td style="text-align: right;">1398</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.require_bech32&nbsp;=&nbsp;require_bech32</td>
+        </tr>
+        <tr id="353" style="color: blue;">
+          <td style="color: grey">353</td>
+          <td style="text-align: right;">0.17</td>
+          <td style="text-align: right;">233</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.require_taproot&nbsp;=&nbsp;require_taproot</td>
+        </tr>
+        <tr id="354" style="None">
+          <td style="color: grey">354</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="355" style="color: blue;">
+          <td style="color: grey">355</td>
+          <td style="text-align: right;">2.00</td>
+          <td style="text-align: right;">1300</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;def&nbsp;get_name(</td>
+        </tr>
+        <tr id="356" style="None">
+          <td style="color: grey">356</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self,</td>
+        </tr>
+        <tr id="357" style="None">
+          <td style="color: grey">357</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;coin:&nbsp;coininfo.CoinInfo,</td>
+        </tr>
+        <tr id="358" style="None">
+          <td style="color: grey">358</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;address_n:&nbsp;Bip32Path,</td>
+        </tr>
+        <tr id="359" style="None">
+          <td style="color: grey">359</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;script_type:&nbsp;InputScriptType&nbsp;|&nbsp;None,</td>
+        </tr>
+        <tr id="360" style="None">
+          <td style="color: grey">360</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;)&nbsp;->&nbsp;str&nbsp;|&nbsp;None:</td>
+        </tr>
+        <tr id="361" style="None">
+          <td style="color: grey">361</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(</td>
+        </tr>
+        <tr id="362" style="None">
+          <td style="color: grey">362</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(script_type&nbsp;is&nbsp;not&nbsp;None&nbsp;and&nbsp;script_type&nbsp;!=&nbsp;self.script_type)</td>
+        </tr>
+        <tr id="363" style="color: blue;">
+          <td style="color: grey">363</td>
+          <td style="text-align: right;">1.00</td>
+          <td style="text-align: right;">655</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;or&nbsp;not&nbsp;PathSchema.parse(self.pattern,&nbsp;coin.slip44).match(address_n)</td>
+        </tr>
+        <tr id="364" style="None">
+          <td style="color: grey">364</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;or&nbsp;(not&nbsp;coin.segwit&nbsp;and&nbsp;self.require_segwit)</td>
+        </tr>
+        <tr id="365" style="None">
+          <td style="color: grey">365</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;or&nbsp;(not&nbsp;coin.bech32_prefix&nbsp;and&nbsp;self.require_bech32)</td>
+        </tr>
+        <tr id="366" style="None">
+          <td style="color: grey">366</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;or&nbsp;(not&nbsp;coin.taproot&nbsp;and&nbsp;self.require_taproot)</td>
+        </tr>
+        <tr id="367" style="None">
+          <td style="color: grey">367</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;):</td>
+        </tr>
+        <tr id="368" style="None">
+          <td style="color: grey">368</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;None</td>
+        </tr>
+        <tr id="369" style="None">
+          <td style="color: grey">369</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="370" style="None">
+          <td style="color: grey">370</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;name&nbsp;=&nbsp;self.account_name</td>
+        </tr>
+        <tr id="371" style="None">
+          <td style="color: grey">371</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;account_pos&nbsp;=&nbsp;self.pattern.find("/account'")</td>
+        </tr>
+        <tr id="372" style="None">
+          <td style="color: grey">372</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;account_pos&nbsp;>=&nbsp;0:</td>
+        </tr>
+        <tr id="373" style="None">
+          <td style="color: grey">373</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;i&nbsp;=&nbsp;self.pattern.count("/",&nbsp;0,&nbsp;account_pos)</td>
+        </tr>
+        <tr id="374" style="None">
+          <td style="color: grey">374</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;account_number&nbsp;=&nbsp;unharden(address_n[i])&nbsp;+&nbsp;1</td>
+        </tr>
+        <tr id="375" style="color: blue;">
+          <td style="color: grey">375</td>
+          <td style="text-align: right;">5.82</td>
+          <td style="text-align: right;">943</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;name&nbsp;+=&nbsp;f"&nbsp;#{account_number}"</td>
+        </tr>
+        <tr id="376" style="None">
+          <td style="color: grey">376</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="377" style="None">
+          <td style="color: grey">377</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;name</td>
+        </tr>
+        <tr id="378" style="None">
+          <td style="color: grey">378</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="379" style="None">
+          <td style="color: grey">379</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="380" style="color: blue;">
+          <td style="color: grey">380</td>
+          <td style="text-align: right;">3.00</td>
+          <td style="text-align: right;">1950</td>
+          <td>def&nbsp;address_n_to_name(</td>
+        </tr>
+        <tr id="381" style="None">
+          <td style="color: grey">381</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;coin:&nbsp;coininfo.CoinInfo,</td>
+        </tr>
+        <tr id="382" style="None">
+          <td style="color: grey">382</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;address_n:&nbsp;Bip32Path,</td>
+        </tr>
+        <tr id="383" style="None">
+          <td style="color: grey">383</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;script_type:&nbsp;InputScriptType&nbsp;|&nbsp;None&nbsp;=&nbsp;None,</td>
+        </tr>
+        <tr id="384" style="None">
+          <td style="color: grey">384</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>)&nbsp;->&nbsp;str&nbsp;|&nbsp;None:</td>
+        </tr>
+        <tr id="385" style="None">
+          <td style="color: grey">385</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;ACCOUNT_TYPES&nbsp;=&nbsp;(</td>
+        </tr>
+        <tr id="386" style="None">
+          <td style="color: grey">386</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;AccountType(</td>
+        </tr>
+        <tr id="387" style="None">
+          <td style="color: grey">387</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"Legacy",</td>
+        </tr>
+        <tr id="388" style="None">
+          <td style="color: grey">388</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;PATTERN_BIP44,</td>
+        </tr>
+        <tr id="389" style="color: blue;">
+          <td style="color: grey">389</td>
+          <td style="text-align: right;">2.00</td>
+          <td style="text-align: right;">466</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;InputScriptType.SPENDADDRESS,</td>
+        </tr>
+        <tr id="390" style="None">
+          <td style="color: grey">390</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;require_segwit=True,</td>
+        </tr>
+        <tr id="391" style="None">
+          <td style="color: grey">391</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;require_bech32=False,</td>
+        </tr>
+        <tr id="392" style="None">
+          <td style="color: grey">392</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;require_taproot=False,</td>
+        </tr>
+        <tr id="393" style="None">
+          <td style="color: grey">393</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;),</td>
+        </tr>
+        <tr id="394" style="None">
+          <td style="color: grey">394</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;AccountType(</td>
+        </tr>
+        <tr id="395" style="None">
+          <td style="color: grey">395</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"",</td>
+        </tr>
+        <tr id="396" style="None">
+          <td style="color: grey">396</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;PATTERN_BIP44,</td>
+        </tr>
+        <tr id="397" style="color: blue;">
+          <td style="color: grey">397</td>
+          <td style="text-align: right;">2.00</td>
+          <td style="text-align: right;">466</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;InputScriptType.SPENDADDRESS,</td>
+        </tr>
+        <tr id="398" style="None">
+          <td style="color: grey">398</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;require_segwit=False,</td>
+        </tr>
+        <tr id="399" style="None">
+          <td style="color: grey">399</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;require_bech32=False,</td>
+        </tr>
+        <tr id="400" style="None">
+          <td style="color: grey">400</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;require_taproot=False,</td>
+        </tr>
+        <tr id="401" style="None">
+          <td style="color: grey">401</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;),</td>
+        </tr>
+        <tr id="402" style="None">
+          <td style="color: grey">402</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;AccountType(</td>
+        </tr>
+        <tr id="403" style="None">
+          <td style="color: grey">403</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"L.&nbsp;SegWit",</td>
+        </tr>
+        <tr id="404" style="None">
+          <td style="color: grey">404</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;PATTERN_BIP49,</td>
+        </tr>
+        <tr id="405" style="color: blue;">
+          <td style="color: grey">405</td>
+          <td style="text-align: right;">2.00</td>
+          <td style="text-align: right;">466</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;InputScriptType.SPENDP2SHWITNESS,</td>
+        </tr>
+        <tr id="406" style="None">
+          <td style="color: grey">406</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;require_segwit=True,</td>
+        </tr>
+        <tr id="407" style="None">
+          <td style="color: grey">407</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;require_bech32=False,</td>
+        </tr>
+        <tr id="408" style="None">
+          <td style="color: grey">408</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;require_taproot=False,</td>
+        </tr>
+        <tr id="409" style="None">
+          <td style="color: grey">409</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;),</td>
+        </tr>
+        <tr id="410" style="None">
+          <td style="color: grey">410</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;AccountType(</td>
+        </tr>
+        <tr id="411" style="None">
+          <td style="color: grey">411</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"SegWit",</td>
+        </tr>
+        <tr id="412" style="None">
+          <td style="color: grey">412</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;PATTERN_BIP84,</td>
+        </tr>
+        <tr id="413" style="color: blue;">
+          <td style="color: grey">413</td>
+          <td style="text-align: right;">2.00</td>
+          <td style="text-align: right;">466</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;InputScriptType.SPENDWITNESS,</td>
+        </tr>
+        <tr id="414" style="None">
+          <td style="color: grey">414</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;require_segwit=True,</td>
+        </tr>
+        <tr id="415" style="None">
+          <td style="color: grey">415</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;require_bech32=True,</td>
+        </tr>
+        <tr id="416" style="None">
+          <td style="color: grey">416</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;require_taproot=False,</td>
+        </tr>
+        <tr id="417" style="None">
+          <td style="color: grey">417</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;),</td>
+        </tr>
+        <tr id="418" style="None">
+          <td style="color: grey">418</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;AccountType(</td>
+        </tr>
+        <tr id="419" style="None">
+          <td style="color: grey">419</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"Taproot",</td>
+        </tr>
+        <tr id="420" style="None">
+          <td style="color: grey">420</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;PATTERN_BIP86,</td>
+        </tr>
+        <tr id="421" style="color: blue;">
+          <td style="color: grey">421</td>
+          <td style="text-align: right;">2.00</td>
+          <td style="text-align: right;">466</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;InputScriptType.SPENDTAPROOT,</td>
+        </tr>
+        <tr id="422" style="None">
+          <td style="color: grey">422</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;require_segwit=False,</td>
+        </tr>
+        <tr id="423" style="None">
+          <td style="color: grey">423</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;require_bech32=True,</td>
+        </tr>
+        <tr id="424" style="None">
+          <td style="color: grey">424</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;require_taproot=True,</td>
+        </tr>
+        <tr id="425" style="None">
+          <td style="color: grey">425</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;),</td>
+        </tr>
+        <tr id="426" style="None">
+          <td style="color: grey">426</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;AccountType(</td>
+        </tr>
+        <tr id="427" style="None">
+          <td style="color: grey">427</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"Coinjoin",</td>
+        </tr>
+        <tr id="428" style="None">
+          <td style="color: grey">428</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;PATTERN_SLIP25_TAPROOT,</td>
+        </tr>
+        <tr id="429" style="color: blue;">
+          <td style="color: grey">429</td>
+          <td style="text-align: right;">2.00</td>
+          <td style="text-align: right;">466</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;InputScriptType.SPENDTAPROOT,</td>
+        </tr>
+        <tr id="430" style="None">
+          <td style="color: grey">430</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;require_segwit=False,</td>
+        </tr>
+        <tr id="431" style="None">
+          <td style="color: grey">431</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;require_bech32=True,</td>
+        </tr>
+        <tr id="432" style="None">
+          <td style="color: grey">432</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;require_taproot=True,</td>
+        </tr>
+        <tr id="433" style="None">
+          <td style="color: grey">433</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;),</td>
+        </tr>
+        <tr id="434" style="None">
+          <td style="color: grey">434</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;)</td>
+        </tr>
+        <tr id="435" style="None">
+          <td style="color: grey">435</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="436" style="None">
+          <td style="color: grey">436</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;for&nbsp;account&nbsp;in&nbsp;ACCOUNT_TYPES:</td>
+        </tr>
+        <tr id="437" style="None">
+          <td style="color: grey">437</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;name&nbsp;=&nbsp;account.get_name(coin,&nbsp;address_n,&nbsp;script_type)</td>
+        </tr>
+        <tr id="438" style="None">
+          <td style="color: grey">438</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;name:</td>
+        </tr>
+        <tr id="439" style="None">
+          <td style="color: grey">439</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;name</td>
+        </tr>
+        <tr id="440" style="None">
+          <td style="color: grey">440</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="441" style="None">
+          <td style="color: grey">441</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;None</td>
+        </tr>
+      </tbody>
+    </table>
+  </body>
+</html>

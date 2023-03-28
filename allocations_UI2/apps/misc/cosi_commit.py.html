@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>apps/misc/cosi_commit.py</title>
+    <meta charset="utf-8">
+    <style>body { font-size: 80%; }</style>
+  </head>
+  <body>
+    <table>
+      <thead>
+        <tr>
+          <th style="color: grey">#</th>
+          <th style="text-align: right;">avg</th>
+          <th style="text-align: right;">total</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr id="1" style="None">
+          <td style="color: grey">1</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>from&nbsp;typing&nbsp;import&nbsp;TYPE_CHECKING</td>
+        </tr>
+        <tr id="2" style="None">
+          <td style="color: grey">2</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="3" style="color: blue;">
+          <td style="color: grey">3</td>
+          <td style="text-align: right;">2.00</td>
+          <td style="text-align: right;">46</td>
+          <td>from&nbsp;trezor.enums&nbsp;import&nbsp;ButtonRequestType</td>
+        </tr>
+        <tr id="4" style="color: blue;">
+          <td style="color: grey">4</td>
+          <td style="text-align: right;">1.00</td>
+          <td style="text-align: right;">23</td>
+          <td>from&nbsp;trezor.messages&nbsp;import&nbsp;CosiCommitment,&nbsp;CosiSign,&nbsp;CosiSignature</td>
+        </tr>
+        <tr id="5" style="color: blue;">
+          <td style="color: grey">5</td>
+          <td style="text-align: right;">2.00</td>
+          <td style="text-align: right;">46</td>
+          <td>from&nbsp;trezor.wire&nbsp;import&nbsp;DataError</td>
+        </tr>
+        <tr id="6" style="None">
+          <td style="color: grey">6</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="7" style="color: blue;">
+          <td style="color: grey">7</td>
+          <td style="text-align: right;">2.00</td>
+          <td style="text-align: right;">46</td>
+          <td>from&nbsp;apps.common.paths&nbsp;import&nbsp;PathSchema,&nbsp;unharden</td>
+        </tr>
+        <tr id="8" style="None">
+          <td style="color: grey">8</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="9" style="None">
+          <td style="color: grey">9</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>if&nbsp;TYPE_CHECKING:</td>
+        </tr>
+        <tr id="10" style="None">
+          <td style="color: grey">10</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;from&nbsp;trezor.messages&nbsp;import&nbsp;CosiCommit</td>
+        </tr>
+        <tr id="11" style="None">
+          <td style="color: grey">11</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;from&nbsp;trezor.wire&nbsp;import&nbsp;Context</td>
+        </tr>
+        <tr id="12" style="None">
+          <td style="color: grey">12</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="13" style="None">
+          <td style="color: grey">13</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>#&nbsp;This&nbsp;module&nbsp;implements&nbsp;the&nbsp;cosigner&nbsp;part&nbsp;of&nbsp;the&nbsp;CoSi&nbsp;collective&nbsp;signatures</td>
+        </tr>
+        <tr id="14" style="None">
+          <td style="color: grey">14</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>#&nbsp;as&nbsp;described&nbsp;in&nbsp;https://dedis.cs.yale.edu/dissent/papers/witness.pdf</td>
+        </tr>
+        <tr id="15" style="None">
+          <td style="color: grey">15</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="16" style="None">
+          <td style="color: grey">16</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="17" style="color: blue;">
+          <td style="color: grey">17</td>
+          <td style="text-align: right;">1.00</td>
+          <td style="text-align: right;">23</td>
+          <td>SCHEMA_SLIP18&nbsp;=&nbsp;PathSchema.parse("m/10018'/address_index'/*'",&nbsp;slip44_id=())</td>
+        </tr>
+        <tr id="18" style="None">
+          <td style="color: grey">18</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>#&nbsp;SLIP-26:&nbsp;m/10026'/model'/type'/rotation_index'</td>
+        </tr>
+        <tr id="19" style="None">
+          <td style="color: grey">19</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>#&nbsp;-&nbsp;`model`:&nbsp;typically&nbsp;ASCII&nbsp;string&nbsp;T1B1&nbsp;etc.&nbsp;parsed&nbsp;as&nbsp;little-endian&nbsp;number,</td>
+        </tr>
+        <tr id="20" style="None">
+          <td style="color: grey">20</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>#&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;but&nbsp;can&nbsp;also&nbsp;be&nbsp;0&nbsp;or&nbsp;other&nbsp;values.&nbsp;Maximum&nbsp;allowed&nbsp;value&nbsp;is&nbsp;0x7F7F7F7F,</td>
+        </tr>
+        <tr id="21" style="None">
+          <td style="color: grey">21</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>#&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;the&nbsp;maximum&nbsp;4-byte&nbsp;ASCII&nbsp;string.</td>
+        </tr>
+        <tr id="22" style="None">
+          <td style="color: grey">22</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>#&nbsp;-&nbsp;`type`:&nbsp;0&nbsp;=&nbsp;bootloader,&nbsp;1&nbsp;=&nbsp;vendorheader,&nbsp;2&nbsp;=&nbsp;firmware,&nbsp;3&nbsp;=&nbsp;definitions,&nbsp;4&nbsp;=&nbsp;reserved</td>
+        </tr>
+        <tr id="23" style="None">
+          <td style="color: grey">23</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>#&nbsp;-&nbsp;`rotation_index`:&nbsp;a&nbsp;fixed&nbsp;0'&nbsp;for&nbsp;now</td>
+        </tr>
+        <tr id="24" style="color: blue;">
+          <td style="color: grey">24</td>
+          <td style="text-align: right;">1.00</td>
+          <td style="text-align: right;">23</td>
+          <td>SCHEMA_SLIP26&nbsp;=&nbsp;PathSchema.parse("m/10026'/[0-2139062143]'/[0-4]'/0'",&nbsp;slip44_id=())</td>
+        </tr>
+        <tr id="25" style="None">
+          <td style="color: grey">25</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="26" style="None">
+          <td style="color: grey">26</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="27" style="color: blue;">
+          <td style="color: grey">27</td>
+          <td style="text-align: right;">1.00</td>
+          <td style="text-align: right;">23</td>
+          <td>async&nbsp;def&nbsp;cosi_commit(ctx:&nbsp;Context,&nbsp;msg:&nbsp;CosiCommit)&nbsp;->&nbsp;CosiSignature:</td>
+        </tr>
+        <tr id="28" style="None">
+          <td style="color: grey">28</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;import&nbsp;storage.cache&nbsp;as&nbsp;storage_cache</td>
+        </tr>
+        <tr id="29" style="color: red;">
+          <td style="color: grey">29</td>
+          <td style="text-align: right;">6.00</td>
+          <td style="text-align: right;">138</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;from&nbsp;trezor.crypto&nbsp;import&nbsp;cosi</td>
+        </tr>
+        <tr id="30" style="color: blue;">
+          <td style="color: grey">30</td>
+          <td style="text-align: right;">1.00</td>
+          <td style="text-align: right;">23</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;from&nbsp;trezor.crypto.curve&nbsp;import&nbsp;ed25519</td>
+        </tr>
+        <tr id="31" style="color: blue;">
+          <td style="color: grey">31</td>
+          <td style="text-align: right;">1.00</td>
+          <td style="text-align: right;">23</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;from&nbsp;trezor.ui.layouts&nbsp;import&nbsp;confirm_blob</td>
+        </tr>
+        <tr id="32" style="color: blue;">
+          <td style="color: grey">32</td>
+          <td style="text-align: right;">1.00</td>
+          <td style="text-align: right;">23</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;from&nbsp;apps.common&nbsp;import&nbsp;paths</td>
+        </tr>
+        <tr id="33" style="color: red;">
+          <td style="color: grey">33</td>
+          <td style="text-align: right;">6.00</td>
+          <td style="text-align: right;">138</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;from&nbsp;apps.common.keychain&nbsp;import&nbsp;get_keychain</td>
+        </tr>
+        <tr id="34" style="None">
+          <td style="color: grey">34</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="35" style="color: blue;">
+          <td style="color: grey">35</td>
+          <td style="text-align: right;">3.00</td>
+          <td style="text-align: right;">69</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;keychain&nbsp;=&nbsp;await&nbsp;get_keychain(ctx,&nbsp;"ed25519",&nbsp;[SCHEMA_SLIP18,&nbsp;SCHEMA_SLIP26])</td>
+        </tr>
+        <tr id="36" style="color: blue;">
+          <td style="color: grey">36</td>
+          <td style="text-align: right;">1.00</td>
+          <td style="text-align: right;">23</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;await&nbsp;paths.validate_path(ctx,&nbsp;keychain,&nbsp;msg.address_n)</td>
+        </tr>
+        <tr id="37" style="None">
+          <td style="color: grey">37</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="38" style="color: blue;">
+          <td style="color: grey">38</td>
+          <td style="text-align: right;">1.00</td>
+          <td style="text-align: right;">17</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;node&nbsp;=&nbsp;keychain.derive(msg.address_n)</td>
+        </tr>
+        <tr id="39" style="color: blue;">
+          <td style="color: grey">39</td>
+          <td style="text-align: right;">2.00</td>
+          <td style="text-align: right;">34</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;seckey&nbsp;=&nbsp;node.private_key()</td>
+        </tr>
+        <tr id="40" style="color: blue;">
+          <td style="color: grey">40</td>
+          <td style="text-align: right;">2.00</td>
+          <td style="text-align: right;">34</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;pubkey&nbsp;=&nbsp;ed25519.publickey(seckey)</td>
+        </tr>
+        <tr id="41" style="None">
+          <td style="color: grey">41</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="42" style="None">
+          <td style="color: grey">42</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;not&nbsp;storage_cache.is_set(storage_cache.APP_MISC_COSI_COMMITMENT):</td>
+        </tr>
+        <tr id="43" style="color: red;">
+          <td style="color: grey">43</td>
+          <td style="text-align: right;">5.00</td>
+          <td style="text-align: right;">75</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;nonce,&nbsp;commitment&nbsp;=&nbsp;cosi.commit()</td>
+        </tr>
+        <tr id="44" style="None">
+          <td style="color: grey">44</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;storage_cache.set(storage_cache.APP_MISC_COSI_NONCE,&nbsp;nonce)</td>
+        </tr>
+        <tr id="45" style="None">
+          <td style="color: grey">45</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;storage_cache.set(storage_cache.APP_MISC_COSI_COMMITMENT,&nbsp;commitment)</td>
+        </tr>
+        <tr id="46" style="None">
+          <td style="color: grey">46</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;commitment&nbsp;=&nbsp;storage_cache.get(storage_cache.APP_MISC_COSI_COMMITMENT)</td>
+        </tr>
+        <tr id="47" style="None">
+          <td style="color: grey">47</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;commitment&nbsp;is&nbsp;None:</td>
+        </tr>
+        <tr id="48" style="None">
+          <td style="color: grey">48</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;raise&nbsp;RuntimeError</td>
+        </tr>
+        <tr id="49" style="None">
+          <td style="color: grey">49</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="50" style="None">
+          <td style="color: grey">50</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;sign_msg&nbsp;=&nbsp;await&nbsp;ctx.call(</td>
+        </tr>
+        <tr id="51" style="color: blue;">
+          <td style="color: grey">51</td>
+          <td style="text-align: right;">0.70</td>
+          <td style="text-align: right;">51</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;CosiCommitment(commitment=commitment,&nbsp;pubkey=pubkey),&nbsp;CosiSign</td>
+        </tr>
+        <tr id="52" style="None">
+          <td style="color: grey">52</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;)</td>
+        </tr>
+        <tr id="53" style="None">
+          <td style="color: grey">53</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="54" style="None">
+          <td style="color: grey">54</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;sign_msg.address_n&nbsp;!=&nbsp;msg.address_n:</td>
+        </tr>
+        <tr id="55" style="color: blue;">
+          <td style="color: grey">55</td>
+          <td style="text-align: right;">2.00</td>
+          <td style="text-align: right;">2</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;raise&nbsp;DataError("Mismatched&nbsp;address_n")</td>
+        </tr>
+        <tr id="56" style="None">
+          <td style="color: grey">56</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="57" style="None">
+          <td style="color: grey">57</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;title&nbsp;=&nbsp;"CoSi&nbsp;sign&nbsp;message"</td>
+        </tr>
+        <tr id="58" style="None">
+          <td style="color: grey">58</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;SCHEMA_SLIP18.match(sign_msg.address_n):</td>
+        </tr>
+        <tr id="59" style="None">
+          <td style="color: grey">59</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;index&nbsp;=&nbsp;unharden(msg.address_n[1])</td>
+        </tr>
+        <tr id="60" style="color: red;">
+          <td style="color: grey">60</td>
+          <td style="text-align: right;">4.50</td>
+          <td style="text-align: right;">18</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;title&nbsp;=&nbsp;f"CoSi&nbsp;sign&nbsp;index&nbsp;{index}"</td>
+        </tr>
+        <tr id="61" style="None">
+          <td style="color: grey">61</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="62" style="None">
+          <td style="color: grey">62</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;await&nbsp;confirm_blob(</td>
+        </tr>
+        <tr id="63" style="color: blue;">
+          <td style="color: grey">63</td>
+          <td style="text-align: right;">0.25</td>
+          <td style="text-align: right;">4</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ctx,&nbsp;"cosi_sign",&nbsp;title,&nbsp;sign_msg.data,&nbsp;br_code=ButtonRequestType.ProtectCall</td>
+        </tr>
+        <tr id="64" style="None">
+          <td style="color: grey">64</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;)</td>
+        </tr>
+        <tr id="65" style="None">
+          <td style="color: grey">65</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="66" style="None">
+          <td style="color: grey">66</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;#&nbsp;clear&nbsp;nonce&nbsp;from&nbsp;cache</td>
+        </tr>
+        <tr id="67" style="None">
+          <td style="color: grey">67</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;nonce&nbsp;=&nbsp;storage_cache.get(storage_cache.APP_MISC_COSI_NONCE)</td>
+        </tr>
+        <tr id="68" style="None">
+          <td style="color: grey">68</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;storage_cache.delete(storage_cache.APP_MISC_COSI_COMMITMENT)</td>
+        </tr>
+        <tr id="69" style="None">
+          <td style="color: grey">69</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;storage_cache.delete(storage_cache.APP_MISC_COSI_NONCE)</td>
+        </tr>
+        <tr id="70" style="None">
+          <td style="color: grey">70</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;nonce&nbsp;is&nbsp;None:</td>
+        </tr>
+        <tr id="71" style="None">
+          <td style="color: grey">71</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;raise&nbsp;RuntimeError</td>
+        </tr>
+        <tr id="72" style="None">
+          <td style="color: grey">72</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="73" style="None">
+          <td style="color: grey">73</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;signature&nbsp;=&nbsp;cosi.sign(</td>
+        </tr>
+        <tr id="74" style="color: blue;">
+          <td style="color: grey">74</td>
+          <td style="text-align: right;">2.00</td>
+          <td style="text-align: right;">8</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;seckey,&nbsp;sign_msg.data,&nbsp;nonce,&nbsp;sign_msg.global_commitment,&nbsp;sign_msg.global_pubkey</td>
+        </tr>
+        <tr id="75" style="None">
+          <td style="color: grey">75</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;)</td>
+        </tr>
+        <tr id="76" style="color: red;">
+          <td style="color: grey">76</td>
+          <td style="text-align: right;">5.00</td>
+          <td style="text-align: right;">20</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;CosiSignature(signature=signature)</td>
+        </tr>
+      </tbody>
+    </table>
+  </body>
+</html>
