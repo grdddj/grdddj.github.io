@@ -1,0 +1,1042 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>apps/bitcoin/addresses.py</title>
+    <meta charset="utf-8">
+    <style>body { font-size: 80%; }</style>
+  </head>
+  <body>
+    <table>
+      <thead>
+        <tr>
+          <th style="color: grey">#</th>
+          <th style="text-align: right;">avg</th>
+          <th style="text-align: right;">total</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr id="1" style="None">
+          <td style="color: grey">1</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>from&nbsp;typing&nbsp;import&nbsp;TYPE_CHECKING</td>
+        </tr>
+        <tr id="2" style="None">
+          <td style="color: grey">2</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="3" style="color: blue;">
+          <td style="color: grey">3</td>
+          <td style="text-align: right;">2.00</td>
+          <td style="text-align: right;">1332</td>
+          <td>from&nbsp;trezor&nbsp;import&nbsp;wire</td>
+        </tr>
+        <tr id="4" style="color: red;">
+          <td style="color: grey">4</td>
+          <td style="text-align: right;">6.00</td>
+          <td style="text-align: right;">3996</td>
+          <td>from&nbsp;trezor.crypto&nbsp;import&nbsp;base58,&nbsp;cashaddr</td>
+        </tr>
+        <tr id="5" style="color: blue;">
+          <td style="color: grey">5</td>
+          <td style="text-align: right;">1.00</td>
+          <td style="text-align: right;">666</td>
+          <td>from&nbsp;trezor.crypto.curve&nbsp;import&nbsp;bip340</td>
+        </tr>
+        <tr id="6" style="color: blue;">
+          <td style="color: grey">6</td>
+          <td style="text-align: right;">2.00</td>
+          <td style="text-align: right;">1332</td>
+          <td>from&nbsp;trezor.crypto.hashlib&nbsp;import&nbsp;sha256</td>
+        </tr>
+        <tr id="7" style="color: blue;">
+          <td style="color: grey">7</td>
+          <td style="text-align: right;">1.00</td>
+          <td style="text-align: right;">666</td>
+          <td>from&nbsp;trezor.enums&nbsp;import&nbsp;InputScriptType</td>
+        </tr>
+        <tr id="8" style="color: blue;">
+          <td style="color: grey">8</td>
+          <td style="text-align: right;">1.00</td>
+          <td style="text-align: right;">666</td>
+          <td>from&nbsp;trezor.messages&nbsp;import&nbsp;MultisigRedeemScriptType</td>
+        </tr>
+        <tr id="9" style="color: blue;">
+          <td style="color: grey">9</td>
+          <td style="text-align: right;">1.00</td>
+          <td style="text-align: right;">666</td>
+          <td>from&nbsp;trezor.utils&nbsp;import&nbsp;HashWriter</td>
+        </tr>
+        <tr id="10" style="None">
+          <td style="color: grey">10</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="11" style="color: red;">
+          <td style="color: grey">11</td>
+          <td style="text-align: right;">5.80</td>
+          <td style="text-align: right;">3864</td>
+          <td>from&nbsp;apps.common&nbsp;import&nbsp;address_type</td>
+        </tr>
+        <tr id="12" style="color: blue;">
+          <td style="color: grey">12</td>
+          <td style="text-align: right;">3.63</td>
+          <td style="text-align: right;">2416</td>
+          <td>from&nbsp;apps.common.coininfo&nbsp;import&nbsp;CoinInfo</td>
+        </tr>
+        <tr id="13" style="None">
+          <td style="color: grey">13</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="14" style="color: blue;">
+          <td style="color: grey">14</td>
+          <td style="text-align: right;">4.10</td>
+          <td style="text-align: right;">2732</td>
+          <td>from&nbsp;.common&nbsp;import&nbsp;ecdsa_hash_pubkey,&nbsp;encode_bech32_address</td>
+        </tr>
+        <tr id="15" style="color: red;">
+          <td style="color: grey">15</td>
+          <td style="text-align: right;">6.00</td>
+          <td style="text-align: right;">3996</td>
+          <td>from&nbsp;.multisig&nbsp;import&nbsp;multisig_get_pubkeys,&nbsp;multisig_pubkey_index</td>
+        </tr>
+        <tr id="16" style="color: red;">
+          <td style="color: grey">16</td>
+          <td style="text-align: right;">6.00</td>
+          <td style="text-align: right;">3996</td>
+          <td>from&nbsp;.scripts&nbsp;import&nbsp;output_script_native_segwit,&nbsp;write_output_script_multisig</td>
+        </tr>
+        <tr id="17" style="None">
+          <td style="color: grey">17</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="18" style="None">
+          <td style="color: grey">18</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>if&nbsp;TYPE_CHECKING:</td>
+        </tr>
+        <tr id="19" style="None">
+          <td style="color: grey">19</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;from&nbsp;trezor.crypto&nbsp;import&nbsp;bip32</td>
+        </tr>
+        <tr id="20" style="None">
+          <td style="color: grey">20</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="21" style="None">
+          <td style="color: grey">21</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="22" style="color: blue;">
+          <td style="color: grey">22</td>
+          <td style="text-align: right;">2.00</td>
+          <td style="text-align: right;">1332</td>
+          <td>def&nbsp;get_address(</td>
+        </tr>
+        <tr id="23" style="None">
+          <td style="color: grey">23</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;script_type:&nbsp;InputScriptType,</td>
+        </tr>
+        <tr id="24" style="None">
+          <td style="color: grey">24</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;coin:&nbsp;CoinInfo,</td>
+        </tr>
+        <tr id="25" style="None">
+          <td style="color: grey">25</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;node:&nbsp;bip32.HDNode,</td>
+        </tr>
+        <tr id="26" style="None">
+          <td style="color: grey">26</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;multisig:&nbsp;MultisigRedeemScriptType&nbsp;|&nbsp;None&nbsp;=&nbsp;None,</td>
+        </tr>
+        <tr id="27" style="None">
+          <td style="color: grey">27</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>)&nbsp;->&nbsp;str:</td>
+        </tr>
+        <tr id="28" style="None">
+          <td style="color: grey">28</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;multisig:</td>
+        </tr>
+        <tr id="29" style="None">
+          <td style="color: grey">29</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#&nbsp;Ensure&nbsp;that&nbsp;our&nbsp;public&nbsp;key&nbsp;is&nbsp;included&nbsp;in&nbsp;the&nbsp;multisig.</td>
+        </tr>
+        <tr id="30" style="color: blue;">
+          <td style="color: grey">30</td>
+          <td style="text-align: right;">2.00</td>
+          <td style="text-align: right;">514</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;multisig_pubkey_index(multisig,&nbsp;node.public_key())</td>
+        </tr>
+        <tr id="31" style="None">
+          <td style="color: grey">31</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="32" style="color: blue;">
+          <td style="color: grey">32</td>
+          <td style="text-align: right;">1.00</td>
+          <td style="text-align: right;">1422</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;script_type&nbsp;in&nbsp;(InputScriptType.SPENDADDRESS,&nbsp;InputScriptType.SPENDMULTISIG):</td>
+        </tr>
+        <tr id="33" style="None">
+          <td style="color: grey">33</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;multisig:&nbsp;&nbsp;#&nbsp;p2sh&nbsp;multisig</td>
+        </tr>
+        <tr id="34" style="None">
+          <td style="color: grey">34</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;coin.address_type_p2sh&nbsp;is&nbsp;None:</td>
+        </tr>
+        <tr id="35" style="None">
+          <td style="color: grey">35</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;raise&nbsp;wire.ProcessError("Multisig&nbsp;not&nbsp;enabled&nbsp;on&nbsp;this&nbsp;coin")</td>
+        </tr>
+        <tr id="36" style="None">
+          <td style="color: grey">36</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="37" style="color: blue;">
+          <td style="color: grey">37</td>
+          <td style="text-align: right;">1.00</td>
+          <td style="text-align: right;">180</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;pubkeys&nbsp;=&nbsp;multisig_get_pubkeys(multisig)</td>
+        </tr>
+        <tr id="38" style="None">
+          <td style="color: grey">38</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;address&nbsp;=&nbsp;address_multisig_p2sh(pubkeys,&nbsp;multisig.m,&nbsp;coin)</td>
+        </tr>
+        <tr id="39" style="None">
+          <td style="color: grey">39</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;coin.cashaddr_prefix&nbsp;is&nbsp;not&nbsp;None:</td>
+        </tr>
+        <tr id="40" style="None">
+          <td style="color: grey">40</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;address&nbsp;=&nbsp;address_to_cashaddr(address,&nbsp;coin)</td>
+        </tr>
+        <tr id="41" style="None">
+          <td style="color: grey">41</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;address</td>
+        </tr>
+        <tr id="42" style="None">
+          <td style="color: grey">42</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;script_type&nbsp;==&nbsp;InputScriptType.SPENDMULTISIG:</td>
+        </tr>
+        <tr id="43" style="None">
+          <td style="color: grey">43</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;raise&nbsp;wire.ProcessError("Multisig&nbsp;details&nbsp;required")</td>
+        </tr>
+        <tr id="44" style="None">
+          <td style="color: grey">44</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="45" style="None">
+          <td style="color: grey">45</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#&nbsp;p2pkh</td>
+        </tr>
+        <tr id="46" style="color: blue;">
+          <td style="color: grey">46</td>
+          <td style="text-align: right;">2.00</td>
+          <td style="text-align: right;">1418</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;address&nbsp;=&nbsp;node.address(coin.address_type)</td>
+        </tr>
+        <tr id="47" style="None">
+          <td style="color: grey">47</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;coin.cashaddr_prefix&nbsp;is&nbsp;not&nbsp;None:</td>
+        </tr>
+        <tr id="48" style="None">
+          <td style="color: grey">48</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;address&nbsp;=&nbsp;address_to_cashaddr(address,&nbsp;coin)</td>
+        </tr>
+        <tr id="49" style="None">
+          <td style="color: grey">49</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;address</td>
+        </tr>
+        <tr id="50" style="None">
+          <td style="color: grey">50</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="51" style="None">
+          <td style="color: grey">51</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;elif&nbsp;script_type&nbsp;==&nbsp;InputScriptType.SPENDWITNESS:&nbsp;&nbsp;#&nbsp;native&nbsp;p2wpkh&nbsp;or&nbsp;native&nbsp;p2wsh</td>
+        </tr>
+        <tr id="52" style="None">
+          <td style="color: grey">52</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;not&nbsp;coin.segwit&nbsp;or&nbsp;not&nbsp;coin.bech32_prefix:</td>
+        </tr>
+        <tr id="53" style="None">
+          <td style="color: grey">53</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;raise&nbsp;wire.ProcessError("Segwit&nbsp;not&nbsp;enabled&nbsp;on&nbsp;this&nbsp;coin")</td>
+        </tr>
+        <tr id="54" style="None">
+          <td style="color: grey">54</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#&nbsp;native&nbsp;p2wsh&nbsp;multisig</td>
+        </tr>
+        <tr id="55" style="None">
+          <td style="color: grey">55</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;multisig&nbsp;is&nbsp;not&nbsp;None:</td>
+        </tr>
+        <tr id="56" style="color: blue;">
+          <td style="color: grey">56</td>
+          <td style="text-align: right;">1.00</td>
+          <td style="text-align: right;">28</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;pubkeys&nbsp;=&nbsp;multisig_get_pubkeys(multisig)</td>
+        </tr>
+        <tr id="57" style="None">
+          <td style="color: grey">57</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;address_multisig_p2wsh(pubkeys,&nbsp;multisig.m,&nbsp;coin.bech32_prefix)</td>
+        </tr>
+        <tr id="58" style="None">
+          <td style="color: grey">58</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="59" style="None">
+          <td style="color: grey">59</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#&nbsp;native&nbsp;p2wpkh</td>
+        </tr>
+        <tr id="60" style="color: blue;">
+          <td style="color: grey">60</td>
+          <td style="text-align: right;">2.00</td>
+          <td style="text-align: right;">444</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;address_p2wpkh(node.public_key(),&nbsp;coin)</td>
+        </tr>
+        <tr id="61" style="None">
+          <td style="color: grey">61</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="62" style="None">
+          <td style="color: grey">62</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;elif&nbsp;script_type&nbsp;==&nbsp;InputScriptType.SPENDTAPROOT:&nbsp;&nbsp;#&nbsp;taproot</td>
+        </tr>
+        <tr id="63" style="None">
+          <td style="color: grey">63</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;not&nbsp;coin.taproot&nbsp;or&nbsp;not&nbsp;coin.bech32_prefix:</td>
+        </tr>
+        <tr id="64" style="None">
+          <td style="color: grey">64</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;raise&nbsp;wire.ProcessError("Taproot&nbsp;not&nbsp;enabled&nbsp;on&nbsp;this&nbsp;coin")</td>
+        </tr>
+        <tr id="65" style="None">
+          <td style="color: grey">65</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="66" style="None">
+          <td style="color: grey">66</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;multisig&nbsp;is&nbsp;not&nbsp;None:</td>
+        </tr>
+        <tr id="67" style="None">
+          <td style="color: grey">67</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;raise&nbsp;wire.ProcessError("Multisig&nbsp;not&nbsp;supported&nbsp;for&nbsp;taproot")</td>
+        </tr>
+        <tr id="68" style="None">
+          <td style="color: grey">68</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="69" style="color: blue;">
+          <td style="color: grey">69</td>
+          <td style="text-align: right;">2.00</td>
+          <td style="text-align: right;">240</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;address_p2tr(node.public_key(),&nbsp;coin)</td>
+        </tr>
+        <tr id="70" style="None">
+          <td style="color: grey">70</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="71" style="None">
+          <td style="color: grey">71</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;elif&nbsp;(</td>
+        </tr>
+        <tr id="72" style="None">
+          <td style="color: grey">72</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;script_type&nbsp;==&nbsp;InputScriptType.SPENDP2SHWITNESS</td>
+        </tr>
+        <tr id="73" style="None">
+          <td style="color: grey">73</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;):&nbsp;&nbsp;#&nbsp;p2wpkh&nbsp;or&nbsp;p2wsh&nbsp;nested&nbsp;in&nbsp;p2sh</td>
+        </tr>
+        <tr id="74" style="None">
+          <td style="color: grey">74</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;not&nbsp;coin.segwit&nbsp;or&nbsp;coin.address_type_p2sh&nbsp;is&nbsp;None:</td>
+        </tr>
+        <tr id="75" style="None">
+          <td style="color: grey">75</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;raise&nbsp;wire.ProcessError("Segwit&nbsp;not&nbsp;enabled&nbsp;on&nbsp;this&nbsp;coin")</td>
+        </tr>
+        <tr id="76" style="None">
+          <td style="color: grey">76</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#&nbsp;p2wsh&nbsp;multisig&nbsp;nested&nbsp;in&nbsp;p2sh</td>
+        </tr>
+        <tr id="77" style="None">
+          <td style="color: grey">77</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;multisig&nbsp;is&nbsp;not&nbsp;None:</td>
+        </tr>
+        <tr id="78" style="color: blue;">
+          <td style="color: grey">78</td>
+          <td style="text-align: right;">1.00</td>
+          <td style="text-align: right;">34</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;pubkeys&nbsp;=&nbsp;multisig_get_pubkeys(multisig)</td>
+        </tr>
+        <tr id="79" style="None">
+          <td style="color: grey">79</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;address_multisig_p2wsh_in_p2sh(pubkeys,&nbsp;multisig.m,&nbsp;coin)</td>
+        </tr>
+        <tr id="80" style="None">
+          <td style="color: grey">80</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="81" style="None">
+          <td style="color: grey">81</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#&nbsp;p2wpkh&nbsp;nested&nbsp;in&nbsp;p2sh</td>
+        </tr>
+        <tr id="82" style="color: blue;">
+          <td style="color: grey">82</td>
+          <td style="text-align: right;">2.00</td>
+          <td style="text-align: right;">258</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;address_p2wpkh_in_p2sh(node.public_key(),&nbsp;coin)</td>
+        </tr>
+        <tr id="83" style="None">
+          <td style="color: grey">83</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="84" style="None">
+          <td style="color: grey">84</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;else:</td>
+        </tr>
+        <tr id="85" style="None">
+          <td style="color: grey">85</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;raise&nbsp;wire.ProcessError("Invalid&nbsp;script&nbsp;type")</td>
+        </tr>
+        <tr id="86" style="None">
+          <td style="color: grey">86</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="87" style="None">
+          <td style="color: grey">87</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="88" style="color: blue;">
+          <td style="color: grey">88</td>
+          <td style="text-align: right;">1.00</td>
+          <td style="text-align: right;">666</td>
+          <td>def&nbsp;address_multisig_p2sh(pubkeys:&nbsp;list[bytes],&nbsp;m:&nbsp;int,&nbsp;coin:&nbsp;CoinInfo)&nbsp;->&nbsp;str:</td>
+        </tr>
+        <tr id="89" style="None">
+          <td style="color: grey">89</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;coin.address_type_p2sh&nbsp;is&nbsp;None:</td>
+        </tr>
+        <tr id="90" style="None">
+          <td style="color: grey">90</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;raise&nbsp;wire.ProcessError("Multisig&nbsp;not&nbsp;enabled&nbsp;on&nbsp;this&nbsp;coin")</td>
+        </tr>
+        <tr id="91" style="color: blue;">
+          <td style="color: grey">91</td>
+          <td style="text-align: right;">4.00</td>
+          <td style="text-align: right;">720</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;redeem_script&nbsp;=&nbsp;HashWriter(coin.script_hash())</td>
+        </tr>
+        <tr id="92" style="None">
+          <td style="color: grey">92</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;write_output_script_multisig(redeem_script,&nbsp;pubkeys,&nbsp;m)</td>
+        </tr>
+        <tr id="93" style="None">
+          <td style="color: grey">93</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;address_p2sh(redeem_script.get_digest(),&nbsp;coin)</td>
+        </tr>
+        <tr id="94" style="None">
+          <td style="color: grey">94</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="95" style="None">
+          <td style="color: grey">95</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="96" style="color: blue;">
+          <td style="color: grey">96</td>
+          <td style="text-align: right;">1.00</td>
+          <td style="text-align: right;">666</td>
+          <td>def&nbsp;address_multisig_p2wsh_in_p2sh(pubkeys:&nbsp;list[bytes],&nbsp;m:&nbsp;int,&nbsp;coin:&nbsp;CoinInfo)&nbsp;->&nbsp;str:</td>
+        </tr>
+        <tr id="97" style="None">
+          <td style="color: grey">97</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;coin.address_type_p2sh&nbsp;is&nbsp;None:</td>
+        </tr>
+        <tr id="98" style="None">
+          <td style="color: grey">98</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;raise&nbsp;wire.ProcessError("Multisig&nbsp;not&nbsp;enabled&nbsp;on&nbsp;this&nbsp;coin")</td>
+        </tr>
+        <tr id="99" style="color: blue;">
+          <td style="color: grey">99</td>
+          <td style="text-align: right;">3.00</td>
+          <td style="text-align: right;">102</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;witness_script_h&nbsp;=&nbsp;HashWriter(sha256())</td>
+        </tr>
+        <tr id="100" style="None">
+          <td style="color: grey">100</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;write_output_script_multisig(witness_script_h,&nbsp;pubkeys,&nbsp;m)</td>
+        </tr>
+        <tr id="101" style="None">
+          <td style="color: grey">101</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;address_p2wsh_in_p2sh(witness_script_h.get_digest(),&nbsp;coin)</td>
+        </tr>
+        <tr id="102" style="None">
+          <td style="color: grey">102</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="103" style="None">
+          <td style="color: grey">103</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="104" style="color: blue;">
+          <td style="color: grey">104</td>
+          <td style="text-align: right;">1.00</td>
+          <td style="text-align: right;">666</td>
+          <td>def&nbsp;address_multisig_p2wsh(pubkeys:&nbsp;list[bytes],&nbsp;m:&nbsp;int,&nbsp;hrp:&nbsp;str)&nbsp;->&nbsp;str:</td>
+        </tr>
+        <tr id="105" style="None">
+          <td style="color: grey">105</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;not&nbsp;hrp:</td>
+        </tr>
+        <tr id="106" style="None">
+          <td style="color: grey">106</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;raise&nbsp;wire.ProcessError("Multisig&nbsp;not&nbsp;enabled&nbsp;on&nbsp;this&nbsp;coin")</td>
+        </tr>
+        <tr id="107" style="color: blue;">
+          <td style="color: grey">107</td>
+          <td style="text-align: right;">3.00</td>
+          <td style="text-align: right;">84</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;witness_script_h&nbsp;=&nbsp;HashWriter(sha256())</td>
+        </tr>
+        <tr id="108" style="None">
+          <td style="color: grey">108</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;write_output_script_multisig(witness_script_h,&nbsp;pubkeys,&nbsp;m)</td>
+        </tr>
+        <tr id="109" style="None">
+          <td style="color: grey">109</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;address_p2wsh(witness_script_h.get_digest(),&nbsp;hrp)</td>
+        </tr>
+        <tr id="110" style="None">
+          <td style="color: grey">110</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="111" style="None">
+          <td style="color: grey">111</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="112" style="color: blue;">
+          <td style="color: grey">112</td>
+          <td style="text-align: right;">1.00</td>
+          <td style="text-align: right;">666</td>
+          <td>def&nbsp;address_pkh(pubkey:&nbsp;bytes,&nbsp;coin:&nbsp;CoinInfo)&nbsp;->&nbsp;str:</td>
+        </tr>
+        <tr id="113" style="None">
+          <td style="color: grey">113</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;s&nbsp;=&nbsp;address_type.tobytes(coin.address_type)&nbsp;+&nbsp;coin.script_hash(pubkey).digest()</td>
+        </tr>
+        <tr id="114" style="None">
+          <td style="color: grey">114</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;base58.encode_check(bytes(s),&nbsp;coin.b58_hash)</td>
+        </tr>
+        <tr id="115" style="None">
+          <td style="color: grey">115</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="116" style="None">
+          <td style="color: grey">116</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="117" style="color: blue;">
+          <td style="color: grey">117</td>
+          <td style="text-align: right;">2.00</td>
+          <td style="text-align: right;">1332</td>
+          <td>def&nbsp;address_p2sh(redeem_script_hash:&nbsp;bytes,&nbsp;coin:&nbsp;CoinInfo)&nbsp;->&nbsp;str:</td>
+        </tr>
+        <tr id="118" style="None">
+          <td style="color: grey">118</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;s&nbsp;=&nbsp;address_type.tobytes(coin.address_type_p2sh)&nbsp;+&nbsp;redeem_script_hash</td>
+        </tr>
+        <tr id="119" style="None">
+          <td style="color: grey">119</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;base58.encode_check(bytes(s),&nbsp;coin.b58_hash)</td>
+        </tr>
+        <tr id="120" style="None">
+          <td style="color: grey">120</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="121" style="None">
+          <td style="color: grey">121</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="122" style="color: blue;">
+          <td style="color: grey">122</td>
+          <td style="text-align: right;">1.00</td>
+          <td style="text-align: right;">666</td>
+          <td>def&nbsp;address_p2wpkh_in_p2sh(pubkey:&nbsp;bytes,&nbsp;coin:&nbsp;CoinInfo)&nbsp;->&nbsp;str:</td>
+        </tr>
+        <tr id="123" style="None">
+          <td style="color: grey">123</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;pubkey_hash&nbsp;=&nbsp;ecdsa_hash_pubkey(pubkey,&nbsp;coin)</td>
+        </tr>
+        <tr id="124" style="None">
+          <td style="color: grey">124</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;redeem_script&nbsp;=&nbsp;output_script_native_segwit(0,&nbsp;pubkey_hash)</td>
+        </tr>
+        <tr id="125" style="color: blue;">
+          <td style="color: grey">125</td>
+          <td style="text-align: right;">2.00</td>
+          <td style="text-align: right;">274</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;redeem_script_hash&nbsp;=&nbsp;coin.script_hash(redeem_script).digest()</td>
+        </tr>
+        <tr id="126" style="None">
+          <td style="color: grey">126</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;address_p2sh(redeem_script_hash,&nbsp;coin)</td>
+        </tr>
+        <tr id="127" style="None">
+          <td style="color: grey">127</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="128" style="None">
+          <td style="color: grey">128</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="129" style="color: blue;">
+          <td style="color: grey">129</td>
+          <td style="text-align: right;">1.00</td>
+          <td style="text-align: right;">666</td>
+          <td>def&nbsp;address_p2wsh_in_p2sh(witness_script_hash:&nbsp;bytes,&nbsp;coin:&nbsp;CoinInfo)&nbsp;->&nbsp;str:</td>
+        </tr>
+        <tr id="130" style="None">
+          <td style="color: grey">130</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;redeem_script&nbsp;=&nbsp;output_script_native_segwit(0,&nbsp;witness_script_hash)</td>
+        </tr>
+        <tr id="131" style="color: blue;">
+          <td style="color: grey">131</td>
+          <td style="text-align: right;">2.00</td>
+          <td style="text-align: right;">68</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;redeem_script_hash&nbsp;=&nbsp;coin.script_hash(redeem_script).digest()</td>
+        </tr>
+        <tr id="132" style="None">
+          <td style="color: grey">132</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;address_p2sh(redeem_script_hash,&nbsp;coin)</td>
+        </tr>
+        <tr id="133" style="None">
+          <td style="color: grey">133</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="134" style="None">
+          <td style="color: grey">134</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="135" style="color: blue;">
+          <td style="color: grey">135</td>
+          <td style="text-align: right;">1.00</td>
+          <td style="text-align: right;">666</td>
+          <td>def&nbsp;address_p2wpkh(pubkey:&nbsp;bytes,&nbsp;coin:&nbsp;CoinInfo)&nbsp;->&nbsp;str:</td>
+        </tr>
+        <tr id="136" style="None">
+          <td style="color: grey">136</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;assert&nbsp;coin.bech32_prefix&nbsp;is&nbsp;not&nbsp;None</td>
+        </tr>
+        <tr id="137" style="None">
+          <td style="color: grey">137</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;pubkeyhash&nbsp;=&nbsp;ecdsa_hash_pubkey(pubkey,&nbsp;coin)</td>
+        </tr>
+        <tr id="138" style="None">
+          <td style="color: grey">138</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;encode_bech32_address(coin.bech32_prefix,&nbsp;0,&nbsp;pubkeyhash)</td>
+        </tr>
+        <tr id="139" style="None">
+          <td style="color: grey">139</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="140" style="None">
+          <td style="color: grey">140</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="141" style="color: blue;">
+          <td style="color: grey">141</td>
+          <td style="text-align: right;">1.00</td>
+          <td style="text-align: right;">666</td>
+          <td>def&nbsp;address_p2wsh(witness_script_hash:&nbsp;bytes,&nbsp;hrp:&nbsp;str)&nbsp;->&nbsp;str:</td>
+        </tr>
+        <tr id="142" style="None">
+          <td style="color: grey">142</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;encode_bech32_address(hrp,&nbsp;0,&nbsp;witness_script_hash)</td>
+        </tr>
+        <tr id="143" style="None">
+          <td style="color: grey">143</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="144" style="None">
+          <td style="color: grey">144</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="145" style="color: blue;">
+          <td style="color: grey">145</td>
+          <td style="text-align: right;">1.00</td>
+          <td style="text-align: right;">666</td>
+          <td>def&nbsp;address_p2tr(pubkey:&nbsp;bytes,&nbsp;coin:&nbsp;CoinInfo)&nbsp;->&nbsp;str:</td>
+        </tr>
+        <tr id="146" style="None">
+          <td style="color: grey">146</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;assert&nbsp;coin.bech32_prefix&nbsp;is&nbsp;not&nbsp;None</td>
+        </tr>
+        <tr id="147" style="color: red;">
+          <td style="color: grey">147</td>
+          <td style="text-align: right;">5.00</td>
+          <td style="text-align: right;">600</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;output_pubkey&nbsp;=&nbsp;bip340.tweak_public_key(pubkey[1:])</td>
+        </tr>
+        <tr id="148" style="None">
+          <td style="color: grey">148</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;encode_bech32_address(coin.bech32_prefix,&nbsp;1,&nbsp;output_pubkey)</td>
+        </tr>
+        <tr id="149" style="None">
+          <td style="color: grey">149</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="150" style="None">
+          <td style="color: grey">150</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="151" style="color: blue;">
+          <td style="color: grey">151</td>
+          <td style="text-align: right;">2.00</td>
+          <td style="text-align: right;">1332</td>
+          <td>def&nbsp;address_to_cashaddr(address:&nbsp;str,&nbsp;coin:&nbsp;CoinInfo)&nbsp;->&nbsp;str:</td>
+        </tr>
+        <tr id="152" style="None">
+          <td style="color: grey">152</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;assert&nbsp;coin.cashaddr_prefix&nbsp;is&nbsp;not&nbsp;None</td>
+        </tr>
+        <tr id="153" style="None">
+          <td style="color: grey">153</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;raw&nbsp;=&nbsp;base58.decode_check(address,&nbsp;coin.b58_hash)</td>
+        </tr>
+        <tr id="154" style="color: blue;">
+          <td style="color: grey">154</td>
+          <td style="text-align: right;">3.00</td>
+          <td style="text-align: right;">129</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;version,&nbsp;data&nbsp;=&nbsp;raw[0],&nbsp;raw[1:]</td>
+        </tr>
+        <tr id="155" style="None">
+          <td style="color: grey">155</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;version&nbsp;==&nbsp;coin.address_type:</td>
+        </tr>
+        <tr id="156" style="None">
+          <td style="color: grey">156</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;version&nbsp;=&nbsp;cashaddr.ADDRESS_TYPE_P2KH</td>
+        </tr>
+        <tr id="157" style="None">
+          <td style="color: grey">157</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;elif&nbsp;version&nbsp;==&nbsp;coin.address_type_p2sh:</td>
+        </tr>
+        <tr id="158" style="None">
+          <td style="color: grey">158</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;version&nbsp;=&nbsp;cashaddr.ADDRESS_TYPE_P2SH</td>
+        </tr>
+        <tr id="159" style="None">
+          <td style="color: grey">159</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;else:</td>
+        </tr>
+        <tr id="160" style="None">
+          <td style="color: grey">160</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;raise&nbsp;ValueError("Unknown&nbsp;cashaddr&nbsp;address&nbsp;type")</td>
+        </tr>
+        <tr id="161" style="None">
+          <td style="color: grey">161</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;cashaddr.encode(coin.cashaddr_prefix,&nbsp;version,&nbsp;data)</td>
+        </tr>
+        <tr id="162" style="None">
+          <td style="color: grey">162</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="163" style="None">
+          <td style="color: grey">163</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="164" style="color: blue;">
+          <td style="color: grey">164</td>
+          <td style="text-align: right;">1.74</td>
+          <td style="text-align: right;">1156</td>
+          <td>def&nbsp;address_short(coin:&nbsp;CoinInfo,&nbsp;address:&nbsp;str)&nbsp;->&nbsp;str:</td>
+        </tr>
+        <tr id="165" style="None">
+          <td style="color: grey">165</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;coin.cashaddr_prefix&nbsp;is&nbsp;not&nbsp;None&nbsp;and&nbsp;address.startswith(</td>
+        </tr>
+        <tr id="166" style="color: blue;">
+          <td style="color: grey">166</td>
+          <td style="text-align: right;">2.00</td>
+          <td style="text-align: right;">42</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;coin.cashaddr_prefix&nbsp;+&nbsp;":"</td>
+        </tr>
+        <tr id="167" style="None">
+          <td style="color: grey">167</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;):</td>
+        </tr>
+        <tr id="168" style="color: blue;">
+          <td style="color: grey">168</td>
+          <td style="text-align: right;">3.10</td>
+          <td style="text-align: right;">62</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;address[len(coin.cashaddr_prefix)&nbsp;+&nbsp;1&nbsp;:]</td>
+        </tr>
+        <tr id="169" style="None">
+          <td style="color: grey">169</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;else:</td>
+        </tr>
+        <tr id="170" style="color: blue;">
+          <td style="color: grey">170</td>
+          <td style="text-align: right;">0.08</td>
+          <td style="text-align: right;">65</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;address</td>
+        </tr>
+      </tbody>
+    </table>
+  </body>
+</html>

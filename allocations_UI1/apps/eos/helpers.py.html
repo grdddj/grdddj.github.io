@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>apps/eos/helpers.py</title>
+    <meta charset="utf-8">
+    <style>body { font-size: 80%; }</style>
+  </head>
+  <body>
+    <table>
+      <thead>
+        <tr>
+          <th style="color: grey">#</th>
+          <th style="text-align: right;">avg</th>
+          <th style="text-align: right;">total</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr id="1" style="color: blue;">
+          <td style="color: grey">1</td>
+          <td style="text-align: right;">2.00</td>
+          <td style="text-align: right;">38</td>
+          <td>from&nbsp;trezor&nbsp;import&nbsp;wire</td>
+        </tr>
+        <tr id="2" style="color: red;">
+          <td style="color: grey">2</td>
+          <td style="text-align: right;">6.00</td>
+          <td style="text-align: right;">114</td>
+          <td>from&nbsp;trezor.crypto&nbsp;import&nbsp;base58</td>
+        </tr>
+        <tr id="3" style="color: blue;">
+          <td style="color: grey">3</td>
+          <td style="text-align: right;">1.00</td>
+          <td style="text-align: right;">19</td>
+          <td>from&nbsp;trezor.messages&nbsp;import&nbsp;EosAsset</td>
+        </tr>
+        <tr id="4" style="None">
+          <td style="color: grey">4</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="5" style="None">
+          <td style="color: grey">5</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="6" style="color: blue;">
+          <td style="color: grey">6</td>
+          <td style="text-align: right;">1.00</td>
+          <td style="text-align: right;">19</td>
+          <td>def&nbsp;base58_encode(prefix:&nbsp;str,&nbsp;sig_prefix:&nbsp;str,&nbsp;data:&nbsp;bytes)&nbsp;->&nbsp;str:</td>
+        </tr>
+        <tr id="7" style="color: blue;">
+          <td style="color: grey">7</td>
+          <td style="text-align: right;">2.39</td>
+          <td style="text-align: right;">55</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;b58&nbsp;=&nbsp;base58.encode(data&nbsp;+&nbsp;base58.ripemd160_32(data&nbsp;+&nbsp;sig_prefix.encode()))</td>
+        </tr>
+        <tr id="8" style="None">
+          <td style="color: grey">8</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;sig_prefix:</td>
+        </tr>
+        <tr id="9" style="color: red;">
+          <td style="color: grey">9</td>
+          <td style="text-align: right;">8.00</td>
+          <td style="text-align: right;">128</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;prefix&nbsp;+&nbsp;sig_prefix&nbsp;+&nbsp;"_"&nbsp;+&nbsp;b58</td>
+        </tr>
+        <tr id="10" style="None">
+          <td style="color: grey">10</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;else:</td>
+        </tr>
+        <tr id="11" style="color: blue;">
+          <td style="color: grey">11</td>
+          <td style="text-align: right;">2.00</td>
+          <td style="text-align: right;">14</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;prefix&nbsp;+&nbsp;b58</td>
+        </tr>
+        <tr id="12" style="None">
+          <td style="color: grey">12</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="13" style="None">
+          <td style="color: grey">13</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="14" style="color: blue;">
+          <td style="color: grey">14</td>
+          <td style="text-align: right;">2.00</td>
+          <td style="text-align: right;">38</td>
+          <td>def&nbsp;eos_name_to_string(value:&nbsp;int)&nbsp;->&nbsp;str:</td>
+        </tr>
+        <tr id="15" style="None">
+          <td style="color: grey">15</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;charmap&nbsp;=&nbsp;".12345abcdefghijklmnopqrstuvwxyz"</td>
+        </tr>
+        <tr id="16" style="None">
+          <td style="color: grey">16</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;tmp&nbsp;=&nbsp;value</td>
+        </tr>
+        <tr id="17" style="None">
+          <td style="color: grey">17</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;string&nbsp;=&nbsp;""</td>
+        </tr>
+        <tr id="18" style="None">
+          <td style="color: grey">18</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;for&nbsp;i&nbsp;in&nbsp;range(0,&nbsp;13):</td>
+        </tr>
+        <tr id="19" style="color: blue;">
+          <td style="color: grey">19</td>
+          <td style="text-align: right;">2.00</td>
+          <td style="text-align: right;">2808</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;c&nbsp;=&nbsp;charmap[tmp&nbsp;&&nbsp;(0x0F&nbsp;if&nbsp;i&nbsp;==&nbsp;0&nbsp;else&nbsp;0x1F)]</td>
+        </tr>
+        <tr id="20" style="color: blue;">
+          <td style="color: grey">20</td>
+          <td style="text-align: right;">1.78</td>
+          <td style="text-align: right;">2497</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;string&nbsp;=&nbsp;c&nbsp;+&nbsp;string</td>
+        </tr>
+        <tr id="21" style="color: blue;">
+          <td style="color: grey">21</td>
+          <td style="text-align: right;">1.86</td>
+          <td style="text-align: right;">2808</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;tmp&nbsp;>>=&nbsp;4&nbsp;if&nbsp;i&nbsp;==&nbsp;0&nbsp;else&nbsp;5</td>
+        </tr>
+        <tr id="22" style="None">
+          <td style="color: grey">22</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="23" style="color: blue;">
+          <td style="color: grey">23</td>
+          <td style="text-align: right;">3.53</td>
+          <td style="text-align: right;">381</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;string.rstrip(".")</td>
+        </tr>
+        <tr id="24" style="None">
+          <td style="color: grey">24</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="25" style="None">
+          <td style="color: grey">25</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="26" style="color: blue;">
+          <td style="color: grey">26</td>
+          <td style="text-align: right;">1.00</td>
+          <td style="text-align: right;">19</td>
+          <td>def&nbsp;eos_asset_to_string(asset:&nbsp;EosAsset)&nbsp;->&nbsp;str:</td>
+        </tr>
+        <tr id="27" style="color: blue;">
+          <td style="color: grey">27</td>
+          <td style="text-align: right;">3.00</td>
+          <td style="text-align: right;">24</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;symbol_bytes&nbsp;=&nbsp;int.to_bytes(asset.symbol,&nbsp;8,&nbsp;"big")</td>
+        </tr>
+        <tr id="28" style="None">
+          <td style="color: grey">28</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;precision&nbsp;=&nbsp;symbol_bytes[7]</td>
+        </tr>
+        <tr id="29" style="color: red;">
+          <td style="color: grey">29</td>
+          <td style="text-align: right;">8.00</td>
+          <td style="text-align: right;">64</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;symbol&nbsp;=&nbsp;bytes(reversed(symbol_bytes[:7])).rstrip(b"\x00").decode("ascii")</td>
+        </tr>
+        <tr id="30" style="None">
+          <td style="color: grey">30</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="31" style="color: red;">
+          <td style="color: grey">31</td>
+          <td style="text-align: right;">4.12</td>
+          <td style="text-align: right;">33</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;amount_digits&nbsp;=&nbsp;f"{asset.amount:0{precision}d}"</td>
+        </tr>
+        <tr id="32" style="None">
+          <td style="color: grey">32</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;precision&nbsp;>&nbsp;0:</td>
+        </tr>
+        <tr id="33" style="color: blue;">
+          <td style="color: grey">33</td>
+          <td style="text-align: right;">1.25</td>
+          <td style="text-align: right;">10</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;integer&nbsp;=&nbsp;amount_digits[:-precision]</td>
+        </tr>
+        <tr id="34" style="None">
+          <td style="color: grey">34</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;integer&nbsp;==&nbsp;"":</td>
+        </tr>
+        <tr id="35" style="None">
+          <td style="color: grey">35</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;integer&nbsp;=&nbsp;"0"</td>
+        </tr>
+        <tr id="36" style="color: blue;">
+          <td style="color: grey">36</td>
+          <td style="text-align: right;">3.00</td>
+          <td style="text-align: right;">24</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;fraction&nbsp;=&nbsp;amount_digits[-precision:]</td>
+        </tr>
+        <tr id="37" style="None">
+          <td style="color: grey">37</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="38" style="color: red;">
+          <td style="color: grey">38</td>
+          <td style="text-align: right;">8.25</td>
+          <td style="text-align: right;">66</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;f"{integer}.{fraction}&nbsp;{symbol}"</td>
+        </tr>
+        <tr id="39" style="None">
+          <td style="color: grey">39</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;else:</td>
+        </tr>
+        <tr id="40" style="None">
+          <td style="color: grey">40</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;f"{amount_digits}&nbsp;{symbol}"</td>
+        </tr>
+        <tr id="41" style="None">
+          <td style="color: grey">41</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="42" style="None">
+          <td style="color: grey">42</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="43" style="color: blue;">
+          <td style="color: grey">43</td>
+          <td style="text-align: right;">3.68</td>
+          <td style="text-align: right;">70</td>
+          <td>def&nbsp;public_key_to_wif(pub_key:&nbsp;bytes)&nbsp;->&nbsp;str:</td>
+        </tr>
+        <tr id="44" style="None">
+          <td style="color: grey">44</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;pub_key[0]&nbsp;==&nbsp;0x04&nbsp;and&nbsp;len(pub_key)&nbsp;==&nbsp;65:</td>
+        </tr>
+        <tr id="45" style="None">
+          <td style="color: grey">45</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;head&nbsp;=&nbsp;b"\x03"&nbsp;if&nbsp;pub_key[64]&nbsp;&&nbsp;0x01&nbsp;else&nbsp;b"\x02"</td>
+        </tr>
+        <tr id="46" style="None">
+          <td style="color: grey">46</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;compressed_pub_key&nbsp;=&nbsp;head&nbsp;+&nbsp;pub_key[1:33]</td>
+        </tr>
+        <tr id="47" style="color: blue;">
+          <td style="color: grey">47</td>
+          <td style="text-align: right;">2.00</td>
+          <td style="text-align: right;">14</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;elif&nbsp;pub_key[0]&nbsp;in&nbsp;[0x02,&nbsp;0x03]&nbsp;and&nbsp;len(pub_key)&nbsp;==&nbsp;33:</td>
+        </tr>
+        <tr id="48" style="None">
+          <td style="color: grey">48</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;compressed_pub_key&nbsp;=&nbsp;pub_key</td>
+        </tr>
+        <tr id="49" style="None">
+          <td style="color: grey">49</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;else:</td>
+        </tr>
+        <tr id="50" style="None">
+          <td style="color: grey">50</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;raise&nbsp;wire.DataError("invalid&nbsp;public&nbsp;key")</td>
+        </tr>
+        <tr id="51" style="None">
+          <td style="color: grey">51</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;base58_encode("EOS",&nbsp;"",&nbsp;compressed_pub_key)</td>
+        </tr>
+      </tbody>
+    </table>
+  </body>
+</html>

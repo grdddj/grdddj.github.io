@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>apps/webauthn/common.py</title>
+    <meta charset="utf-8">
+    <style>body { font-size: 80%; }</style>
+  </head>
+  <body>
+    <table>
+      <thead>
+        <tr>
+          <th style="color: grey">#</th>
+          <th style="text-align: right;">avg</th>
+          <th style="text-align: right;">total</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr id="1" style="color: red;">
+          <td style="color: grey">1</td>
+          <td style="text-align: right;">2.00</td>
+          <td style="text-align: right;">23800</td>
+          <td>from&nbsp;micropython&nbsp;import&nbsp;const</td>
+        </tr>
+        <tr id="2" style="None">
+          <td style="color: grey">2</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="3" style="None">
+          <td style="color: grey">3</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>#&nbsp;COSE&nbsp;Key&nbsp;Object&nbsp;Parameter&nbsp;labels</td>
+        </tr>
+        <tr id="4" style="None">
+          <td style="color: grey">4</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>COSE_KEY_KTY&nbsp;=&nbsp;const(1)&nbsp;&nbsp;#&nbsp;identification&nbsp;of&nbsp;the&nbsp;key&nbsp;type</td>
+        </tr>
+        <tr id="5" style="color: red;">
+          <td style="color: grey">5</td>
+          <td style="text-align: right;">1.00</td>
+          <td style="text-align: right;">11900</td>
+          <td>COSE_KEY_ALG&nbsp;=&nbsp;const(3)&nbsp;&nbsp;#&nbsp;algorithm&nbsp;to&nbsp;be&nbsp;used&nbsp;with&nbsp;the&nbsp;key</td>
+        </tr>
+        <tr id="6" style="None">
+          <td style="color: grey">6</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>COSE_KEY_CRV&nbsp;=&nbsp;const(-1)&nbsp;&nbsp;#&nbsp;elliptic&nbsp;curve&nbsp;identifier</td>
+        </tr>
+        <tr id="7" style="color: red;">
+          <td style="color: grey">7</td>
+          <td style="text-align: right;">1.00</td>
+          <td style="text-align: right;">11900</td>
+          <td>COSE_KEY_X&nbsp;=&nbsp;const(-2)&nbsp;&nbsp;#&nbsp;x&nbsp;coordinate&nbsp;of&nbsp;the&nbsp;public&nbsp;key&nbsp;or&nbsp;encoded&nbsp;public&nbsp;key</td>
+        </tr>
+        <tr id="8" style="None">
+          <td style="color: grey">8</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>COSE_KEY_Y&nbsp;=&nbsp;const(-3)&nbsp;&nbsp;#&nbsp;y&nbsp;coordinate&nbsp;of&nbsp;the&nbsp;public&nbsp;key</td>
+        </tr>
+        <tr id="9" style="None">
+          <td style="color: grey">9</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="10" style="None">
+          <td style="color: grey">10</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>#&nbsp;COSE&nbsp;Algorithm&nbsp;values</td>
+        </tr>
+        <tr id="11" style="color: red;">
+          <td style="color: grey">11</td>
+          <td style="text-align: right;">1.00</td>
+          <td style="text-align: right;">11900</td>
+          <td>COSE_ALG_ES256&nbsp;=&nbsp;const(-7)&nbsp;&nbsp;#&nbsp;ECDSA&nbsp;with&nbsp;SHA-256</td>
+        </tr>
+        <tr id="12" style="None">
+          <td style="color: grey">12</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>COSE_ALG_EDDSA&nbsp;=&nbsp;const(-8)&nbsp;&nbsp;#&nbsp;EdDSA</td>
+        </tr>
+        <tr id="13" style="color: red;">
+          <td style="color: grey">13</td>
+          <td style="text-align: right;">1.00</td>
+          <td style="text-align: right;">11900</td>
+          <td>COSE_ALG_ECDH_ES_HKDF_256&nbsp;=&nbsp;const(-25)&nbsp;&nbsp;#&nbsp;ephemeral-static&nbsp;ECDH&nbsp;with&nbsp;HKDF&nbsp;SHA-256</td>
+        </tr>
+        <tr id="14" style="None">
+          <td style="color: grey">14</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="15" style="None">
+          <td style="color: grey">15</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>#&nbsp;COSE&nbsp;Key&nbsp;Type&nbsp;values</td>
+        </tr>
+        <tr id="16" style="None">
+          <td style="color: grey">16</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>COSE_KEYTYPE_OKP&nbsp;=&nbsp;const(1)&nbsp;&nbsp;#&nbsp;octet&nbsp;key&nbsp;pair</td>
+        </tr>
+        <tr id="17" style="color: blue;">
+          <td style="color: grey">17</td>
+          <td style="text-align: right;">1.00</td>
+          <td style="text-align: right;">11900</td>
+          <td>COSE_KEYTYPE_EC2&nbsp;=&nbsp;const(2)&nbsp;&nbsp;#&nbsp;elliptic&nbsp;curve&nbsp;keys&nbsp;with&nbsp;x-&nbsp;and&nbsp;y-coordinate&nbsp;pair</td>
+        </tr>
+        <tr id="18" style="None">
+          <td style="color: grey">18</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="19" style="None">
+          <td style="color: grey">19</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>#&nbsp;COSE&nbsp;Elliptic&nbsp;Curve&nbsp;values</td>
+        </tr>
+        <tr id="20" style="None">
+          <td style="color: grey">20</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>COSE_CURVE_P256&nbsp;=&nbsp;const(1)&nbsp;&nbsp;#&nbsp;NIST&nbsp;P-256&nbsp;curve</td>
+        </tr>
+        <tr id="21" style="color: blue;">
+          <td style="color: grey">21</td>
+          <td style="text-align: right;">1.00</td>
+          <td style="text-align: right;">11900</td>
+          <td>COSE_CURVE_ED25519&nbsp;=&nbsp;const(6)&nbsp;&nbsp;#&nbsp;Ed25519&nbsp;curve</td>
+        </tr>
+      </tbody>
+    </table>
+  </body>
+</html>

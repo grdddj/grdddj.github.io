@@ -1,0 +1,736 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>apps/stellar/sign_tx.py</title>
+    <meta charset="utf-8">
+    <style>body { font-size: 80%; }</style>
+  </head>
+  <body>
+    <table>
+      <thead>
+        <tr>
+          <th style="color: grey">#</th>
+          <th style="text-align: right;">avg</th>
+          <th style="text-align: right;">total</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr id="1" style="None">
+          <td style="color: grey">1</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>from&nbsp;typing&nbsp;import&nbsp;TYPE_CHECKING</td>
+        </tr>
+        <tr id="2" style="color: blue;">
+          <td style="color: grey">2</td>
+          <td style="text-align: right;">2.00</td>
+          <td style="text-align: right;">58</td>
+          <td>from&nbsp;ubinascii&nbsp;import&nbsp;hexlify</td>
+        </tr>
+        <tr id="3" style="None">
+          <td style="color: grey">3</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="4" style="color: blue;">
+          <td style="color: grey">4</td>
+          <td style="text-align: right;">1.00</td>
+          <td style="text-align: right;">29</td>
+          <td>from&nbsp;trezor.crypto.curve&nbsp;import&nbsp;ed25519</td>
+        </tr>
+        <tr id="5" style="color: blue;">
+          <td style="color: grey">5</td>
+          <td style="text-align: right;">2.00</td>
+          <td style="text-align: right;">58</td>
+          <td>from&nbsp;trezor.crypto.hashlib&nbsp;import&nbsp;sha256</td>
+        </tr>
+        <tr id="6" style="color: red;">
+          <td style="color: grey">6</td>
+          <td style="text-align: right;">6.00</td>
+          <td style="text-align: right;">174</td>
+          <td>from&nbsp;trezor.enums&nbsp;import&nbsp;StellarMemoType</td>
+        </tr>
+        <tr id="7" style="color: blue;">
+          <td style="color: grey">7</td>
+          <td style="text-align: right;">1.00</td>
+          <td style="text-align: right;">29</td>
+          <td>from&nbsp;trezor.messages&nbsp;import&nbsp;StellarSignedTx,&nbsp;StellarSignTx,&nbsp;StellarTxOpRequest</td>
+        </tr>
+        <tr id="8" style="color: blue;">
+          <td style="color: grey">8</td>
+          <td style="text-align: right;">2.00</td>
+          <td style="text-align: right;">58</td>
+          <td>from&nbsp;trezor.wire&nbsp;import&nbsp;DataError,&nbsp;ProcessError</td>
+        </tr>
+        <tr id="9" style="None">
+          <td style="color: grey">9</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="10" style="color: blue;">
+          <td style="color: grey">10</td>
+          <td style="text-align: right;">2.00</td>
+          <td style="text-align: right;">58</td>
+          <td>from&nbsp;apps.common&nbsp;import&nbsp;paths,&nbsp;seed</td>
+        </tr>
+        <tr id="11" style="color: red;">
+          <td style="color: grey">11</td>
+          <td style="text-align: right;">6.00</td>
+          <td style="text-align: right;">174</td>
+          <td>from&nbsp;apps.common.keychain&nbsp;import&nbsp;auto_keychain</td>
+        </tr>
+        <tr id="12" style="None">
+          <td style="color: grey">12</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="13" style="color: red;">
+          <td style="color: grey">13</td>
+          <td style="text-align: right;">6.00</td>
+          <td style="text-align: right;">174</td>
+          <td>from&nbsp;.&nbsp;import&nbsp;consts,&nbsp;helpers,&nbsp;layout,&nbsp;writers</td>
+        </tr>
+        <tr id="14" style="color: red;">
+          <td style="color: grey">14</td>
+          <td style="text-align: right;">9.00</td>
+          <td style="text-align: right;">261</td>
+          <td>from&nbsp;.operations&nbsp;import&nbsp;process_operation</td>
+        </tr>
+        <tr id="15" style="None">
+          <td style="color: grey">15</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="16" style="None">
+          <td style="color: grey">16</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>if&nbsp;TYPE_CHECKING:</td>
+        </tr>
+        <tr id="17" style="None">
+          <td style="color: grey">17</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;from&nbsp;trezor.wire&nbsp;import&nbsp;Context</td>
+        </tr>
+        <tr id="18" style="None">
+          <td style="color: grey">18</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;from&nbsp;trezor.utils&nbsp;import&nbsp;Writer</td>
+        </tr>
+        <tr id="19" style="None">
+          <td style="color: grey">19</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="20" style="None">
+          <td style="color: grey">20</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;from&nbsp;apps.common.keychain&nbsp;import&nbsp;Keychain</td>
+        </tr>
+        <tr id="21" style="None">
+          <td style="color: grey">21</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="22" style="None">
+          <td style="color: grey">22</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="23" style="None">
+          <td style="color: grey">23</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>@auto_keychain(__name__)</td>
+        </tr>
+        <tr id="24" style="None">
+          <td style="color: grey">24</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>async&nbsp;def&nbsp;sign_tx(</td>
+        </tr>
+        <tr id="25" style="None">
+          <td style="color: grey">25</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;ctx:&nbsp;Context,&nbsp;msg:&nbsp;StellarSignTx,&nbsp;keychain:&nbsp;Keychain</td>
+        </tr>
+        <tr id="26" style="None">
+          <td style="color: grey">26</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>)&nbsp;->&nbsp;StellarSignedTx:</td>
+        </tr>
+        <tr id="27" style="color: blue;">
+          <td style="color: grey">27</td>
+          <td style="text-align: right;">1.00</td>
+          <td style="text-align: right;">29</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;await&nbsp;paths.validate_path(ctx,&nbsp;keychain,&nbsp;msg.address_n)</td>
+        </tr>
+        <tr id="28" style="None">
+          <td style="color: grey">28</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="29" style="color: blue;">
+          <td style="color: grey">29</td>
+          <td style="text-align: right;">1.00</td>
+          <td style="text-align: right;">29</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;node&nbsp;=&nbsp;keychain.derive(msg.address_n)</td>
+        </tr>
+        <tr id="30" style="color: blue;">
+          <td style="color: grey">30</td>
+          <td style="text-align: right;">2.00</td>
+          <td style="text-align: right;">58</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;pubkey&nbsp;=&nbsp;seed.remove_ed25519_prefix(node.public_key())</td>
+        </tr>
+        <tr id="31" style="None">
+          <td style="color: grey">31</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="32" style="None">
+          <td style="color: grey">32</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;msg.num_operations&nbsp;==&nbsp;0:</td>
+        </tr>
+        <tr id="33" style="None">
+          <td style="color: grey">33</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;raise&nbsp;ProcessError("Stellar:&nbsp;At&nbsp;least&nbsp;one&nbsp;operation&nbsp;is&nbsp;required")</td>
+        </tr>
+        <tr id="34" style="None">
+          <td style="color: grey">34</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="35" style="color: blue;">
+          <td style="color: grey">35</td>
+          <td style="text-align: right;">1.00</td>
+          <td style="text-align: right;">29</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;w&nbsp;=&nbsp;bytearray()</td>
+        </tr>
+        <tr id="36" style="color: blue;">
+          <td style="color: grey">36</td>
+          <td style="text-align: right;">0.12</td>
+          <td style="text-align: right;">29</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;await&nbsp;_init(ctx,&nbsp;w,&nbsp;pubkey,&nbsp;msg)</td>
+        </tr>
+        <tr id="37" style="color: blue;">
+          <td style="color: grey">37</td>
+          <td style="text-align: right;">0.25</td>
+          <td style="text-align: right;">29</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;await&nbsp;_timebounds(ctx,&nbsp;w,&nbsp;msg.timebounds_start,&nbsp;msg.timebounds_end)</td>
+        </tr>
+        <tr id="38" style="color: blue;">
+          <td style="color: grey">38</td>
+          <td style="text-align: right;">0.25</td>
+          <td style="text-align: right;">29</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;await&nbsp;_memo(ctx,&nbsp;w,&nbsp;msg)</td>
+        </tr>
+        <tr id="39" style="color: blue;">
+          <td style="color: grey">39</td>
+          <td style="text-align: right;">0.09</td>
+          <td style="text-align: right;">29</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;await&nbsp;_operations(ctx,&nbsp;w,&nbsp;msg.num_operations)</td>
+        </tr>
+        <tr id="40" style="color: blue;">
+          <td style="color: grey">40</td>
+          <td style="text-align: right;">0.25</td>
+          <td style="text-align: right;">29</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;await&nbsp;_final(ctx,&nbsp;w,&nbsp;msg)</td>
+        </tr>
+        <tr id="41" style="None">
+          <td style="color: grey">41</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="42" style="None">
+          <td style="color: grey">42</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;#&nbsp;sign</td>
+        </tr>
+        <tr id="43" style="color: blue;">
+          <td style="color: grey">43</td>
+          <td style="text-align: right;">3.00</td>
+          <td style="text-align: right;">87</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;digest&nbsp;=&nbsp;sha256(w).digest()</td>
+        </tr>
+        <tr id="44" style="color: blue;">
+          <td style="color: grey">44</td>
+          <td style="text-align: right;">4.00</td>
+          <td style="text-align: right;">116</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;signature&nbsp;=&nbsp;ed25519.sign(node.private_key(),&nbsp;digest)</td>
+        </tr>
+        <tr id="45" style="None">
+          <td style="color: grey">45</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="46" style="None">
+          <td style="color: grey">46</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;#&nbsp;Add&nbsp;the&nbsp;public&nbsp;key&nbsp;for&nbsp;verification&nbsp;that&nbsp;the&nbsp;right&nbsp;account&nbsp;was&nbsp;used&nbsp;for&nbsp;signing</td>
+        </tr>
+        <tr id="47" style="color: blue;">
+          <td style="color: grey">47</td>
+          <td style="text-align: right;">2.00</td>
+          <td style="text-align: right;">58</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;StellarSignedTx(public_key=pubkey,&nbsp;signature=signature)</td>
+        </tr>
+        <tr id="48" style="None">
+          <td style="color: grey">48</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="49" style="None">
+          <td style="color: grey">49</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="50" style="color: blue;">
+          <td style="color: grey">50</td>
+          <td style="text-align: right;">1.00</td>
+          <td style="text-align: right;">29</td>
+          <td>async&nbsp;def&nbsp;_final(ctx:&nbsp;Context,&nbsp;w:&nbsp;Writer,&nbsp;msg:&nbsp;StellarSignTx)&nbsp;->&nbsp;None:</td>
+        </tr>
+        <tr id="51" style="None">
+          <td style="color: grey">51</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;#&nbsp;4&nbsp;null&nbsp;bytes&nbsp;representing&nbsp;a&nbsp;(currently&nbsp;unused)&nbsp;empty&nbsp;union</td>
+        </tr>
+        <tr id="52" style="None">
+          <td style="color: grey">52</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;writers.write_uint32(w,&nbsp;0)</td>
+        </tr>
+        <tr id="53" style="None">
+          <td style="color: grey">53</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;#&nbsp;final&nbsp;confirm</td>
+        </tr>
+        <tr id="54" style="color: blue;">
+          <td style="color: grey">54</td>
+          <td style="text-align: right;">0.25</td>
+          <td style="text-align: right;">29</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;await&nbsp;layout.require_confirm_final(ctx,&nbsp;msg.fee,&nbsp;msg.num_operations)</td>
+        </tr>
+        <tr id="55" style="None">
+          <td style="color: grey">55</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="56" style="None">
+          <td style="color: grey">56</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="57" style="color: blue;">
+          <td style="color: grey">57</td>
+          <td style="text-align: right;">1.00</td>
+          <td style="text-align: right;">29</td>
+          <td>async&nbsp;def&nbsp;_init(ctx:&nbsp;Context,&nbsp;w:&nbsp;Writer,&nbsp;pubkey:&nbsp;bytes,&nbsp;msg:&nbsp;StellarSignTx)&nbsp;->&nbsp;None:</td>
+        </tr>
+        <tr id="58" style="color: red;">
+          <td style="color: grey">58</td>
+          <td style="text-align: right;">4.00</td>
+          <td style="text-align: right;">116</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;network_passphrase_hash&nbsp;=&nbsp;sha256(msg.network_passphrase.encode()).digest()</td>
+        </tr>
+        <tr id="59" style="None">
+          <td style="color: grey">59</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;writers.write_bytes_fixed(w,&nbsp;network_passphrase_hash,&nbsp;32)</td>
+        </tr>
+        <tr id="60" style="None">
+          <td style="color: grey">60</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;writers.write_bytes_fixed(w,&nbsp;consts.TX_TYPE,&nbsp;4)</td>
+        </tr>
+        <tr id="61" style="None">
+          <td style="color: grey">61</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="62" style="None">
+          <td style="color: grey">62</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;address&nbsp;=&nbsp;helpers.address_from_public_key(pubkey)</td>
+        </tr>
+        <tr id="63" style="None">
+          <td style="color: grey">63</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;accounts_match&nbsp;=&nbsp;msg.source_account&nbsp;==&nbsp;address</td>
+        </tr>
+        <tr id="64" style="None">
+          <td style="color: grey">64</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="65" style="None">
+          <td style="color: grey">65</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;writers.write_pubkey(w,&nbsp;msg.source_account)</td>
+        </tr>
+        <tr id="66" style="None">
+          <td style="color: grey">66</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;writers.write_uint32(w,&nbsp;msg.fee)</td>
+        </tr>
+        <tr id="67" style="None">
+          <td style="color: grey">67</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;writers.write_uint64(w,&nbsp;msg.sequence_number)</td>
+        </tr>
+        <tr id="68" style="None">
+          <td style="color: grey">68</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="69" style="None">
+          <td style="color: grey">69</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;#&nbsp;confirm&nbsp;init</td>
+        </tr>
+        <tr id="70" style="None">
+          <td style="color: grey">70</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;await&nbsp;layout.require_confirm_init(</td>
+        </tr>
+        <tr id="71" style="color: blue;">
+          <td style="color: grey">71</td>
+          <td style="text-align: right;">0.12</td>
+          <td style="text-align: right;">29</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ctx,&nbsp;msg.source_account,&nbsp;msg.network_passphrase,&nbsp;accounts_match</td>
+        </tr>
+        <tr id="72" style="None">
+          <td style="color: grey">72</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;)</td>
+        </tr>
+        <tr id="73" style="None">
+          <td style="color: grey">73</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="74" style="None">
+          <td style="color: grey">74</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="75" style="color: blue;">
+          <td style="color: grey">75</td>
+          <td style="text-align: right;">1.00</td>
+          <td style="text-align: right;">29</td>
+          <td>async&nbsp;def&nbsp;_timebounds(ctx:&nbsp;Context,&nbsp;w:&nbsp;Writer,&nbsp;start:&nbsp;int,&nbsp;end:&nbsp;int)&nbsp;->&nbsp;None:</td>
+        </tr>
+        <tr id="76" style="None">
+          <td style="color: grey">76</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;#&nbsp;confirm&nbsp;dialog</td>
+        </tr>
+        <tr id="77" style="color: blue;">
+          <td style="color: grey">77</td>
+          <td style="text-align: right;">0.25</td>
+          <td style="text-align: right;">29</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;await&nbsp;layout.require_confirm_timebounds(ctx,&nbsp;start,&nbsp;end)</td>
+        </tr>
+        <tr id="78" style="None">
+          <td style="color: grey">78</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="79" style="None">
+          <td style="color: grey">79</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;#&nbsp;timebounds&nbsp;are&nbsp;sent&nbsp;as&nbsp;uint32s&nbsp;since&nbsp;that's&nbsp;all&nbsp;we&nbsp;can&nbsp;display,&nbsp;but&nbsp;they&nbsp;must&nbsp;be&nbsp;hashed&nbsp;as&nbsp;64bit</td>
+        </tr>
+        <tr id="80" style="None">
+          <td style="color: grey">80</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;writers.write_bool(w,&nbsp;True)</td>
+        </tr>
+        <tr id="81" style="None">
+          <td style="color: grey">81</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;writers.write_uint64(w,&nbsp;start)</td>
+        </tr>
+        <tr id="82" style="None">
+          <td style="color: grey">82</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;writers.write_uint64(w,&nbsp;end)</td>
+        </tr>
+        <tr id="83" style="None">
+          <td style="color: grey">83</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="84" style="None">
+          <td style="color: grey">84</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="85" style="color: blue;">
+          <td style="color: grey">85</td>
+          <td style="text-align: right;">2.00</td>
+          <td style="text-align: right;">58</td>
+          <td>async&nbsp;def&nbsp;_operations(ctx:&nbsp;Context,&nbsp;w:&nbsp;Writer,&nbsp;num_operations:&nbsp;int)&nbsp;->&nbsp;None:</td>
+        </tr>
+        <tr id="86" style="None">
+          <td style="color: grey">86</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;writers.write_uint32(w,&nbsp;num_operations)</td>
+        </tr>
+        <tr id="87" style="None">
+          <td style="color: grey">87</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;for&nbsp;_&nbsp;in&nbsp;range(num_operations):</td>
+        </tr>
+        <tr id="88" style="color: blue;">
+          <td style="color: grey">88</td>
+          <td style="text-align: right;">0.70</td>
+          <td style="text-align: right;">93</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;op&nbsp;=&nbsp;await&nbsp;ctx.call_any(StellarTxOpRequest(),&nbsp;*consts.op_wire_types)</td>
+        </tr>
+        <tr id="89" style="color: blue;">
+          <td style="color: grey">89</td>
+          <td style="text-align: right;">0.13</td>
+          <td style="text-align: right;">31</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;await&nbsp;process_operation(ctx,&nbsp;w,&nbsp;op)&nbsp;&nbsp;#&nbsp;type:&nbsp;ignore&nbsp;[Argument&nbsp;of&nbsp;type&nbsp;"MessageType"&nbsp;cannot&nbsp;be&nbsp;assigned&nbsp;to&nbsp;parameter&nbsp;"op"&nbsp;of&nbsp;type&nbsp;"StellarMessageType"&nbsp;in&nbsp;function&nbsp;"process_operation"]</td>
+        </tr>
+        <tr id="90" style="None">
+          <td style="color: grey">90</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="91" style="None">
+          <td style="color: grey">91</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="92" style="color: blue;">
+          <td style="color: grey">92</td>
+          <td style="text-align: right;">2.00</td>
+          <td style="text-align: right;">58</td>
+          <td>async&nbsp;def&nbsp;_memo(ctx:&nbsp;Context,&nbsp;w:&nbsp;Writer,&nbsp;msg:&nbsp;StellarSignTx)&nbsp;->&nbsp;None:</td>
+        </tr>
+        <tr id="93" style="None">
+          <td style="color: grey">93</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;writers.write_uint32(w,&nbsp;msg.memo_type)</td>
+        </tr>
+        <tr id="94" style="None">
+          <td style="color: grey">94</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;msg.memo_type&nbsp;==&nbsp;StellarMemoType.NONE:</td>
+        </tr>
+        <tr id="95" style="None">
+          <td style="color: grey">95</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#&nbsp;nothing&nbsp;is&nbsp;serialized</td>
+        </tr>
+        <tr id="96" style="None">
+          <td style="color: grey">96</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;memo_confirm_text&nbsp;=&nbsp;""</td>
+        </tr>
+        <tr id="97" style="None">
+          <td style="color: grey">97</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;elif&nbsp;msg.memo_type&nbsp;==&nbsp;StellarMemoType.TEXT:</td>
+        </tr>
+        <tr id="98" style="None">
+          <td style="color: grey">98</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#&nbsp;Text:&nbsp;4&nbsp;bytes&nbsp;(size)&nbsp;+&nbsp;up&nbsp;to&nbsp;28&nbsp;bytes</td>
+        </tr>
+        <tr id="99" style="None">
+          <td style="color: grey">99</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;msg.memo_text&nbsp;is&nbsp;None:</td>
+        </tr>
+        <tr id="100" style="None">
+          <td style="color: grey">100</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;raise&nbsp;DataError("Stellar:&nbsp;Missing&nbsp;memo&nbsp;text")</td>
+        </tr>
+        <tr id="101" style="None">
+          <td style="color: grey">101</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;len(msg.memo_text)&nbsp;>&nbsp;28:</td>
+        </tr>
+        <tr id="102" style="None">
+          <td style="color: grey">102</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;raise&nbsp;ProcessError("Stellar:&nbsp;max&nbsp;length&nbsp;of&nbsp;a&nbsp;memo&nbsp;text&nbsp;is&nbsp;28&nbsp;bytes")</td>
+        </tr>
+        <tr id="103" style="None">
+          <td style="color: grey">103</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;writers.write_string(w,&nbsp;msg.memo_text)</td>
+        </tr>
+        <tr id="104" style="None">
+          <td style="color: grey">104</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;memo_confirm_text&nbsp;=&nbsp;msg.memo_text</td>
+        </tr>
+        <tr id="105" style="None">
+          <td style="color: grey">105</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;elif&nbsp;msg.memo_type&nbsp;==&nbsp;StellarMemoType.ID:</td>
+        </tr>
+        <tr id="106" style="None">
+          <td style="color: grey">106</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#&nbsp;ID:&nbsp;64&nbsp;bit&nbsp;unsigned&nbsp;integer</td>
+        </tr>
+        <tr id="107" style="None">
+          <td style="color: grey">107</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;msg.memo_id&nbsp;is&nbsp;None:</td>
+        </tr>
+        <tr id="108" style="None">
+          <td style="color: grey">108</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;raise&nbsp;DataError("Stellar:&nbsp;Missing&nbsp;memo&nbsp;id")</td>
+        </tr>
+        <tr id="109" style="None">
+          <td style="color: grey">109</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;writers.write_uint64(w,&nbsp;msg.memo_id)</td>
+        </tr>
+        <tr id="110" style="color: blue;">
+          <td style="color: grey">110</td>
+          <td style="text-align: right;">3.00</td>
+          <td style="text-align: right;">3</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;memo_confirm_text&nbsp;=&nbsp;str(msg.memo_id)</td>
+        </tr>
+        <tr id="111" style="color: blue;">
+          <td style="color: grey">111</td>
+          <td style="text-align: right;">1.00</td>
+          <td style="text-align: right;">2</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;elif&nbsp;msg.memo_type&nbsp;in&nbsp;(StellarMemoType.HASH,&nbsp;StellarMemoType.RETURN):</td>
+        </tr>
+        <tr id="112" style="None">
+          <td style="color: grey">112</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#&nbsp;Hash/Return:&nbsp;32&nbsp;byte&nbsp;hash</td>
+        </tr>
+        <tr id="113" style="None">
+          <td style="color: grey">113</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;msg.memo_hash&nbsp;is&nbsp;None:</td>
+        </tr>
+        <tr id="114" style="None">
+          <td style="color: grey">114</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;raise&nbsp;DataError("Stellar:&nbsp;Missing&nbsp;memo&nbsp;hash")</td>
+        </tr>
+        <tr id="115" style="color: blue;">
+          <td style="color: grey">115</td>
+          <td style="text-align: right;">2.00</td>
+          <td style="text-align: right;">4</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;writers.write_bytes_fixed(w,&nbsp;bytearray(msg.memo_hash),&nbsp;32)</td>
+        </tr>
+        <tr id="116" style="color: blue;">
+          <td style="color: grey">116</td>
+          <td style="text-align: right;">3.00</td>
+          <td style="text-align: right;">6</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;memo_confirm_text&nbsp;=&nbsp;hexlify(msg.memo_hash).decode()</td>
+        </tr>
+        <tr id="117" style="None">
+          <td style="color: grey">117</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;else:</td>
+        </tr>
+        <tr id="118" style="None">
+          <td style="color: grey">118</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;raise&nbsp;ProcessError("Stellar&nbsp;invalid&nbsp;memo&nbsp;type")</td>
+        </tr>
+        <tr id="119" style="color: blue;">
+          <td style="color: grey">119</td>
+          <td style="text-align: right;">0.25</td>
+          <td style="text-align: right;">29</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;await&nbsp;layout.require_confirm_memo(ctx,&nbsp;msg.memo_type,&nbsp;memo_confirm_text)</td>
+        </tr>
+      </tbody>
+    </table>
+  </body>
+</html>

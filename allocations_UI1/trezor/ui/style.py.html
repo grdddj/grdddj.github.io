@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>trezor/ui/style.py</title>
+    <meta charset="utf-8">
+    <style>body { font-size: 80%; }</style>
+  </head>
+  <body>
+    <table>
+      <thead>
+        <tr>
+          <th style="color: grey">#</th>
+          <th style="text-align: right;">avg</th>
+          <th style="text-align: right;">total</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr id="1" style="color: red;">
+          <td style="color: grey">1</td>
+          <td style="text-align: right;">2.00</td>
+          <td style="text-align: right;">23802</td>
+          <td>from&nbsp;micropython&nbsp;import&nbsp;const</td>
+        </tr>
+        <tr id="2" style="None">
+          <td style="color: grey">2</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="3" style="color: red;">
+          <td style="color: grey">3</td>
+          <td style="text-align: right;">1.00</td>
+          <td style="text-align: right;">11901</td>
+          <td>from&nbsp;trezor.ui&nbsp;import&nbsp;rgb</td>
+        </tr>
+        <tr id="4" style="None">
+          <td style="color: grey">4</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="5" style="None">
+          <td style="color: grey">5</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>#&nbsp;radius&nbsp;for&nbsp;buttons&nbsp;and&nbsp;other&nbsp;elements</td>
+        </tr>
+        <tr id="6" style="color: red;">
+          <td style="color: grey">6</td>
+          <td style="text-align: right;">1.00</td>
+          <td style="text-align: right;">11901</td>
+          <td>RADIUS&nbsp;=&nbsp;const(2)</td>
+        </tr>
+        <tr id="7" style="None">
+          <td style="color: grey">7</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="8" style="None">
+          <td style="color: grey">8</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>#&nbsp;backlight&nbsp;brightness</td>
+        </tr>
+        <tr id="9" style="None">
+          <td style="color: grey">9</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>BACKLIGHT_NORMAL&nbsp;=&nbsp;const(150)</td>
+        </tr>
+        <tr id="10" style="color: blue;">
+          <td style="color: grey">10</td>
+          <td style="text-align: right;">1.00</td>
+          <td style="text-align: right;">11901</td>
+          <td>BACKLIGHT_LOW&nbsp;=&nbsp;const(45)</td>
+        </tr>
+        <tr id="11" style="None">
+          <td style="color: grey">11</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>BACKLIGHT_DIM&nbsp;=&nbsp;const(5)</td>
+        </tr>
+        <tr id="12" style="color: red;">
+          <td style="color: grey">12</td>
+          <td style="text-align: right;">1.00</td>
+          <td style="text-align: right;">11901</td>
+          <td>BACKLIGHT_NONE&nbsp;=&nbsp;const(2)</td>
+        </tr>
+        <tr id="13" style="None">
+          <td style="color: grey">13</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>BACKLIGHT_MAX&nbsp;=&nbsp;const(255)</td>
+        </tr>
+        <tr id="14" style="None">
+          <td style="color: grey">14</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="15" style="None">
+          <td style="color: grey">15</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>#&nbsp;color&nbsp;palette</td>
+        </tr>
+        <tr id="16" style="None">
+          <td style="color: grey">16</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>RED&nbsp;=&nbsp;rgb(0xFF,&nbsp;0x00,&nbsp;0x00)</td>
+        </tr>
+        <tr id="17" style="None">
+          <td style="color: grey">17</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>PINK&nbsp;=&nbsp;rgb(0xE9,&nbsp;0x1E,&nbsp;0x63)</td>
+        </tr>
+        <tr id="18" style="None">
+          <td style="color: grey">18</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>PURPLE&nbsp;=&nbsp;rgb(0x9C,&nbsp;0x27,&nbsp;0xB0)</td>
+        </tr>
+        <tr id="19" style="None">
+          <td style="color: grey">19</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>DEEP_PURPLE&nbsp;=&nbsp;rgb(0x67,&nbsp;0x3A,&nbsp;0xB7)</td>
+        </tr>
+        <tr id="20" style="None">
+          <td style="color: grey">20</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>INDIGO&nbsp;=&nbsp;rgb(0x3F,&nbsp;0x51,&nbsp;0xB5)</td>
+        </tr>
+        <tr id="21" style="None">
+          <td style="color: grey">21</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>BLUE&nbsp;=&nbsp;rgb(0x21,&nbsp;0x96,&nbsp;0xF3)</td>
+        </tr>
+        <tr id="22" style="None">
+          <td style="color: grey">22</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>LIGHT_BLUE&nbsp;=&nbsp;rgb(0x03,&nbsp;0xA9,&nbsp;0xF4)</td>
+        </tr>
+        <tr id="23" style="None">
+          <td style="color: grey">23</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>CYAN&nbsp;=&nbsp;rgb(0x00,&nbsp;0xBC,&nbsp;0xD4)</td>
+        </tr>
+        <tr id="24" style="None">
+          <td style="color: grey">24</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>TEAL&nbsp;=&nbsp;rgb(0x00,&nbsp;0x96,&nbsp;0x88)</td>
+        </tr>
+        <tr id="25" style="None">
+          <td style="color: grey">25</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>GREEN&nbsp;=&nbsp;rgb(0x00,&nbsp;0xAE,&nbsp;0x0B)</td>
+        </tr>
+        <tr id="26" style="None">
+          <td style="color: grey">26</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>LIGHT_GREEN&nbsp;=&nbsp;rgb(0x87,&nbsp;0xCE,&nbsp;0x26)</td>
+        </tr>
+        <tr id="27" style="None">
+          <td style="color: grey">27</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>LIME&nbsp;=&nbsp;rgb(0xCD,&nbsp;0xDC,&nbsp;0x39)</td>
+        </tr>
+        <tr id="28" style="None">
+          <td style="color: grey">28</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>YELLOW&nbsp;=&nbsp;rgb(0xFF,&nbsp;0xEB,&nbsp;0x3B)</td>
+        </tr>
+        <tr id="29" style="None">
+          <td style="color: grey">29</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>AMBER&nbsp;=&nbsp;rgb(0xFF,&nbsp;0xC1,&nbsp;0x07)</td>
+        </tr>
+        <tr id="30" style="None">
+          <td style="color: grey">30</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>ORANGE&nbsp;=&nbsp;rgb(0xFF,&nbsp;0x98,&nbsp;0x00)</td>
+        </tr>
+        <tr id="31" style="None">
+          <td style="color: grey">31</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>DEEP_ORANGE&nbsp;=&nbsp;rgb(0xFF,&nbsp;0x57,&nbsp;0x22)</td>
+        </tr>
+        <tr id="32" style="None">
+          <td style="color: grey">32</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>BROWN&nbsp;=&nbsp;rgb(0x79,&nbsp;0x55,&nbsp;0x48)</td>
+        </tr>
+        <tr id="33" style="None">
+          <td style="color: grey">33</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>LIGHT_GREY&nbsp;=&nbsp;rgb(0xDA,&nbsp;0xDD,&nbsp;0xD8)</td>
+        </tr>
+        <tr id="34" style="None">
+          <td style="color: grey">34</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>GREY&nbsp;=&nbsp;rgb(0x9E,&nbsp;0x9E,&nbsp;0x9E)</td>
+        </tr>
+        <tr id="35" style="None">
+          <td style="color: grey">35</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>DARK_GREY&nbsp;=&nbsp;rgb(0x3E,&nbsp;0x3E,&nbsp;0x3E)</td>
+        </tr>
+        <tr id="36" style="None">
+          <td style="color: grey">36</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>BLUE_GRAY&nbsp;=&nbsp;rgb(0x60,&nbsp;0x7D,&nbsp;0x8B)</td>
+        </tr>
+        <tr id="37" style="None">
+          <td style="color: grey">37</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>BLACK&nbsp;=&nbsp;rgb(0x00,&nbsp;0x00,&nbsp;0x00)</td>
+        </tr>
+        <tr id="38" style="None">
+          <td style="color: grey">38</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>WHITE&nbsp;=&nbsp;rgb(0xFA,&nbsp;0xFA,&nbsp;0xFA)</td>
+        </tr>
+        <tr id="39" style="None">
+          <td style="color: grey">39</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>BLACKISH&nbsp;=&nbsp;rgb(0x30,&nbsp;0x30,&nbsp;0x30)</td>
+        </tr>
+        <tr id="40" style="None">
+          <td style="color: grey">40</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>DARK_BLACK&nbsp;=&nbsp;rgb(0x10,&nbsp;0x10,&nbsp;0x10)</td>
+        </tr>
+        <tr id="41" style="None">
+          <td style="color: grey">41</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>DARK_WHITE&nbsp;=&nbsp;rgb(0xE8,&nbsp;0xE8,&nbsp;0xE8)</td>
+        </tr>
+        <tr id="42" style="None">
+          <td style="color: grey">42</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="43" style="None">
+          <td style="color: grey">43</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>TITLE_GREY&nbsp;=&nbsp;rgb(0x9B,&nbsp;0x9B,&nbsp;0x9B)</td>
+        </tr>
+        <tr id="44" style="None">
+          <td style="color: grey">44</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>ORANGE_ICON&nbsp;=&nbsp;rgb(0xF5,&nbsp;0xA6,&nbsp;0x23)</td>
+        </tr>
+        <tr id="45" style="None">
+          <td style="color: grey">45</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="46" style="None">
+          <td style="color: grey">46</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>#&nbsp;common&nbsp;color&nbsp;styles</td>
+        </tr>
+        <tr id="47" style="None">
+          <td style="color: grey">47</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>BG&nbsp;=&nbsp;BLACK</td>
+        </tr>
+        <tr id="48" style="None">
+          <td style="color: grey">48</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>FG&nbsp;=&nbsp;WHITE</td>
+        </tr>
+        <tr id="49" style="None">
+          <td style="color: grey">49</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="50" style="None">
+          <td style="color: grey">50</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>#&nbsp;icons</td>
+        </tr>
+        <tr id="51" style="None">
+          <td style="color: grey">51</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>ICON_RESET&nbsp;=&nbsp;"trezor/res/header_icons/reset.toif"</td>
+        </tr>
+        <tr id="52" style="None">
+          <td style="color: grey">52</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>ICON_WIPE&nbsp;=&nbsp;"trezor/res/header_icons/wipe.toif"</td>
+        </tr>
+        <tr id="53" style="None">
+          <td style="color: grey">53</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>ICON_RECOVERY&nbsp;=&nbsp;"trezor/res/header_icons/recovery.toif"</td>
+        </tr>
+        <tr id="54" style="None">
+          <td style="color: grey">54</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>ICON_NOCOPY&nbsp;=&nbsp;"trezor/res/header_icons/nocopy.toif"</td>
+        </tr>
+        <tr id="55" style="None">
+          <td style="color: grey">55</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>ICON_WRONG&nbsp;=&nbsp;"trezor/res/header_icons/wrong.toif"</td>
+        </tr>
+        <tr id="56" style="None">
+          <td style="color: grey">56</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>ICON_CONFIG&nbsp;=&nbsp;"trezor/res/header_icons/cog.toif"</td>
+        </tr>
+        <tr id="57" style="None">
+          <td style="color: grey">57</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>ICON_RECEIVE&nbsp;=&nbsp;"trezor/res/header_icons/receive.toif"</td>
+        </tr>
+        <tr id="58" style="color: red;">
+          <td style="color: grey">58</td>
+          <td style="text-align: right;">1.00</td>
+          <td style="text-align: right;">11901</td>
+          <td>ICON_SEND&nbsp;=&nbsp;"trezor/res/header_icons/send.toif"</td>
+        </tr>
+        <tr id="59" style="None">
+          <td style="color: grey">59</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="60" style="None">
+          <td style="color: grey">60</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>ICON_DEFAULT&nbsp;=&nbsp;ICON_CONFIG</td>
+        </tr>
+        <tr id="61" style="None">
+          <td style="color: grey">61</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="62" style="None">
+          <td style="color: grey">62</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>ICON_CANCEL&nbsp;=&nbsp;"trezor/res/cancel.toif"</td>
+        </tr>
+        <tr id="63" style="None">
+          <td style="color: grey">63</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>ICON_CONFIRM&nbsp;=&nbsp;"trezor/res/confirm.toif"</td>
+        </tr>
+        <tr id="64" style="None">
+          <td style="color: grey">64</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>ICON_LOCK&nbsp;=&nbsp;"trezor/res/lock.toif"</td>
+        </tr>
+        <tr id="65" style="None">
+          <td style="color: grey">65</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>ICON_CLICK&nbsp;=&nbsp;"trezor/res/click.toif"</td>
+        </tr>
+        <tr id="66" style="None">
+          <td style="color: grey">66</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>ICON_BACK&nbsp;=&nbsp;"trezor/res/left.toif"</td>
+        </tr>
+        <tr id="67" style="None">
+          <td style="color: grey">67</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>ICON_SWIPE&nbsp;=&nbsp;"trezor/res/swipe.toif"</td>
+        </tr>
+        <tr id="68" style="None">
+          <td style="color: grey">68</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>ICON_SWIPE_LEFT&nbsp;=&nbsp;"trezor/res/swipe_left.toif"</td>
+        </tr>
+        <tr id="69" style="None">
+          <td style="color: grey">69</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>ICON_SWIPE_RIGHT&nbsp;=&nbsp;"trezor/res/swipe_right.toif"</td>
+        </tr>
+        <tr id="70" style="None">
+          <td style="color: grey">70</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>ICON_CHECK&nbsp;=&nbsp;"trezor/res/check.toif"</td>
+        </tr>
+        <tr id="71" style="None">
+          <td style="color: grey">71</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>ICON_SPACE&nbsp;=&nbsp;"trezor/res/space.toif"</td>
+        </tr>
+      </tbody>
+    </table>
+  </body>
+</html>

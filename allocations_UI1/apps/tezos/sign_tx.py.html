@@ -1,0 +1,2524 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>apps/tezos/sign_tx.py</title>
+    <meta charset="utf-8">
+    <style>body { font-size: 80%; }</style>
+  </head>
+  <body>
+    <table>
+      <thead>
+        <tr>
+          <th style="color: grey">#</th>
+          <th style="text-align: right;">avg</th>
+          <th style="text-align: right;">total</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr id="1" style="None">
+          <td style="color: grey">1</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>from&nbsp;typing&nbsp;import&nbsp;TYPE_CHECKING</td>
+        </tr>
+        <tr id="2" style="None">
+          <td style="color: grey">2</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="3" style="color: blue;">
+          <td style="color: grey">3</td>
+          <td style="text-align: right;">2.00</td>
+          <td style="text-align: right;">26</td>
+          <td>from&nbsp;trezor&nbsp;import&nbsp;wire</td>
+        </tr>
+        <tr id="4" style="color: blue;">
+          <td style="color: grey">4</td>
+          <td style="text-align: right;">1.00</td>
+          <td style="text-align: right;">13</td>
+          <td>from&nbsp;trezor.crypto&nbsp;import&nbsp;hashlib</td>
+        </tr>
+        <tr id="5" style="color: blue;">
+          <td style="color: grey">5</td>
+          <td style="text-align: right;">2.00</td>
+          <td style="text-align: right;">26</td>
+          <td>from&nbsp;trezor.crypto.curve&nbsp;import&nbsp;ed25519</td>
+        </tr>
+        <tr id="6" style="color: red;">
+          <td style="color: grey">6</td>
+          <td style="text-align: right;">6.00</td>
+          <td style="text-align: right;">78</td>
+          <td>from&nbsp;trezor.enums&nbsp;import&nbsp;TezosBallotType,&nbsp;TezosContractType</td>
+        </tr>
+        <tr id="7" style="color: blue;">
+          <td style="color: grey">7</td>
+          <td style="text-align: right;">1.00</td>
+          <td style="text-align: right;">13</td>
+          <td>from&nbsp;trezor.messages&nbsp;import&nbsp;TezosSignedTx</td>
+        </tr>
+        <tr id="8" style="None">
+          <td style="color: grey">8</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="9" style="color: blue;">
+          <td style="color: grey">9</td>
+          <td style="text-align: right;">2.00</td>
+          <td style="text-align: right;">26</td>
+          <td>from&nbsp;apps.common&nbsp;import&nbsp;paths</td>
+        </tr>
+        <tr id="10" style="color: red;">
+          <td style="color: grey">10</td>
+          <td style="text-align: right;">6.00</td>
+          <td style="text-align: right;">78</td>
+          <td>from&nbsp;apps.common.keychain&nbsp;import&nbsp;with_slip44_keychain</td>
+        </tr>
+        <tr id="11" style="color: red;">
+          <td style="color: grey">11</td>
+          <td style="text-align: right;">6.00</td>
+          <td style="text-align: right;">78</td>
+          <td>from&nbsp;apps.common.writers&nbsp;import&nbsp;(</td>
+        </tr>
+        <tr id="12" style="None">
+          <td style="color: grey">12</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;write_bytes_fixed,</td>
+        </tr>
+        <tr id="13" style="None">
+          <td style="color: grey">13</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;write_bytes_unchecked,</td>
+        </tr>
+        <tr id="14" style="None">
+          <td style="color: grey">14</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;write_uint8,</td>
+        </tr>
+        <tr id="15" style="None">
+          <td style="color: grey">15</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;write_uint32_be,</td>
+        </tr>
+        <tr id="16" style="None">
+          <td style="color: grey">16</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>)</td>
+        </tr>
+        <tr id="17" style="None">
+          <td style="color: grey">17</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="18" style="color: red;">
+          <td style="color: grey">18</td>
+          <td style="text-align: right;">6.00</td>
+          <td style="text-align: right;">78</td>
+          <td>from&nbsp;.&nbsp;import&nbsp;CURVE,&nbsp;PATTERNS,&nbsp;SLIP44_ID,&nbsp;helpers,&nbsp;layout</td>
+        </tr>
+        <tr id="19" style="None">
+          <td style="color: grey">19</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="20" style="None">
+          <td style="color: grey">20</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>if&nbsp;TYPE_CHECKING:</td>
+        </tr>
+        <tr id="21" style="None">
+          <td style="color: grey">21</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;from&nbsp;apps.common.keychain&nbsp;import&nbsp;Keychain</td>
+        </tr>
+        <tr id="22" style="None">
+          <td style="color: grey">22</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;from&nbsp;trezor.wire&nbsp;import&nbsp;Context</td>
+        </tr>
+        <tr id="23" style="None">
+          <td style="color: grey">23</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;from&nbsp;trezor.messages&nbsp;import&nbsp;(</td>
+        </tr>
+        <tr id="24" style="None">
+          <td style="color: grey">24</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;TezosSignTx,</td>
+        </tr>
+        <tr id="25" style="None">
+          <td style="color: grey">25</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;TezosContractID,</td>
+        </tr>
+        <tr id="26" style="None">
+          <td style="color: grey">26</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;TezosManagerTransfer,</td>
+        </tr>
+        <tr id="27" style="None">
+          <td style="color: grey">27</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;TezosBallotOp,</td>
+        </tr>
+        <tr id="28" style="None">
+          <td style="color: grey">28</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;TezosProposalOp,</td>
+        </tr>
+        <tr id="29" style="None">
+          <td style="color: grey">29</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;TezosRevealOp,</td>
+        </tr>
+        <tr id="30" style="None">
+          <td style="color: grey">30</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;TezosDelegationOp,</td>
+        </tr>
+        <tr id="31" style="None">
+          <td style="color: grey">31</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;TezosTransactionOp,</td>
+        </tr>
+        <tr id="32" style="None">
+          <td style="color: grey">32</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;TezosOriginationOp,</td>
+        </tr>
+        <tr id="33" style="None">
+          <td style="color: grey">33</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;)</td>
+        </tr>
+        <tr id="34" style="None">
+          <td style="color: grey">34</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;from&nbsp;trezor.utils&nbsp;import&nbsp;Writer</td>
+        </tr>
+        <tr id="35" style="None">
+          <td style="color: grey">35</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="36" style="None">
+          <td style="color: grey">36</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="37" style="color: blue;">
+          <td style="color: grey">37</td>
+          <td style="text-align: right;">3.00</td>
+          <td style="text-align: right;">39</td>
+          <td>@with_slip44_keychain(*PATTERNS,&nbsp;slip44_id=SLIP44_ID,&nbsp;curve=CURVE)</td>
+        </tr>
+        <tr id="38" style="None">
+          <td style="color: grey">38</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>async&nbsp;def&nbsp;sign_tx(ctx:&nbsp;Context,&nbsp;msg:&nbsp;TezosSignTx,&nbsp;keychain:&nbsp;Keychain)&nbsp;->&nbsp;TezosSignedTx:</td>
+        </tr>
+        <tr id="39" style="color: blue;">
+          <td style="color: grey">39</td>
+          <td style="text-align: right;">1.00</td>
+          <td style="text-align: right;">13</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;await&nbsp;paths.validate_path(ctx,&nbsp;keychain,&nbsp;msg.address_n)</td>
+        </tr>
+        <tr id="40" style="None">
+          <td style="color: grey">40</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="41" style="color: blue;">
+          <td style="color: grey">41</td>
+          <td style="text-align: right;">1.00</td>
+          <td style="text-align: right;">13</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;node&nbsp;=&nbsp;keychain.derive(msg.address_n)</td>
+        </tr>
+        <tr id="42" style="None">
+          <td style="color: grey">42</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="43" style="None">
+          <td style="color: grey">43</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;msg.transaction&nbsp;is&nbsp;not&nbsp;None:</td>
+        </tr>
+        <tr id="44" style="None">
+          <td style="color: grey">44</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#&nbsp;if&nbsp;the&nbsp;transaction&nbsp;operation&nbsp;is&nbsp;used&nbsp;to&nbsp;execute&nbsp;code&nbsp;on&nbsp;a&nbsp;smart&nbsp;contract</td>
+        </tr>
+        <tr id="45" style="None">
+          <td style="color: grey">45</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;msg.transaction.parameters_manager&nbsp;is&nbsp;not&nbsp;None:</td>
+        </tr>
+        <tr id="46" style="None">
+          <td style="color: grey">46</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;parameters_manager&nbsp;=&nbsp;msg.transaction.parameters_manager</td>
+        </tr>
+        <tr id="47" style="None">
+          <td style="color: grey">47</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="48" style="None">
+          <td style="color: grey">48</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#&nbsp;operation&nbsp;to&nbsp;delegate&nbsp;from&nbsp;a&nbsp;smart&nbsp;contract&nbsp;with&nbsp;manager.tz</td>
+        </tr>
+        <tr id="49" style="None">
+          <td style="color: grey">49</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;parameters_manager.set_delegate&nbsp;is&nbsp;not&nbsp;None:</td>
+        </tr>
+        <tr id="50" style="None">
+          <td style="color: grey">50</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;delegate&nbsp;=&nbsp;_get_address_by_tag(parameters_manager.set_delegate)</td>
+        </tr>
+        <tr id="51" style="color: blue;">
+          <td style="color: grey">51</td>
+          <td style="text-align: right;">0.25</td>
+          <td style="text-align: right;">1</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;await&nbsp;layout.require_confirm_delegation_baker(ctx,&nbsp;delegate)</td>
+        </tr>
+        <tr id="52" style="color: blue;">
+          <td style="color: grey">52</td>
+          <td style="text-align: right;">0.25</td>
+          <td style="text-align: right;">1</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;await&nbsp;layout.require_confirm_set_delegate(ctx,&nbsp;msg.transaction.fee)</td>
+        </tr>
+        <tr id="53" style="None">
+          <td style="color: grey">53</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="54" style="None">
+          <td style="color: grey">54</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#&nbsp;operation&nbsp;to&nbsp;remove&nbsp;delegate&nbsp;from&nbsp;the&nbsp;smart&nbsp;contract&nbsp;with&nbsp;manager.tz</td>
+        </tr>
+        <tr id="55" style="None">
+          <td style="color: grey">55</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;elif&nbsp;parameters_manager.cancel_delegate&nbsp;is&nbsp;not&nbsp;None:</td>
+        </tr>
+        <tr id="56" style="None">
+          <td style="color: grey">56</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;address&nbsp;=&nbsp;_get_address_from_contract(msg.transaction.destination)</td>
+        </tr>
+        <tr id="57" style="color: blue;">
+          <td style="color: grey">57</td>
+          <td style="text-align: right;">0.25</td>
+          <td style="text-align: right;">1</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;await&nbsp;layout.require_confirm_delegation_manager_withdraw(ctx,&nbsp;address)</td>
+        </tr>
+        <tr id="58" style="None">
+          <td style="color: grey">58</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;await&nbsp;layout.require_confirm_manager_remove_delegate(</td>
+        </tr>
+        <tr id="59" style="color: blue;">
+          <td style="color: grey">59</td>
+          <td style="text-align: right;">0.25</td>
+          <td style="text-align: right;">1</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ctx,&nbsp;msg.transaction.fee</td>
+        </tr>
+        <tr id="60" style="None">
+          <td style="color: grey">60</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;)</td>
+        </tr>
+        <tr id="61" style="None">
+          <td style="color: grey">61</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="62" style="None">
+          <td style="color: grey">62</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#&nbsp;operation&nbsp;to&nbsp;transfer&nbsp;tokens&nbsp;from&nbsp;a&nbsp;smart&nbsp;contract&nbsp;to&nbsp;an&nbsp;implicit&nbsp;account&nbsp;or&nbsp;a&nbsp;smart&nbsp;contract</td>
+        </tr>
+        <tr id="63" style="None">
+          <td style="color: grey">63</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;elif&nbsp;parameters_manager.transfer&nbsp;is&nbsp;not&nbsp;None:</td>
+        </tr>
+        <tr id="64" style="None">
+          <td style="color: grey">64</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;to&nbsp;=&nbsp;_get_address_from_contract(parameters_manager.transfer.destination)</td>
+        </tr>
+        <tr id="65" style="None">
+          <td style="color: grey">65</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;await&nbsp;layout.require_confirm_tx(</td>
+        </tr>
+        <tr id="66" style="color: blue;">
+          <td style="color: grey">66</td>
+          <td style="text-align: right;">0.25</td>
+          <td style="text-align: right;">2</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ctx,&nbsp;to,&nbsp;parameters_manager.transfer.amount</td>
+        </tr>
+        <tr id="67" style="None">
+          <td style="color: grey">67</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;)</td>
+        </tr>
+        <tr id="68" style="None">
+          <td style="color: grey">68</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;await&nbsp;layout.require_confirm_fee(</td>
+        </tr>
+        <tr id="69" style="color: blue;">
+          <td style="color: grey">69</td>
+          <td style="text-align: right;">0.20</td>
+          <td style="text-align: right;">2</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ctx,&nbsp;parameters_manager.transfer.amount,&nbsp;msg.transaction.fee</td>
+        </tr>
+        <tr id="70" style="None">
+          <td style="color: grey">70</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;)</td>
+        </tr>
+        <tr id="71" style="None">
+          <td style="color: grey">71</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;else:</td>
+        </tr>
+        <tr id="72" style="None">
+          <td style="color: grey">72</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#&nbsp;transactions&nbsp;from&nbsp;an&nbsp;implicit&nbsp;account</td>
+        </tr>
+        <tr id="73" style="None">
+          <td style="color: grey">73</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;to&nbsp;=&nbsp;_get_address_from_contract(msg.transaction.destination)</td>
+        </tr>
+        <tr id="74" style="color: blue;">
+          <td style="color: grey">74</td>
+          <td style="text-align: right;">0.25</td>
+          <td style="text-align: right;">2</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;await&nbsp;layout.require_confirm_tx(ctx,&nbsp;to,&nbsp;msg.transaction.amount)</td>
+        </tr>
+        <tr id="75" style="None">
+          <td style="color: grey">75</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;await&nbsp;layout.require_confirm_fee(</td>
+        </tr>
+        <tr id="76" style="color: blue;">
+          <td style="color: grey">76</td>
+          <td style="text-align: right;">0.17</td>
+          <td style="text-align: right;">2</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ctx,&nbsp;msg.transaction.amount,&nbsp;msg.transaction.fee</td>
+        </tr>
+        <tr id="77" style="None">
+          <td style="color: grey">77</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;)</td>
+        </tr>
+        <tr id="78" style="None">
+          <td style="color: grey">78</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="79" style="None">
+          <td style="color: grey">79</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;elif&nbsp;msg.origination&nbsp;is&nbsp;not&nbsp;None:</td>
+        </tr>
+        <tr id="80" style="None">
+          <td style="color: grey">80</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;source&nbsp;=&nbsp;_get_address_by_tag(msg.origination.source)</td>
+        </tr>
+        <tr id="81" style="color: blue;">
+          <td style="color: grey">81</td>
+          <td style="text-align: right;">0.25</td>
+          <td style="text-align: right;">1</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;await&nbsp;layout.require_confirm_origination(ctx,&nbsp;source)</td>
+        </tr>
+        <tr id="82" style="None">
+          <td style="color: grey">82</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="83" style="None">
+          <td style="color: grey">83</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#&nbsp;if&nbsp;we&nbsp;are&nbsp;immediately&nbsp;delegating&nbsp;contract</td>
+        </tr>
+        <tr id="84" style="None">
+          <td style="color: grey">84</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;msg.origination.delegate&nbsp;is&nbsp;not&nbsp;None:</td>
+        </tr>
+        <tr id="85" style="None">
+          <td style="color: grey">85</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;delegate&nbsp;=&nbsp;_get_address_by_tag(msg.origination.delegate)</td>
+        </tr>
+        <tr id="86" style="None">
+          <td style="color: grey">86</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;await&nbsp;layout.require_confirm_delegation_baker(ctx,&nbsp;delegate)</td>
+        </tr>
+        <tr id="87" style="None">
+          <td style="color: grey">87</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="88" style="None">
+          <td style="color: grey">88</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;await&nbsp;layout.require_confirm_origination_fee(</td>
+        </tr>
+        <tr id="89" style="color: blue;">
+          <td style="color: grey">89</td>
+          <td style="text-align: right;">0.25</td>
+          <td style="text-align: right;">1</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ctx,&nbsp;msg.origination.balance,&nbsp;msg.origination.fee</td>
+        </tr>
+        <tr id="90" style="None">
+          <td style="color: grey">90</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;)</td>
+        </tr>
+        <tr id="91" style="None">
+          <td style="color: grey">91</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="92" style="None">
+          <td style="color: grey">92</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;elif&nbsp;msg.delegation&nbsp;is&nbsp;not&nbsp;None:</td>
+        </tr>
+        <tr id="93" style="None">
+          <td style="color: grey">93</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;source&nbsp;=&nbsp;_get_address_by_tag(msg.delegation.source)</td>
+        </tr>
+        <tr id="94" style="None">
+          <td style="color: grey">94</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="95" style="None">
+          <td style="color: grey">95</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;delegate_address:&nbsp;str&nbsp;|&nbsp;None&nbsp;=&nbsp;None</td>
+        </tr>
+        <tr id="96" style="None">
+          <td style="color: grey">96</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;msg.delegation.delegate&nbsp;is&nbsp;not&nbsp;None:</td>
+        </tr>
+        <tr id="97" style="None">
+          <td style="color: grey">97</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;delegate_address&nbsp;=&nbsp;_get_address_by_tag(msg.delegation.delegate)</td>
+        </tr>
+        <tr id="98" style="None">
+          <td style="color: grey">98</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="99" style="None">
+          <td style="color: grey">99</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;delegate_address&nbsp;is&nbsp;not&nbsp;None&nbsp;and&nbsp;source&nbsp;!=&nbsp;delegate_address:</td>
+        </tr>
+        <tr id="100" style="color: blue;">
+          <td style="color: grey">100</td>
+          <td style="text-align: right;">0.25</td>
+          <td style="text-align: right;">1</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;await&nbsp;layout.require_confirm_delegation_baker(ctx,&nbsp;delegate_address)</td>
+        </tr>
+        <tr id="101" style="color: blue;">
+          <td style="color: grey">101</td>
+          <td style="text-align: right;">0.25</td>
+          <td style="text-align: right;">1</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;await&nbsp;layout.require_confirm_set_delegate(ctx,&nbsp;msg.delegation.fee)</td>
+        </tr>
+        <tr id="102" style="None">
+          <td style="color: grey">102</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#&nbsp;if&nbsp;account&nbsp;registers&nbsp;itself&nbsp;as&nbsp;a&nbsp;delegate</td>
+        </tr>
+        <tr id="103" style="None">
+          <td style="color: grey">103</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;else:</td>
+        </tr>
+        <tr id="104" style="None">
+          <td style="color: grey">104</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;await&nbsp;layout.require_confirm_register_delegate(</td>
+        </tr>
+        <tr id="105" style="None">
+          <td style="color: grey">105</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ctx,&nbsp;source,&nbsp;msg.delegation.fee</td>
+        </tr>
+        <tr id="106" style="None">
+          <td style="color: grey">106</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;)</td>
+        </tr>
+        <tr id="107" style="None">
+          <td style="color: grey">107</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="108" style="None">
+          <td style="color: grey">108</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;elif&nbsp;msg.proposal&nbsp;is&nbsp;not&nbsp;None:</td>
+        </tr>
+        <tr id="109" style="color: blue;">
+          <td style="color: grey">109</td>
+          <td style="text-align: right;">0.86</td>
+          <td style="text-align: right;">6</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;proposed_protocols&nbsp;=&nbsp;[_get_protocol_hash(p)&nbsp;for&nbsp;p&nbsp;in&nbsp;msg.proposal.proposals]</td>
+        </tr>
+        <tr id="110" style="color: blue;">
+          <td style="color: grey">110</td>
+          <td style="text-align: right;">0.22</td>
+          <td style="text-align: right;">2</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;await&nbsp;layout.require_confirm_proposals(ctx,&nbsp;proposed_protocols)</td>
+        </tr>
+        <tr id="111" style="None">
+          <td style="color: grey">111</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="112" style="None">
+          <td style="color: grey">112</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;elif&nbsp;msg.ballot&nbsp;is&nbsp;not&nbsp;None:</td>
+        </tr>
+        <tr id="113" style="None">
+          <td style="color: grey">113</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;proposed_protocol&nbsp;=&nbsp;_get_protocol_hash(msg.ballot.proposal)</td>
+        </tr>
+        <tr id="114" style="None">
+          <td style="color: grey">114</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;submitted_ballot&nbsp;=&nbsp;_get_ballot(msg.ballot.ballot)</td>
+        </tr>
+        <tr id="115" style="color: blue;">
+          <td style="color: grey">115</td>
+          <td style="text-align: right;">0.20</td>
+          <td style="text-align: right;">3</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;await&nbsp;layout.require_confirm_ballot(ctx,&nbsp;proposed_protocol,&nbsp;submitted_ballot)</td>
+        </tr>
+        <tr id="116" style="None">
+          <td style="color: grey">116</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="117" style="None">
+          <td style="color: grey">117</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;else:</td>
+        </tr>
+        <tr id="118" style="None">
+          <td style="color: grey">118</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;raise&nbsp;wire.DataError("Invalid&nbsp;operation")</td>
+        </tr>
+        <tr id="119" style="None">
+          <td style="color: grey">119</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="120" style="color: blue;">
+          <td style="color: grey">120</td>
+          <td style="text-align: right;">1.00</td>
+          <td style="text-align: right;">13</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;w&nbsp;=&nbsp;bytearray()</td>
+        </tr>
+        <tr id="121" style="None">
+          <td style="color: grey">121</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;_get_operation_bytes(w,&nbsp;msg)</td>
+        </tr>
+        <tr id="122" style="None">
+          <td style="color: grey">122</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="123" style="color: blue;">
+          <td style="color: grey">123</td>
+          <td style="text-align: right;">2.00</td>
+          <td style="text-align: right;">26</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;opbytes&nbsp;=&nbsp;bytes(w)</td>
+        </tr>
+        <tr id="124" style="None">
+          <td style="color: grey">124</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="125" style="None">
+          <td style="color: grey">125</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;#&nbsp;watermark&nbsp;0x03&nbsp;is&nbsp;prefix&nbsp;for&nbsp;transactions,&nbsp;delegations,&nbsp;originations,&nbsp;reveals...</td>
+        </tr>
+        <tr id="126" style="color: red;">
+          <td style="color: grey">126</td>
+          <td style="text-align: right;">4.00</td>
+          <td style="text-align: right;">52</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;watermark&nbsp;=&nbsp;bytes([3])</td>
+        </tr>
+        <tr id="127" style="color: blue;">
+          <td style="color: grey">127</td>
+          <td style="text-align: right;">2.00</td>
+          <td style="text-align: right;">26</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;wm_opbytes&nbsp;=&nbsp;watermark&nbsp;+&nbsp;opbytes</td>
+        </tr>
+        <tr id="128" style="color: blue;">
+          <td style="color: grey">128</td>
+          <td style="text-align: right;">3.00</td>
+          <td style="text-align: right;">39</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;wm_opbytes_hash&nbsp;=&nbsp;hashlib.blake2b(wm_opbytes,&nbsp;outlen=32).digest()</td>
+        </tr>
+        <tr id="129" style="None">
+          <td style="color: grey">129</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="130" style="color: blue;">
+          <td style="color: grey">130</td>
+          <td style="text-align: right;">4.00</td>
+          <td style="text-align: right;">52</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;signature&nbsp;=&nbsp;ed25519.sign(node.private_key(),&nbsp;wm_opbytes_hash)</td>
+        </tr>
+        <tr id="131" style="None">
+          <td style="color: grey">131</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="132" style="color: blue;">
+          <td style="color: grey">132</td>
+          <td style="text-align: right;">2.00</td>
+          <td style="text-align: right;">26</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;sig_op_contents&nbsp;=&nbsp;opbytes&nbsp;+&nbsp;signature</td>
+        </tr>
+        <tr id="133" style="color: blue;">
+          <td style="color: grey">133</td>
+          <td style="text-align: right;">3.00</td>
+          <td style="text-align: right;">39</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;sig_op_contents_hash&nbsp;=&nbsp;hashlib.blake2b(sig_op_contents,&nbsp;outlen=32).digest()</td>
+        </tr>
+        <tr id="134" style="None">
+          <td style="color: grey">134</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;ophash&nbsp;=&nbsp;helpers.base58_encode_check(sig_op_contents_hash,&nbsp;prefix="o")</td>
+        </tr>
+        <tr id="135" style="None">
+          <td style="color: grey">135</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="136" style="None">
+          <td style="color: grey">136</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;sig_prefixed&nbsp;=&nbsp;helpers.base58_encode_check(</td>
+        </tr>
+        <tr id="137" style="None">
+          <td style="color: grey">137</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;signature,&nbsp;prefix=helpers.TEZOS_SIGNATURE_PREFIX</td>
+        </tr>
+        <tr id="138" style="None">
+          <td style="color: grey">138</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;)</td>
+        </tr>
+        <tr id="139" style="None">
+          <td style="color: grey">139</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="140" style="color: blue;">
+          <td style="color: grey">140</td>
+          <td style="text-align: right;">2.00</td>
+          <td style="text-align: right;">26</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;TezosSignedTx(</td>
+        </tr>
+        <tr id="141" style="None">
+          <td style="color: grey">141</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;signature=sig_prefixed,&nbsp;sig_op_contents=sig_op_contents,&nbsp;operation_hash=ophash</td>
+        </tr>
+        <tr id="142" style="None">
+          <td style="color: grey">142</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;)</td>
+        </tr>
+        <tr id="143" style="None">
+          <td style="color: grey">143</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="144" style="None">
+          <td style="color: grey">144</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="145" style="color: blue;">
+          <td style="color: grey">145</td>
+          <td style="text-align: right;">1.00</td>
+          <td style="text-align: right;">13</td>
+          <td>def&nbsp;_get_address_by_tag(address_hash:&nbsp;bytes)&nbsp;->&nbsp;str:</td>
+        </tr>
+        <tr id="146" style="color: blue;">
+          <td style="color: grey">146</td>
+          <td style="text-align: right;">2.00</td>
+          <td style="text-align: right;">14</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;prefixes&nbsp;=&nbsp;["tz1",&nbsp;"tz2",&nbsp;"tz3"]</td>
+        </tr>
+        <tr id="147" style="None">
+          <td style="color: grey">147</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;tag&nbsp;=&nbsp;int(address_hash[0])</td>
+        </tr>
+        <tr id="148" style="None">
+          <td style="color: grey">148</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="149" style="None">
+          <td style="color: grey">149</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;0&nbsp;<=&nbsp;tag&nbsp;<&nbsp;len(prefixes):</td>
+        </tr>
+        <tr id="150" style="color: blue;">
+          <td style="color: grey">150</td>
+          <td style="text-align: right;">3.00</td>
+          <td style="text-align: right;">21</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;helpers.base58_encode_check(address_hash[1:],&nbsp;prefix=prefixes[tag])</td>
+        </tr>
+        <tr id="151" style="None">
+          <td style="color: grey">151</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;raise&nbsp;wire.DataError("Invalid&nbsp;tag&nbsp;in&nbsp;address&nbsp;hash")</td>
+        </tr>
+        <tr id="152" style="None">
+          <td style="color: grey">152</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="153" style="None">
+          <td style="color: grey">153</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="154" style="color: blue;">
+          <td style="color: grey">154</td>
+          <td style="text-align: right;">1.00</td>
+          <td style="text-align: right;">13</td>
+          <td>def&nbsp;_get_address_from_contract(address:&nbsp;TezosContractID)&nbsp;->&nbsp;str:</td>
+        </tr>
+        <tr id="155" style="None">
+          <td style="color: grey">155</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;address.tag&nbsp;==&nbsp;TezosContractType.Implicit:</td>
+        </tr>
+        <tr id="156" style="None">
+          <td style="color: grey">156</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;_get_address_by_tag(address.hash)</td>
+        </tr>
+        <tr id="157" style="None">
+          <td style="color: grey">157</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="158" style="None">
+          <td style="color: grey">158</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;elif&nbsp;address.tag&nbsp;==&nbsp;TezosContractType.Originated:</td>
+        </tr>
+        <tr id="159" style="None">
+          <td style="color: grey">159</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;helpers.base58_encode_check(</td>
+        </tr>
+        <tr id="160" style="color: blue;">
+          <td style="color: grey">160</td>
+          <td style="text-align: right;">3.00</td>
+          <td style="text-align: right;">6</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;address.hash[:-1],&nbsp;prefix=helpers.TEZOS_ORIGINATED_ADDRESS_PREFIX</td>
+        </tr>
+        <tr id="161" style="None">
+          <td style="color: grey">161</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;)</td>
+        </tr>
+        <tr id="162" style="None">
+          <td style="color: grey">162</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="163" style="None">
+          <td style="color: grey">163</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;raise&nbsp;wire.DataError("Invalid&nbsp;contract&nbsp;type")</td>
+        </tr>
+        <tr id="164" style="None">
+          <td style="color: grey">164</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="165" style="None">
+          <td style="color: grey">165</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="166" style="color: blue;">
+          <td style="color: grey">166</td>
+          <td style="text-align: right;">1.00</td>
+          <td style="text-align: right;">13</td>
+          <td>def&nbsp;_get_protocol_hash(proposal:&nbsp;bytes)&nbsp;->&nbsp;str:</td>
+        </tr>
+        <tr id="167" style="None">
+          <td style="color: grey">167</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;helpers.base58_encode_check(proposal,&nbsp;prefix="P")</td>
+        </tr>
+        <tr id="168" style="None">
+          <td style="color: grey">168</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="169" style="None">
+          <td style="color: grey">169</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="170" style="color: blue;">
+          <td style="color: grey">170</td>
+          <td style="text-align: right;">2.00</td>
+          <td style="text-align: right;">26</td>
+          <td>def&nbsp;_get_ballot(ballot:&nbsp;TezosBallotType)&nbsp;->&nbsp;str:</td>
+        </tr>
+        <tr id="171" style="None">
+          <td style="color: grey">171</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;ballot&nbsp;==&nbsp;TezosBallotType.Yay:</td>
+        </tr>
+        <tr id="172" style="None">
+          <td style="color: grey">172</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;"yay"</td>
+        </tr>
+        <tr id="173" style="None">
+          <td style="color: grey">173</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;elif&nbsp;ballot&nbsp;==&nbsp;TezosBallotType.Nay:</td>
+        </tr>
+        <tr id="174" style="None">
+          <td style="color: grey">174</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;"nay"</td>
+        </tr>
+        <tr id="175" style="None">
+          <td style="color: grey">175</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;elif&nbsp;ballot&nbsp;==&nbsp;TezosBallotType.Pass:</td>
+        </tr>
+        <tr id="176" style="None">
+          <td style="color: grey">176</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;"pass"</td>
+        </tr>
+        <tr id="177" style="None">
+          <td style="color: grey">177</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="178" style="None">
+          <td style="color: grey">178</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;raise&nbsp;RuntimeError&nbsp;&nbsp;#&nbsp;unrecognized&nbsp;enum&nbsp;value</td>
+        </tr>
+        <tr id="179" style="None">
+          <td style="color: grey">179</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="180" style="None">
+          <td style="color: grey">180</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="181" style="color: blue;">
+          <td style="color: grey">181</td>
+          <td style="text-align: right;">1.00</td>
+          <td style="text-align: right;">13</td>
+          <td>def&nbsp;_get_operation_bytes(w:&nbsp;Writer,&nbsp;msg:&nbsp;TezosSignTx)&nbsp;->&nbsp;None:</td>
+        </tr>
+        <tr id="182" style="None">
+          <td style="color: grey">182</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;write_bytes_fixed(w,&nbsp;msg.branch,&nbsp;helpers.BRANCH_HASH_SIZE)</td>
+        </tr>
+        <tr id="183" style="None">
+          <td style="color: grey">183</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="184" style="None">
+          <td style="color: grey">184</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;#&nbsp;when&nbsp;the&nbsp;account&nbsp;sends&nbsp;first&nbsp;operation&nbsp;in&nbsp;lifetime,</td>
+        </tr>
+        <tr id="185" style="None">
+          <td style="color: grey">185</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;#&nbsp;we&nbsp;need&nbsp;to&nbsp;reveal&nbsp;its&nbsp;public&nbsp;key</td>
+        </tr>
+        <tr id="186" style="None">
+          <td style="color: grey">186</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;msg.reveal&nbsp;is&nbsp;not&nbsp;None:</td>
+        </tr>
+        <tr id="187" style="None">
+          <td style="color: grey">187</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;_encode_common(w,&nbsp;msg.reveal,&nbsp;"reveal")</td>
+        </tr>
+        <tr id="188" style="None">
+          <td style="color: grey">188</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;tag&nbsp;=&nbsp;int(msg.reveal.public_key[0])</td>
+        </tr>
+        <tr id="189" style="None">
+          <td style="color: grey">189</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="190" style="None">
+          <td style="color: grey">190</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;try:</td>
+        </tr>
+        <tr id="191" style="None">
+          <td style="color: grey">191</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;public_key_size&nbsp;=&nbsp;helpers.PUBLIC_KEY_TAG_TO_SIZE[tag]</td>
+        </tr>
+        <tr id="192" style="None">
+          <td style="color: grey">192</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;except&nbsp;KeyError:</td>
+        </tr>
+        <tr id="193" style="None">
+          <td style="color: grey">193</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;raise&nbsp;wire.DataError("Invalid&nbsp;tag&nbsp;in&nbsp;public&nbsp;key")</td>
+        </tr>
+        <tr id="194" style="None">
+          <td style="color: grey">194</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="195" style="None">
+          <td style="color: grey">195</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;write_bytes_fixed(w,&nbsp;msg.reveal.public_key,&nbsp;1&nbsp;+&nbsp;public_key_size)</td>
+        </tr>
+        <tr id="196" style="None">
+          <td style="color: grey">196</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="197" style="None">
+          <td style="color: grey">197</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;#&nbsp;transaction&nbsp;operation</td>
+        </tr>
+        <tr id="198" style="None">
+          <td style="color: grey">198</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;msg.transaction&nbsp;is&nbsp;not&nbsp;None:</td>
+        </tr>
+        <tr id="199" style="None">
+          <td style="color: grey">199</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;_encode_common(w,&nbsp;msg.transaction,&nbsp;"transaction")</td>
+        </tr>
+        <tr id="200" style="None">
+          <td style="color: grey">200</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;_encode_zarith(w,&nbsp;msg.transaction.amount)</td>
+        </tr>
+        <tr id="201" style="None">
+          <td style="color: grey">201</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;_encode_contract_id(w,&nbsp;msg.transaction.destination)</td>
+        </tr>
+        <tr id="202" style="None">
+          <td style="color: grey">202</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="203" style="None">
+          <td style="color: grey">203</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#&nbsp;support&nbsp;delegation&nbsp;and&nbsp;transfer&nbsp;from&nbsp;the&nbsp;old&nbsp;scriptless&nbsp;contracts&nbsp;(now&nbsp;with&nbsp;manager.tz&nbsp;script)</td>
+        </tr>
+        <tr id="204" style="None">
+          <td style="color: grey">204</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;msg.transaction.parameters_manager&nbsp;is&nbsp;not&nbsp;None:</td>
+        </tr>
+        <tr id="205" style="None">
+          <td style="color: grey">205</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;parameters_manager&nbsp;=&nbsp;msg.transaction.parameters_manager</td>
+        </tr>
+        <tr id="206" style="None">
+          <td style="color: grey">206</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="207" style="None">
+          <td style="color: grey">207</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;parameters_manager.set_delegate&nbsp;is&nbsp;not&nbsp;None:</td>
+        </tr>
+        <tr id="208" style="None">
+          <td style="color: grey">208</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;_encode_manager_delegation(w,&nbsp;parameters_manager.set_delegate)</td>
+        </tr>
+        <tr id="209" style="None">
+          <td style="color: grey">209</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;elif&nbsp;parameters_manager.cancel_delegate&nbsp;is&nbsp;not&nbsp;None:</td>
+        </tr>
+        <tr id="210" style="None">
+          <td style="color: grey">210</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;_encode_manager_delegation_remove(w)</td>
+        </tr>
+        <tr id="211" style="None">
+          <td style="color: grey">211</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;elif&nbsp;parameters_manager.transfer&nbsp;is&nbsp;not&nbsp;None:</td>
+        </tr>
+        <tr id="212" style="None">
+          <td style="color: grey">212</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;assert&nbsp;parameters_manager.transfer.destination&nbsp;is&nbsp;not&nbsp;None</td>
+        </tr>
+        <tr id="213" style="None">
+          <td style="color: grey">213</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(</td>
+        </tr>
+        <tr id="214" style="None">
+          <td style="color: grey">214</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;parameters_manager.transfer.destination.tag</td>
+        </tr>
+        <tr id="215" style="None">
+          <td style="color: grey">215</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;==&nbsp;TezosContractType.Implicit</td>
+        </tr>
+        <tr id="216" style="None">
+          <td style="color: grey">216</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;):</td>
+        </tr>
+        <tr id="217" style="None">
+          <td style="color: grey">217</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;_encode_manager_to_implicit_transfer(w,&nbsp;parameters_manager.transfer)</td>
+        </tr>
+        <tr id="218" style="None">
+          <td style="color: grey">218</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;else:</td>
+        </tr>
+        <tr id="219" style="None">
+          <td style="color: grey">219</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;_encode_manager_to_manager_transfer(w,&nbsp;parameters_manager.transfer)</td>
+        </tr>
+        <tr id="220" style="None">
+          <td style="color: grey">220</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;else:</td>
+        </tr>
+        <tr id="221" style="None">
+          <td style="color: grey">221</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;msg.transaction.parameters:</td>
+        </tr>
+        <tr id="222" style="None">
+          <td style="color: grey">222</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;helpers.write_bool(w,&nbsp;True)</td>
+        </tr>
+        <tr id="223" style="None">
+          <td style="color: grey">223</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;helpers.check_tx_params_size(msg.transaction.parameters)</td>
+        </tr>
+        <tr id="224" style="None">
+          <td style="color: grey">224</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;write_bytes_unchecked(w,&nbsp;msg.transaction.parameters)</td>
+        </tr>
+        <tr id="225" style="None">
+          <td style="color: grey">225</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;else:</td>
+        </tr>
+        <tr id="226" style="None">
+          <td style="color: grey">226</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;helpers.write_bool(w,&nbsp;False)</td>
+        </tr>
+        <tr id="227" style="None">
+          <td style="color: grey">227</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;#&nbsp;origination&nbsp;operation</td>
+        </tr>
+        <tr id="228" style="None">
+          <td style="color: grey">228</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;elif&nbsp;msg.origination&nbsp;is&nbsp;not&nbsp;None:</td>
+        </tr>
+        <tr id="229" style="None">
+          <td style="color: grey">229</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;_encode_common(w,&nbsp;msg.origination,&nbsp;"origination")</td>
+        </tr>
+        <tr id="230" style="None">
+          <td style="color: grey">230</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;_encode_zarith(w,&nbsp;msg.origination.balance)</td>
+        </tr>
+        <tr id="231" style="None">
+          <td style="color: grey">231</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;_encode_data_with_bool_prefix(</td>
+        </tr>
+        <tr id="232" style="None">
+          <td style="color: grey">232</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;w,&nbsp;msg.origination.delegate,&nbsp;helpers.TAGGED_PUBKEY_HASH_SIZE</td>
+        </tr>
+        <tr id="233" style="None">
+          <td style="color: grey">233</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;)</td>
+        </tr>
+        <tr id="234" style="None">
+          <td style="color: grey">234</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;helpers.check_script_size(msg.origination.script)</td>
+        </tr>
+        <tr id="235" style="None">
+          <td style="color: grey">235</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;write_bytes_unchecked(w,&nbsp;msg.origination.script)</td>
+        </tr>
+        <tr id="236" style="None">
+          <td style="color: grey">236</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="237" style="None">
+          <td style="color: grey">237</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;#&nbsp;delegation&nbsp;operation</td>
+        </tr>
+        <tr id="238" style="None">
+          <td style="color: grey">238</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;elif&nbsp;msg.delegation&nbsp;is&nbsp;not&nbsp;None:</td>
+        </tr>
+        <tr id="239" style="None">
+          <td style="color: grey">239</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;_encode_common(w,&nbsp;msg.delegation,&nbsp;"delegation")</td>
+        </tr>
+        <tr id="240" style="None">
+          <td style="color: grey">240</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;_encode_data_with_bool_prefix(</td>
+        </tr>
+        <tr id="241" style="None">
+          <td style="color: grey">241</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;w,&nbsp;msg.delegation.delegate,&nbsp;helpers.TAGGED_PUBKEY_HASH_SIZE</td>
+        </tr>
+        <tr id="242" style="None">
+          <td style="color: grey">242</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;)</td>
+        </tr>
+        <tr id="243" style="None">
+          <td style="color: grey">243</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;elif&nbsp;msg.proposal&nbsp;is&nbsp;not&nbsp;None:</td>
+        </tr>
+        <tr id="244" style="None">
+          <td style="color: grey">244</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;_encode_proposal(w,&nbsp;msg.proposal)</td>
+        </tr>
+        <tr id="245" style="None">
+          <td style="color: grey">245</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;elif&nbsp;msg.ballot&nbsp;is&nbsp;not&nbsp;None:</td>
+        </tr>
+        <tr id="246" style="None">
+          <td style="color: grey">246</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;_encode_ballot(w,&nbsp;msg.ballot)</td>
+        </tr>
+        <tr id="247" style="None">
+          <td style="color: grey">247</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="248" style="None">
+          <td style="color: grey">248</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="249" style="color: blue;">
+          <td style="color: grey">249</td>
+          <td style="text-align: right;">1.00</td>
+          <td style="text-align: right;">13</td>
+          <td>def&nbsp;_encode_common(</td>
+        </tr>
+        <tr id="250" style="None">
+          <td style="color: grey">250</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;w:&nbsp;Writer,</td>
+        </tr>
+        <tr id="251" style="None">
+          <td style="color: grey">251</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;operation:&nbsp;TezosDelegationOp</td>
+        </tr>
+        <tr id="252" style="None">
+          <td style="color: grey">252</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;TezosOriginationOp</td>
+        </tr>
+        <tr id="253" style="None">
+          <td style="color: grey">253</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;TezosTransactionOp</td>
+        </tr>
+        <tr id="254" style="None">
+          <td style="color: grey">254</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;TezosRevealOp,</td>
+        </tr>
+        <tr id="255" style="None">
+          <td style="color: grey">255</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;str_operation:&nbsp;str,</td>
+        </tr>
+        <tr id="256" style="None">
+          <td style="color: grey">256</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>)&nbsp;->&nbsp;None:</td>
+        </tr>
+        <tr id="257" style="color: blue;">
+          <td style="color: grey">257</td>
+          <td style="text-align: right;">2.00</td>
+          <td style="text-align: right;">18</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;operation_tags&nbsp;=&nbsp;{</td>
+        </tr>
+        <tr id="258" style="None">
+          <td style="color: grey">258</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"reveal":&nbsp;helpers.OP_TAG_REVEAL,</td>
+        </tr>
+        <tr id="259" style="None">
+          <td style="color: grey">259</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"transaction":&nbsp;helpers.OP_TAG_TRANSACTION,</td>
+        </tr>
+        <tr id="260" style="None">
+          <td style="color: grey">260</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"origination":&nbsp;helpers.OP_TAG_ORIGINATION,</td>
+        </tr>
+        <tr id="261" style="None">
+          <td style="color: grey">261</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"delegation":&nbsp;helpers.OP_TAG_DELEGATION,</td>
+        </tr>
+        <tr id="262" style="None">
+          <td style="color: grey">262</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;}</td>
+        </tr>
+        <tr id="263" style="None">
+          <td style="color: grey">263</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;write_uint8(w,&nbsp;operation_tags[str_operation])</td>
+        </tr>
+        <tr id="264" style="None">
+          <td style="color: grey">264</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;write_bytes_fixed(w,&nbsp;operation.source,&nbsp;helpers.TAGGED_PUBKEY_HASH_SIZE)</td>
+        </tr>
+        <tr id="265" style="None">
+          <td style="color: grey">265</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;_encode_zarith(w,&nbsp;operation.fee)</td>
+        </tr>
+        <tr id="266" style="None">
+          <td style="color: grey">266</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;_encode_zarith(w,&nbsp;operation.counter)</td>
+        </tr>
+        <tr id="267" style="None">
+          <td style="color: grey">267</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;_encode_zarith(w,&nbsp;operation.gas_limit)</td>
+        </tr>
+        <tr id="268" style="None">
+          <td style="color: grey">268</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;_encode_zarith(w,&nbsp;operation.storage_limit)</td>
+        </tr>
+        <tr id="269" style="None">
+          <td style="color: grey">269</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="270" style="None">
+          <td style="color: grey">270</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="271" style="color: blue;">
+          <td style="color: grey">271</td>
+          <td style="text-align: right;">1.00</td>
+          <td style="text-align: right;">13</td>
+          <td>def&nbsp;_encode_contract_id(w:&nbsp;Writer,&nbsp;contract_id:&nbsp;TezosContractID)&nbsp;->&nbsp;None:</td>
+        </tr>
+        <tr id="272" style="None">
+          <td style="color: grey">272</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;write_uint8(w,&nbsp;contract_id.tag)</td>
+        </tr>
+        <tr id="273" style="None">
+          <td style="color: grey">273</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;write_bytes_fixed(w,&nbsp;contract_id.hash,&nbsp;helpers.CONTRACT_ID_SIZE&nbsp;-&nbsp;1)</td>
+        </tr>
+        <tr id="274" style="None">
+          <td style="color: grey">274</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="275" style="None">
+          <td style="color: grey">275</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="276" style="color: blue;">
+          <td style="color: grey">276</td>
+          <td style="text-align: right;">1.00</td>
+          <td style="text-align: right;">13</td>
+          <td>def&nbsp;_encode_data_with_bool_prefix(</td>
+        </tr>
+        <tr id="277" style="None">
+          <td style="color: grey">277</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;w:&nbsp;Writer,&nbsp;data:&nbsp;bytes&nbsp;|&nbsp;None,&nbsp;expected_length:&nbsp;int</td>
+        </tr>
+        <tr id="278" style="None">
+          <td style="color: grey">278</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>)&nbsp;->&nbsp;None:</td>
+        </tr>
+        <tr id="279" style="None">
+          <td style="color: grey">279</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;data:</td>
+        </tr>
+        <tr id="280" style="None">
+          <td style="color: grey">280</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;helpers.write_bool(w,&nbsp;True)</td>
+        </tr>
+        <tr id="281" style="None">
+          <td style="color: grey">281</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;write_bytes_fixed(w,&nbsp;data,&nbsp;expected_length)</td>
+        </tr>
+        <tr id="282" style="None">
+          <td style="color: grey">282</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;else:</td>
+        </tr>
+        <tr id="283" style="None">
+          <td style="color: grey">283</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;helpers.write_bool(w,&nbsp;False)</td>
+        </tr>
+        <tr id="284" style="None">
+          <td style="color: grey">284</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="285" style="None">
+          <td style="color: grey">285</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="286" style="color: blue;">
+          <td style="color: grey">286</td>
+          <td style="text-align: right;">1.00</td>
+          <td style="text-align: right;">13</td>
+          <td>def&nbsp;_encode_zarith(w:&nbsp;Writer,&nbsp;num:&nbsp;int)&nbsp;->&nbsp;None:</td>
+        </tr>
+        <tr id="287" style="None">
+          <td style="color: grey">287</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;while&nbsp;True:</td>
+        </tr>
+        <tr id="288" style="None">
+          <td style="color: grey">288</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;byte&nbsp;=&nbsp;num&nbsp;&&nbsp;127</td>
+        </tr>
+        <tr id="289" style="None">
+          <td style="color: grey">289</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;num&nbsp;=&nbsp;num&nbsp;>>&nbsp;7</td>
+        </tr>
+        <tr id="290" style="None">
+          <td style="color: grey">290</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="291" style="None">
+          <td style="color: grey">291</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;num&nbsp;==&nbsp;0:</td>
+        </tr>
+        <tr id="292" style="None">
+          <td style="color: grey">292</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;write_uint8(w,&nbsp;byte)</td>
+        </tr>
+        <tr id="293" style="None">
+          <td style="color: grey">293</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;break</td>
+        </tr>
+        <tr id="294" style="None">
+          <td style="color: grey">294</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="295" style="None">
+          <td style="color: grey">295</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;write_uint8(w,&nbsp;128&nbsp;|&nbsp;byte)</td>
+        </tr>
+        <tr id="296" style="None">
+          <td style="color: grey">296</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="297" style="None">
+          <td style="color: grey">297</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="298" style="color: blue;">
+          <td style="color: grey">298</td>
+          <td style="text-align: right;">2.00</td>
+          <td style="text-align: right;">26</td>
+          <td>def&nbsp;_encode_proposal(w:&nbsp;Writer,&nbsp;proposal:&nbsp;TezosProposalOp)&nbsp;->&nbsp;None:</td>
+        </tr>
+        <tr id="299" style="None">
+          <td style="color: grey">299</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;write_uint8(w,&nbsp;helpers.OP_TAG_PROPOSALS)</td>
+        </tr>
+        <tr id="300" style="None">
+          <td style="color: grey">300</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;write_bytes_fixed(w,&nbsp;proposal.source,&nbsp;helpers.TAGGED_PUBKEY_HASH_SIZE)</td>
+        </tr>
+        <tr id="301" style="None">
+          <td style="color: grey">301</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;write_uint32_be(w,&nbsp;proposal.period)</td>
+        </tr>
+        <tr id="302" style="None">
+          <td style="color: grey">302</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;write_uint32_be(w,&nbsp;len(proposal.proposals)&nbsp;*&nbsp;helpers.PROPOSAL_HASH_SIZE)</td>
+        </tr>
+        <tr id="303" style="None">
+          <td style="color: grey">303</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;for&nbsp;proposal_hash&nbsp;in&nbsp;proposal.proposals:</td>
+        </tr>
+        <tr id="304" style="None">
+          <td style="color: grey">304</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;write_bytes_fixed(w,&nbsp;proposal_hash,&nbsp;helpers.PROPOSAL_HASH_SIZE)</td>
+        </tr>
+        <tr id="305" style="None">
+          <td style="color: grey">305</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="306" style="None">
+          <td style="color: grey">306</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="307" style="color: blue;">
+          <td style="color: grey">307</td>
+          <td style="text-align: right;">1.00</td>
+          <td style="text-align: right;">13</td>
+          <td>def&nbsp;_encode_ballot(w:&nbsp;Writer,&nbsp;ballot:&nbsp;TezosBallotOp)&nbsp;->&nbsp;None:</td>
+        </tr>
+        <tr id="308" style="None">
+          <td style="color: grey">308</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;write_uint8(w,&nbsp;helpers.OP_TAG_BALLOT)</td>
+        </tr>
+        <tr id="309" style="None">
+          <td style="color: grey">309</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;write_bytes_fixed(w,&nbsp;ballot.source,&nbsp;helpers.TAGGED_PUBKEY_HASH_SIZE)</td>
+        </tr>
+        <tr id="310" style="None">
+          <td style="color: grey">310</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;write_uint32_be(w,&nbsp;ballot.period)</td>
+        </tr>
+        <tr id="311" style="None">
+          <td style="color: grey">311</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;write_bytes_fixed(w,&nbsp;ballot.proposal,&nbsp;helpers.PROPOSAL_HASH_SIZE)</td>
+        </tr>
+        <tr id="312" style="None">
+          <td style="color: grey">312</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;write_uint8(w,&nbsp;ballot.ballot)</td>
+        </tr>
+        <tr id="313" style="None">
+          <td style="color: grey">313</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="314" style="None">
+          <td style="color: grey">314</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="315" style="color: blue;">
+          <td style="color: grey">315</td>
+          <td style="text-align: right;">1.00</td>
+          <td style="text-align: right;">13</td>
+          <td>def&nbsp;_encode_natural(w:&nbsp;Writer,&nbsp;num:&nbsp;int)&nbsp;->&nbsp;None:</td>
+        </tr>
+        <tr id="316" style="None">
+          <td style="color: grey">316</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;#&nbsp;encode&nbsp;a&nbsp;natural&nbsp;integer&nbsp;with&nbsp;its&nbsp;signed&nbsp;bit&nbsp;on&nbsp;position&nbsp;7</td>
+        </tr>
+        <tr id="317" style="None">
+          <td style="color: grey">317</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;#&nbsp;as&nbsp;we&nbsp;do&nbsp;not&nbsp;expect&nbsp;negative&nbsp;numbers&nbsp;in&nbsp;a&nbsp;transfer&nbsp;operation&nbsp;the&nbsp;bit&nbsp;is&nbsp;never&nbsp;set</td>
+        </tr>
+        <tr id="318" style="None">
+          <td style="color: grey">318</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;natural_tag&nbsp;=&nbsp;0</td>
+        </tr>
+        <tr id="319" style="None">
+          <td style="color: grey">319</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;write_uint8(w,&nbsp;natural_tag)</td>
+        </tr>
+        <tr id="320" style="None">
+          <td style="color: grey">320</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="321" style="None">
+          <td style="color: grey">321</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;byte&nbsp;=&nbsp;num&nbsp;&&nbsp;63</td>
+        </tr>
+        <tr id="322" style="None">
+          <td style="color: grey">322</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;modified&nbsp;=&nbsp;num&nbsp;>>&nbsp;6</td>
+        </tr>
+        <tr id="323" style="None">
+          <td style="color: grey">323</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="324" style="None">
+          <td style="color: grey">324</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;modified&nbsp;==&nbsp;0:</td>
+        </tr>
+        <tr id="325" style="None">
+          <td style="color: grey">325</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;write_uint8(w,&nbsp;byte)</td>
+        </tr>
+        <tr id="326" style="None">
+          <td style="color: grey">326</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;else:</td>
+        </tr>
+        <tr id="327" style="None">
+          <td style="color: grey">327</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;write_uint8(w,&nbsp;128&nbsp;|&nbsp;byte)</td>
+        </tr>
+        <tr id="328" style="None">
+          <td style="color: grey">328</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;_encode_zarith(w,&nbsp;modified)</td>
+        </tr>
+        <tr id="329" style="None">
+          <td style="color: grey">329</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="330" style="None">
+          <td style="color: grey">330</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="331" style="color: blue;">
+          <td style="color: grey">331</td>
+          <td style="text-align: right;">2.00</td>
+          <td style="text-align: right;">26</td>
+          <td>def&nbsp;_encode_manager_common(</td>
+        </tr>
+        <tr id="332" style="None">
+          <td style="color: grey">332</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;w:&nbsp;Writer,&nbsp;sequence_length:&nbsp;int,&nbsp;operation:&nbsp;str,&nbsp;to_contract:&nbsp;bool&nbsp;=&nbsp;False</td>
+        </tr>
+        <tr id="333" style="None">
+          <td style="color: grey">333</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>)&nbsp;->&nbsp;None:</td>
+        </tr>
+        <tr id="334" style="None">
+          <td style="color: grey">334</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;#&nbsp;5&nbsp;=&nbsp;tag&nbsp;and&nbsp;sequence_length&nbsp;(1&nbsp;byte&nbsp;+&nbsp;4&nbsp;bytes)</td>
+        </tr>
+        <tr id="335" style="None">
+          <td style="color: grey">335</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;argument_length&nbsp;=&nbsp;sequence_length&nbsp;+&nbsp;5</td>
+        </tr>
+        <tr id="336" style="None">
+          <td style="color: grey">336</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="337" style="None">
+          <td style="color: grey">337</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;helpers.write_bool(w,&nbsp;True)</td>
+        </tr>
+        <tr id="338" style="None">
+          <td style="color: grey">338</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;write_uint8(w,&nbsp;helpers.DO_ENTRYPOINT_TAG)</td>
+        </tr>
+        <tr id="339" style="None">
+          <td style="color: grey">339</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;write_uint32_be(w,&nbsp;argument_length)</td>
+        </tr>
+        <tr id="340" style="None">
+          <td style="color: grey">340</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;write_uint8(w,&nbsp;helpers.MICHELSON_SEQUENCE_TAG)</td>
+        </tr>
+        <tr id="341" style="None">
+          <td style="color: grey">341</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;write_uint32_be(w,&nbsp;sequence_length)</td>
+        </tr>
+        <tr id="342" style="None">
+          <td style="color: grey">342</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;helpers.write_instruction(w,&nbsp;"DROP")</td>
+        </tr>
+        <tr id="343" style="None">
+          <td style="color: grey">343</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;helpers.write_instruction(w,&nbsp;"NIL")</td>
+        </tr>
+        <tr id="344" style="None">
+          <td style="color: grey">344</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;helpers.write_instruction(w,&nbsp;"operation")</td>
+        </tr>
+        <tr id="345" style="None">
+          <td style="color: grey">345</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;helpers.write_instruction(w,&nbsp;operation)</td>
+        </tr>
+        <tr id="346" style="None">
+          <td style="color: grey">346</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;to_contract:</td>
+        </tr>
+        <tr id="347" style="None">
+          <td style="color: grey">347</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;helpers.write_instruction(w,&nbsp;"address")</td>
+        </tr>
+        <tr id="348" style="None">
+          <td style="color: grey">348</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;else:</td>
+        </tr>
+        <tr id="349" style="None">
+          <td style="color: grey">349</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;helpers.write_instruction(w,&nbsp;"key_hash")</td>
+        </tr>
+        <tr id="350" style="None">
+          <td style="color: grey">350</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;operation&nbsp;==&nbsp;"PUSH":</td>
+        </tr>
+        <tr id="351" style="None">
+          <td style="color: grey">351</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;write_uint8(w,&nbsp;10)&nbsp;&nbsp;#&nbsp;byte&nbsp;sequence</td>
+        </tr>
+        <tr id="352" style="None">
+          <td style="color: grey">352</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;to_contract:</td>
+        </tr>
+        <tr id="353" style="None">
+          <td style="color: grey">353</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;write_uint32_be(w,&nbsp;helpers.CONTRACT_ID_SIZE)</td>
+        </tr>
+        <tr id="354" style="None">
+          <td style="color: grey">354</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;else:</td>
+        </tr>
+        <tr id="355" style="None">
+          <td style="color: grey">355</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;write_uint32_be(w,&nbsp;helpers.TAGGED_PUBKEY_HASH_SIZE)</td>
+        </tr>
+        <tr id="356" style="None">
+          <td style="color: grey">356</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="357" style="None">
+          <td style="color: grey">357</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="358" style="color: blue;">
+          <td style="color: grey">358</td>
+          <td style="text-align: right;">1.00</td>
+          <td style="text-align: right;">13</td>
+          <td>def&nbsp;_encode_manager_to_implicit_transfer(</td>
+        </tr>
+        <tr id="359" style="None">
+          <td style="color: grey">359</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;w:&nbsp;Writer,&nbsp;manager_transfer:&nbsp;TezosManagerTransfer</td>
+        </tr>
+        <tr id="360" style="None">
+          <td style="color: grey">360</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>)&nbsp;->&nbsp;None:</td>
+        </tr>
+        <tr id="361" style="None">
+          <td style="color: grey">361</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;MICHELSON_LENGTH&nbsp;=&nbsp;48</td>
+        </tr>
+        <tr id="362" style="None">
+          <td style="color: grey">362</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="363" style="color: blue;">
+          <td style="color: grey">363</td>
+          <td style="text-align: right;">1.00</td>
+          <td style="text-align: right;">1</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;value_natural&nbsp;=&nbsp;bytearray()</td>
+        </tr>
+        <tr id="364" style="None">
+          <td style="color: grey">364</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;_encode_natural(value_natural,&nbsp;manager_transfer.amount)</td>
+        </tr>
+        <tr id="365" style="None">
+          <td style="color: grey">365</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;sequence_length&nbsp;=&nbsp;MICHELSON_LENGTH&nbsp;+&nbsp;len(value_natural)</td>
+        </tr>
+        <tr id="366" style="None">
+          <td style="color: grey">366</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="367" style="None">
+          <td style="color: grey">367</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;_encode_manager_common(w,&nbsp;sequence_length,&nbsp;"PUSH")</td>
+        </tr>
+        <tr id="368" style="None">
+          <td style="color: grey">368</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;write_bytes_fixed(</td>
+        </tr>
+        <tr id="369" style="None">
+          <td style="color: grey">369</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;w,&nbsp;manager_transfer.destination.hash,&nbsp;helpers.TAGGED_PUBKEY_HASH_SIZE</td>
+        </tr>
+        <tr id="370" style="None">
+          <td style="color: grey">370</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;)</td>
+        </tr>
+        <tr id="371" style="None">
+          <td style="color: grey">371</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;helpers.write_instruction(w,&nbsp;"IMPLICIT_ACCOUNT")</td>
+        </tr>
+        <tr id="372" style="None">
+          <td style="color: grey">372</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;helpers.write_instruction(w,&nbsp;"PUSH")</td>
+        </tr>
+        <tr id="373" style="None">
+          <td style="color: grey">373</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;helpers.write_instruction(w,&nbsp;"mutez")</td>
+        </tr>
+        <tr id="374" style="None">
+          <td style="color: grey">374</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;_encode_natural(w,&nbsp;manager_transfer.amount)</td>
+        </tr>
+        <tr id="375" style="None">
+          <td style="color: grey">375</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;helpers.write_instruction(w,&nbsp;"UNIT")</td>
+        </tr>
+        <tr id="376" style="None">
+          <td style="color: grey">376</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;helpers.write_instruction(w,&nbsp;"TRANSFER_TOKENS")</td>
+        </tr>
+        <tr id="377" style="None">
+          <td style="color: grey">377</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;helpers.write_instruction(w,&nbsp;"CONS")</td>
+        </tr>
+        <tr id="378" style="None">
+          <td style="color: grey">378</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="379" style="None">
+          <td style="color: grey">379</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="380" style="None">
+          <td style="color: grey">380</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>#&nbsp;smart_contract_delegation</td>
+        </tr>
+        <tr id="381" style="color: blue;">
+          <td style="color: grey">381</td>
+          <td style="text-align: right;">1.00</td>
+          <td style="text-align: right;">13</td>
+          <td>def&nbsp;_encode_manager_delegation(w:&nbsp;Writer,&nbsp;delegate:&nbsp;bytes)&nbsp;->&nbsp;None:</td>
+        </tr>
+        <tr id="382" style="None">
+          <td style="color: grey">382</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;MICHELSON_LENGTH&nbsp;=&nbsp;42&nbsp;&nbsp;#&nbsp;length&nbsp;is&nbsp;fixed&nbsp;this&nbsp;time(no&nbsp;variable&nbsp;length&nbsp;fields)</td>
+        </tr>
+        <tr id="383" style="None">
+          <td style="color: grey">383</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="384" style="None">
+          <td style="color: grey">384</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;_encode_manager_common(w,&nbsp;MICHELSON_LENGTH,&nbsp;"PUSH")</td>
+        </tr>
+        <tr id="385" style="None">
+          <td style="color: grey">385</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;write_bytes_fixed(w,&nbsp;delegate,&nbsp;helpers.TAGGED_PUBKEY_HASH_SIZE)</td>
+        </tr>
+        <tr id="386" style="None">
+          <td style="color: grey">386</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;helpers.write_instruction(w,&nbsp;"SOME")</td>
+        </tr>
+        <tr id="387" style="None">
+          <td style="color: grey">387</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;helpers.write_instruction(w,&nbsp;"SET_DELEGATE")</td>
+        </tr>
+        <tr id="388" style="None">
+          <td style="color: grey">388</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;helpers.write_instruction(w,&nbsp;"CONS")</td>
+        </tr>
+        <tr id="389" style="None">
+          <td style="color: grey">389</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="390" style="None">
+          <td style="color: grey">390</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="391" style="color: blue;">
+          <td style="color: grey">391</td>
+          <td style="text-align: right;">1.00</td>
+          <td style="text-align: right;">13</td>
+          <td>def&nbsp;_encode_manager_delegation_remove(w:&nbsp;Writer)&nbsp;->&nbsp;None:</td>
+        </tr>
+        <tr id="392" style="None">
+          <td style="color: grey">392</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;MICHELSON_LENGTH&nbsp;=&nbsp;14&nbsp;&nbsp;#&nbsp;length&nbsp;is&nbsp;fixed&nbsp;this&nbsp;time(no&nbsp;variable&nbsp;length&nbsp;fields)</td>
+        </tr>
+        <tr id="393" style="None">
+          <td style="color: grey">393</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;_encode_manager_common(w,&nbsp;MICHELSON_LENGTH,&nbsp;"NONE")</td>
+        </tr>
+        <tr id="394" style="None">
+          <td style="color: grey">394</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;helpers.write_instruction(w,&nbsp;"SET_DELEGATE")</td>
+        </tr>
+        <tr id="395" style="None">
+          <td style="color: grey">395</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;helpers.write_instruction(w,&nbsp;"CONS")</td>
+        </tr>
+        <tr id="396" style="None">
+          <td style="color: grey">396</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="397" style="None">
+          <td style="color: grey">397</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="398" style="color: blue;">
+          <td style="color: grey">398</td>
+          <td style="text-align: right;">1.00</td>
+          <td style="text-align: right;">13</td>
+          <td>def&nbsp;_encode_manager_to_manager_transfer(</td>
+        </tr>
+        <tr id="399" style="None">
+          <td style="color: grey">399</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;w:&nbsp;Writer,&nbsp;manager_transfer:&nbsp;TezosManagerTransfer</td>
+        </tr>
+        <tr id="400" style="None">
+          <td style="color: grey">400</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>)&nbsp;->&nbsp;None:</td>
+        </tr>
+        <tr id="401" style="None">
+          <td style="color: grey">401</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;MICHELSON_LENGTH&nbsp;=&nbsp;77</td>
+        </tr>
+        <tr id="402" style="None">
+          <td style="color: grey">402</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="403" style="color: blue;">
+          <td style="color: grey">403</td>
+          <td style="text-align: right;">1.00</td>
+          <td style="text-align: right;">1</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;value_natural&nbsp;=&nbsp;bytearray()</td>
+        </tr>
+        <tr id="404" style="None">
+          <td style="color: grey">404</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;_encode_natural(value_natural,&nbsp;manager_transfer.amount)</td>
+        </tr>
+        <tr id="405" style="None">
+          <td style="color: grey">405</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;sequence_length&nbsp;=&nbsp;MICHELSON_LENGTH&nbsp;+&nbsp;len(value_natural)</td>
+        </tr>
+        <tr id="406" style="None">
+          <td style="color: grey">406</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="407" style="None">
+          <td style="color: grey">407</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;_encode_manager_common(w,&nbsp;sequence_length,&nbsp;"PUSH",&nbsp;to_contract=True)</td>
+        </tr>
+        <tr id="408" style="None">
+          <td style="color: grey">408</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;_encode_contract_id(w,&nbsp;manager_transfer.destination)</td>
+        </tr>
+        <tr id="409" style="None">
+          <td style="color: grey">409</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;helpers.write_instruction(w,&nbsp;"CONTRACT")</td>
+        </tr>
+        <tr id="410" style="None">
+          <td style="color: grey">410</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;helpers.write_instruction(w,&nbsp;"unit")</td>
+        </tr>
+        <tr id="411" style="None">
+          <td style="color: grey">411</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;helpers.write_instruction(w,&nbsp;"ASSERT_SOME")</td>
+        </tr>
+        <tr id="412" style="None">
+          <td style="color: grey">412</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;helpers.write_instruction(w,&nbsp;"PUSH")</td>
+        </tr>
+        <tr id="413" style="None">
+          <td style="color: grey">413</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;helpers.write_instruction(w,&nbsp;"mutez")</td>
+        </tr>
+        <tr id="414" style="None">
+          <td style="color: grey">414</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;_encode_natural(w,&nbsp;manager_transfer.amount)</td>
+        </tr>
+        <tr id="415" style="None">
+          <td style="color: grey">415</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;helpers.write_instruction(w,&nbsp;"UNIT")</td>
+        </tr>
+        <tr id="416" style="None">
+          <td style="color: grey">416</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;helpers.write_instruction(w,&nbsp;"TRANSFER_TOKENS")</td>
+        </tr>
+        <tr id="417" style="None">
+          <td style="color: grey">417</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;helpers.write_instruction(w,&nbsp;"CONS")</td>
+        </tr>
+      </tbody>
+    </table>
+  </body>
+</html>

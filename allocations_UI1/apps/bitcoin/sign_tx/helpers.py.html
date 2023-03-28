@@ -1,0 +1,3202 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>apps/bitcoin/sign_tx/helpers.py</title>
+    <meta charset="utf-8">
+    <style>body { font-size: 80%; }</style>
+  </head>
+  <body>
+    <table>
+      <thead>
+        <tr>
+          <th style="color: grey">#</th>
+          <th style="text-align: right;">avg</th>
+          <th style="text-align: right;">total</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr id="1" style="color: blue;">
+          <td style="color: grey">1</td>
+          <td style="text-align: right;">1.00</td>
+          <td style="text-align: right;">3962</td>
+          <td>from&nbsp;typing&nbsp;import&nbsp;TYPE_CHECKING</td>
+        </tr>
+        <tr id="2" style="None">
+          <td style="color: grey">2</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="3" style="color: blue;">
+          <td style="color: grey">3</td>
+          <td style="text-align: right;">2.00</td>
+          <td style="text-align: right;">566</td>
+          <td>from&nbsp;trezor&nbsp;import&nbsp;utils,&nbsp;wire</td>
+        </tr>
+        <tr id="4" style="color: red;">
+          <td style="color: grey">4</td>
+          <td style="text-align: right;">3.00</td>
+          <td style="text-align: right;">849</td>
+          <td>from&nbsp;trezor.enums&nbsp;import&nbsp;InputScriptType,&nbsp;OutputScriptType,&nbsp;RequestType</td>
+        </tr>
+        <tr id="5" style="color: blue;">
+          <td style="color: grey">5</td>
+          <td style="text-align: right;">1.00</td>
+          <td style="text-align: right;">283</td>
+          <td>from&nbsp;trezor.messages&nbsp;import&nbsp;(</td>
+        </tr>
+        <tr id="6" style="None">
+          <td style="color: grey">6</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;PrevInput,</td>
+        </tr>
+        <tr id="7" style="None">
+          <td style="color: grey">7</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;PrevOutput,</td>
+        </tr>
+        <tr id="8" style="None">
+          <td style="color: grey">8</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;PrevTx,</td>
+        </tr>
+        <tr id="9" style="None">
+          <td style="color: grey">9</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;SignTx,</td>
+        </tr>
+        <tr id="10" style="None">
+          <td style="color: grey">10</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;TxAckInput,</td>
+        </tr>
+        <tr id="11" style="None">
+          <td style="color: grey">11</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;TxAckOutput,</td>
+        </tr>
+        <tr id="12" style="None">
+          <td style="color: grey">12</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;TxAckPaymentRequest,</td>
+        </tr>
+        <tr id="13" style="None">
+          <td style="color: grey">13</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;TxAckPrevExtraData,</td>
+        </tr>
+        <tr id="14" style="None">
+          <td style="color: grey">14</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;TxAckPrevInput,</td>
+        </tr>
+        <tr id="15" style="None">
+          <td style="color: grey">15</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;TxAckPrevMeta,</td>
+        </tr>
+        <tr id="16" style="None">
+          <td style="color: grey">16</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;TxAckPrevOutput,</td>
+        </tr>
+        <tr id="17" style="None">
+          <td style="color: grey">17</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;TxInput,</td>
+        </tr>
+        <tr id="18" style="None">
+          <td style="color: grey">18</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;TxOutput,</td>
+        </tr>
+        <tr id="19" style="None">
+          <td style="color: grey">19</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;TxRequest,</td>
+        </tr>
+        <tr id="20" style="None">
+          <td style="color: grey">20</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>)</td>
+        </tr>
+        <tr id="21" style="None">
+          <td style="color: grey">21</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="22" style="color: blue;">
+          <td style="color: grey">22</td>
+          <td style="text-align: right;">1.00</td>
+          <td style="text-align: right;">283</td>
+          <td>from&nbsp;apps.common&nbsp;import&nbsp;paths</td>
+        </tr>
+        <tr id="23" style="color: blue;">
+          <td style="color: grey">23</td>
+          <td style="text-align: right;">1.00</td>
+          <td style="text-align: right;">283</td>
+          <td>from&nbsp;apps.common.coininfo&nbsp;import&nbsp;CoinInfo</td>
+        </tr>
+        <tr id="24" style="None">
+          <td style="color: grey">24</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="25" style="color: blue;">
+          <td style="color: grey">25</td>
+          <td style="text-align: right;">2.00</td>
+          <td style="text-align: right;">566</td>
+          <td>from&nbsp;..&nbsp;import&nbsp;common</td>
+        </tr>
+        <tr id="26" style="color: blue;">
+          <td style="color: grey">26</td>
+          <td style="text-align: right;">1.00</td>
+          <td style="text-align: right;">283</td>
+          <td>from&nbsp;..writers&nbsp;import&nbsp;TX_HASH_SIZE</td>
+        </tr>
+        <tr id="27" style="color: red;">
+          <td style="color: grey">27</td>
+          <td style="text-align: right;">6.00</td>
+          <td style="text-align: right;">1698</td>
+          <td>from&nbsp;.&nbsp;import&nbsp;layout</td>
+        </tr>
+        <tr id="28" style="None">
+          <td style="color: grey">28</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="29" style="None">
+          <td style="color: grey">29</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>if&nbsp;TYPE_CHECKING:</td>
+        </tr>
+        <tr id="30" style="None">
+          <td style="color: grey">30</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;from&nbsp;typing&nbsp;import&nbsp;Any,&nbsp;Awaitable</td>
+        </tr>
+        <tr id="31" style="None">
+          <td style="color: grey">31</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;from&nbsp;trezor.enums&nbsp;import&nbsp;AmountUnit</td>
+        </tr>
+        <tr id="32" style="None">
+          <td style="color: grey">32</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="33" style="None">
+          <td style="color: grey">33</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="34" style="None">
+          <td style="color: grey">34</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>#&nbsp;Machine&nbsp;instructions</td>
+        </tr>
+        <tr id="35" style="None">
+          <td style="color: grey">35</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>#&nbsp;===</td>
+        </tr>
+        <tr id="36" style="None">
+          <td style="color: grey">36</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="37" style="None">
+          <td style="color: grey">37</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="38" style="color: blue;">
+          <td style="color: grey">38</td>
+          <td style="text-align: right;">2.00</td>
+          <td style="text-align: right;">566</td>
+          <td>class&nbsp;UiConfirm:</td>
+        </tr>
+        <tr id="39" style="color: blue;">
+          <td style="color: grey">39</td>
+          <td style="text-align: right;">2.00</td>
+          <td style="text-align: right;">566</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;def&nbsp;confirm_dialog(self,&nbsp;ctx:&nbsp;wire.Context)&nbsp;->&nbsp;Awaitable[Any]:</td>
+        </tr>
+        <tr id="40" style="None">
+          <td style="color: grey">40</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;raise&nbsp;NotImplementedError</td>
+        </tr>
+        <tr id="41" style="None">
+          <td style="color: grey">41</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="42" style="color: blue;">
+          <td style="color: grey">42</td>
+          <td style="text-align: right;">1.00</td>
+          <td style="text-align: right;">283</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;__eq__&nbsp;=&nbsp;utils.obj_eq</td>
+        </tr>
+        <tr id="43" style="None">
+          <td style="color: grey">43</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="44" style="None">
+          <td style="color: grey">44</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="45" style="color: blue;">
+          <td style="color: grey">45</td>
+          <td style="text-align: right;">2.00</td>
+          <td style="text-align: right;">566</td>
+          <td>class&nbsp;UiConfirmOutput(UiConfirm):</td>
+        </tr>
+        <tr id="46" style="color: blue;">
+          <td style="color: grey">46</td>
+          <td style="text-align: right;">2.00</td>
+          <td style="text-align: right;">566</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;def&nbsp;__init__(self,&nbsp;output:&nbsp;TxOutput,&nbsp;coin:&nbsp;CoinInfo,&nbsp;amount_unit:&nbsp;AmountUnit):</td>
+        </tr>
+        <tr id="47" style="color: blue;">
+          <td style="color: grey">47</td>
+          <td style="text-align: right;">1.00</td>
+          <td style="text-align: right;">501</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.output&nbsp;=&nbsp;output</td>
+        </tr>
+        <tr id="48" style="None">
+          <td style="color: grey">48</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.coin&nbsp;=&nbsp;coin</td>
+        </tr>
+        <tr id="49" style="color: blue;">
+          <td style="color: grey">49</td>
+          <td style="text-align: right;">1.00</td>
+          <td style="text-align: right;">501</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.amount_unit&nbsp;=&nbsp;amount_unit</td>
+        </tr>
+        <tr id="50" style="None">
+          <td style="color: grey">50</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="51" style="color: blue;">
+          <td style="color: grey">51</td>
+          <td style="text-align: right;">3.00</td>
+          <td style="text-align: right;">849</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;def&nbsp;confirm_dialog(self,&nbsp;ctx:&nbsp;wire.Context)&nbsp;->&nbsp;Awaitable[Any]:</td>
+        </tr>
+        <tr id="52" style="color: blue;">
+          <td style="color: grey">52</td>
+          <td style="text-align: right;">1.00</td>
+          <td style="text-align: right;">501</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;layout.confirm_output(ctx,&nbsp;self.output,&nbsp;self.coin,&nbsp;self.amount_unit)</td>
+        </tr>
+        <tr id="53" style="None">
+          <td style="color: grey">53</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="54" style="None">
+          <td style="color: grey">54</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="55" style="color: blue;">
+          <td style="color: grey">55</td>
+          <td style="text-align: right;">2.00</td>
+          <td style="text-align: right;">566</td>
+          <td>class&nbsp;UiConfirmDecredSSTXSubmission(UiConfirm):</td>
+        </tr>
+        <tr id="56" style="color: blue;">
+          <td style="color: grey">56</td>
+          <td style="text-align: right;">2.00</td>
+          <td style="text-align: right;">566</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;def&nbsp;__init__(self,&nbsp;output:&nbsp;TxOutput,&nbsp;coin:&nbsp;CoinInfo,&nbsp;amount_unit:&nbsp;AmountUnit):</td>
+        </tr>
+        <tr id="57" style="color: blue;">
+          <td style="color: grey">57</td>
+          <td style="text-align: right;">1.00</td>
+          <td style="text-align: right;">1</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.output&nbsp;=&nbsp;output</td>
+        </tr>
+        <tr id="58" style="None">
+          <td style="color: grey">58</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.coin&nbsp;=&nbsp;coin</td>
+        </tr>
+        <tr id="59" style="color: blue;">
+          <td style="color: grey">59</td>
+          <td style="text-align: right;">1.00</td>
+          <td style="text-align: right;">1</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.amount_unit&nbsp;=&nbsp;amount_unit</td>
+        </tr>
+        <tr id="60" style="None">
+          <td style="color: grey">60</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="61" style="color: blue;">
+          <td style="color: grey">61</td>
+          <td style="text-align: right;">3.00</td>
+          <td style="text-align: right;">849</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;def&nbsp;confirm_dialog(self,&nbsp;ctx:&nbsp;wire.Context)&nbsp;->&nbsp;Awaitable[Any]:</td>
+        </tr>
+        <tr id="62" style="None">
+          <td style="color: grey">62</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;layout.confirm_decred_sstx_submission(</td>
+        </tr>
+        <tr id="63" style="color: blue;">
+          <td style="color: grey">63</td>
+          <td style="text-align: right;">1.00</td>
+          <td style="text-align: right;">1</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ctx,&nbsp;self.output,&nbsp;self.coin,&nbsp;self.amount_unit</td>
+        </tr>
+        <tr id="64" style="None">
+          <td style="color: grey">64</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;)</td>
+        </tr>
+        <tr id="65" style="None">
+          <td style="color: grey">65</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="66" style="None">
+          <td style="color: grey">66</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="67" style="color: blue;">
+          <td style="color: grey">67</td>
+          <td style="text-align: right;">2.00</td>
+          <td style="text-align: right;">566</td>
+          <td>class&nbsp;UiConfirmPaymentRequest(UiConfirm):</td>
+        </tr>
+        <tr id="68" style="color: blue;">
+          <td style="color: grey">68</td>
+          <td style="text-align: right;">2.00</td>
+          <td style="text-align: right;">566</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;def&nbsp;__init__(</td>
+        </tr>
+        <tr id="69" style="None">
+          <td style="color: grey">69</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self,</td>
+        </tr>
+        <tr id="70" style="None">
+          <td style="color: grey">70</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;payment_req:&nbsp;TxAckPaymentRequest,</td>
+        </tr>
+        <tr id="71" style="None">
+          <td style="color: grey">71</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;coin:&nbsp;CoinInfo,</td>
+        </tr>
+        <tr id="72" style="None">
+          <td style="color: grey">72</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;amount_unit:&nbsp;AmountUnit,</td>
+        </tr>
+        <tr id="73" style="None">
+          <td style="color: grey">73</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;):</td>
+        </tr>
+        <tr id="74" style="color: blue;">
+          <td style="color: grey">74</td>
+          <td style="text-align: right;">1.00</td>
+          <td style="text-align: right;">12</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.payment_req&nbsp;=&nbsp;payment_req</td>
+        </tr>
+        <tr id="75" style="None">
+          <td style="color: grey">75</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.amount_unit&nbsp;=&nbsp;amount_unit</td>
+        </tr>
+        <tr id="76" style="color: blue;">
+          <td style="color: grey">76</td>
+          <td style="text-align: right;">1.00</td>
+          <td style="text-align: right;">12</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.coin&nbsp;=&nbsp;coin</td>
+        </tr>
+        <tr id="77" style="None">
+          <td style="color: grey">77</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="78" style="color: blue;">
+          <td style="color: grey">78</td>
+          <td style="text-align: right;">1.00</td>
+          <td style="text-align: right;">283</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;def&nbsp;confirm_dialog(self,&nbsp;ctx:&nbsp;wire.Context)&nbsp;->&nbsp;Awaitable[Any]:</td>
+        </tr>
+        <tr id="79" style="None">
+          <td style="color: grey">79</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;layout.confirm_payment_request(</td>
+        </tr>
+        <tr id="80" style="color: blue;">
+          <td style="color: grey">80</td>
+          <td style="text-align: right;">1.00</td>
+          <td style="text-align: right;">12</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ctx,&nbsp;self.payment_req,&nbsp;self.coin,&nbsp;self.amount_unit</td>
+        </tr>
+        <tr id="81" style="None">
+          <td style="color: grey">81</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;)</td>
+        </tr>
+        <tr id="82" style="None">
+          <td style="color: grey">82</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="83" style="color: red;">
+          <td style="color: grey">83</td>
+          <td style="text-align: right;">4.00</td>
+          <td style="text-align: right;">1132</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;__eq__&nbsp;=&nbsp;utils.obj_eq</td>
+        </tr>
+        <tr id="84" style="None">
+          <td style="color: grey">84</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="85" style="None">
+          <td style="color: grey">85</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="86" style="color: blue;">
+          <td style="color: grey">86</td>
+          <td style="text-align: right;">2.00</td>
+          <td style="text-align: right;">566</td>
+          <td>class&nbsp;UiConfirmReplacement(UiConfirm):</td>
+        </tr>
+        <tr id="87" style="color: blue;">
+          <td style="color: grey">87</td>
+          <td style="text-align: right;">2.00</td>
+          <td style="text-align: right;">566</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;def&nbsp;__init__(self,&nbsp;description:&nbsp;str,&nbsp;txid:&nbsp;bytes):</td>
+        </tr>
+        <tr id="88" style="color: blue;">
+          <td style="color: grey">88</td>
+          <td style="text-align: right;">1.00</td>
+          <td style="text-align: right;">16</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.description&nbsp;=&nbsp;description</td>
+        </tr>
+        <tr id="89" style="None">
+          <td style="color: grey">89</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.txid&nbsp;=&nbsp;txid</td>
+        </tr>
+        <tr id="90" style="None">
+          <td style="color: grey">90</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="91" style="color: blue;">
+          <td style="color: grey">91</td>
+          <td style="text-align: right;">3.00</td>
+          <td style="text-align: right;">849</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;def&nbsp;confirm_dialog(self,&nbsp;ctx:&nbsp;wire.Context)&nbsp;->&nbsp;Awaitable[Any]:</td>
+        </tr>
+        <tr id="92" style="color: blue;">
+          <td style="color: grey">92</td>
+          <td style="text-align: right;">1.00</td>
+          <td style="text-align: right;">16</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;layout.confirm_replacement(ctx,&nbsp;self.description,&nbsp;self.txid)</td>
+        </tr>
+        <tr id="93" style="None">
+          <td style="color: grey">93</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="94" style="None">
+          <td style="color: grey">94</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="95" style="color: blue;">
+          <td style="color: grey">95</td>
+          <td style="text-align: right;">2.00</td>
+          <td style="text-align: right;">566</td>
+          <td>class&nbsp;UiConfirmModifyOutput(UiConfirm):</td>
+        </tr>
+        <tr id="96" style="color: blue;">
+          <td style="color: grey">96</td>
+          <td style="text-align: right;">2.00</td>
+          <td style="text-align: right;">566</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;def&nbsp;__init__(</td>
+        </tr>
+        <tr id="97" style="None">
+          <td style="color: grey">97</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self,</td>
+        </tr>
+        <tr id="98" style="None">
+          <td style="color: grey">98</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;txo:&nbsp;TxOutput,</td>
+        </tr>
+        <tr id="99" style="None">
+          <td style="color: grey">99</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;orig_txo:&nbsp;TxOutput,</td>
+        </tr>
+        <tr id="100" style="None">
+          <td style="color: grey">100</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;coin:&nbsp;CoinInfo,</td>
+        </tr>
+        <tr id="101" style="None">
+          <td style="color: grey">101</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;amount_unit:&nbsp;AmountUnit,</td>
+        </tr>
+        <tr id="102" style="None">
+          <td style="color: grey">102</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;):</td>
+        </tr>
+        <tr id="103" style="color: blue;">
+          <td style="color: grey">103</td>
+          <td style="text-align: right;">1.00</td>
+          <td style="text-align: right;">1</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.txo&nbsp;=&nbsp;txo</td>
+        </tr>
+        <tr id="104" style="None">
+          <td style="color: grey">104</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.orig_txo&nbsp;=&nbsp;orig_txo</td>
+        </tr>
+        <tr id="105" style="color: blue;">
+          <td style="color: grey">105</td>
+          <td style="text-align: right;">1.00</td>
+          <td style="text-align: right;">1</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.coin&nbsp;=&nbsp;coin</td>
+        </tr>
+        <tr id="106" style="None">
+          <td style="color: grey">106</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.amount_unit&nbsp;=&nbsp;amount_unit</td>
+        </tr>
+        <tr id="107" style="None">
+          <td style="color: grey">107</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="108" style="color: blue;">
+          <td style="color: grey">108</td>
+          <td style="text-align: right;">3.00</td>
+          <td style="text-align: right;">849</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;def&nbsp;confirm_dialog(self,&nbsp;ctx:&nbsp;wire.Context)&nbsp;->&nbsp;Awaitable[Any]:</td>
+        </tr>
+        <tr id="109" style="None">
+          <td style="color: grey">109</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;layout.confirm_modify_output(</td>
+        </tr>
+        <tr id="110" style="color: blue;">
+          <td style="color: grey">110</td>
+          <td style="text-align: right;">1.00</td>
+          <td style="text-align: right;">1</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ctx,&nbsp;self.txo,&nbsp;self.orig_txo,&nbsp;self.coin,&nbsp;self.amount_unit</td>
+        </tr>
+        <tr id="111" style="None">
+          <td style="color: grey">111</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;)</td>
+        </tr>
+        <tr id="112" style="None">
+          <td style="color: grey">112</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="113" style="None">
+          <td style="color: grey">113</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="114" style="color: blue;">
+          <td style="color: grey">114</td>
+          <td style="text-align: right;">2.00</td>
+          <td style="text-align: right;">566</td>
+          <td>class&nbsp;UiConfirmModifyFee(UiConfirm):</td>
+        </tr>
+        <tr id="115" style="color: blue;">
+          <td style="color: grey">115</td>
+          <td style="text-align: right;">2.00</td>
+          <td style="text-align: right;">566</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;def&nbsp;__init__(</td>
+        </tr>
+        <tr id="116" style="None">
+          <td style="color: grey">116</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self,</td>
+        </tr>
+        <tr id="117" style="None">
+          <td style="color: grey">117</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;user_fee_change:&nbsp;int,</td>
+        </tr>
+        <tr id="118" style="None">
+          <td style="color: grey">118</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;total_fee_new:&nbsp;int,</td>
+        </tr>
+        <tr id="119" style="None">
+          <td style="color: grey">119</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;fee_rate:&nbsp;float,</td>
+        </tr>
+        <tr id="120" style="None">
+          <td style="color: grey">120</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;coin:&nbsp;CoinInfo,</td>
+        </tr>
+        <tr id="121" style="None">
+          <td style="color: grey">121</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;amount_unit:&nbsp;AmountUnit,</td>
+        </tr>
+        <tr id="122" style="None">
+          <td style="color: grey">122</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;):</td>
+        </tr>
+        <tr id="123" style="color: blue;">
+          <td style="color: grey">123</td>
+          <td style="text-align: right;">1.00</td>
+          <td style="text-align: right;">10</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.user_fee_change&nbsp;=&nbsp;user_fee_change</td>
+        </tr>
+        <tr id="124" style="None">
+          <td style="color: grey">124</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.total_fee_new&nbsp;=&nbsp;total_fee_new</td>
+        </tr>
+        <tr id="125" style="color: blue;">
+          <td style="color: grey">125</td>
+          <td style="text-align: right;">1.00</td>
+          <td style="text-align: right;">10</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.fee_rate&nbsp;=&nbsp;fee_rate</td>
+        </tr>
+        <tr id="126" style="None">
+          <td style="color: grey">126</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.coin&nbsp;=&nbsp;coin</td>
+        </tr>
+        <tr id="127" style="color: blue;">
+          <td style="color: grey">127</td>
+          <td style="text-align: right;">1.00</td>
+          <td style="text-align: right;">10</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.amount_unit&nbsp;=&nbsp;amount_unit</td>
+        </tr>
+        <tr id="128" style="None">
+          <td style="color: grey">128</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="129" style="color: blue;">
+          <td style="color: grey">129</td>
+          <td style="text-align: right;">3.00</td>
+          <td style="text-align: right;">849</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;def&nbsp;confirm_dialog(self,&nbsp;ctx:&nbsp;wire.Context)&nbsp;->&nbsp;Awaitable[Any]:</td>
+        </tr>
+        <tr id="130" style="None">
+          <td style="color: grey">130</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;layout.confirm_modify_fee(</td>
+        </tr>
+        <tr id="131" style="None">
+          <td style="color: grey">131</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ctx,</td>
+        </tr>
+        <tr id="132" style="None">
+          <td style="color: grey">132</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.user_fee_change,</td>
+        </tr>
+        <tr id="133" style="None">
+          <td style="color: grey">133</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.total_fee_new,</td>
+        </tr>
+        <tr id="134" style="None">
+          <td style="color: grey">134</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.fee_rate,</td>
+        </tr>
+        <tr id="135" style="None">
+          <td style="color: grey">135</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.coin,</td>
+        </tr>
+        <tr id="136" style="color: blue;">
+          <td style="color: grey">136</td>
+          <td style="text-align: right;">1.00</td>
+          <td style="text-align: right;">10</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.amount_unit,</td>
+        </tr>
+        <tr id="137" style="None">
+          <td style="color: grey">137</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;)</td>
+        </tr>
+        <tr id="138" style="None">
+          <td style="color: grey">138</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="139" style="None">
+          <td style="color: grey">139</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="140" style="color: blue;">
+          <td style="color: grey">140</td>
+          <td style="text-align: right;">2.00</td>
+          <td style="text-align: right;">566</td>
+          <td>class&nbsp;UiConfirmTotal(UiConfirm):</td>
+        </tr>
+        <tr id="141" style="color: blue;">
+          <td style="color: grey">141</td>
+          <td style="text-align: right;">2.00</td>
+          <td style="text-align: right;">566</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;def&nbsp;__init__(</td>
+        </tr>
+        <tr id="142" style="None">
+          <td style="color: grey">142</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self,</td>
+        </tr>
+        <tr id="143" style="None">
+          <td style="color: grey">143</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;spending:&nbsp;int,</td>
+        </tr>
+        <tr id="144" style="None">
+          <td style="color: grey">144</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;fee:&nbsp;int,</td>
+        </tr>
+        <tr id="145" style="None">
+          <td style="color: grey">145</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;fee_rate:&nbsp;float,</td>
+        </tr>
+        <tr id="146" style="None">
+          <td style="color: grey">146</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;coin:&nbsp;CoinInfo,</td>
+        </tr>
+        <tr id="147" style="None">
+          <td style="color: grey">147</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;amount_unit:&nbsp;AmountUnit,</td>
+        </tr>
+        <tr id="148" style="None">
+          <td style="color: grey">148</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;):</td>
+        </tr>
+        <tr id="149" style="color: blue;">
+          <td style="color: grey">149</td>
+          <td style="text-align: right;">1.00</td>
+          <td style="text-align: right;">198</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.spending&nbsp;=&nbsp;spending</td>
+        </tr>
+        <tr id="150" style="None">
+          <td style="color: grey">150</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.fee&nbsp;=&nbsp;fee</td>
+        </tr>
+        <tr id="151" style="color: blue;">
+          <td style="color: grey">151</td>
+          <td style="text-align: right;">1.00</td>
+          <td style="text-align: right;">198</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.fee_rate&nbsp;=&nbsp;fee_rate</td>
+        </tr>
+        <tr id="152" style="None">
+          <td style="color: grey">152</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.coin&nbsp;=&nbsp;coin</td>
+        </tr>
+        <tr id="153" style="color: blue;">
+          <td style="color: grey">153</td>
+          <td style="text-align: right;">1.00</td>
+          <td style="text-align: right;">198</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.amount_unit&nbsp;=&nbsp;amount_unit</td>
+        </tr>
+        <tr id="154" style="None">
+          <td style="color: grey">154</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="155" style="color: blue;">
+          <td style="color: grey">155</td>
+          <td style="text-align: right;">3.00</td>
+          <td style="text-align: right;">849</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;def&nbsp;confirm_dialog(self,&nbsp;ctx:&nbsp;wire.Context)&nbsp;->&nbsp;Awaitable[Any]:</td>
+        </tr>
+        <tr id="156" style="None">
+          <td style="color: grey">156</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;layout.confirm_total(</td>
+        </tr>
+        <tr id="157" style="color: blue;">
+          <td style="color: grey">157</td>
+          <td style="text-align: right;">1.00</td>
+          <td style="text-align: right;">198</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ctx,&nbsp;self.spending,&nbsp;self.fee,&nbsp;self.fee_rate,&nbsp;self.coin,&nbsp;self.amount_unit</td>
+        </tr>
+        <tr id="158" style="None">
+          <td style="color: grey">158</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;)</td>
+        </tr>
+        <tr id="159" style="None">
+          <td style="color: grey">159</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="160" style="None">
+          <td style="color: grey">160</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="161" style="color: blue;">
+          <td style="color: grey">161</td>
+          <td style="text-align: right;">2.00</td>
+          <td style="text-align: right;">566</td>
+          <td>class&nbsp;UiConfirmJointTotal(UiConfirm):</td>
+        </tr>
+        <tr id="162" style="color: blue;">
+          <td style="color: grey">162</td>
+          <td style="text-align: right;">2.00</td>
+          <td style="text-align: right;">566</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;def&nbsp;__init__(</td>
+        </tr>
+        <tr id="163" style="None">
+          <td style="color: grey">163</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self,&nbsp;spending:&nbsp;int,&nbsp;total:&nbsp;int,&nbsp;coin:&nbsp;CoinInfo,&nbsp;amount_unit:&nbsp;AmountUnit</td>
+        </tr>
+        <tr id="164" style="None">
+          <td style="color: grey">164</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;):</td>
+        </tr>
+        <tr id="165" style="color: blue;">
+          <td style="color: grey">165</td>
+          <td style="text-align: right;">1.00</td>
+          <td style="text-align: right;">17</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.spending&nbsp;=&nbsp;spending</td>
+        </tr>
+        <tr id="166" style="None">
+          <td style="color: grey">166</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.total&nbsp;=&nbsp;total</td>
+        </tr>
+        <tr id="167" style="color: blue;">
+          <td style="color: grey">167</td>
+          <td style="text-align: right;">1.00</td>
+          <td style="text-align: right;">17</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.coin&nbsp;=&nbsp;coin</td>
+        </tr>
+        <tr id="168" style="None">
+          <td style="color: grey">168</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.amount_unit&nbsp;=&nbsp;amount_unit</td>
+        </tr>
+        <tr id="169" style="None">
+          <td style="color: grey">169</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="170" style="color: blue;">
+          <td style="color: grey">170</td>
+          <td style="text-align: right;">3.00</td>
+          <td style="text-align: right;">849</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;def&nbsp;confirm_dialog(self,&nbsp;ctx:&nbsp;wire.Context)&nbsp;->&nbsp;Awaitable[Any]:</td>
+        </tr>
+        <tr id="171" style="None">
+          <td style="color: grey">171</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;layout.confirm_joint_total(</td>
+        </tr>
+        <tr id="172" style="color: blue;">
+          <td style="color: grey">172</td>
+          <td style="text-align: right;">1.00</td>
+          <td style="text-align: right;">17</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ctx,&nbsp;self.spending,&nbsp;self.total,&nbsp;self.coin,&nbsp;self.amount_unit</td>
+        </tr>
+        <tr id="173" style="None">
+          <td style="color: grey">173</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;)</td>
+        </tr>
+        <tr id="174" style="None">
+          <td style="color: grey">174</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="175" style="None">
+          <td style="color: grey">175</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="176" style="color: blue;">
+          <td style="color: grey">176</td>
+          <td style="text-align: right;">2.00</td>
+          <td style="text-align: right;">566</td>
+          <td>class&nbsp;UiConfirmFeeOverThreshold(UiConfirm):</td>
+        </tr>
+        <tr id="177" style="color: blue;">
+          <td style="color: grey">177</td>
+          <td style="text-align: right;">2.00</td>
+          <td style="text-align: right;">566</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;def&nbsp;__init__(self,&nbsp;fee:&nbsp;int,&nbsp;coin:&nbsp;CoinInfo,&nbsp;amount_unit:&nbsp;AmountUnit):</td>
+        </tr>
+        <tr id="178" style="color: blue;">
+          <td style="color: grey">178</td>
+          <td style="text-align: right;">1.00</td>
+          <td style="text-align: right;">13</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.fee&nbsp;=&nbsp;fee</td>
+        </tr>
+        <tr id="179" style="None">
+          <td style="color: grey">179</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.coin&nbsp;=&nbsp;coin</td>
+        </tr>
+        <tr id="180" style="color: blue;">
+          <td style="color: grey">180</td>
+          <td style="text-align: right;">1.00</td>
+          <td style="text-align: right;">13</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.amount_unit&nbsp;=&nbsp;amount_unit</td>
+        </tr>
+        <tr id="181" style="None">
+          <td style="color: grey">181</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="182" style="color: blue;">
+          <td style="color: grey">182</td>
+          <td style="text-align: right;">3.00</td>
+          <td style="text-align: right;">849</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;def&nbsp;confirm_dialog(self,&nbsp;ctx:&nbsp;wire.Context)&nbsp;->&nbsp;Awaitable[Any]:</td>
+        </tr>
+        <tr id="183" style="None">
+          <td style="color: grey">183</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;layout.confirm_feeoverthreshold(</td>
+        </tr>
+        <tr id="184" style="color: blue;">
+          <td style="color: grey">184</td>
+          <td style="text-align: right;">1.00</td>
+          <td style="text-align: right;">13</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ctx,&nbsp;self.fee,&nbsp;self.coin,&nbsp;self.amount_unit</td>
+        </tr>
+        <tr id="185" style="None">
+          <td style="color: grey">185</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;)</td>
+        </tr>
+        <tr id="186" style="None">
+          <td style="color: grey">186</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="187" style="None">
+          <td style="color: grey">187</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="188" style="color: blue;">
+          <td style="color: grey">188</td>
+          <td style="text-align: right;">2.00</td>
+          <td style="text-align: right;">566</td>
+          <td>class&nbsp;UiConfirmChangeCountOverThreshold(UiConfirm):</td>
+        </tr>
+        <tr id="189" style="color: blue;">
+          <td style="color: grey">189</td>
+          <td style="text-align: right;">2.00</td>
+          <td style="text-align: right;">566</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;def&nbsp;__init__(self,&nbsp;change_count:&nbsp;int):</td>
+        </tr>
+        <tr id="190" style="color: blue;">
+          <td style="color: grey">190</td>
+          <td style="text-align: right;">1.00</td>
+          <td style="text-align: right;">1</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.change_count&nbsp;=&nbsp;change_count</td>
+        </tr>
+        <tr id="191" style="None">
+          <td style="color: grey">191</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="192" style="color: blue;">
+          <td style="color: grey">192</td>
+          <td style="text-align: right;">3.00</td>
+          <td style="text-align: right;">849</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;def&nbsp;confirm_dialog(self,&nbsp;ctx:&nbsp;wire.Context)&nbsp;->&nbsp;Awaitable[Any]:</td>
+        </tr>
+        <tr id="193" style="color: blue;">
+          <td style="color: grey">193</td>
+          <td style="text-align: right;">1.00</td>
+          <td style="text-align: right;">1</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;layout.confirm_change_count_over_threshold(ctx,&nbsp;self.change_count)</td>
+        </tr>
+        <tr id="194" style="None">
+          <td style="color: grey">194</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="195" style="None">
+          <td style="color: grey">195</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="196" style="color: blue;">
+          <td style="color: grey">196</td>
+          <td style="text-align: right;">2.00</td>
+          <td style="text-align: right;">566</td>
+          <td>class&nbsp;UiConfirmUnverifiedExternalInput(UiConfirm):</td>
+        </tr>
+        <tr id="197" style="color: red;">
+          <td style="color: grey">197</td>
+          <td style="text-align: right;">5.00</td>
+          <td style="text-align: right;">1415</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;def&nbsp;confirm_dialog(self,&nbsp;ctx:&nbsp;wire.Context)&nbsp;->&nbsp;Awaitable[Any]:</td>
+        </tr>
+        <tr id="198" style="color: blue;">
+          <td style="color: grey">198</td>
+          <td style="text-align: right;">1.00</td>
+          <td style="text-align: right;">2</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;layout.confirm_unverified_external_input(ctx)</td>
+        </tr>
+        <tr id="199" style="None">
+          <td style="color: grey">199</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="200" style="None">
+          <td style="color: grey">200</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="201" style="color: blue;">
+          <td style="color: grey">201</td>
+          <td style="text-align: right;">2.00</td>
+          <td style="text-align: right;">566</td>
+          <td>class&nbsp;UiConfirmForeignAddress(UiConfirm):</td>
+        </tr>
+        <tr id="202" style="color: blue;">
+          <td style="color: grey">202</td>
+          <td style="text-align: right;">2.00</td>
+          <td style="text-align: right;">566</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;def&nbsp;__init__(self,&nbsp;address_n:&nbsp;list):</td>
+        </tr>
+        <tr id="203" style="color: blue;">
+          <td style="color: grey">203</td>
+          <td style="text-align: right;">1.00</td>
+          <td style="text-align: right;">15</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.address_n&nbsp;=&nbsp;address_n</td>
+        </tr>
+        <tr id="204" style="None">
+          <td style="color: grey">204</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="205" style="color: blue;">
+          <td style="color: grey">205</td>
+          <td style="text-align: right;">3.00</td>
+          <td style="text-align: right;">849</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;def&nbsp;confirm_dialog(self,&nbsp;ctx:&nbsp;wire.Context)&nbsp;->&nbsp;Awaitable[Any]:</td>
+        </tr>
+        <tr id="206" style="color: blue;">
+          <td style="color: grey">206</td>
+          <td style="text-align: right;">1.00</td>
+          <td style="text-align: right;">15</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;paths.show_path_warning(ctx,&nbsp;self.address_n)</td>
+        </tr>
+        <tr id="207" style="None">
+          <td style="color: grey">207</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="208" style="None">
+          <td style="color: grey">208</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="209" style="color: blue;">
+          <td style="color: grey">209</td>
+          <td style="text-align: right;">2.00</td>
+          <td style="text-align: right;">566</td>
+          <td>class&nbsp;UiConfirmNonDefaultLocktime(UiConfirm):</td>
+        </tr>
+        <tr id="210" style="color: blue;">
+          <td style="color: grey">210</td>
+          <td style="text-align: right;">2.00</td>
+          <td style="text-align: right;">566</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;def&nbsp;__init__(self,&nbsp;lock_time:&nbsp;int,&nbsp;lock_time_disabled:&nbsp;bool):</td>
+        </tr>
+        <tr id="211" style="color: blue;">
+          <td style="color: grey">211</td>
+          <td style="text-align: right;">1.00</td>
+          <td style="text-align: right;">12</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.lock_time&nbsp;=&nbsp;lock_time</td>
+        </tr>
+        <tr id="212" style="None">
+          <td style="color: grey">212</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.lock_time_disabled&nbsp;=&nbsp;lock_time_disabled</td>
+        </tr>
+        <tr id="213" style="None">
+          <td style="color: grey">213</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="214" style="color: blue;">
+          <td style="color: grey">214</td>
+          <td style="text-align: right;">3.00</td>
+          <td style="text-align: right;">849</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;def&nbsp;confirm_dialog(self,&nbsp;ctx:&nbsp;wire.Context)&nbsp;->&nbsp;Awaitable[Any]:</td>
+        </tr>
+        <tr id="215" style="None">
+          <td style="color: grey">215</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;layout.confirm_nondefault_locktime(</td>
+        </tr>
+        <tr id="216" style="color: blue;">
+          <td style="color: grey">216</td>
+          <td style="text-align: right;">1.00</td>
+          <td style="text-align: right;">12</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ctx,&nbsp;self.lock_time,&nbsp;self.lock_time_disabled</td>
+        </tr>
+        <tr id="217" style="None">
+          <td style="color: grey">217</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;)</td>
+        </tr>
+        <tr id="218" style="None">
+          <td style="color: grey">218</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="219" style="None">
+          <td style="color: grey">219</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="220" style="color: blue;">
+          <td style="color: grey">220</td>
+          <td style="text-align: right;">1.00</td>
+          <td style="text-align: right;">283</td>
+          <td>def&nbsp;confirm_output(output:&nbsp;TxOutput,&nbsp;coin:&nbsp;CoinInfo,&nbsp;amount_unit:&nbsp;AmountUnit)&nbsp;->&nbsp;Awaitable[None]:&nbsp;&nbsp;#&nbsp;type:&nbsp;ignore&nbsp;[awaitable-is-generator]</td>
+        </tr>
+        <tr id="221" style="color: blue;">
+          <td style="color: grey">221</td>
+          <td style="text-align: right;">1.00</td>
+          <td style="text-align: right;">1002</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;(yield&nbsp;UiConfirmOutput(output,&nbsp;coin,&nbsp;amount_unit))</td>
+        </tr>
+        <tr id="222" style="None">
+          <td style="color: grey">222</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="223" style="None">
+          <td style="color: grey">223</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="224" style="color: blue;">
+          <td style="color: grey">224</td>
+          <td style="text-align: right;">1.00</td>
+          <td style="text-align: right;">283</td>
+          <td>def&nbsp;confirm_decred_sstx_submission(output:&nbsp;TxOutput,&nbsp;coin:&nbsp;CoinInfo,&nbsp;amount_unit:&nbsp;AmountUnit)&nbsp;->&nbsp;Awaitable[None]:&nbsp;&nbsp;#&nbsp;type:&nbsp;ignore&nbsp;[awaitable-is-generator]</td>
+        </tr>
+        <tr id="225" style="color: blue;">
+          <td style="color: grey">225</td>
+          <td style="text-align: right;">1.00</td>
+          <td style="text-align: right;">2</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;(yield&nbsp;UiConfirmDecredSSTXSubmission(output,&nbsp;coin,&nbsp;amount_unit))</td>
+        </tr>
+        <tr id="226" style="None">
+          <td style="color: grey">226</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="227" style="None">
+          <td style="color: grey">227</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="228" style="color: blue;">
+          <td style="color: grey">228</td>
+          <td style="text-align: right;">1.00</td>
+          <td style="text-align: right;">283</td>
+          <td>def&nbsp;confirm_payment_request(payment_req:&nbsp;TxAckPaymentRequest,&nbsp;coin:&nbsp;CoinInfo,&nbsp;amount_unit:&nbsp;AmountUnit)&nbsp;->&nbsp;Awaitable[Any]:&nbsp;&nbsp;#&nbsp;type:&nbsp;ignore&nbsp;[awaitable-is-generator]</td>
+        </tr>
+        <tr id="229" style="color: blue;">
+          <td style="color: grey">229</td>
+          <td style="text-align: right;">1.00</td>
+          <td style="text-align: right;">24</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;(yield&nbsp;UiConfirmPaymentRequest(payment_req,&nbsp;coin,&nbsp;amount_unit))</td>
+        </tr>
+        <tr id="230" style="None">
+          <td style="color: grey">230</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="231" style="None">
+          <td style="color: grey">231</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="232" style="color: blue;">
+          <td style="color: grey">232</td>
+          <td style="text-align: right;">1.00</td>
+          <td style="text-align: right;">283</td>
+          <td>def&nbsp;confirm_replacement(description:&nbsp;str,&nbsp;txid:&nbsp;bytes)&nbsp;->&nbsp;Awaitable[Any]:&nbsp;&nbsp;#&nbsp;type:&nbsp;ignore&nbsp;[awaitable-is-generator]</td>
+        </tr>
+        <tr id="233" style="color: blue;">
+          <td style="color: grey">233</td>
+          <td style="text-align: right;">1.00</td>
+          <td style="text-align: right;">32</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;(yield&nbsp;UiConfirmReplacement(description,&nbsp;txid))</td>
+        </tr>
+        <tr id="234" style="None">
+          <td style="color: grey">234</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="235" style="None">
+          <td style="color: grey">235</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="236" style="color: blue;">
+          <td style="color: grey">236</td>
+          <td style="text-align: right;">1.00</td>
+          <td style="text-align: right;">283</td>
+          <td>def&nbsp;confirm_modify_output(txo:&nbsp;TxOutput,&nbsp;orig_txo:&nbsp;TxOutput,&nbsp;coin:&nbsp;CoinInfo,&nbsp;amount_unit:&nbsp;AmountUnit)&nbsp;->&nbsp;Awaitable[Any]:&nbsp;&nbsp;#&nbsp;type:&nbsp;ignore&nbsp;[awaitable-is-generator]</td>
+        </tr>
+        <tr id="237" style="color: blue;">
+          <td style="color: grey">237</td>
+          <td style="text-align: right;">1.00</td>
+          <td style="text-align: right;">2</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;(yield&nbsp;UiConfirmModifyOutput(txo,&nbsp;orig_txo,&nbsp;coin,&nbsp;amount_unit))</td>
+        </tr>
+        <tr id="238" style="None">
+          <td style="color: grey">238</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="239" style="None">
+          <td style="color: grey">239</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="240" style="color: blue;">
+          <td style="color: grey">240</td>
+          <td style="text-align: right;">1.00</td>
+          <td style="text-align: right;">283</td>
+          <td>def&nbsp;confirm_modify_fee(user_fee_change:&nbsp;int,&nbsp;total_fee_new:&nbsp;int,&nbsp;fee_rate:&nbsp;float,&nbsp;coin:&nbsp;CoinInfo,&nbsp;amount_unit:&nbsp;AmountUnit)&nbsp;->&nbsp;Awaitable[Any]:&nbsp;&nbsp;#&nbsp;type:&nbsp;ignore&nbsp;[awaitable-is-generator]</td>
+        </tr>
+        <tr id="241" style="None">
+          <td style="color: grey">241</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;(</td>
+        </tr>
+        <tr id="242" style="color: blue;">
+          <td style="color: grey">242</td>
+          <td style="text-align: right;">1.00</td>
+          <td style="text-align: right;">20</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;yield&nbsp;UiConfirmModifyFee(</td>
+        </tr>
+        <tr id="243" style="None">
+          <td style="color: grey">243</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;user_fee_change,&nbsp;total_fee_new,&nbsp;fee_rate,&nbsp;coin,&nbsp;amount_unit</td>
+        </tr>
+        <tr id="244" style="None">
+          <td style="color: grey">244</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;)</td>
+        </tr>
+        <tr id="245" style="None">
+          <td style="color: grey">245</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;)</td>
+        </tr>
+        <tr id="246" style="None">
+          <td style="color: grey">246</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="247" style="None">
+          <td style="color: grey">247</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="248" style="color: blue;">
+          <td style="color: grey">248</td>
+          <td style="text-align: right;">1.00</td>
+          <td style="text-align: right;">283</td>
+          <td>def&nbsp;confirm_total(spending:&nbsp;int,&nbsp;fee:&nbsp;int,&nbsp;fee_rate:&nbsp;float,&nbsp;coin:&nbsp;CoinInfo,&nbsp;amount_unit:&nbsp;AmountUnit)&nbsp;->&nbsp;Awaitable[None]:&nbsp;&nbsp;#&nbsp;type:&nbsp;ignore&nbsp;[awaitable-is-generator]</td>
+        </tr>
+        <tr id="249" style="color: blue;">
+          <td style="color: grey">249</td>
+          <td style="text-align: right;">1.00</td>
+          <td style="text-align: right;">396</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;(yield&nbsp;UiConfirmTotal(spending,&nbsp;fee,&nbsp;fee_rate,&nbsp;coin,&nbsp;amount_unit))</td>
+        </tr>
+        <tr id="250" style="None">
+          <td style="color: grey">250</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="251" style="None">
+          <td style="color: grey">251</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="252" style="color: blue;">
+          <td style="color: grey">252</td>
+          <td style="text-align: right;">2.00</td>
+          <td style="text-align: right;">566</td>
+          <td>def&nbsp;confirm_joint_total(spending:&nbsp;int,&nbsp;total:&nbsp;int,&nbsp;coin:&nbsp;CoinInfo,&nbsp;amount_unit:&nbsp;AmountUnit)&nbsp;->&nbsp;Awaitable[Any]:&nbsp;&nbsp;#&nbsp;type:&nbsp;ignore&nbsp;[awaitable-is-generator]</td>
+        </tr>
+        <tr id="253" style="color: blue;">
+          <td style="color: grey">253</td>
+          <td style="text-align: right;">1.00</td>
+          <td style="text-align: right;">34</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;(yield&nbsp;UiConfirmJointTotal(spending,&nbsp;total,&nbsp;coin,&nbsp;amount_unit))</td>
+        </tr>
+        <tr id="254" style="None">
+          <td style="color: grey">254</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="255" style="None">
+          <td style="color: grey">255</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="256" style="color: blue;">
+          <td style="color: grey">256</td>
+          <td style="text-align: right;">1.00</td>
+          <td style="text-align: right;">283</td>
+          <td>def&nbsp;confirm_feeoverthreshold(fee:&nbsp;int,&nbsp;coin:&nbsp;CoinInfo,&nbsp;amount_unit:&nbsp;AmountUnit)&nbsp;->&nbsp;Awaitable[Any]:&nbsp;&nbsp;#&nbsp;type:&nbsp;ignore&nbsp;[awaitable-is-generator]</td>
+        </tr>
+        <tr id="257" style="color: blue;">
+          <td style="color: grey">257</td>
+          <td style="text-align: right;">1.00</td>
+          <td style="text-align: right;">26</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;(yield&nbsp;UiConfirmFeeOverThreshold(fee,&nbsp;coin,&nbsp;amount_unit))</td>
+        </tr>
+        <tr id="258" style="None">
+          <td style="color: grey">258</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="259" style="None">
+          <td style="color: grey">259</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="260" style="color: blue;">
+          <td style="color: grey">260</td>
+          <td style="text-align: right;">1.00</td>
+          <td style="text-align: right;">283</td>
+          <td>def&nbsp;confirm_change_count_over_threshold(change_count:&nbsp;int)&nbsp;->&nbsp;Awaitable[Any]:&nbsp;&nbsp;#&nbsp;type:&nbsp;ignore&nbsp;[awaitable-is-generator]</td>
+        </tr>
+        <tr id="261" style="color: blue;">
+          <td style="color: grey">261</td>
+          <td style="text-align: right;">1.00</td>
+          <td style="text-align: right;">2</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;(yield&nbsp;UiConfirmChangeCountOverThreshold(change_count))</td>
+        </tr>
+        <tr id="262" style="None">
+          <td style="color: grey">262</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="263" style="None">
+          <td style="color: grey">263</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="264" style="color: blue;">
+          <td style="color: grey">264</td>
+          <td style="text-align: right;">1.00</td>
+          <td style="text-align: right;">283</td>
+          <td>def&nbsp;confirm_unverified_external_input()&nbsp;->&nbsp;Awaitable[Any]:&nbsp;&nbsp;#&nbsp;type:&nbsp;ignore&nbsp;[awaitable-is-generator]</td>
+        </tr>
+        <tr id="265" style="color: blue;">
+          <td style="color: grey">265</td>
+          <td style="text-align: right;">0.50</td>
+          <td style="text-align: right;">2</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;(yield&nbsp;UiConfirmUnverifiedExternalInput())</td>
+        </tr>
+        <tr id="266" style="None">
+          <td style="color: grey">266</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="267" style="None">
+          <td style="color: grey">267</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="268" style="color: blue;">
+          <td style="color: grey">268</td>
+          <td style="text-align: right;">1.00</td>
+          <td style="text-align: right;">283</td>
+          <td>def&nbsp;confirm_foreign_address(address_n:&nbsp;list)&nbsp;->&nbsp;Awaitable[Any]:&nbsp;&nbsp;#&nbsp;type:&nbsp;ignore&nbsp;[awaitable-is-generator]</td>
+        </tr>
+        <tr id="269" style="color: blue;">
+          <td style="color: grey">269</td>
+          <td style="text-align: right;">1.00</td>
+          <td style="text-align: right;">30</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;(yield&nbsp;UiConfirmForeignAddress(address_n))</td>
+        </tr>
+        <tr id="270" style="None">
+          <td style="color: grey">270</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="271" style="None">
+          <td style="color: grey">271</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="272" style="color: blue;">
+          <td style="color: grey">272</td>
+          <td style="text-align: right;">1.00</td>
+          <td style="text-align: right;">283</td>
+          <td>def&nbsp;confirm_nondefault_locktime(lock_time:&nbsp;int,&nbsp;lock_time_disabled:&nbsp;bool)&nbsp;->&nbsp;Awaitable[Any]:&nbsp;&nbsp;#&nbsp;type:&nbsp;ignore&nbsp;[awaitable-is-generator]</td>
+        </tr>
+        <tr id="273" style="color: blue;">
+          <td style="color: grey">273</td>
+          <td style="text-align: right;">1.00</td>
+          <td style="text-align: right;">24</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;(yield&nbsp;UiConfirmNonDefaultLocktime(lock_time,&nbsp;lock_time_disabled))</td>
+        </tr>
+        <tr id="274" style="None">
+          <td style="color: grey">274</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="275" style="None">
+          <td style="color: grey">275</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="276" style="color: blue;">
+          <td style="color: grey">276</td>
+          <td style="text-align: right;">2.00</td>
+          <td style="text-align: right;">566</td>
+          <td>def&nbsp;request_tx_meta(tx_req:&nbsp;TxRequest,&nbsp;coin:&nbsp;CoinInfo,&nbsp;tx_hash:&nbsp;bytes&nbsp;|&nbsp;None&nbsp;=&nbsp;None)&nbsp;->&nbsp;Awaitable[PrevTx]:&nbsp;&nbsp;#&nbsp;type:&nbsp;ignore&nbsp;[awaitable-is-generator]</td>
+        </tr>
+        <tr id="277" style="None">
+          <td style="color: grey">277</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;assert&nbsp;tx_req.details&nbsp;is&nbsp;not&nbsp;None</td>
+        </tr>
+        <tr id="278" style="None">
+          <td style="color: grey">278</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;tx_req.request_type&nbsp;=&nbsp;RequestType.TXMETA</td>
+        </tr>
+        <tr id="279" style="None">
+          <td style="color: grey">279</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;tx_req.details.tx_hash&nbsp;=&nbsp;tx_hash</td>
+        </tr>
+        <tr id="280" style="color: blue;">
+          <td style="color: grey">280</td>
+          <td style="text-align: right;">0.50</td>
+          <td style="text-align: right;">384</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;ack&nbsp;=&nbsp;yield&nbsp;TxAckPrevMeta,&nbsp;tx_req</td>
+        </tr>
+        <tr id="281" style="None">
+          <td style="color: grey">281</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;_clear_tx_request(tx_req)</td>
+        </tr>
+        <tr id="282" style="None">
+          <td style="color: grey">282</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;sanitize_tx_meta(ack.tx,&nbsp;coin)</td>
+        </tr>
+        <tr id="283" style="None">
+          <td style="color: grey">283</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="284" style="None">
+          <td style="color: grey">284</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="285" style="color: blue;">
+          <td style="color: grey">285</td>
+          <td style="text-align: right;">2.00</td>
+          <td style="text-align: right;">566</td>
+          <td>def&nbsp;request_tx_extra_data(</td>
+        </tr>
+        <tr id="286" style="None">
+          <td style="color: grey">286</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;tx_req:&nbsp;TxRequest,&nbsp;offset:&nbsp;int,&nbsp;size:&nbsp;int,&nbsp;tx_hash:&nbsp;bytes&nbsp;|&nbsp;None&nbsp;=&nbsp;None</td>
+        </tr>
+        <tr id="287" style="None">
+          <td style="color: grey">287</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>)&nbsp;->&nbsp;Awaitable[bytearray]:&nbsp;&nbsp;#&nbsp;type:&nbsp;ignore&nbsp;[awaitable-is-generator]</td>
+        </tr>
+        <tr id="288" style="None">
+          <td style="color: grey">288</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;assert&nbsp;tx_req.details&nbsp;is&nbsp;not&nbsp;None</td>
+        </tr>
+        <tr id="289" style="None">
+          <td style="color: grey">289</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;tx_req.request_type&nbsp;=&nbsp;RequestType.TXEXTRADATA</td>
+        </tr>
+        <tr id="290" style="None">
+          <td style="color: grey">290</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;tx_req.details.extra_data_offset&nbsp;=&nbsp;offset</td>
+        </tr>
+        <tr id="291" style="None">
+          <td style="color: grey">291</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;tx_req.details.extra_data_len&nbsp;=&nbsp;size</td>
+        </tr>
+        <tr id="292" style="None">
+          <td style="color: grey">292</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;tx_req.details.tx_hash&nbsp;=&nbsp;tx_hash</td>
+        </tr>
+        <tr id="293" style="color: blue;">
+          <td style="color: grey">293</td>
+          <td style="text-align: right;">0.50</td>
+          <td style="text-align: right;">14</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;ack&nbsp;=&nbsp;yield&nbsp;TxAckPrevExtraData,&nbsp;tx_req</td>
+        </tr>
+        <tr id="294" style="None">
+          <td style="color: grey">294</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;_clear_tx_request(tx_req)</td>
+        </tr>
+        <tr id="295" style="None">
+          <td style="color: grey">295</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;ack.tx.extra_data_chunk</td>
+        </tr>
+        <tr id="296" style="None">
+          <td style="color: grey">296</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="297" style="None">
+          <td style="color: grey">297</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="298" style="color: blue;">
+          <td style="color: grey">298</td>
+          <td style="text-align: right;">2.00</td>
+          <td style="text-align: right;">566</td>
+          <td>def&nbsp;request_tx_input(tx_req:&nbsp;TxRequest,&nbsp;i:&nbsp;int,&nbsp;coin:&nbsp;CoinInfo,&nbsp;tx_hash:&nbsp;bytes&nbsp;|&nbsp;None&nbsp;=&nbsp;None)&nbsp;->&nbsp;Awaitable[TxInput]:&nbsp;&nbsp;#&nbsp;type:&nbsp;ignore&nbsp;[awaitable-is-generator]</td>
+        </tr>
+        <tr id="299" style="None">
+          <td style="color: grey">299</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;assert&nbsp;tx_req.details&nbsp;is&nbsp;not&nbsp;None</td>
+        </tr>
+        <tr id="300" style="None">
+          <td style="color: grey">300</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;tx_hash:</td>
+        </tr>
+        <tr id="301" style="None">
+          <td style="color: grey">301</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;tx_req.request_type&nbsp;=&nbsp;RequestType.TXORIGINPUT</td>
+        </tr>
+        <tr id="302" style="None">
+          <td style="color: grey">302</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;tx_req.details.tx_hash&nbsp;=&nbsp;tx_hash</td>
+        </tr>
+        <tr id="303" style="None">
+          <td style="color: grey">303</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;else:</td>
+        </tr>
+        <tr id="304" style="None">
+          <td style="color: grey">304</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;tx_req.request_type&nbsp;=&nbsp;RequestType.TXINPUT</td>
+        </tr>
+        <tr id="305" style="None">
+          <td style="color: grey">305</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;tx_req.details.request_index&nbsp;=&nbsp;i</td>
+        </tr>
+        <tr id="306" style="color: blue;">
+          <td style="color: grey">306</td>
+          <td style="text-align: right;">0.50</td>
+          <td style="text-align: right;">11696</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;ack&nbsp;=&nbsp;yield&nbsp;TxAckInput,&nbsp;tx_req</td>
+        </tr>
+        <tr id="307" style="None">
+          <td style="color: grey">307</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;_clear_tx_request(tx_req)</td>
+        </tr>
+        <tr id="308" style="None">
+          <td style="color: grey">308</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;sanitize_tx_input(ack.tx.input,&nbsp;coin)</td>
+        </tr>
+        <tr id="309" style="None">
+          <td style="color: grey">309</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="310" style="None">
+          <td style="color: grey">310</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="311" style="color: blue;">
+          <td style="color: grey">311</td>
+          <td style="text-align: right;">2.00</td>
+          <td style="text-align: right;">566</td>
+          <td>def&nbsp;request_tx_prev_input(tx_req:&nbsp;TxRequest,&nbsp;i:&nbsp;int,&nbsp;coin:&nbsp;CoinInfo,&nbsp;tx_hash:&nbsp;bytes&nbsp;|&nbsp;None&nbsp;=&nbsp;None)&nbsp;->&nbsp;Awaitable[PrevInput]:&nbsp;&nbsp;#&nbsp;type:&nbsp;ignore&nbsp;[awaitable-is-generator]</td>
+        </tr>
+        <tr id="312" style="None">
+          <td style="color: grey">312</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;assert&nbsp;tx_req.details&nbsp;is&nbsp;not&nbsp;None</td>
+        </tr>
+        <tr id="313" style="None">
+          <td style="color: grey">313</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;tx_req.request_type&nbsp;=&nbsp;RequestType.TXINPUT</td>
+        </tr>
+        <tr id="314" style="None">
+          <td style="color: grey">314</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;tx_req.details.request_index&nbsp;=&nbsp;i</td>
+        </tr>
+        <tr id="315" style="None">
+          <td style="color: grey">315</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;tx_req.details.tx_hash&nbsp;=&nbsp;tx_hash</td>
+        </tr>
+        <tr id="316" style="color: blue;">
+          <td style="color: grey">316</td>
+          <td style="text-align: right;">0.50</td>
+          <td style="text-align: right;">373</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;ack&nbsp;=&nbsp;yield&nbsp;TxAckPrevInput,&nbsp;tx_req</td>
+        </tr>
+        <tr id="317" style="None">
+          <td style="color: grey">317</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;_clear_tx_request(tx_req)</td>
+        </tr>
+        <tr id="318" style="None">
+          <td style="color: grey">318</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;sanitize_tx_prev_input(ack.tx.input,&nbsp;coin)</td>
+        </tr>
+        <tr id="319" style="None">
+          <td style="color: grey">319</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="320" style="None">
+          <td style="color: grey">320</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="321" style="color: blue;">
+          <td style="color: grey">321</td>
+          <td style="text-align: right;">2.00</td>
+          <td style="text-align: right;">566</td>
+          <td>def&nbsp;request_tx_output(tx_req:&nbsp;TxRequest,&nbsp;i:&nbsp;int,&nbsp;coin:&nbsp;CoinInfo,&nbsp;tx_hash:&nbsp;bytes&nbsp;|&nbsp;None&nbsp;=&nbsp;None)&nbsp;->&nbsp;Awaitable[TxOutput]:&nbsp;&nbsp;#&nbsp;type:&nbsp;ignore&nbsp;[awaitable-is-generator]</td>
+        </tr>
+        <tr id="322" style="None">
+          <td style="color: grey">322</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;assert&nbsp;tx_req.details&nbsp;is&nbsp;not&nbsp;None</td>
+        </tr>
+        <tr id="323" style="None">
+          <td style="color: grey">323</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;tx_hash:</td>
+        </tr>
+        <tr id="324" style="None">
+          <td style="color: grey">324</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;tx_req.request_type&nbsp;=&nbsp;RequestType.TXORIGOUTPUT</td>
+        </tr>
+        <tr id="325" style="None">
+          <td style="color: grey">325</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;tx_req.details.tx_hash&nbsp;=&nbsp;tx_hash</td>
+        </tr>
+        <tr id="326" style="None">
+          <td style="color: grey">326</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;else:</td>
+        </tr>
+        <tr id="327" style="None">
+          <td style="color: grey">327</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;tx_req.request_type&nbsp;=&nbsp;RequestType.TXOUTPUT</td>
+        </tr>
+        <tr id="328" style="None">
+          <td style="color: grey">328</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;tx_req.details.request_index&nbsp;=&nbsp;i</td>
+        </tr>
+        <tr id="329" style="color: blue;">
+          <td style="color: grey">329</td>
+          <td style="text-align: right;">0.50</td>
+          <td style="text-align: right;">2979</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;ack&nbsp;=&nbsp;yield&nbsp;TxAckOutput,&nbsp;tx_req</td>
+        </tr>
+        <tr id="330" style="None">
+          <td style="color: grey">330</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;_clear_tx_request(tx_req)</td>
+        </tr>
+        <tr id="331" style="None">
+          <td style="color: grey">331</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;sanitize_tx_output(ack.tx.output,&nbsp;coin)</td>
+        </tr>
+        <tr id="332" style="None">
+          <td style="color: grey">332</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="333" style="None">
+          <td style="color: grey">333</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="334" style="color: blue;">
+          <td style="color: grey">334</td>
+          <td style="text-align: right;">2.00</td>
+          <td style="text-align: right;">566</td>
+          <td>def&nbsp;request_tx_prev_output(tx_req:&nbsp;TxRequest,&nbsp;i:&nbsp;int,&nbsp;coin:&nbsp;CoinInfo,&nbsp;tx_hash:&nbsp;bytes&nbsp;|&nbsp;None&nbsp;=&nbsp;None)&nbsp;->&nbsp;Awaitable[PrevOutput]:&nbsp;&nbsp;#&nbsp;type:&nbsp;ignore&nbsp;[awaitable-is-generator]</td>
+        </tr>
+        <tr id="335" style="None">
+          <td style="color: grey">335</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;assert&nbsp;tx_req.details&nbsp;is&nbsp;not&nbsp;None</td>
+        </tr>
+        <tr id="336" style="None">
+          <td style="color: grey">336</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;tx_req.request_type&nbsp;=&nbsp;RequestType.TXOUTPUT</td>
+        </tr>
+        <tr id="337" style="None">
+          <td style="color: grey">337</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;tx_req.details.request_index&nbsp;=&nbsp;i</td>
+        </tr>
+        <tr id="338" style="None">
+          <td style="color: grey">338</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;tx_req.details.tx_hash&nbsp;=&nbsp;tx_hash</td>
+        </tr>
+        <tr id="339" style="color: blue;">
+          <td style="color: grey">339</td>
+          <td style="text-align: right;">0.50</td>
+          <td style="text-align: right;">10500</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;ack&nbsp;=&nbsp;yield&nbsp;TxAckPrevOutput,&nbsp;tx_req</td>
+        </tr>
+        <tr id="340" style="None">
+          <td style="color: grey">340</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;_clear_tx_request(tx_req)</td>
+        </tr>
+        <tr id="341" style="None">
+          <td style="color: grey">341</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;#&nbsp;return&nbsp;sanitize_tx_prev_output(ack.tx,&nbsp;coin)&nbsp;&nbsp;#&nbsp;no&nbsp;sanitize&nbsp;is&nbsp;required</td>
+        </tr>
+        <tr id="342" style="None">
+          <td style="color: grey">342</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;ack.tx.output</td>
+        </tr>
+        <tr id="343" style="None">
+          <td style="color: grey">343</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="344" style="None">
+          <td style="color: grey">344</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="345" style="color: blue;">
+          <td style="color: grey">345</td>
+          <td style="text-align: right;">2.00</td>
+          <td style="text-align: right;">566</td>
+          <td>def&nbsp;request_payment_req(tx_req:&nbsp;TxRequest,&nbsp;i:&nbsp;int)&nbsp;->&nbsp;Awaitable[TxAckPaymentRequest]:&nbsp;&nbsp;#&nbsp;type:&nbsp;ignore&nbsp;[awaitable-is-generator]</td>
+        </tr>
+        <tr id="346" style="None">
+          <td style="color: grey">346</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;assert&nbsp;tx_req.details&nbsp;is&nbsp;not&nbsp;None</td>
+        </tr>
+        <tr id="347" style="None">
+          <td style="color: grey">347</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;tx_req.request_type&nbsp;=&nbsp;RequestType.TXPAYMENTREQ</td>
+        </tr>
+        <tr id="348" style="None">
+          <td style="color: grey">348</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;tx_req.details.request_index&nbsp;=&nbsp;i</td>
+        </tr>
+        <tr id="349" style="color: blue;">
+          <td style="color: grey">349</td>
+          <td style="text-align: right;">0.50</td>
+          <td style="text-align: right;">21</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;ack&nbsp;=&nbsp;yield&nbsp;TxAckPaymentRequest,&nbsp;tx_req</td>
+        </tr>
+        <tr id="350" style="None">
+          <td style="color: grey">350</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;_clear_tx_request(tx_req)</td>
+        </tr>
+        <tr id="351" style="None">
+          <td style="color: grey">351</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;sanitize_payment_req(ack)</td>
+        </tr>
+        <tr id="352" style="None">
+          <td style="color: grey">352</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="353" style="None">
+          <td style="color: grey">353</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="354" style="color: blue;">
+          <td style="color: grey">354</td>
+          <td style="text-align: right;">1.00</td>
+          <td style="text-align: right;">283</td>
+          <td>def&nbsp;request_tx_finish(tx_req:&nbsp;TxRequest)&nbsp;->&nbsp;Awaitable[None]:&nbsp;&nbsp;#&nbsp;type:&nbsp;ignore&nbsp;[awaitable-is-generator]</td>
+        </tr>
+        <tr id="355" style="None">
+          <td style="color: grey">355</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;tx_req.request_type&nbsp;=&nbsp;RequestType.TXFINISHED</td>
+        </tr>
+        <tr id="356" style="color: blue;">
+          <td style="color: grey">356</td>
+          <td style="text-align: right;">1.00</td>
+          <td style="text-align: right;">199</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;yield&nbsp;None,&nbsp;tx_req</td>
+        </tr>
+        <tr id="357" style="None">
+          <td style="color: grey">357</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;_clear_tx_request(tx_req)</td>
+        </tr>
+        <tr id="358" style="None">
+          <td style="color: grey">358</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="359" style="None">
+          <td style="color: grey">359</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="360" style="color: blue;">
+          <td style="color: grey">360</td>
+          <td style="text-align: right;">1.00</td>
+          <td style="text-align: right;">283</td>
+          <td>def&nbsp;_clear_tx_request(tx_req:&nbsp;TxRequest)&nbsp;->&nbsp;None:</td>
+        </tr>
+        <tr id="361" style="None">
+          <td style="color: grey">361</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;assert&nbsp;tx_req.details&nbsp;is&nbsp;not&nbsp;None</td>
+        </tr>
+        <tr id="362" style="None">
+          <td style="color: grey">362</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;assert&nbsp;tx_req.serialized&nbsp;is&nbsp;not&nbsp;None</td>
+        </tr>
+        <tr id="363" style="None">
+          <td style="color: grey">363</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;assert&nbsp;tx_req.serialized.serialized_tx&nbsp;is&nbsp;not&nbsp;None</td>
+        </tr>
+        <tr id="364" style="None">
+          <td style="color: grey">364</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;tx_req.request_type&nbsp;=&nbsp;None</td>
+        </tr>
+        <tr id="365" style="None">
+          <td style="color: grey">365</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;tx_req.details.request_index&nbsp;=&nbsp;None</td>
+        </tr>
+        <tr id="366" style="None">
+          <td style="color: grey">366</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;tx_req.details.tx_hash&nbsp;=&nbsp;None</td>
+        </tr>
+        <tr id="367" style="None">
+          <td style="color: grey">367</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;tx_req.details.extra_data_len&nbsp;=&nbsp;None</td>
+        </tr>
+        <tr id="368" style="None">
+          <td style="color: grey">368</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;tx_req.details.extra_data_offset&nbsp;=&nbsp;None</td>
+        </tr>
+        <tr id="369" style="None">
+          <td style="color: grey">369</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;tx_req.serialized.signature&nbsp;=&nbsp;None</td>
+        </tr>
+        <tr id="370" style="None">
+          <td style="color: grey">370</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;tx_req.serialized.signature_index&nbsp;=&nbsp;None</td>
+        </tr>
+        <tr id="371" style="None">
+          <td style="color: grey">371</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;#&nbsp;typechecker&nbsp;thinks&nbsp;serialized_tx&nbsp;is&nbsp;`bytes`,&nbsp;which&nbsp;is&nbsp;immutable</td>
+        </tr>
+        <tr id="372" style="None">
+          <td style="color: grey">372</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;#&nbsp;we&nbsp;know&nbsp;that&nbsp;it&nbsp;is&nbsp;`bytearray`&nbsp;in&nbsp;reality</td>
+        </tr>
+        <tr id="373" style="color: blue;">
+          <td style="color: grey">373</td>
+          <td style="text-align: right;">1.00</td>
+          <td style="text-align: right;">25967</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;tx_req.serialized.serialized_tx[:]&nbsp;=&nbsp;bytes()&nbsp;&nbsp;#&nbsp;type:&nbsp;ignore&nbsp;["__setitem__"&nbsp;method&nbsp;not&nbsp;defined&nbsp;on&nbsp;type&nbsp;"bytes"]</td>
+        </tr>
+        <tr id="374" style="None">
+          <td style="color: grey">374</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="375" style="None">
+          <td style="color: grey">375</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="376" style="None">
+          <td style="color: grey">376</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>#&nbsp;Data&nbsp;sanitizers</td>
+        </tr>
+        <tr id="377" style="None">
+          <td style="color: grey">377</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>#&nbsp;===</td>
+        </tr>
+        <tr id="378" style="None">
+          <td style="color: grey">378</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="379" style="None">
+          <td style="color: grey">379</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="380" style="color: blue;">
+          <td style="color: grey">380</td>
+          <td style="text-align: right;">1.00</td>
+          <td style="text-align: right;">283</td>
+          <td>def&nbsp;sanitize_sign_tx(tx:&nbsp;SignTx,&nbsp;coin:&nbsp;CoinInfo)&nbsp;->&nbsp;SignTx:</td>
+        </tr>
+        <tr id="381" style="None">
+          <td style="color: grey">381</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;coin.decred&nbsp;or&nbsp;coin.overwintered:</td>
+        </tr>
+        <tr id="382" style="None">
+          <td style="color: grey">382</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;tx.expiry&nbsp;=&nbsp;tx.expiry&nbsp;if&nbsp;tx.expiry&nbsp;is&nbsp;not&nbsp;None&nbsp;else&nbsp;0</td>
+        </tr>
+        <tr id="383" style="None">
+          <td style="color: grey">383</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;elif&nbsp;tx.expiry:</td>
+        </tr>
+        <tr id="384" style="color: blue;">
+          <td style="color: grey">384</td>
+          <td style="text-align: right;">2.00</td>
+          <td style="text-align: right;">2</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;raise&nbsp;wire.DataError("Expiry&nbsp;not&nbsp;enabled&nbsp;on&nbsp;this&nbsp;coin.")</td>
+        </tr>
+        <tr id="385" style="None">
+          <td style="color: grey">385</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="386" style="None">
+          <td style="color: grey">386</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;coin.timestamp&nbsp;and&nbsp;not&nbsp;tx.timestamp:</td>
+        </tr>
+        <tr id="387" style="color: blue;">
+          <td style="color: grey">387</td>
+          <td style="text-align: right;">2.00</td>
+          <td style="text-align: right;">4</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;raise&nbsp;wire.DataError("Timestamp&nbsp;must&nbsp;be&nbsp;set.")</td>
+        </tr>
+        <tr id="388" style="None">
+          <td style="color: grey">388</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;elif&nbsp;not&nbsp;coin.timestamp&nbsp;and&nbsp;tx.timestamp:</td>
+        </tr>
+        <tr id="389" style="color: blue;">
+          <td style="color: grey">389</td>
+          <td style="text-align: right;">2.00</td>
+          <td style="text-align: right;">2</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;raise&nbsp;wire.DataError("Timestamp&nbsp;not&nbsp;enabled&nbsp;on&nbsp;this&nbsp;coin.")</td>
+        </tr>
+        <tr id="390" style="None">
+          <td style="color: grey">390</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="391" style="None">
+          <td style="color: grey">391</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;coin.overwintered:</td>
+        </tr>
+        <tr id="392" style="None">
+          <td style="color: grey">392</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;tx.version_group_id&nbsp;is&nbsp;None:</td>
+        </tr>
+        <tr id="393" style="color: blue;">
+          <td style="color: grey">393</td>
+          <td style="text-align: right;">2.00</td>
+          <td style="text-align: right;">4</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;raise&nbsp;wire.DataError("Version&nbsp;group&nbsp;ID&nbsp;must&nbsp;be&nbsp;set.")</td>
+        </tr>
+        <tr id="394" style="None">
+          <td style="color: grey">394</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;tx.branch_id&nbsp;is&nbsp;None:</td>
+        </tr>
+        <tr id="395" style="None">
+          <td style="color: grey">395</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;raise&nbsp;wire.DataError("Branch&nbsp;ID&nbsp;must&nbsp;be&nbsp;set.")</td>
+        </tr>
+        <tr id="396" style="None">
+          <td style="color: grey">396</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;elif&nbsp;not&nbsp;coin.overwintered:</td>
+        </tr>
+        <tr id="397" style="None">
+          <td style="color: grey">397</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;tx.version_group_id&nbsp;is&nbsp;not&nbsp;None:</td>
+        </tr>
+        <tr id="398" style="color: blue;">
+          <td style="color: grey">398</td>
+          <td style="text-align: right;">2.00</td>
+          <td style="text-align: right;">2</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;raise&nbsp;wire.DataError("Version&nbsp;group&nbsp;ID&nbsp;not&nbsp;enabled&nbsp;on&nbsp;this&nbsp;coin.")</td>
+        </tr>
+        <tr id="399" style="None">
+          <td style="color: grey">399</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;tx.branch_id&nbsp;is&nbsp;not&nbsp;None:</td>
+        </tr>
+        <tr id="400" style="color: blue;">
+          <td style="color: grey">400</td>
+          <td style="text-align: right;">0.01</td>
+          <td style="text-align: right;">2</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;raise&nbsp;wire.DataError("Branch&nbsp;ID&nbsp;not&nbsp;enabled&nbsp;on&nbsp;this&nbsp;coin.")</td>
+        </tr>
+        <tr id="401" style="None">
+          <td style="color: grey">401</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="402" style="color: blue;">
+          <td style="color: grey">402</td>
+          <td style="text-align: right;">2.00</td>
+          <td style="text-align: right;">550</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;tx</td>
+        </tr>
+        <tr id="403" style="None">
+          <td style="color: grey">403</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="404" style="None">
+          <td style="color: grey">404</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="405" style="color: blue;">
+          <td style="color: grey">405</td>
+          <td style="text-align: right;">1.00</td>
+          <td style="text-align: right;">283</td>
+          <td>def&nbsp;sanitize_tx_meta(tx:&nbsp;PrevTx,&nbsp;coin:&nbsp;CoinInfo)&nbsp;->&nbsp;PrevTx:</td>
+        </tr>
+        <tr id="406" style="None">
+          <td style="color: grey">406</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;not&nbsp;coin.extra_data&nbsp;and&nbsp;tx.extra_data_len:</td>
+        </tr>
+        <tr id="407" style="color: blue;">
+          <td style="color: grey">407</td>
+          <td style="text-align: right;">2.00</td>
+          <td style="text-align: right;">2</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;raise&nbsp;wire.DataError("Extra&nbsp;data&nbsp;not&nbsp;enabled&nbsp;on&nbsp;this&nbsp;coin.")</td>
+        </tr>
+        <tr id="408" style="None">
+          <td style="color: grey">408</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="409" style="None">
+          <td style="color: grey">409</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;coin.decred&nbsp;or&nbsp;coin.overwintered:</td>
+        </tr>
+        <tr id="410" style="None">
+          <td style="color: grey">410</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;tx.expiry&nbsp;=&nbsp;tx.expiry&nbsp;if&nbsp;tx.expiry&nbsp;is&nbsp;not&nbsp;None&nbsp;else&nbsp;0</td>
+        </tr>
+        <tr id="411" style="None">
+          <td style="color: grey">411</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;elif&nbsp;tx.expiry:</td>
+        </tr>
+        <tr id="412" style="color: blue;">
+          <td style="color: grey">412</td>
+          <td style="text-align: right;">2.00</td>
+          <td style="text-align: right;">2</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;raise&nbsp;wire.DataError("Expiry&nbsp;not&nbsp;enabled&nbsp;on&nbsp;this&nbsp;coin.")</td>
+        </tr>
+        <tr id="413" style="None">
+          <td style="color: grey">413</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="414" style="None">
+          <td style="color: grey">414</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;coin.timestamp&nbsp;and&nbsp;not&nbsp;tx.timestamp:</td>
+        </tr>
+        <tr id="415" style="color: blue;">
+          <td style="color: grey">415</td>
+          <td style="text-align: right;">2.00</td>
+          <td style="text-align: right;">4</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;raise&nbsp;wire.DataError("Timestamp&nbsp;must&nbsp;be&nbsp;set.")</td>
+        </tr>
+        <tr id="416" style="None">
+          <td style="color: grey">416</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;elif&nbsp;not&nbsp;coin.timestamp&nbsp;and&nbsp;tx.timestamp:</td>
+        </tr>
+        <tr id="417" style="color: blue;">
+          <td style="color: grey">417</td>
+          <td style="text-align: right;">2.00</td>
+          <td style="text-align: right;">2</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;raise&nbsp;wire.DataError("Timestamp&nbsp;not&nbsp;enabled&nbsp;on&nbsp;this&nbsp;coin.")</td>
+        </tr>
+        <tr id="418" style="None">
+          <td style="color: grey">418</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;elif&nbsp;not&nbsp;coin.overwintered:</td>
+        </tr>
+        <tr id="419" style="None">
+          <td style="color: grey">419</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;tx.version_group_id&nbsp;is&nbsp;not&nbsp;None:</td>
+        </tr>
+        <tr id="420" style="color: blue;">
+          <td style="color: grey">420</td>
+          <td style="text-align: right;">2.00</td>
+          <td style="text-align: right;">2</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;raise&nbsp;wire.DataError("Version&nbsp;group&nbsp;ID&nbsp;not&nbsp;enabled&nbsp;on&nbsp;this&nbsp;coin.")</td>
+        </tr>
+        <tr id="421" style="None">
+          <td style="color: grey">421</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;tx.branch_id&nbsp;is&nbsp;not&nbsp;None:</td>
+        </tr>
+        <tr id="422" style="color: blue;">
+          <td style="color: grey">422</td>
+          <td style="text-align: right;">0.01</td>
+          <td style="text-align: right;">2</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;raise&nbsp;wire.DataError("Branch&nbsp;ID&nbsp;not&nbsp;enabled&nbsp;on&nbsp;this&nbsp;coin.")</td>
+        </tr>
+        <tr id="423" style="None">
+          <td style="color: grey">423</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="424" style="None">
+          <td style="color: grey">424</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;tx</td>
+        </tr>
+        <tr id="425" style="None">
+          <td style="color: grey">425</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="426" style="None">
+          <td style="color: grey">426</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="427" style="color: blue;">
+          <td style="color: grey">427</td>
+          <td style="text-align: right;">1.00</td>
+          <td style="text-align: right;">283</td>
+          <td>def&nbsp;sanitize_tx_input(txi:&nbsp;TxInput,&nbsp;coin:&nbsp;CoinInfo)&nbsp;->&nbsp;TxInput:</td>
+        </tr>
+        <tr id="428" style="None">
+          <td style="color: grey">428</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;len(txi.prev_hash)&nbsp;!=&nbsp;TX_HASH_SIZE:</td>
+        </tr>
+        <tr id="429" style="color: blue;">
+          <td style="color: grey">429</td>
+          <td style="text-align: right;">2.00</td>
+          <td style="text-align: right;">16</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;raise&nbsp;wire.DataError("Provided&nbsp;prev_hash&nbsp;is&nbsp;invalid.")</td>
+        </tr>
+        <tr id="430" style="None">
+          <td style="color: grey">430</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="431" style="None">
+          <td style="color: grey">431</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;txi.multisig&nbsp;and&nbsp;txi.script_type&nbsp;not&nbsp;in&nbsp;common.MULTISIG_INPUT_SCRIPT_TYPES:</td>
+        </tr>
+        <tr id="432" style="color: blue;">
+          <td style="color: grey">432</td>
+          <td style="text-align: right;">2.00</td>
+          <td style="text-align: right;">4</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;raise&nbsp;wire.DataError("Multisig&nbsp;field&nbsp;provided&nbsp;but&nbsp;not&nbsp;expected.")</td>
+        </tr>
+        <tr id="433" style="None">
+          <td style="color: grey">433</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="434" style="None">
+          <td style="color: grey">434</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;not&nbsp;txi.multisig&nbsp;and&nbsp;txi.script_type&nbsp;==&nbsp;InputScriptType.SPENDMULTISIG:</td>
+        </tr>
+        <tr id="435" style="None">
+          <td style="color: grey">435</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;raise&nbsp;wire.DataError("Multisig&nbsp;details&nbsp;required.")</td>
+        </tr>
+        <tr id="436" style="None">
+          <td style="color: grey">436</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="437" style="None">
+          <td style="color: grey">437</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;txi.script_type&nbsp;in&nbsp;common.INTERNAL_INPUT_SCRIPT_TYPES:</td>
+        </tr>
+        <tr id="438" style="None">
+          <td style="color: grey">438</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;not&nbsp;txi.address_n:</td>
+        </tr>
+        <tr id="439" style="None">
+          <td style="color: grey">439</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;raise&nbsp;wire.DataError("Missing&nbsp;address_n&nbsp;field.")</td>
+        </tr>
+        <tr id="440" style="None">
+          <td style="color: grey">440</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="441" style="None">
+          <td style="color: grey">441</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;txi.script_pubkey:</td>
+        </tr>
+        <tr id="442" style="None">
+          <td style="color: grey">442</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;raise&nbsp;wire.DataError("Input's&nbsp;script_pubkey&nbsp;provided&nbsp;but&nbsp;not&nbsp;expected.")</td>
+        </tr>
+        <tr id="443" style="None">
+          <td style="color: grey">443</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;else:</td>
+        </tr>
+        <tr id="444" style="None">
+          <td style="color: grey">444</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;txi.address_n:</td>
+        </tr>
+        <tr id="445" style="None">
+          <td style="color: grey">445</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;raise&nbsp;wire.DataError("Input's&nbsp;address_n&nbsp;provided&nbsp;but&nbsp;not&nbsp;expected.")</td>
+        </tr>
+        <tr id="446" style="None">
+          <td style="color: grey">446</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="447" style="None">
+          <td style="color: grey">447</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;not&nbsp;txi.script_pubkey:</td>
+        </tr>
+        <tr id="448" style="None">
+          <td style="color: grey">448</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;raise&nbsp;wire.DataError("Missing&nbsp;script_pubkey&nbsp;field.")</td>
+        </tr>
+        <tr id="449" style="None">
+          <td style="color: grey">449</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="450" style="None">
+          <td style="color: grey">450</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;not&nbsp;coin.decred&nbsp;and&nbsp;txi.decred_tree&nbsp;is&nbsp;not&nbsp;None:</td>
+        </tr>
+        <tr id="451" style="None">
+          <td style="color: grey">451</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;raise&nbsp;wire.DataError("Decred&nbsp;details&nbsp;provided&nbsp;but&nbsp;Decred&nbsp;coin&nbsp;not&nbsp;specified.")</td>
+        </tr>
+        <tr id="452" style="None">
+          <td style="color: grey">452</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="453" style="None">
+          <td style="color: grey">453</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;txi.script_type&nbsp;in&nbsp;common.SEGWIT_INPUT_SCRIPT_TYPES&nbsp;or&nbsp;txi.witness&nbsp;is&nbsp;not&nbsp;None:</td>
+        </tr>
+        <tr id="454" style="None">
+          <td style="color: grey">454</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;not&nbsp;coin.segwit:</td>
+        </tr>
+        <tr id="455" style="None">
+          <td style="color: grey">455</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;raise&nbsp;wire.DataError("Segwit&nbsp;not&nbsp;enabled&nbsp;on&nbsp;this&nbsp;coin.")</td>
+        </tr>
+        <tr id="456" style="None">
+          <td style="color: grey">456</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="457" style="None">
+          <td style="color: grey">457</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;txi.script_type&nbsp;==&nbsp;InputScriptType.SPENDTAPROOT&nbsp;and&nbsp;not&nbsp;coin.taproot:</td>
+        </tr>
+        <tr id="458" style="None">
+          <td style="color: grey">458</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;raise&nbsp;wire.DataError("Taproot&nbsp;not&nbsp;enabled&nbsp;on&nbsp;this&nbsp;coin")</td>
+        </tr>
+        <tr id="459" style="None">
+          <td style="color: grey">459</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="460" style="None">
+          <td style="color: grey">460</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;txi.commitment_data&nbsp;and&nbsp;not&nbsp;txi.ownership_proof:</td>
+        </tr>
+        <tr id="461" style="None">
+          <td style="color: grey">461</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;raise&nbsp;wire.DataError("commitment_data&nbsp;field&nbsp;provided&nbsp;but&nbsp;not&nbsp;expected.")</td>
+        </tr>
+        <tr id="462" style="None">
+          <td style="color: grey">462</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="463" style="None">
+          <td style="color: grey">463</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;txi.orig_hash&nbsp;and&nbsp;txi.orig_index&nbsp;is&nbsp;None:</td>
+        </tr>
+        <tr id="464" style="None">
+          <td style="color: grey">464</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;raise&nbsp;wire.DataError("Missing&nbsp;orig_index&nbsp;field.")</td>
+        </tr>
+        <tr id="465" style="None">
+          <td style="color: grey">465</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="466" style="None">
+          <td style="color: grey">466</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;txi</td>
+        </tr>
+        <tr id="467" style="None">
+          <td style="color: grey">467</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="468" style="None">
+          <td style="color: grey">468</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="469" style="color: blue;">
+          <td style="color: grey">469</td>
+          <td style="text-align: right;">1.00</td>
+          <td style="text-align: right;">283</td>
+          <td>def&nbsp;sanitize_tx_prev_input(txi:&nbsp;PrevInput,&nbsp;coin:&nbsp;CoinInfo)&nbsp;->&nbsp;PrevInput:</td>
+        </tr>
+        <tr id="470" style="None">
+          <td style="color: grey">470</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;len(txi.prev_hash)&nbsp;!=&nbsp;TX_HASH_SIZE:</td>
+        </tr>
+        <tr id="471" style="color: blue;">
+          <td style="color: grey">471</td>
+          <td style="text-align: right;">2.00</td>
+          <td style="text-align: right;">8</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;raise&nbsp;wire.DataError("Provided&nbsp;prev_hash&nbsp;is&nbsp;invalid.")</td>
+        </tr>
+        <tr id="472" style="None">
+          <td style="color: grey">472</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="473" style="None">
+          <td style="color: grey">473</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;not&nbsp;coin.decred&nbsp;and&nbsp;txi.decred_tree&nbsp;is&nbsp;not&nbsp;None:</td>
+        </tr>
+        <tr id="474" style="None">
+          <td style="color: grey">474</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;raise&nbsp;wire.DataError("Decred&nbsp;details&nbsp;provided&nbsp;but&nbsp;Decred&nbsp;coin&nbsp;not&nbsp;specified.")</td>
+        </tr>
+        <tr id="475" style="None">
+          <td style="color: grey">475</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="476" style="None">
+          <td style="color: grey">476</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;txi</td>
+        </tr>
+        <tr id="477" style="None">
+          <td style="color: grey">477</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="478" style="None">
+          <td style="color: grey">478</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="479" style="color: blue;">
+          <td style="color: grey">479</td>
+          <td style="text-align: right;">1.00</td>
+          <td style="text-align: right;">283</td>
+          <td>def&nbsp;sanitize_tx_output(txo:&nbsp;TxOutput,&nbsp;coin:&nbsp;CoinInfo)&nbsp;->&nbsp;TxOutput:</td>
+        </tr>
+        <tr id="480" style="None">
+          <td style="color: grey">480</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;txo.multisig&nbsp;and&nbsp;txo.script_type&nbsp;not&nbsp;in&nbsp;common.MULTISIG_OUTPUT_SCRIPT_TYPES:</td>
+        </tr>
+        <tr id="481" style="color: blue;">
+          <td style="color: grey">481</td>
+          <td style="text-align: right;">2.00</td>
+          <td style="text-align: right;">4</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;raise&nbsp;wire.DataError("Multisig&nbsp;field&nbsp;provided&nbsp;but&nbsp;not&nbsp;expected.")</td>
+        </tr>
+        <tr id="482" style="None">
+          <td style="color: grey">482</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="483" style="None">
+          <td style="color: grey">483</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;not&nbsp;txo.multisig&nbsp;and&nbsp;txo.script_type&nbsp;==&nbsp;OutputScriptType.PAYTOMULTISIG:</td>
+        </tr>
+        <tr id="484" style="None">
+          <td style="color: grey">484</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;raise&nbsp;wire.DataError("Multisig&nbsp;details&nbsp;required.")</td>
+        </tr>
+        <tr id="485" style="None">
+          <td style="color: grey">485</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="486" style="None">
+          <td style="color: grey">486</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;txo.address_n&nbsp;and&nbsp;txo.script_type&nbsp;not&nbsp;in&nbsp;common.CHANGE_OUTPUT_SCRIPT_TYPES:</td>
+        </tr>
+        <tr id="487" style="color: blue;">
+          <td style="color: grey">487</td>
+          <td style="text-align: right;">2.00</td>
+          <td style="text-align: right;">2</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;raise&nbsp;wire.DataError("Output's&nbsp;address_n&nbsp;provided&nbsp;but&nbsp;not&nbsp;expected.")</td>
+        </tr>
+        <tr id="488" style="None">
+          <td style="color: grey">488</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="489" style="None">
+          <td style="color: grey">489</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;txo.amount&nbsp;is&nbsp;None:</td>
+        </tr>
+        <tr id="490" style="None">
+          <td style="color: grey">490</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;raise&nbsp;wire.DataError("Missing&nbsp;amount&nbsp;field.")</td>
+        </tr>
+        <tr id="491" style="None">
+          <td style="color: grey">491</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="492" style="None">
+          <td style="color: grey">492</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;txo.script_type&nbsp;in&nbsp;common.SEGWIT_OUTPUT_SCRIPT_TYPES:</td>
+        </tr>
+        <tr id="493" style="None">
+          <td style="color: grey">493</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;not&nbsp;coin.segwit:</td>
+        </tr>
+        <tr id="494" style="None">
+          <td style="color: grey">494</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;raise&nbsp;wire.DataError("Segwit&nbsp;not&nbsp;enabled&nbsp;on&nbsp;this&nbsp;coin.")</td>
+        </tr>
+        <tr id="495" style="None">
+          <td style="color: grey">495</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="496" style="None">
+          <td style="color: grey">496</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;txo.script_type&nbsp;==&nbsp;OutputScriptType.PAYTOTAPROOT&nbsp;and&nbsp;not&nbsp;coin.taproot:</td>
+        </tr>
+        <tr id="497" style="None">
+          <td style="color: grey">497</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;raise&nbsp;wire.DataError("Taproot&nbsp;not&nbsp;enabled&nbsp;on&nbsp;this&nbsp;coin")</td>
+        </tr>
+        <tr id="498" style="None">
+          <td style="color: grey">498</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="499" style="None">
+          <td style="color: grey">499</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;txo.script_type&nbsp;==&nbsp;OutputScriptType.PAYTOOPRETURN:</td>
+        </tr>
+        <tr id="500" style="None">
+          <td style="color: grey">500</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#&nbsp;op_return&nbsp;output</td>
+        </tr>
+        <tr id="501" style="None">
+          <td style="color: grey">501</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;txo.op_return_data&nbsp;is&nbsp;None:</td>
+        </tr>
+        <tr id="502" style="None">
+          <td style="color: grey">502</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;raise&nbsp;wire.DataError("OP_RETURN&nbsp;output&nbsp;without&nbsp;op_return_data")</td>
+        </tr>
+        <tr id="503" style="None">
+          <td style="color: grey">503</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;txo.amount&nbsp;!=&nbsp;0:</td>
+        </tr>
+        <tr id="504" style="color: blue;">
+          <td style="color: grey">504</td>
+          <td style="text-align: right;">2.00</td>
+          <td style="text-align: right;">2</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;raise&nbsp;wire.DataError("OP_RETURN&nbsp;output&nbsp;with&nbsp;non-zero&nbsp;amount")</td>
+        </tr>
+        <tr id="505" style="None">
+          <td style="color: grey">505</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;txo.address&nbsp;or&nbsp;txo.address_n&nbsp;or&nbsp;txo.multisig:</td>
+        </tr>
+        <tr id="506" style="None">
+          <td style="color: grey">506</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;raise&nbsp;wire.DataError("OP_RETURN&nbsp;output&nbsp;with&nbsp;address&nbsp;or&nbsp;multisig")</td>
+        </tr>
+        <tr id="507" style="None">
+          <td style="color: grey">507</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;else:</td>
+        </tr>
+        <tr id="508" style="None">
+          <td style="color: grey">508</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;txo.op_return_data:</td>
+        </tr>
+        <tr id="509" style="None">
+          <td style="color: grey">509</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;raise&nbsp;wire.DataError(</td>
+        </tr>
+        <tr id="510" style="None">
+          <td style="color: grey">510</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"OP&nbsp;RETURN&nbsp;data&nbsp;provided&nbsp;but&nbsp;not&nbsp;OP&nbsp;RETURN&nbsp;script&nbsp;type."</td>
+        </tr>
+        <tr id="511" style="None">
+          <td style="color: grey">511</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;)</td>
+        </tr>
+        <tr id="512" style="None">
+          <td style="color: grey">512</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;txo.address_n&nbsp;and&nbsp;txo.address:</td>
+        </tr>
+        <tr id="513" style="None">
+          <td style="color: grey">513</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;raise&nbsp;wire.DataError("Both&nbsp;address&nbsp;and&nbsp;address_n&nbsp;provided.")</td>
+        </tr>
+        <tr id="514" style="None">
+          <td style="color: grey">514</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;not&nbsp;txo.address_n&nbsp;and&nbsp;not&nbsp;txo.address:</td>
+        </tr>
+        <tr id="515" style="None">
+          <td style="color: grey">515</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;raise&nbsp;wire.DataError("Missing&nbsp;address")</td>
+        </tr>
+        <tr id="516" style="None">
+          <td style="color: grey">516</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="517" style="None">
+          <td style="color: grey">517</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;txo.orig_hash&nbsp;and&nbsp;txo.orig_index&nbsp;is&nbsp;None:</td>
+        </tr>
+        <tr id="518" style="None">
+          <td style="color: grey">518</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;raise&nbsp;wire.DataError("Missing&nbsp;orig_index&nbsp;field.")</td>
+        </tr>
+        <tr id="519" style="None">
+          <td style="color: grey">519</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="520" style="None">
+          <td style="color: grey">520</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;txo</td>
+        </tr>
+        <tr id="521" style="None">
+          <td style="color: grey">521</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="522" style="None">
+          <td style="color: grey">522</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="523" style="color: red;">
+          <td style="color: grey">523</td>
+          <td style="text-align: right;">6.00</td>
+          <td style="text-align: right;">1698</td>
+          <td>def&nbsp;sanitize_payment_req(payment_req:&nbsp;TxAckPaymentRequest)&nbsp;->&nbsp;TxAckPaymentRequest:</td>
+        </tr>
+        <tr id="524" style="None">
+          <td style="color: grey">524</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;for&nbsp;memo&nbsp;in&nbsp;payment_req.memos:</td>
+        </tr>
+        <tr id="525" style="color: blue;">
+          <td style="color: grey">525</td>
+          <td style="text-align: right;">1.00</td>
+          <td style="text-align: right;">13</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(memo.text_memo,&nbsp;memo.refund_memo,&nbsp;memo.coin_purchase_memo).count(None)&nbsp;!=&nbsp;2:</td>
+        </tr>
+        <tr id="526" style="None">
+          <td style="color: grey">526</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;raise&nbsp;wire.DataError(</td>
+        </tr>
+        <tr id="527" style="None">
+          <td style="color: grey">527</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"Exactly&nbsp;one&nbsp;memo&nbsp;type&nbsp;must&nbsp;be&nbsp;specified&nbsp;in&nbsp;each&nbsp;PaymentRequestMemo."</td>
+        </tr>
+        <tr id="528" style="None">
+          <td style="color: grey">528</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;)</td>
+        </tr>
+        <tr id="529" style="None">
+          <td style="color: grey">529</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="530" style="None">
+          <td style="color: grey">530</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;payment_req</td>
+        </tr>
+      </tbody>
+    </table>
+  </body>
+</html>

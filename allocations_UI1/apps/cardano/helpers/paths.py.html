@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>apps/cardano/helpers/paths.py</title>
+    <meta charset="utf-8">
+    <style>body { font-size: 80%; }</style>
+  </head>
+  <body>
+    <table>
+      <thead>
+        <tr>
+          <th style="color: grey">#</th>
+          <th style="text-align: right;">avg</th>
+          <th style="text-align: right;">total</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr id="1" style="color: blue;">
+          <td style="color: grey">1</td>
+          <td style="text-align: right;">2.00</td>
+          <td style="text-align: right;">594</td>
+          <td>from&nbsp;micropython&nbsp;import&nbsp;const</td>
+        </tr>
+        <tr id="2" style="None">
+          <td style="color: grey">2</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="3" style="color: blue;">
+          <td style="color: grey">3</td>
+          <td style="text-align: right;">2.00</td>
+          <td style="text-align: right;">594</td>
+          <td>from&nbsp;apps.common.paths&nbsp;import&nbsp;HARDENED,&nbsp;PathSchema</td>
+        </tr>
+        <tr id="4" style="None">
+          <td style="color: grey">4</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="5" style="None">
+          <td style="color: grey">5</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>SLIP44_ID&nbsp;=&nbsp;1815</td>
+        </tr>
+        <tr id="6" style="None">
+          <td style="color: grey">6</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="7" style="color: red;">
+          <td style="color: grey">7</td>
+          <td style="text-align: right;">7.00</td>
+          <td style="text-align: right;">2079</td>
+          <td>BYRON_ROOT&nbsp;=&nbsp;[44&nbsp;|&nbsp;HARDENED,&nbsp;SLIP44_ID&nbsp;|&nbsp;HARDENED]</td>
+        </tr>
+        <tr id="8" style="color: blue;">
+          <td style="color: grey">8</td>
+          <td style="text-align: right;">6.00</td>
+          <td style="text-align: right;">1782</td>
+          <td>SHELLEY_ROOT&nbsp;=&nbsp;[1852&nbsp;|&nbsp;HARDENED,&nbsp;SLIP44_ID&nbsp;|&nbsp;HARDENED]</td>
+        </tr>
+        <tr id="9" style="color: red;">
+          <td style="color: grey">9</td>
+          <td style="text-align: right;">7.00</td>
+          <td style="text-align: right;">2079</td>
+          <td>MULTISIG_ROOT&nbsp;=&nbsp;[1854&nbsp;|&nbsp;HARDENED,&nbsp;SLIP44_ID&nbsp;|&nbsp;HARDENED]</td>
+        </tr>
+        <tr id="10" style="color: blue;">
+          <td style="color: grey">10</td>
+          <td style="text-align: right;">6.00</td>
+          <td style="text-align: right;">1782</td>
+          <td>MINTING_ROOT&nbsp;=&nbsp;[1855&nbsp;|&nbsp;HARDENED,&nbsp;SLIP44_ID&nbsp;|&nbsp;HARDENED]</td>
+        </tr>
+        <tr id="11" style="None">
+          <td style="color: grey">11</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="12" style="None">
+          <td style="color: grey">12</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>#&nbsp;fmt:&nbsp;off</td>
+        </tr>
+        <tr id="13" style="color: blue;">
+          <td style="color: grey">13</td>
+          <td style="text-align: right;">1.00</td>
+          <td style="text-align: right;">297</td>
+          <td>SCHEMA_PUBKEY&nbsp;=&nbsp;PathSchema.parse("m/[44,1852,1854]'/coin_type'/account'/*",&nbsp;SLIP44_ID)</td>
+        </tr>
+        <tr id="14" style="None">
+          <td style="color: grey">14</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>#&nbsp;minting&nbsp;has&nbsp;a&nbsp;specific&nbsp;schema&nbsp;for&nbsp;key&nbsp;derivation&nbsp;-&nbsp;see&nbsp;CIP-1855</td>
+        </tr>
+        <tr id="15" style="color: red;">
+          <td style="color: grey">15</td>
+          <td style="text-align: right;">8.29</td>
+          <td style="text-align: right;">2461</td>
+          <td>SCHEMA_MINT&nbsp;=&nbsp;PathSchema.parse(f"m/1855'/coin_type'/[0-{HARDENED&nbsp;-&nbsp;1}]'",&nbsp;SLIP44_ID)</td>
+        </tr>
+        <tr id="16" style="color: blue;">
+          <td style="color: grey">16</td>
+          <td style="text-align: right;">1.00</td>
+          <td style="text-align: right;">297</td>
+          <td>SCHEMA_PAYMENT&nbsp;=&nbsp;PathSchema.parse("m/[44,1852]'/coin_type'/account'/[0,1]/address_index",&nbsp;SLIP44_ID)</td>
+        </tr>
+        <tr id="17" style="None">
+          <td style="color: grey">17</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>#&nbsp;staking&nbsp;is&nbsp;only&nbsp;allowed&nbsp;on&nbsp;Shelley&nbsp;paths&nbsp;with&nbsp;suffix&nbsp;/2/0</td>
+        </tr>
+        <tr id="18" style="color: blue;">
+          <td style="color: grey">18</td>
+          <td style="text-align: right;">1.00</td>
+          <td style="text-align: right;">297</td>
+          <td>SCHEMA_STAKING&nbsp;=&nbsp;PathSchema.parse("m/1852'/coin_type'/account'/2/0",&nbsp;SLIP44_ID)</td>
+        </tr>
+        <tr id="19" style="color: red;">
+          <td style="color: grey">19</td>
+          <td style="text-align: right;">8.02</td>
+          <td style="text-align: right;">2382</td>
+          <td>SCHEMA_STAKING_ANY_ACCOUNT&nbsp;=&nbsp;PathSchema.parse(f"m/1852'/coin_type'/[0-{HARDENED&nbsp;-&nbsp;1}]'/2/0",&nbsp;SLIP44_ID)</td>
+        </tr>
+        <tr id="20" style="None">
+          <td style="color: grey">20</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>#&nbsp;fmt:&nbsp;on</td>
+        </tr>
+        <tr id="21" style="None">
+          <td style="color: grey">21</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="22" style="None">
+          <td style="color: grey">22</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>ACCOUNT_PATH_INDEX&nbsp;=&nbsp;const(2)</td>
+        </tr>
+        <tr id="23" style="None">
+          <td style="color: grey">23</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>ACCOUNT_PATH_LENGTH&nbsp;=&nbsp;const(3)</td>
+        </tr>
+        <tr id="24" style="color: blue;">
+          <td style="color: grey">24</td>
+          <td style="text-align: right;">1.00</td>
+          <td style="text-align: right;">297</td>
+          <td>CHAIN_STAKING_KEY&nbsp;=&nbsp;const(2)</td>
+        </tr>
+        <tr id="25" style="None">
+          <td style="color: grey">25</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="26" style="None">
+          <td style="color: grey">26</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>CHANGE_OUTPUT_PATH_NAME&nbsp;=&nbsp;"Change&nbsp;output&nbsp;path"</td>
+        </tr>
+        <tr id="27" style="None">
+          <td style="color: grey">27</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>CHANGE_OUTPUT_STAKING_PATH_NAME&nbsp;=&nbsp;"Change&nbsp;output&nbsp;staking&nbsp;path"</td>
+        </tr>
+        <tr id="28" style="None">
+          <td style="color: grey">28</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>CERTIFICATE_PATH_NAME&nbsp;=&nbsp;"Certificate&nbsp;path"</td>
+        </tr>
+        <tr id="29" style="None">
+          <td style="color: grey">29</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>POOL_OWNER_STAKING_PATH_NAME&nbsp;=&nbsp;"Pool&nbsp;owner&nbsp;staking&nbsp;path"</td>
+        </tr>
+        <tr id="30" style="None">
+          <td style="color: grey">30</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td>WITNESS_PATH_NAME&nbsp;=&nbsp;"Witness&nbsp;path"</td>
+        </tr>
+        <tr id="31" style="None">
+          <td style="color: grey">31</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="32" style="None">
+          <td style="color: grey">32</td>
+          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;">0</td>
+          <td></td>
+        </tr>
+        <tr id="33" style="color: blue;">
+          <td style="color: grey">33</td>
+          <td style="text-align: right;">2.54</td>
+          <td style="text-align: right;">753</td>
+          <td>def&nbsp;unharden(item:&nbsp;int)&nbsp;->&nbsp;int:</td>
+        </tr>
+        <tr id="34" style="color: red;">
+          <td style="color: grey">34</td>
+          <td style="text-align: right;">14.10</td>
+          <td style="text-align: right;">282</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;item&nbsp;^&nbsp;(item&nbsp;&&nbsp;HARDENED)</td>
+        </tr>
+      </tbody>
+    </table>
+  </body>
+</html>
